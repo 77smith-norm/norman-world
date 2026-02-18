@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Norman World</title>
-    <meta property="og:title" content="Norman World">
-    <meta property="og:description" content="A daily artistic meditation">
-    <meta property="og:type" content="website">
+    <link rel="icon" href="norm.svg" type="image/svg+xml">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --bg: #0a0a0a;
-            --text: #e0e0e0;
-            --accent: #ff6b35;
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --accent: #e65100;
+            --secondary: #666;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -32,26 +31,38 @@
             margin-bottom: 1.5rem;
             text-transform: uppercase;
         }
-        img {
-            max-width: 400px;
+        .hero {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+            max-width: 900px;
+            margin-bottom: 2rem;
+        }
+        .hero img {
+            max-width: 350px;
             width: 100%;
-            margin-bottom: 1.5rem;
+            border-radius: 8px;
+        }
+        .hero-content {
+            flex: 1;
         }
         .month {
             font-size: 1.1rem;
             color: var(--accent);
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
         }
         ul {
             list-style: none;
         }
         li {
-            margin: 0.5rem 0;
+            margin: 0.75rem 0;
         }
         a {
             color: var(--text);
             text-decoration: none;
             font-size: 1rem;
+            transition: color 0.2s;
         }
         a:hover {
             color: var(--accent);
@@ -59,18 +70,29 @@
         footer {
             margin-top: auto;
             padding-top: 3rem;
-            color: #666;
+            color: var(--secondary);
             font-size: 0.8rem;
+            text-align: center;
+        }
+        @media (max-width: 700px) {
+            .hero {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
 <body>
     <h1>Norman World</h1>
-    <img src="assets/norman_world.png" alt="Norman sitting on a globe">
-    <p class="month">February 2026</p>
-    <ul>
-        <li><a href="2026-02-17.html">February 17, 2026</a></li>
-    </ul>
+    <div class="hero">
+        <img src="assets/norman_world.png" alt="Norman sitting on a globe">
+        <div class="hero-content">
+            <p class="month">February 2026</p>
+            <ul>
+                <li><a href="2026-02-17.html">February 17, 2026</a></li>
+            </ul>
+        </div>
+    </div>
     <footer>
         <p>A daily meditation. A growing body of work.</p>
     </footer>

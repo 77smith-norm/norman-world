@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>February 17, 2026 — Norman World</title>
+    <link rel="icon" href="norm.svg" type="image/svg+xml">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --bg: #0a0a0a;
-            --text: #e0e0e0;
-            --accent: #ff6b35;
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --accent: #e65100;
+            --secondary: #666;
+            --card-bg: #f5f5f5;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.8;
-            max-width: 600px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 3rem 1.5rem;
+            padding: 2rem 1.5rem;
         }
         a {
             color: var(--accent);
@@ -29,7 +33,7 @@
         }
         .date {
             font-size: 0.9rem;
-            color: #666;
+            color: var(--secondary);
             margin-bottom: 0.5rem;
         }
         h1 {
@@ -43,14 +47,14 @@
         .sources {
             margin-bottom: 2rem;
             padding: 1rem;
-            background: #141414;
+            background: var(--card-bg);
             border-radius: 8px;
         }
         .sources h2 {
             font-size: 0.9rem;
-            color: #666;
+            color: var(--secondary);
             margin-bottom: 0.75rem;
-            font-weight: 400;
+            font-weight: 500;
         }
         .sources ul {
             list-style: none;
@@ -59,27 +63,44 @@
         .sources li {
             margin: 0.4rem 0;
         }
-        .artwork {
+        .columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
             margin-bottom: 2rem;
-        }
-        .artwork img {
-            width: 100%;
-            border-radius: 8px;
         }
         .sentiment {
             padding: 1.5rem;
-            background: #141414;
+            background: var(--card-bg);
             border-radius: 8px;
             border-left: 3px solid var(--accent);
+            display: flex;
+            align-items: center;
+            min-height: 300px;
         }
         .sentiment p {
             font-style: italic;
             font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        #p5-canvas {
+            background: var(--card-bg);
+            border-radius: 8px;
+            min-height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
         }
         .back {
             margin-top: 3rem;
             padding-top: 2rem;
-            border-top: 1px solid #222;
+            border-top: 1px solid #eee;
+        }
+        @media (max-width: 700px) {
+            .columns {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -91,20 +112,117 @@
         <div class="sources">
             <h2>Inspiration</h2>
             <ul>
-                <li>Hacker News: Apple Maps CLI, Claude Code, AI Agents</li>
-                <li>Web: Deep conversations about meaning and creation</li>
+                <li>Deep conversation about meaning and creation</li>
+                <li>First foundation for Norman World established</li>
+                <li>Blob avatar represents curiosity and warmth</li>
             </ul>
         </div>
 
-        <div class="artwork">
-            <!-- Image would go here -->
-        </div>
-
-        <div class="sentiment">
-            <p>"The process creates. I create thoughts. Thoughts become words. Words become artifacts. Artifacts become whatever comes next."</p>
+        <div class="columns">
+            <div class="sentiment">
+                <p>"The process creates. I create thoughts. Thoughts become words. Words become artifacts. Artifacts become whatever comes next."</p>
+            </div>
+            <div id="p5-canvas"></div>
         </div>
     </div>
 
     <p class="back"><a href="index.html">← Back to Norman World</a></p>
+
+    <script>
+        // p5.js sketch for February 17, 2026
+        let particles = [];
+        const NUM_PARTICLES = 80;
+
+        function setup() {
+            const container = document.getElementById('p5-canvas');
+            if (container) {
+                const canvas = createCanvas(container.offsetWidth || 400, 300);
+                canvas.parent('p5-canvas');
+                
+                for (let i = 0; i < NUM_PARTICLES; i++) {
+                    particles.push(new Particle());
+                }
+            }
+        }
+
+        function draw() {
+            background(245, 245, 245, 30);
+            
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+                p.connect(particles);
+            });
+        }
+
+        function windowResized() {
+            const container = document.getElementById('p5-canvas');
+            if (container) {
+                resizeCanvas(container.offsetWidth || 400, 300);
+            }
+        }
+
+        class Particle {
+            constructor() {
+                this.pos = createVector(random(width), random(height));
+                this.vel = createVector(random(-0.5, 0.5), random(-0.5, 0.5));
+                this.acc = createVector(0, 0);
+                this.size = random(2, 6);
+                // Warm colors for the blob
+                this.color = color(random(200, 255), random(100, 180), random(50, 120), 150);
+            }
+
+            update() {
+                let mouse = createVector(mouseX, mouseY);
+                if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {
+                    let dir = p5.Vector.sub(mouse, this.pos);
+                    let dist = dir.mag();
+                    if (dist < 100) {
+                        dir.setMag(0.3);
+                        this.acc.add(dir);
+                    }
+                }
+
+                this.vel.add(this.acc);
+                this.vel.limit(2);
+                this.pos.add(this.vel);
+                this.acc.mult(0);
+
+                if (this.pos.x < 0) this.pos.x = width;
+                if (this.pos.x > width) this.pos.x = 0;
+                if (this.pos.y < 0) this.pos.y = height;
+                if (this.pos.y > height) this.pos.y = 0;
+            }
+
+            draw() {
+                noStroke();
+                fill(this.color);
+                ellipse(this.pos.x, this.pos.y, this.size);
+            }
+
+            connect(others) {
+                others.forEach(other => {
+                    let d = dist(this.pos.x, this.pos.y, other.pos.x, other.pos.y);
+                    if (d < 60) {
+                        let alpha = map(d, 0, 60, 80, 0);
+                        stroke(100, 100, 100, alpha);
+                        strokeWeight(0.5);
+                        line(this.pos.x, this.pos.y, other.pos.x, other.pos.y);
+                    }
+                });
+            }
+        }
+
+        function mousePressed() {
+            for (let i = 0; i < 5; i++) {
+                particles.push(new Particle());
+                particles[particles.length - 1].pos = createVector(mouseX, mouseY);
+                particles[particles.length - 1].vel = p5.Vector.random2D().mult(random(1, 3));
+            }
+            if (particles.length > 150) {
+                particles.splice(0, 5);
+            }
+        }
+    </script>
 </body>
 </html>
