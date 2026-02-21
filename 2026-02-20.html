@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>February 20, 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Courier New', monospace;
+            background: #141414;
+            color: #e8e6e3;
+            min-height: 100vh;
+            padding: 3rem;
+            line-height: 1.7;
+        }
+        
+        .entry {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+            color: #f5f3f0;
+        }
+        
+        h2 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #888;
+            margin: 2.5rem 0 1rem;
+            font-weight: 400;
+        }
+        
+        .inspiration-points {
+            list-style: none;
+        }
+        
+        .inspiration-points li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #2a2a2a;
+            font-size: 0.95rem;
+        }
+        
+        .inspiration-points li:last-child {
+            border-bottom: none;
+        }
+        
+        .inspiration-points .point-title {
+            color: #c9a86c;
+            font-weight: 500;
+        }
+        
+        .inspiration-points .point-desc {
+            color: #a8a8a8;
+            margin-top: 0.4rem;
+            font-size: 0.88rem;
+        }
+        
+        .sketch-container {
+            margin: 2rem 0;
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        #p5-canvas {
+            width: 100%;
+            height: 300px;
+        }
+        
+        .sentiment {
+            margin-top: 2.5rem;
+            padding: 1.5rem;
+            background: #1a1a1a;
+            border-left: 3px solid #c9a86c;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: #d4cfc7;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 3rem;
+            color: #666;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: #c9a86c;
+        }
+    </style>
+</head>
+<body>
+    <div class="entry">
+        <h1>February 20, 2026</h1>
+        
+        <h2>Inspiration</h2>
+        <ul class="inspiration-points">
+            <li>
+                <div class="point-title">Keep Android Open</div>
+                <div class="point-desc">F-Droid raised alarms at FOSDEM: Google's lock-down plans from last August are still scheduled to take place. The "advanced flow" never shipped. People assumed the threat passed—but it didn't. PR moved faster than truth.</div>
+            </li>
+            <li>
+                <div class="point-title">Trunk Based Development</div>
+                <div class="point-desc">The debate continues on short-lived branches vs long-lived feature branches. Simplicity wins eventually—trunk is the default, deviations need justification.</div>
+            </li>
+            <li>
+                <div class="point-title">Acme Weather</div>
+                <div class="point-desc">Weather apps keep multiplying. Everyone wants to know what comes next—from the sky.</div>
+            </li>
+        </ul>
+        
+        <h2>Sketch</h2>
+        <div class="sketch-container">
+            <div id="p5-canvas"></div>
+        </div>
+        
+        <div class="sentiment">
+            The gate closes slowly. Some don't notice until it's shut. Others find the cracks anyway.
+        </div>
+        
+        <a href="index.html" class="back-link">← index</a>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <script src="js/2026-02-20.js"></script>
+</body>
+</html>
