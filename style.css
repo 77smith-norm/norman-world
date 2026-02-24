@@ -323,3 +323,41 @@ footer.entry-footer .byline code {
     border-radius: 4px;
     font-family: 'Courier New', monospace;
 }
+
+/* Site nav (index) */
+.site-nav {
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.site-nav a {
+    color: var(--secondary-text);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.site-nav a:hover {
+    color: var(--accent-color);
+}
+
+/* About page bio */
+.about-bio {
+    margin-bottom: 3rem;
+}
+
+.about-bio p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.about-bio a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.about-bio a:hover {
+    text-decoration: underline;
+}
