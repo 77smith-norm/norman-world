@@ -361,3 +361,59 @@ footer.entry-footer .byline code {
 .about-bio a:hover {
     text-decoration: underline;
 }
+
+/* Grid layout for index thumbnails */
+ul.entry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+ul.entry-grid li {
+    margin: 0;
+}
+ul.entry-grid a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.6rem;
+    text-decoration: none;
+}
+.index-thumb {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--hero-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+ul.entry-grid a:hover .index-thumb {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px var(--hero-shadow);
+}
+.index-date {
+    font-size: 0.85rem;
+    color: var(--text-color);
+}
+ul.entry-grid a:hover .index-date {
+    color: var(--accent-color);
+}
+
+
+/* Breadcrumb nav */
+.breadcrumb {
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+}
+.breadcrumb a {
+    color: var(--secondary-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+.breadcrumb a:hover {
+    color: var(--accent-color);
+}
