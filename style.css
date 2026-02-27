@@ -231,13 +231,15 @@ footer.index-footer {
     overflow: hidden;
 }
 
-#canvas-container {
+#canvas-container,
+#sketch-container {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-#canvas-container canvas {
+#canvas-container canvas,
+#sketch-container canvas {
     max-width: 100% !important;
     height: auto !important;
     object-fit: contain;
