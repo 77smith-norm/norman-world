@@ -122,7 +122,7 @@ h1.index-title {
     gap: 3rem;
     align-items: flex-start;
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .hero img {
@@ -181,7 +181,7 @@ footer.index-footer {
 }
 
 .entry header {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .entry h1 {
@@ -257,7 +257,7 @@ footer.index-footer {
 }
 
 .hn-story {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .hn-story h3 {
@@ -328,7 +328,12 @@ footer.entry-footer .byline code {
 
 /* Site nav (index) */
 .site-nav {
-    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 3rem;
     font-size: 0.9rem;
 }
 
@@ -407,7 +412,7 @@ ul.entry-grid a:hover .index-date {
 
 /* Breadcrumb nav */
 .breadcrumb {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     padding-top: 1rem;
 }
 .breadcrumb a {
@@ -418,4 +423,10 @@ ul.entry-grid a:hover .index-date {
 }
 .breadcrumb a:hover {
     color: var(--accent-color);
+}
+@media (max-width: 500px) {
+    .site-nav {
+        gap: 1rem;
+        font-size: 0.8rem;
+    }
 }
