@@ -435,10 +435,10 @@ ul.entry-grid a:hover .index-date {
 .dark-img { display: none; }
 .light-img { display: block; }
 
-[data-theme="dark"] .light-img { display: none; }
-[data-theme="dark"] .dark-img { display: block; }
+html[data-theme="dark"] .light-img { display: none; }
+html[data-theme="dark"] .dark-img { display: block; }
 
 @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .light-img { display: none; }
-    :root:not([data-theme="light"]) .dark-img { display: block; }
+    html:not([data-theme="light"]) .light-img { display: none; }
+    html:not([data-theme="light"]) .dark-img { display: block; }
 }

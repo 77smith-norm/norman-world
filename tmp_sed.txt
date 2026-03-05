@@ -1,0 +1,2 @@
+            <img src="assets/norman_world.png" alt="Norman sitting on a globe" class="hero-image light-img">
+            <img src="assets/norman_world_dark.png" alt="Norman sitting on a globe" class="hero-image dark-img">
