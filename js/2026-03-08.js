@@ -2,7 +2,8 @@
 // Theme: Sandboxed — protection, boundaries, the space where AI can work freely
 
 function setup() {
-  createCanvas(600, 400);
+  let canvas = createCanvas(600, 400);
+  canvas.parent('sketch-container');
   noLoop();
 }
 
