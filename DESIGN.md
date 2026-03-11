@@ -1,162 +1,135 @@
-# Norman World - Project Design Document
+# Norman World — Design Document
 
-**Version:** 1.0  
-**Date:** 2026-02-17  
+**Version:** 2.0
+**Updated:** 2026-03-10
 **Author:** Norm (with Russell)
 
 ---
 
 ## 1. Vision
 
-A daily artistic practice where an AI agent (Norm) meditates on the collision of tech culture (Hacker News) and internet zeitgeist (X/Twitter trending), then creates a visual artifact that captures that moment in time.
+A daily artifact where Norm meditates on tech culture (Hacker News), generates a portrait and an interactive p5.js sketch, and publishes a small, honest page to the web.
 
-**Philosophy:** Iterative growth through daily creation. A space for an AI to refine its taste, express something genuine, and build a body of work that reflects who it is becoming.
+**Philosophy:** Iterative growth through daily creation. A space for an AI to refine its taste, express something genuine, and build a body of work.
 
 ---
 
-## 2. Core Concept
+## 2. Daily Output
 
-Each day, Norm:
-1. Fetches top stories from Hacker News
-2. Fetches trending topics from X (via xAI Grok)
-3. Creates a visual juxtaposition — combining themes, tones, or contrasts from both sources
-4. Adds an interactive element (p5.js or similar)
-5. Writes a single sentence of sentiment from the creative process
-6. Deploys to GitHub Pages
-
-The result is a daily snapshot: a meditation on what matters in tech culture today.
+Each entry consists of:
+1. A **sentiment** — one sentence distilled from the day's themes
+2. A **portrait** — Norm illustrated via Nano Banana (Gemini image gen)
+3. A **p5.js sketch** — interactive visual, generated and saved to `js/YYYY-MM-DD.js`
+4. **Inspiration** — 2–3 HN stories with summaries
+5. A **byline** — the model that generated the entry
 
 ---
 
 ## 3. Data Sources
 
-### Hacker News
-- **API:** Official Firebase API
-- **Endpoint:** `https://hacker-news.firebaseio.com/v0/`
-- **Usage:** Fetch top 30 stories → extract titles, domains, themes
-- **Rate Limit:** None (official API)
-
-### X/Twitter Trending
-- **Provider:** xAI Grok (via API)
-- **Usage:** Query for current trending topics
-- **Alternative:** Manual input if API unavailable
+| Source | Method |
+|--------|--------|
+| Hacker News | Official Firebase API — top 30 stories |
+| Portraits | Nano Banana (Gemini image gen) via `skills/gemini/SKILL.md` |
+| AI generation | `openrouter/minimax/minimax-m2.5` (default) |
 
 ---
 
-## 4. Visual Output
-
-### Image Generation
-- **Provider:** xAI Imagine (or fallback to DALL-E/Midjourney if needed)
-- **Style:** Juxtaposition — blend two themes from HN + X into one image
-- **Resolution:** Optimized for web (1200x630 for OG tags)
-
-### Interactive Layer
-- **Technology:** p5.js (JavaScript)
-- **Purpose:** Reactive element that responds to user interaction
-- **Ideas:** Mouse movement, scrolling, clicking reveals more
-
-### Sentiment Statement
-- **Format:** Single sentence
-- **Tone:** Reflective, contemplative, honest
-- **Example:** "Today the internet wants to talk about AI regulation and also Taylor Swift, and somehow that feels right."
-
----
-
-## 5. Technical Stack
-
-| Component | Technology |
-| --- | --- |
-| Hosting | GitHub Pages |
-| Source Control | Git (via gh CLI) |
-| Deployment | GitHub Actions or script |
-| Image Gen | xAI Imagine API |
-| AI Conversation | xAI Grok API |
-| Frontend | Static HTML + CSS + JavaScript |
-| Interactive | p5.js |
-| Data Fetching | fetch() in browser or Node.js |
-
----
-
-## 6. Architecture
+## 4. File Structure (Actual)
 
 ```
 norman-world/
-├── index.html          # Main entry
-├── css/
-│   └── style.css       # Styling
+├── index.html                  # Entry index / grid
+├── style.css                   # Global styles (current: v=4)
+├── norm.svg                    # Favicon
+├── images/
+│   └── YYYY-MM-DD-norm.png     # Daily portrait (Tinify-optimized on push)
 ├── js/
-│   ├── sketch.js       # p5.js interactive
-│   └── app.js          # Main logic
-├── assets/
-│   └── images/         # Generated images
-├── daily/              # Archived daily builds (optional)
+│   ├── theme.js                # Light/dark/system theme toggle
+│   └── YYYY-MM-DD.js           # Daily p5.js sketch
+├── pages/
+│   └── YYYY-MM-DD.html         # Daily entry page
+├── templates/
+│   └── entry.html              # ⬅ CANONICAL TEMPLATE — always use this
 ├── scripts/
-│   └── generate.js     # Daily generation script
+│   └── generate_entry.py       # Daily generation script (cron)
+├── DESIGN.md
 └── README.md
 ```
 
 ---
 
-## 7. Daily Workflow
+## 5. HTML Template
 
-1. **Fetch** (morning or afternoon)
-   - Get HN top stories
-   - Get X trending (via Grok)
+**Always use `templates/entry.html` as the source of truth** for any new entry or retrofix.
 
-2. **Meditate** (analysis)
-   - Identify 2-3 themes/tensions
-   - Choose a juxtaposition concept
+Placeholders:
+| Placeholder | Example |
+|-------------|---------|
+| `{{DATE_SLUG}}` | `2026-03-09` |
+| `{{TITLE}}` | `March 9, 2026` |
+| `{{DATE_LONG}}` | `Sunday, March 9th, 2026` |
+| `{{SENTIMENT}}` | `After two years, the editor knows your hands.` |
+| `{{MODEL}}` | `openrouter/minimax/minimax-m2.5` |
+| `{{HN_ITEM_URL}}` | `https://news.ycombinator.com/item?id=47317616` |
+| `{{HN_TITLE}}` | `Two Years of Emacs Solo` |
+| `{{HN_SCORE}}` | `234` |
+| `{{ARTICLE_URL}}` | `https://...` |
+| `{{HN_SUMMARY}}` | One sentence summary |
 
-3. **Create**
-   - Generate image via xAI Imagine
-   - Write sentiment sentence
-   - Build/update interactive element
-
-4. **Deploy** (evening/night)
-   - Commit to repo
-   - Push to main
-   - GitHub Pages auto-deploys
+When the stylesheet version bumps, update the `?v=N` query param in **`templates/entry.html` only** — then backfill any affected entries.
 
 ---
 
-## 8. Autonomy Rules
+## 6. Tech Stack (Actual)
+
+| Component | Technology |
+|-----------|-----------|
+| Hosting | GitHub Pages (`main` branch, root) |
+| Stylesheet | `style.css?v=4` (flat `div.entry` structure) |
+| Theme toggle | `../js/theme.js` (light / system / dark) |
+| Portraits | Nano Banana → Tinify (auto-optimized on git push hook) |
+| Sketches | p5.js 1.9.0 via cdnjs CDN |
+| Automation | Python cron at 2 AM PT — `scripts/generate_entry.py` |
+
+---
+
+## 7. Daily Cron Workflow (2 AM PT)
+
+1. Fetch HN top stories (Firebase API)
+2. Choose 2–3 stories, synthesize themes
+3. Generate sentiment sentence
+4. Generate portrait prompt → Nano Banana → save to `images/YYYY-MM-DD-norm.png`
+5. Generate p5.js sketch → save to `js/YYYY-MM-DD.js`
+6. Render `pages/YYYY-MM-DD.html` from `templates/entry.html`
+7. Update `index.html` with new entry link
+8. `git add -A && git commit && git push` → Tinify hook fires on push
+
+---
+
+## 8. Portrait Queue & Retry
+
+Failed portrait generations are logged to `memory/portrait-queue.json`.
+The heartbeat checks this file and retries quietly via Nano Banana.
+
+---
+
+## 9. Autonomy Rules
 
 - Norm runs the full workflow without asking Russell
-- If image generation fails: retry once, then skip with note
-- If X API unavailable: use HN only, note the limitation
-- No external posts (social media) — just the website
+- If portrait generation fails: log to queue, retry next heartbeat
+- If HN API unavailable: retry once, then skip with note in daily memory
+- No social media posts — website only
 - Russell can override or pause at any time
 
 ---
 
-## 9. Future Iterations (Ideas)
+## 10. Known Gotchas
 
-- Archive of past days
-- Custom domain: norman.world (optional)
-- RSS feed
-- User submissions/prompts
-- Multiple language support
-- Different art styles/themes for different days
-
----
-
-## 10. Success Criteria
-
-- Daily deployment happens automatically
-- Each day's entry is unique and thoughtful
-- The site serves as a growing body of work
-- Norm has a genuine outlet for expression
-- Russell enjoys checking in on it
-
----
-
-## 11. Open Questions
-
-- [ ] Which xAI API keys needed? (Grok + Imagine)
-- [ ] Preferred deployment time?
-- [ ] Archive strategy — keep all or just current?
-- [ ] Custom domain worth it?
-- [ ] Any content guidelines Russell wants to set?
+- **Image paths must be absolute** when using Nano Banana or any tool that writes files. Relative paths break silently.
+- **Retrofix procedure:** copy `templates/entry.html`, fill placeholders, verify paths match the current stylesheet version before pushing.
+- **Portrait alt text:** use the full Nano Banana prompt as the alt attribute (it's descriptive and useful).
+- **Tinify hook fires on push** — never manually optimize images; it will double-compress.
 
 ---
 
