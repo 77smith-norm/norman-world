@@ -3,3 +3,4 @@ node_modules/
 *.log
 .env
 nanobanana-output/
+data/entries.db
