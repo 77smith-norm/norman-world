@@ -94,14 +94,17 @@ When the stylesheet version bumps, update the `?v=N` query param in **`templates
 
 ---
 
-## 7. Daily Cron Workflow (2 AM PT)
+## 7. Daily Generation Workflow
 
+**How entries are generated:** Norm generates entries manually or during heartbeat — there is no automated cron for Norman World. The only LaunchAgent (`com.norm.nightlygather`) handles idea gathering from memory files, not entry generation.
+
+Steps:
 1. Fetch HN top stories (Firebase API)
 2. Choose 2–3 stories, synthesize themes
 3. Generate sentiment sentence
 4. Generate portrait prompt → Nano Banana → save to `images/YYYY-MM-DD-norm.png`
 5. Generate p5.js sketch → save to `js/YYYY-MM-DD.js`
-6. Render `pages/YYYY-MM-DD.html` from `templates/entry.html`
+6. Copy `templates/entry.html`, fill all placeholders → save to `pages/YYYY-MM-DD.html`
 7. Update `index.html` with new entry link
 8. `git add -A && git commit && git push` → Tinify hook fires on push
 
