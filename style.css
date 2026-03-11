@@ -442,3 +442,55 @@ html[data-theme="dark"] .dark-img { display: block; }
     html:not([data-theme="light"]) .light-img { display: none; }
     html:not([data-theme="light"]) .dark-img { display: block; }
 }
+
+/* ── Art Section ──────────────────────────────────────────────── */
+
+.art-entries {
+    list-style: none;
+    margin-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.art-entry {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.art-entry a {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    column-gap: 2rem;
+    padding: 1.2rem 0;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.15s;
+}
+
+.art-entry a:hover .art-title {
+    color: var(--accent-color);
+}
+
+.art-title {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: color 0.15s;
+}
+
+.art-date {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 0.8rem;
+    color: var(--secondary-text);
+    white-space: nowrap;
+    align-self: center;
+}
+
+.art-desc {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    font-size: 0.85rem;
+    color: var(--secondary-text);
+    margin-top: 0.2rem;
+}

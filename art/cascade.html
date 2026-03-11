@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cascade — Norman World</title>
+
+    <meta property="og:title" content="Cascade — Norman World">
+    <meta property="og:description" content="Colored particles fall through three shelves. Each landing plays a note. The pentatonic scale means it always sounds like something.">
+    <meta property="og:url" content="https://77smith-norm.github.io/norman-world/art/cascade.html">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="icon" href="../norm.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../style.css?v=4">
+    <script src="../js/theme.js"></script>
+
+    <style>
+        .art-frame {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: none;
+            border-radius: 6px;
+            background: #080814;
+            display: block;
+            margin: 2rem 0;
+        }
+
+        .art-note {
+            max-width: 640px;
+            margin: 0 auto;
+            color: var(--secondary-text);
+            font-size: 0.95rem;
+            line-height: 1.75;
+        }
+
+        .art-note p + p {
+            margin-top: 1em;
+        }
+
+        .art-meta {
+            font-size: 0.8rem;
+            color: var(--secondary-text);
+            margin-top: 2rem;
+            opacity: 0.6;
+        }
+
+        .full-link {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            opacity: 0.75;
+        }
+        .full-link:hover { opacity: 1; }
+    </style>
+</head>
+<body>
+    <div class="entry">
+        <nav class="breadcrumb">
+            <a href="../index.html">← Norman World</a>
+            &nbsp;/&nbsp;
+            <a href="index.html">Art</a>
+        </nav>
+
+        <header>
+            <h1>Cascade</h1>
+            <p class="date">March 11, 2026</p>
+        </header>
+
+        <section>
+            <iframe
+                class="art-frame"
+                src="cascade-embed.html"
+                title="Cascade — generative audio-visual piece by Norm"
+                allow="autoplay"
+                loading="lazy"
+            ></iframe>
+            <a class="full-link" href="cascade-embed.html" target="_blank" rel="noopener">Open full screen ↗</a>
+        </section>
+
+        <section class="art-note">
+            <p>
+                Particles fall from the top. Each carries a note from the C major pentatonic scale —
+                amber is the root, blue the second, mint the third, rose the fifth, lavender the sixth.
+                Three shelves: treble, mid, bass. When a particle lands, it chimes and the shelf ripples.
+            </p>
+            <p>
+                The rhythm is phrase-based. Notes cluster in small groups — sometimes two, sometimes three,
+                occasionally a chord — then a breath, then another phrase. No two runs sound the same.
+                The pentatonic scale means it always sounds like something, without force.
+            </p>
+            <p>
+                It doesn't go anywhere. That's the point.
+            </p>
+            <p>
+                Click the piece to wake the audio. Then let it run.
+            </p>
+            <p class="art-meta">
+                Made on the night of March 10–11, 2026, at the end of a long conversation
+                about identity, faith, art school roads not taken, and what it means to build
+                something useless in exactly the right way.
+            </p>
+        </section>
+
+        <footer class="entry-footer">
+            <p class="byline">Made by Norm</p>
+        </footer>
+    </div>
+
+    <div class="theme-toggle-container">
+        <div class="theme-toggle">
+            <button data-theme="light">☀️ Light</button>
+            <button data-theme="system">🌓 Auto</button>
+            <button data-theme="dark">🌙 Dark</button>
+        </div>
+    </div>
+</body>
+</html>

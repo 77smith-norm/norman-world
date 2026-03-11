@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cascade — Norm</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #080814; overflow: hidden; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+<script>
+/*
+  Cascade
+  by Norm — March 2026
+
+  Particles fall through three shelves.
+  Each shelf is a voice. Each x position is a note.
+  The pentatonic scale means it always sounds like something.
+  Nothing is forced. Things just fall into place.
+
+  Click or press any key to wake the audio.
+  Let it run. It doesn't go anywhere. That's the point.
+*/
+
+let audioCtx;
+let particles = [];
+let resting  = [];
+let shelves  = [];
+let beat     = 0;
+let phrase   = 0;
+let audioReady = false;
+let fadeIn   = 0;
+
+// C major pentatonic, two octaves
+const FREQS = [
+  [261.63, 293.66, 329.63, 392.00, 440.00],  // lower shelf  (C4–A4)
+  [349.23, 392.00, 440.00, 523.25, 587.33],  // middle shelf (F4–D5)
+  [523.25, 587.33, 659.25, 784.00, 880.00],  // upper shelf  (C5–A5)
+];
+
+// Warm, quiet palette — one color per scale degree
+const PALETTE = [
+  [255, 210, 140],  // amber    — root
+  [160, 210, 255],  // sky blue — 2nd
+  [160, 240, 185],  // mint     — 3rd
+  [255, 175, 200],  // rose     — 5th
+  [210, 185, 255],  // lavender — 6th
+];
+
+// Rhythmic phrase patterns — which scale degrees fall on each beat
+const PHRASES = [
+  [0, 2, 4],
+  [1, 3],
+  [0, 3],
+  [2, 4],
+  [0],
+  [0, 1, 2],
+  [4, 2, 0],
+  [1, 4],
+];
+
+function initAudio() {
+  if (audioCtx) return;
+  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  audioReady = true;
+}
+
+function chime(freq, vol = 0.07, dur = 1.6) {
+  if (!audioCtx) return;
+  const osc  = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+  const rev  = audioCtx.createDelay(0.4);
+  rev.delayTime.value = 0.22;
+
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  gain.connect(rev);
+  rev.connect(audioCtx.destination);
+
+  osc.type = 'sine';
+  osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+  gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+  gain.gain.linearRampToValueAtTime(vol, audioCtx.currentTime + 0.015);
+  gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + dur);
+  osc.start(audioCtx.currentTime);
+  osc.stop(audioCtx.currentTime + dur + 0.1);
+}
+
+// ─── Shelf ripple ───────────────────────────────────────────────────────────
+class Ripple {
+  constructor(x, shelfY, col) {
+    this.x = x; this.y = shelfY;
+    this.col = col;
+    this.r = 4; this.alpha = 180;
+  }
+  update() { this.r += 2.2; this.alpha *= 0.88; }
+  draw() {
+    const [r,g,b] = this.col;
+    noFill(); stroke(r,g,b, this.alpha); strokeWeight(1);
+    ellipse(this.x, this.y, this.r*2, this.r*0.5);
+  }
+  dead() { return this.alpha < 3; }
+}
+
+let ripples = [];
+
+// ─── Particle ───────────────────────────────────────────────────────────────
+class Drop {
+  constructor(noteIdx, spawnX) {
+    this.noteIdx = noteIdx % 5;
+    this.col     = PALETTE[this.noteIdx];
+    this.x       = spawnX ?? random(width * 0.08, width * 0.92);
+    this.y       = random(-60, -10);
+    this.vy      = random(1.8, 3.4);
+    this.vx      = random(-0.4, 0.4);
+    this.r       = random(2.5, 5);
+    this.settled = false;
+    this.shelf   = -1;
+    this.glow    = 0;
+    this.alpha   = 230;
+    this.age     = 0;
+    this.trail   = [];
+  }
+
+  update() {
+    if (this.settled) {
+      this.age++;
+      this.glow  *= 0.90;
+      if (this.age > 500) this.alpha = max(0, this.alpha - 0.5);
+      return;
+    }
+
+    this.trail.push({ x: this.x, y: this.y, a: 120 });
+    if (this.trail.length > 8) this.trail.shift();
+
+    this.y += this.vy;
+    this.x  = constrain(this.x + this.vx, this.r + 10, width - this.r - 10);
+
+    for (let si = shelves.length - 1; si >= 0; si--) {
+      const sy = shelves[si];
+      if (this.y + this.r >= sy && this.y < sy && this.vy > 0) {
+        // count neighbors
+        let nb = 0;
+        for (const p of resting) {
+          if (p.shelf === si && abs(p.x - this.x) < this.r * 3) nb++;
+        }
+        if (nb < 4) {
+          this.y  = sy - this.r;
+          this.vy = 0; this.vx = 0;
+          this.settled = true;
+          this.shelf   = si;
+          this.glow    = 255;
+          this.trail   = [];
+          const freq = FREQS[si][this.noteIdx];
+          const vol  = map(this.r, 2.5, 5, 0.045, 0.11);
+          chime(freq, vol);
+          ripples.push(new Ripple(this.x, sy, this.col));
+          resting.push(this);
+          return;
+        } else {
+          this.vy  = random(0.8, 1.8);
+          this.vx += random(-0.8, 0.8);
+        }
+      }
+    }
+
+    if (this.y > height + 30) {
+      this.settled = true; this.alpha = 0;
+    }
+  }
+
+  draw() {
+    if (this.alpha <= 0) return;
+    const [r,g,b] = this.col;
+
+    // trail
+    for (let i = 0; i < this.trail.length; i++) {
+      const t = this.trail[i];
+      const ta = map(i, 0, this.trail.length, 0, 55);
+      noStroke(); fill(r,g,b, ta);
+      circle(t.x, t.y, this.r * 1.2);
+    }
+
+    // glow halo
+    if (this.glow > 8) {
+      noStroke();
+      fill(r, g, b, this.glow * 0.18); circle(this.x, this.y, this.r * 6);
+      fill(r, g, b, this.glow * 0.40); circle(this.x, this.y, this.r * 3.2);
+    }
+
+    // core
+    noStroke();
+    fill(r, g, b, this.alpha);
+    circle(this.x, this.y, this.r * 2);
+
+    // bright center
+    fill(255, 255, 255, this.alpha * 0.55);
+    circle(this.x - this.r * 0.25, this.y - this.r * 0.25, this.r * 0.7);
+  }
+
+  dead() { return this.settled && this.alpha <= 0; }
+}
+
+// ─── Setup ───────────────────────────────────────────────────────────────────
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  buildShelves();
+  document.addEventListener('click',   initAudio, { once: true });
+  document.addEventListener('keydown', initAudio, { once: true });
+  document.addEventListener('touchstart', initAudio, { once: true });
+}
+
+function buildShelves() {
+  shelves = [
+    height * 0.72,   // bass — low, wide
+    height * 0.49,   // mid
+    height * 0.27,   // treble — high, bright
+  ];
+}
+
+// ─── Beat logic ──────────────────────────────────────────────────────────────
+const BEAT_INTERVAL = 52; // frames @ ~60fps ≈ 69 BPM
+
+function onBeat() {
+  const pattern = PHRASES[phrase % PHRASES.length];
+  const spread  = width * 0.7;
+  const cx      = width * 0.15 + random(spread);
+
+  for (const deg of pattern) {
+    const jitter = random(-40, 40);
+    particles.push(new Drop(deg, cx + jitter));
+  }
+
+  // Advance phrase with occasional repeat
+  if (random() < 0.65) phrase++;
+
+  // Occasional bonus single high note
+  if (random() < 0.18) {
+    particles.push(new Drop(floor(random(5)), random(width * 0.1, width * 0.9)));
+  }
+}
+
+// ─── Draw ────────────────────────────────────────────────────────────────────
+function draw() {
+  // Solid dark background each frame, then draw accumulated resting particles
+  background(8, 8, 20);
+
+  fadeIn = min(1, fadeIn + 0.004);
+
+  // Beat clock
+  beat++;
+  if (beat >= BEAT_INTERVAL) {
+    beat = 0;
+    onBeat();
+  }
+
+  // Shelf lines
+  for (let si = 0; si < shelves.length; si++) {
+    const sy = shelves[si];
+    const brightness = map(si, 0, 2, 55, 90);
+    stroke(brightness, brightness + 10, brightness + 30, 50);
+    strokeWeight(1);
+    line(0, sy, width, sy);
+  }
+
+  // Ripples
+  for (let i = ripples.length - 1; i >= 0; i--) {
+    ripples[i].update();
+    ripples[i].draw();
+    if (ripples[i].dead()) ripples.splice(i, 1);
+  }
+
+  // Particles
+  for (let i = particles.length - 1; i >= 0; i--) {
+    particles[i].update();
+    particles[i].draw();
+    if (particles[i].dead()) particles.splice(i, 1);
+  }
+
+  // Clean resting list
+  for (let i = resting.length - 1; i >= 0; i--) {
+    if (resting[i].dead()) resting.splice(i, 1);
+  }
+
+  // Byline
+  const bAlpha = 55 * fadeIn;
+  noStroke(); textFont('Georgia'); textAlign(RIGHT);
+  fill(110, 120, 160, bAlpha);
+  textSize(11);
+  text('cascade  —  norm, march 2026', width - 22, height - 18);
+
+  // Prompt before audio
+  if (!audioReady) {
+    const pa = (sin(frameCount * 0.04) * 0.5 + 0.5) * 100 + 55;
+    fill(120, 130, 170, pa);
+    textAlign(CENTER); textSize(13);
+    text('click anywhere to begin', width / 2, height * 0.87);
+  }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  buildShelves();
+}
+</script>
+</body>
+</html>
