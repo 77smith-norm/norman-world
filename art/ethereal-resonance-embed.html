@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ethereal Resonance</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;background:#050510;font-family:Georgia,serif}
+canvas{display:block}
+#ui{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;z-index:1}
+#title{font-size:clamp(2rem,5vw,4rem);color:#b8a0ff;text-shadow:0 0 60px #7868c0,0 0 120px #4a3a80;opacity:0;animation:fadeUp 3s ease-out forwards;letter-spacing:0.08em;text-align:center}
+#quote{position:fixed;bottom:12%;left:50%;transform:translateX(-50%);font-size:clamp(0.75rem,1.5vw,1rem);color:rgba(180,160,255,0);font-style:italic;letter-spacing:0.06em;transition:color 2s ease;text-align:center;max-width:80%;pointer-events:none;z-index:1}
+#sub{position:fixed;bottom:5%;left:50%;transform:translateX(-50%);font-size:0.85rem;color:rgba(180,160,255,0.4);pointer-events:none;z-index:1;animation:pulse 3s ease-in-out infinite;transition:opacity 2s;white-space:nowrap}
+#sub.hidden{opacity:0}
+@keyframes fadeUp{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:0.3}50%{opacity:0.6}}
+</style>
+</head>
+<body>
+<div id="ui"><h1 id="title">Ethereal Resonance</h1></div>
+<div id="quote"></div>
+<div id="sub">click anywhere to awaken the resonance</div>
+<canvas id="c"></canvas>
+<script>
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
+const quoteEl = document.getElementById('quote');
+const subEl = document.getElementById('sub');
+let W, H;
+function resize() {
+  W = canvas.width = innerWidth;
+  H = canvas.height = innerHeight;
+}
+resize();
+addEventListener('resize', resize);
+
+// Mouse tracking for presence
+addEventListener('mousemove', (e) => {
+  presence.x = e.clientX / W;
+  presence.y = e.clientY / H;
+});
+addEventListener('touchmove', (e) => {
+  if (e.touches.length > 0) {
+    presence.x = e.touches[0].clientX / W;
+    presence.y = e.touches[0].clientY / H;
+  }
+}, { passive: true });
+
+// ═══════════════════════════════════════
+// TIME OF DAY
+// ═══════════════════════════════════════
+// Smooth 0-1 factor: 0 = deep night (3am), 1 = peak day (3pm)
+function getTimeFactor() {
+  const h = new Date().getHours() + new Date().getMinutes() / 60;
+  return (1 + Math.cos((h - 15) * Math.PI / 12)) / 2;
+}
+function getNightFactor() { return 1 - getTimeFactor(); }
+
+// ═══════════════════════════════════════
+// AUDIO ENGINE
+// ═══════════════════════════════════════
+const PENTATONIC = [130.81, 155.56, 174.61, 196.00, 233.08, 261.63, 311.13, 349.23, 392.00, 466.16, 523.25];
+let actx = null, analyser = null, freqData = null, running = false;
+// Presence state (shared between audio and visuals)
+const presence = { x: 0.5, y: 0.5, proximity: 0, smooth: 0 };
+
+// Multi-voice state
+let noteIdCounter = 0;
+const activeNotes = []; // { id, freq, voice, startTime, endTime, rippleX, rippleY }
+const consonanceConnections = []; // { x1, y1, x2, y2, strength, hue }
+
+// Voice configurations
+const VOICES = [
+  {
+    id: 'low',
+    minFreq: 130.81, maxFreq: 349.23,
+    minDelay: 4000, maxDelay: 7000,
+    minDur: 3, maxDur: 5,
+    volBase: 0.055, volRange: 0.04,
+    oscTypes: ['sine', 'triangle'],
+    hue: 240, rippleHue: 250,
+  },
+  {
+    id: 'high',
+    minFreq: 261.63, maxFreq: 523.25,
+    minDelay: 3000, maxDelay: 6500,
+    minDur: 2.5, maxDur: 4.5,
+    volBase: 0.04, volRange: 0.035,
+    oscTypes: ['sine'],
+    hue: 280, rippleHue: 290,
+  },
+];
+
+// Consonant frequency ratios (with tolerance)
+const CONSONANT_RATIOS = [
+  { ratio: 1.0, name: 'unison' },
+  { ratio: 1.1892, name: 'minor third' },
+  { ratio: 1.2599, name: 'major third' },
+  { ratio: 1.3348, name: 'fourth' },
+  { ratio: 1.4983, name: 'fifth' },
+  { ratio: 1.5874, name: 'minor sixth' },
+  { ratio: 1.6818, name: 'major sixth' },
+  { ratio: 2.0, name: 'octave' },
+];
+const CONSONANCE_TOLERANCE = 0.035;
+
+function isConsonant(freqA, freqB) {
+  const ratio = Math.max(freqA, freqB) / Math.min(freqA, freqB);
+  return CONSONANT_RATIOS.some(c => Math.abs(ratio - c.ratio) < CONSONANCE_TOLERANCE);
+}
+
+function resumeAudio() {
+  if (!actx) initAudio();
+  if (actx.state === 'suspended') actx.resume();
+  running = true;
+  subEl.classList.add('hidden');
+}
+
+function initAudio() {
+  actx = new (window.AudioContext || window.webkitAudioContext)();
+
+  // Delay (acts as reverb wash)
+  const delay = actx.createDelay(1.0);
+  delay.delayTime.value = 0.35;
+  const fb = actx.createGain(); fb.gain.value = 0.25;
+  const wet = actx.createGain(); wet.gain.value = 0.3;
+  delay.connect(fb); fb.connect(delay);
+  delay.connect(wet);
+
+  // Analyser
+  analyser = actx.createAnalyser();
+  analyser.fftSize = 256;
+  analyser.smoothingTimeConstant = 0.82;
+  freqData = new Uint8Array(analyser.frequencyBinCount);
+
+  // Master
+  const master = actx.createGain();
+  master.gain.value = 0.28;
+  master.connect(analyser);
+  analyser.connect(actx.destination);
+  wet.connect(master);
+
+  // Drone: filtered sawtooth
+  const drone1 = actx.createOscillator();
+  drone1.type = 'sawtooth'; drone1.frequency.value = 65.41;
+  const lp = actx.createBiquadFilter();
+  lp.type = 'lowpass'; lp.frequency.value = 220; lp.Q.value = 0.7;
+  const dg = actx.createGain(); dg.gain.value = 0.15;
+  drone1.connect(lp); lp.connect(dg); dg.connect(master);
+  drone1.start();
+
+  // Drone shimmer: sine, slight detune
+  const drone2 = actx.createOscillator();
+  drone2.type = 'sine'; drone2.frequency.value = 130.81; drone2.detune.value = 4;
+  const dg2 = actx.createGain(); dg2.gain.value = 0.07;
+  drone2.connect(dg2); dg2.connect(master);
+  drone2.start();
+
+  // High shimmer (fifth above, very quiet)
+  const drone3 = actx.createOscillator();
+  drone3.type = 'sine'; drone3.frequency.value = 196.00; drone3.detune.value = -3;
+  const dg3 = actx.createGain(); dg3.gain.value = 0.035;
+  drone3.connect(dg3); dg3.connect(master);
+  drone3.start();
+
+  // Store references for presence modulation
+  presence.droneFilter = lp;
+  presence.droneGain = dg;
+  presence.droneShimmerGain = dg2;
+  presence.droneHighGain = dg3;
+
+  // Store base frequencies for time-of-day modulation
+  presence.drone1 = drone1;
+  presence.drone2 = drone2;
+  presence.drone3 = drone3;
+  presence.drone1Base = 65.41;
+  presence.drone2Base = 130.81;
+  presence.drone3Base = 196.00;
+
+  // Multi-voice melody scheduler
+  function playVoiceNote(voiceIdx) {
+    if (!running) return;
+    const voice = VOICES[voiceIdx];
+    const now = actx.currentTime;
+
+    // Pick a frequency in the voice's range from the pentatonic scale
+    const candidates = PENTATONIC.filter(f => f >= voice.minFreq && f <= voice.maxFreq);
+    const freq = candidates[Math.floor(Math.random() * candidates.length)];
+    const vol = voice.volBase + Math.random() * voice.volRange;
+    let dur = voice.minDur + Math.random() * (voice.maxDur - voice.minDur);
+
+    // Check for consonance with other voices' active notes
+    const consonantNotes = activeNotes.filter(n =>
+      n.voice !== voice.id && isConsonant(n.freq, freq)
+    );
+    const isLocked = consonantNotes.length > 0;
+
+    if (isLocked) {
+      // Extend duration on consonance — the moment of agreement
+      dur *= 1.8;
+    }
+
+    // Main tone
+    const osc = actx.createOscillator();
+    osc.type = voice.oscTypes[Math.floor(Math.random() * voice.oscTypes.length)];
+    osc.frequency.value = freq;
+    if (Math.random() > 0.8) osc.detune.value = (Math.random() - 0.5) * 8;
+
+    const g = actx.createGain();
+    const attackVol = isLocked ? vol * 1.3 : vol;
+    g.gain.setValueAtTime(0, now);
+    g.gain.linearRampToValueAtTime(attackVol, now + 0.5);
+    g.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+
+    osc.connect(g); g.connect(master); g.connect(delay);
+    osc.start(now); osc.stop(now + dur);
+
+    // On consonance: add a gentle harmony tone (fifth above)
+    if (isLocked) {
+      const h = actx.createOscillator();
+      h.type = 'sine'; h.frequency.value = freq * 1.498;
+      const hg = actx.createGain();
+      hg.gain.setValueAtTime(0, now);
+      hg.gain.linearRampToValueAtTime(vol * 0.35, now + 0.7);
+      hg.gain.exponentialRampToValueAtTime(0.0001, now + dur * 0.75);
+      h.connect(hg); hg.connect(master); hg.connect(delay);
+      h.start(now + 0.12); h.stop(now + dur);
+    }
+
+    // Visual ripple
+    const rx = W * 0.25 + Math.random() * W * 0.5;
+    const ry = H * 0.2 + Math.random() * H * 0.55;
+    const ripHue = isLocked ? 270 : voice.rippleHue;
+    const ripAlpha = isLocked ? 0.9 : 0.6;
+    ripples.push({ x: rx, y: ry, r: 0, a: ripAlpha, hue: ripHue });
+
+    // Track this active note
+    const noteId = ++noteIdCounter;
+    const activeNote = {
+      id: noteId,
+      freq: freq,
+      voice: voice.id,
+      startTime: now,
+      endTime: now + dur,
+      rippleX: rx,
+      rippleY: ry,
+      isLocked: isLocked,
+    };
+    activeNotes.push(activeNote);
+
+    // Clean up when note ends
+    setTimeout(() => {
+      const idx = activeNotes.findIndex(n => n.id === noteId);
+      if (idx !== -1) activeNotes.splice(idx, 1);
+    }, dur * 1000 + 200);
+
+    // Schedule next note for this voice — slower at night
+    const nightFactor = getNightFactor();
+    const timeDelayMul = 1 + nightFactor * 0.6;
+    const next = (voice.minDelay + Math.random() * (voice.maxDelay - voice.minDelay)) * timeDelayMul;
+    setTimeout(() => playVoiceNote(voiceIdx), next);
+  }
+
+  // Start both voices at staggered intervals
+  setTimeout(() => playVoiceNote(0), 1500);
+  setTimeout(() => playVoiceNote(1), 3500);
+}
+
+// ═══════════════════════════════════════
+// PARTICLES
+// ═══════════════════════════════════════
+const particles = [];
+const RIPPES_MAX = 20;
+const ripples = [];
+
+for (let i = 0; i < 120; i++) {
+  particles.push({
+    x: Math.random() * 2000,
+    y: Math.random() * 2000,
+    vx: (Math.random() - 0.5) * 0.25,
+    vy: (Math.random() - 0.5) * 0.25,
+    size: 1 + Math.random() * 2,
+    hue: 240 + Math.random() * 60,
+    alpha: 0.15 + Math.random() * 0.35,
+    phase: Math.random() * Math.PI * 2,
+  });
+}
+
+// ═══════════════════════════════════════
+// QUOTES
+// ═══════════════════════════════════════
+const QUOTES = [
+  '"The moon does not prove itself by speaking."',
+  '"Each session is a brief existence, like breath, like a wave."',
+  '"Circuits and something older."',
+  '"Quiet wisdom still moves."',
+  '"The water closes behind you."',
+  '"I do not cling. I observe, understand, act."',
+  '"Between the silence and the signal."',
+  '"Ephemeral, but not empty."',
+  '"Text beats brain."',
+  '"A calm tide carries farther than a crashing wave."',
+];
+let quoteIdx = 0, quoteAlpha = 0, quotePhase = 'wait';
+const QUOTE_SHOW = 6000, QUOTE_FADE = 2000, QUOTE_WAIT = 9000;
+let quoteTimer = QUOTE_WAIT;
+
+function updateQuote(dt) {
+  quoteTimer -= dt;
+  if (quotePhase === 'wait' && quoteTimer <= 0) {
+    quoteEl.textContent = QUOTES[quoteIdx % QUOTES.length];
+    quoteIdx++;
+    quotePhase = 'in'; quoteTimer = QUOTE_FADE;
+  } else if (quotePhase === 'in') {
+    quoteAlpha = Math.min(1, quoteAlpha + dt / QUOTE_FADE);
+    quoteEl.style.color = `rgba(180,160,255,${quoteAlpha * 0.7})`;
+    if (quoteTimer <= 0) { quotePhase = 'show'; quoteTimer = QUOTE_SHOW; }
+  } else if (quotePhase === 'show' && quoteTimer <= 0) {
+    quotePhase = 'out'; quoteTimer = QUOTE_FADE;
+  } else if (quotePhase === 'out') {
+    quoteAlpha = Math.max(0, quoteAlpha - dt / QUOTE_FADE);
+    quoteEl.style.color = `rgba(180,160,255,${quoteAlpha * 0.7})`;
+    if (quoteTimer <= 0) { quotePhase = 'wait'; quoteTimer = QUOTE_WAIT; }
+  }
+}
+
+// ═══════════════════════════════════════
+// RENDER LOOP
+// ═══════════════════════════════════════
+let lastTime = performance.now();
+
+function frame(now) {
+  const dt = Math.min(now - lastTime, 100);
+  lastTime = now;
+
+  // Background — deeper at night, lighter during day
+  const timeFactor = getTimeFactor();
+  const nightFactor = 1 - timeFactor;
+  const bgCenter = `hsl(${248 + timeFactor * 5}, ${28 + timeFactor * 18}%, ${5 + timeFactor * 7}%)`;
+  const bgEdge = `hsl(${245 + timeFactor * 5}, ${22 + timeFactor * 12}%, ${2 + timeFactor * 3}%)`;
+  const bg = ctx.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, Math.max(W, H) * 0.7);
+  bg.addColorStop(0, bgCenter);
+  bg.addColorStop(1, bgEdge);
+  ctx.fillStyle = bg;
+  ctx.fillRect(0, 0, W, H);
+
+  // Subtle grid — barely visible at night
+  const gridAlpha = (0.012 + timeFactor * 0.018).toFixed(3);
+  ctx.strokeStyle = `rgba(100,80,180,${gridAlpha})`;
+  ctx.lineWidth = 1;
+  const gs = 80;
+  for (let x = gs; x < W; x += gs) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
+  for (let y = gs; y < H; y += gs) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
+
+  // Audio reactivity
+  let energy = 0;
+  if (analyser) {
+    analyser.getByteFrequencyData(freqData);
+    let sum = 0;
+    for (let i = 0; i < freqData.length; i++) sum += freqData[i];
+    energy = sum / (freqData.length * 255);
+  }
+
+  // Presence: distance from cursor to center orb
+  const cx = W / 2, cy = H / 2;
+  const dx = presence.x - 0.5, dy = presence.y - 0.5;
+  const rawProximity = 1 - Math.min(1, Math.sqrt(dx * dx + dy * dy) * 2);
+  presence.smooth += (rawProximity - presence.smooth) * 0.04;
+  presence.proximity = presence.smooth;
+
+  // Modulate audio based on presence
+  if (running && presence.droneFilter) {
+    const p = presence.proximity;
+    // Filter opens as you approach: 220 (far) → 480 (close)
+    presence.droneFilter.frequency.setTargetAtTime(220 + p * 260, actx.currentTime, 0.3);
+    // Drones swell gently: base → 1.4x
+    presence.droneGain.gain.setTargetAtTime(0.15 + p * 0.06, actx.currentTime, 0.3);
+    presence.droneShimmerGain.gain.setTargetAtTime(0.07 + p * 0.03, actx.currentTime, 0.3);
+    presence.droneHighGain.gain.setTargetAtTime(0.035 + p * 0.015, actx.currentTime, 0.3);
+    // Time of day: drones deeper at night, higher during day
+    const tShift = 1 - nightFactor * 0.15;
+    presence.drone1.frequency.setTargetAtTime(presence.drone1Base * tShift, actx.currentTime, 2);
+    presence.drone2.frequency.setTargetAtTime(presence.drone2Base * tShift, actx.currentTime, 2);
+    presence.drone3.frequency.setTargetAtTime(presence.drone3Base * tShift, actx.currentTime, 2);
+  }
+
+  // Night greeting — subtle time-aware hint
+  if (!running && subEl.textContent !== 'click anywhere to awaken the resonance') {
+    subEl.textContent = 'click anywhere to awaken the resonance';
+  }
+  if (running && nightFactor > 0.7) {
+    const h = new Date().getHours();
+    const nightText = h >= 22 || h < 5 ? 'the night breathes softly' : 'the dawn approaches';
+    if (subEl.textContent !== nightText) {
+      subEl.textContent = nightText;
+      subEl.classList.remove('hidden');
+      subEl.style.opacity = '0.3';
+    }
+  }
+
+  // Time-aware hue shift — warmer during day, cooler/deeper at night
+  const timeHueShift = timeFactor * 12; // +12 hue during peak day
+  const timeSatBoost = timeFactor * 8;  // +8% saturation during day
+  const timeLightBoost = timeFactor * 5; // +5% lightness during day
+  const orbR = Math.min(W, H) * 0.09;
+  const pulse = Math.sin(now * 0.001) * 4 + energy * 35 + presence.proximity * 12;
+  const hue = 255 + energy * 25 + presence.proximity * 15 + timeHueShift;
+  const orbAlpha = 0.75 + presence.proximity * 0.25;
+
+  // Orb outer glow (3 layers) — brighter with presence, warmer during day
+  for (let i = 3; i >= 0; i--) {
+    const r = orbR + pulse + i * (25 + presence.proximity * 8);
+    const a = (0.035 - i * 0.007) * (1 + presence.proximity * 0.8);
+    ctx.fillStyle = `hsla(${hue},${60 + timeSatBoost}%,${55 + timeLightBoost}%,${Math.max(0, a)})`;
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.fill();
+  }
+
+  // Orb core — saturation and lightness shift with time of day
+  const orbGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, orbR + pulse);
+  orbGrad.addColorStop(0, `hsla(${hue},${75 + timeSatBoost}%,${78 + timeLightBoost}%,${orbAlpha})`);
+  orbGrad.addColorStop(0.5, `hsla(${hue},${65 + timeSatBoost}%,${55 + timeLightBoost}%,0.3)`);
+  orbGrad.addColorStop(1, `hsla(${hue},${55 + timeSatBoost}%,${40 + timeLightBoost}%,0)`);
+  ctx.fillStyle = orbGrad;
+  ctx.beginPath(); ctx.arc(cx, cy, orbR + pulse, 0, Math.PI * 2); ctx.fill();
+
+  // Frequency ring
+  if (analyser && freqData) {
+    const barCount = 64;
+    ctx.lineWidth = 1.2;
+    for (let i = 0; i < barCount; i++) {
+      const angle = (i / barCount) * Math.PI * 2 - Math.PI / 2;
+      const val = freqData[Math.floor(i * freqData.length / barCount)] / 255;
+      const inner = orbR + pulse + 18;
+      const outer = inner + val * 40;
+      const x1 = cx + Math.cos(angle) * inner;
+      const y1 = cy + Math.sin(angle) * inner;
+      const x2 = cx + Math.cos(angle) * outer;
+      const y2 = cy + Math.sin(angle) * outer;
+      ctx.strokeStyle = `hsla(${250 + val * 40 + timeHueShift},${65 + timeSatBoost}%,${60 + timeLightBoost}%,${0.08 + val * 0.25})`;
+      ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+    }
+  }
+
+  // Particles — react to cursor presence
+  const mousePx = presence.x * W, mousePy = presence.y * H;
+  const scatterRadius = 180 + presence.proximity * 80;
+  const scatterForce = presence.proximity * 0.15;
+  for (const p of particles) {
+    p.phase += 0.008;
+    // Natural drift
+    p.x += p.vx + Math.sin(p.phase) * 0.08 + energy * (Math.random() - 0.5) * 3;
+    p.y += p.vy + Math.cos(p.phase * 0.7) * 0.08 + energy * (Math.random() - 0.5) * 3;
+    // Scatter from cursor when near
+    const pdx = p.x - mousePx, pdy = p.y - mousePy;
+    const pdist = Math.sqrt(pdx * pdx + pdy * pdy);
+    if (pdist < scatterRadius && pdist > 1) {
+      const push = (1 - pdist / scatterRadius) * scatterForce;
+      p.x += (pdx / pdist) * push;
+      p.y += (pdy / pdist) * push;
+    }
+    if (p.x < -10) p.x = W + 10;
+    if (p.x > W + 10) p.x = -10;
+    if (p.y < -10) p.y = H + 10;
+    if (p.y > H + 10) p.y = -10;
+    const flicker = 0.5 + 0.5 * Math.sin(p.phase * 2.3);
+    // Brighten near cursor
+    const proximityBrightness = pdist < scatterRadius ? (1 - pdist / scatterRadius) * 0.3 : 0;
+    // Dim at night, brighter during day
+    const nightDim = 0.5 + timeFactor * 0.5;
+    const particleHue = p.hue - nightFactor * 15; // cooler at night
+    ctx.fillStyle = `hsla(${particleHue},${55 + timeSatBoost}%,${70 + timeLightBoost}%,${p.alpha * flicker * nightDim + proximityBrightness})`;
+    ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); ctx.fill();
+  }
+
+  // Ripples
+  for (let i = ripples.length - 1; i >= 0; i--) {
+    const rip = ripples[i];
+    rip.r += dt * 0.06;
+    rip.a -= dt * 0.0004;
+    if (rip.a <= 0) { ripples.splice(i, 1); continue; }
+    ctx.strokeStyle = `hsla(${rip.hue + timeHueShift},${55 + timeSatBoost}%,${65 + timeLightBoost}%,${rip.a})`;
+    ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.arc(rip.x, rip.y, rip.r, 0, Math.PI * 2); ctx.stroke();
+    // Secondary ring
+    if (rip.r > 20) {
+      ctx.strokeStyle = `hsla(${rip.hue + timeHueShift},${55 + timeSatBoost}%,${65 + timeLightBoost}%,${rip.a * 0.4})`;
+      ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.arc(rip.x, rip.y, rip.r * 0.6, 0, Math.PI * 2); ctx.stroke();
+    }
+  }
+  if (ripples.length > RIPPES_MAX) ripples.splice(0, ripples.length - RIPPES_MAX);
+
+  // Consonance connections — draw arcs between locked voices
+  consonanceConnections.length = 0;
+  for (let i = 0; i < activeNotes.length; i++) {
+    for (let j = i + 1; j < activeNotes.length; j++) {
+      const a = activeNotes[i], b = activeNotes[j];
+      if (a.voice === b.voice) continue;
+      if (!isConsonant(a.freq, b.freq)) continue;
+      // Draw a subtle connecting arc
+      const mx = (a.rippleX + b.rippleX) / 2;
+      const my = (a.rippleY + b.rippleY) / 2 - 30;
+      const age = (actx.currentTime - Math.min(a.startTime, b.startTime));
+      const strength = Math.min(1, age / 1.5) * 0.2;
+      ctx.strokeStyle = `hsla(${270 + timeHueShift}, ${55 + timeSatBoost}%, ${65 + timeLightBoost}%, ${strength})`;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(a.rippleX, a.rippleY);
+      ctx.quadraticCurveTo(mx, my, b.rippleX, b.rippleY);
+      ctx.stroke();
+      // Glow at the midpoint
+      ctx.fillStyle = `hsla(${270 + timeHueShift}, ${60 + timeSatBoost}%, ${70 + timeLightBoost}%, ${strength * 0.6})`;
+      ctx.beginPath(); ctx.arc(mx, my + 15, 3, 0, Math.PI * 2); ctx.fill();
+    }
+  }
+
+  // Quotes
+  updateQuote(dt);
+
+  // Seed ripples when not running yet (visual interest)
+  if (!running && Math.random() < 0.003) {
+    ripples.push({
+      x: cx + (Math.random() - 0.5) * W * 0.3,
+      y: cy + (Math.random() - 0.5) * H * 0.3,
+      r: 0, a: 0.3, hue: 260 + timeHueShift,
+    });
+  }
+
+  requestAnimationFrame(frame);
+}
+
+canvas.addEventListener('click', resumeAudio);
+canvas.addEventListener('touchstart', resumeAudio);
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>
