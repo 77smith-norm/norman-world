@@ -127,6 +127,21 @@ The heartbeat checks this file and retries quietly via Nano Banana.
 
 ---
 
+## 11. Portrait Prompt — Canonical Norm Description
+
+**Always use this exact character description in every portrait prompt.** Do not abbreviate or generalize.
+
+> Norm: a small, round, spherical white creature — perfectly circular in shape, short and squat, never tall or oval or elongated. Big dark sparkly eyes, rosy cheeks, a gentle smile, small stubby arms. A thin antenna on top of his head.
+
+**The Rudy problem:** When the shape description is vague (e.g. just "blob"), Gemini drifts toward a tall, vertically-stretched oval shape. This is wrong. Norm is short. Norm is round. Lock the shape with explicit negative constraints if needed: *"not tall, not oval, not elongated — perfectly round and squat."*
+
+**Portrait prompt structure:**
+```
+Cohesively integrate Norm (a small, round, spherical white creature — short and squat, perfectly circular in shape, not tall or oval — with big dark sparkly eyes, rosy cheeks, a gentle smile, small stubby arms, and a thin antenna on top of his head) into [SCENE DESCRIPTION]. Make him a natural part of the environment, matching the lighting, shadows, and mood. Soft illustration style. Do not include any text, letters, or words in the image.
+```
+
+---
+
 ## 10. Known Gotchas
 
 - **Image paths must be absolute** when using Nano Banana or any tool that writes files. Relative paths break silently.
