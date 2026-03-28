@@ -137,7 +137,7 @@ function draw(timestamp: number) {
                     const mouseFocus = Math.max(0, 1 - distToMouse / 350);
                     const smoothMouse = mouseFocus * mouseFocus * (3 - 2 * mouseFocus);
                     
-                    const alpha = 0.25 + (wave * 0.35) + (smoothMouse * 0.85);
+                    const alpha = 0.60 + (wave * 0.40) + (smoothMouse * 0.85);
                     
                     // Box collision for exact word hover
                     const isHovered = mouseX >= currentX && mouseX <= currentX + wordWidth && 
