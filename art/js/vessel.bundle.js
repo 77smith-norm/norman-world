@@ -2315,39 +2315,35 @@ function getBounds(y, time) {
   if (rSq <= 0)
     return [0, 0];
   let halfWidth = rx * Math.sqrt(rSq);
-  const breath = Math.sin(time * 0.0005);
-  const slowWave = Math.cos(y * 0.002 - time * 0.0003);
-  const wobbleWidth = (breath + slowWave) * (rx * 0.02);
-  const wobbleCenter = Math.cos(y * 0.001 + time * 0.0002) * (rx * 0.04);
+  let lineWidth = halfWidth * 2;
+  const sway = Math.cos(y * 0.002 - time * 0.0002) * (rx * 0.06);
   let pullOffsetX = 0;
-  let pullOffsetW = 0;
   const yDistToMouse = Math.abs(y - mouseY);
-  const interactR = Math.max(rx, 300);
+  const interactR = Math.max(rx * 1.5, 400);
   if (yDistToMouse < interactR) {
     const falloff = Math.cos(yDistToMouse / interactR * (Math.PI / 2));
-    const pullStrength = falloff * falloff;
-    const dxFromSlice = mouseX - cx;
-    pullOffsetX = dxFromSlice * 0.12 * pullStrength;
-    pullOffsetW = breath * (rx * 0.02) * pullStrength;
+    const pullStrength = falloff * falloff * falloff;
+    const dxFromCenter = mouseX - cx;
+    pullOffsetX = dxFromCenter * 0.15 * pullStrength;
   }
-  let startX = cx - halfWidth + wobbleCenter + pullOffsetX;
-  let lineWidth = halfWidth * 2 + wobbleWidth + pullOffsetW;
-  return [startX, Math.max(0, lineWidth)];
+  let startX = cx - halfWidth + sway + pullOffsetX;
+  return [startX, lineWidth];
 }
 function draw(timestamp) {
-  mouseX += (targetMouseX - mouseX) * 0.015;
-  mouseY += (targetMouseY - mouseY) * 0.015;
+  mouseX += (targetMouseX - mouseX) * 0.02;
+  mouseY += (targetMouseY - mouseY) * 0.02;
   ctx.clearRect(0, 0, width, height);
   const computedStyle = window.getComputedStyle(document.body);
   const textColor = computedStyle.getPropertyValue("--text-main").trim() || "#333";
   ctx.fillStyle = textColor;
   ctx.font = fontString;
   ctx.textBaseline = "alphabetic";
+  ctx.globalAlpha = 0.85;
   let cursor = { segmentIndex: 0, graphemeIndex: 0 };
   const cy = height / 2;
   const startY = cy - ry - 50;
   const endY = cy + ry + 50;
-  const lineHeight = fontSize * 1.6;
+  const lineHeight = fontSize * 1.8;
   for (let y = startY;y < endY; y += lineHeight) {
     const [startX, lineWidth] = getBounds(y, timestamp);
     if (lineWidth > 40) {

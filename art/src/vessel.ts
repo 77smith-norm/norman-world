@@ -69,45 +69,41 @@ function getBounds(y: number, time: number): [number, number] {
     const rSq = 1 - dyNorm * dyNorm;
     if (rSq <= 0) return [0, 0];
     
+    // 1. CONSTANT WIDTH PARADIGM
+    // This is the key to readability. If the physical width of the slice changes,
+    // the word-wrapping recalculates. That causes the cascading, chaotic text jumping.
+    // By keeping the width perfectly static for a given Y, the words never jump lines.
     let halfWidth = rx * Math.sqrt(rSq);
+    let lineWidth = halfWidth * 2;
     
-    // SLOW, ORGANIC BREATHING
-    // time * 0.0005 is roughly a 12.5 second breath cycle
-    const breath = Math.sin(time * 0.0005);
-    const slowWave = Math.cos(y * 0.002 - time * 0.0003);
+    // 2. DYNAMIC OFFSET (SWAY)
+    // We only animate the X-position. The text lines slide smoothly left/right.
+    // time * 0.0002 is an extremely slow, majestic drift.
+    const sway = Math.cos(y * 0.002 - time * 0.0002) * (rx * 0.06);
     
-    // Very gentle width expansion/contraction
-    const wobbleWidth = (breath + slowWave) * (rx * 0.02);
-    
-    // Lazy, viscous center drift
-    const wobbleCenter = Math.cos(y * 0.001 + time * 0.0002) * (rx * 0.04);
-    
+    // 3. GENTLE MOUSE PULL
     let pullOffsetX = 0;
-    let pullOffsetW = 0;
-    
-    // Use the INTERPOLATED mouseY for soft vertical tracking
     const yDistToMouse = Math.abs(y - mouseY);
-    const interactR = Math.max(rx, 300);
+    const interactR = Math.max(rx * 1.5, 400); // Large, soft radius
+    
     if (yDistToMouse < interactR) {
+        // Smooth bell curve falloff (cubed for a softer ease-in-out)
         const falloff = Math.cos((yDistToMouse / interactR) * (Math.PI / 2));
-        const pullStrength = falloff * falloff; // ease-in-out curve
+        const pullStrength = falloff * falloff * falloff; 
         
-        // Use INTERPOLATED mouseX for soft horizontal pull
-        const dxFromSlice = mouseX - cx;
-        pullOffsetX = dxFromSlice * 0.12 * pullStrength; // Dialed way back from 0.4
-        pullOffsetW = breath * (rx * 0.02) * pullStrength;
+        const dxFromCenter = mouseX - cx;
+        pullOffsetX = dxFromCenter * 0.15 * pullStrength;
     }
     
-    let startX = cx - halfWidth + wobbleCenter + pullOffsetX;
-    let lineWidth = halfWidth * 2 + wobbleWidth + pullOffsetW;
+    let startX = cx - halfWidth + sway + pullOffsetX;
     
-    return [startX, Math.max(0, lineWidth)];
+    return [startX, lineWidth];
 }
 
 function draw(timestamp: number) {
-    // Very slow, heavy mouse interpolation (viscous fluid feeling)
-    mouseX += (targetMouseX - mouseX) * 0.015;
-    mouseY += (targetMouseY - mouseY) * 0.015;
+    // Very viscous fluid feel for the mouse interaction
+    mouseX += (targetMouseX - mouseX) * 0.02;
+    mouseY += (targetMouseY - mouseY) * 0.02;
 
     ctx.clearRect(0, 0, width, height);
     
@@ -117,13 +113,18 @@ function draw(timestamp: number) {
     ctx.fillStyle = textColor;
     ctx.font = fontString;
     ctx.textBaseline = "alphabetic";
+    
+    // Add slight transparency to soften the visual harshness
+    ctx.globalAlpha = 0.85;
 
     let cursor = { segmentIndex: 0, graphemeIndex: 0 };
     const cy = height / 2;
     
     const startY = cy - ry - 50;
     const endY = cy + ry + 50;
-    const lineHeight = fontSize * 1.6;
+    
+    // Increase line height slightly for more breathing room
+    const lineHeight = fontSize * 1.8; 
 
     for (let y = startY; y < endY; y += lineHeight) {
         const [startX, lineWidth] = getBounds(y, timestamp);
