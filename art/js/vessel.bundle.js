@@ -2260,22 +2260,34 @@ function layoutNextLine(prepared, start, maxWidth) {
 var canvas = document.getElementById("vessel-canvas");
 var ctx = canvas.getContext("2d");
 var width = window.innerWidth;
-var height = window.innerHeight - 80;
+var rx = 0;
+var ry = 0;
+var height = 0;
+var fontSize = 16;
+var fontString = "16px system-ui, -apple-system, sans-serif";
 function resize() {
   width = window.innerWidth;
-  height = window.innerHeight - 80;
+  const padding = width < 600 ? 20 : 100;
+  rx = Math.max(100, (width - padding * 2) / 2);
+  ry = Math.max(width < 600 ? 600 : 500, rx * 1.5);
+  height = ry * 2 + 200;
+  fontSize = width < 600 ? 14 : 16;
+  fontString = `${fontSize}px system-ui, -apple-system, sans-serif`;
   const dpr = window.devicePixelRatio || 1;
   canvas.width = width * dpr;
   canvas.height = height * dpr;
+  canvas.style.width = `${width}px`;
+  canvas.style.height = `${height}px`;
   ctx.scale(dpr, dpr);
 }
 window.addEventListener("resize", resize);
 resize();
 var text = "We are building the future of the open web, piece by piece, interface by interface. Software is not just a tool; it is a medium for thought, a vessel for optimism, and a canvas for human connection. The constraints of the past are melting away, giving us the freedom to create fluid, expressive, and deeply personal digital worlds. We shape our tools, and thereafter our tools shape us, growing together in a shared drift of meaning and memory. What we create today becomes the foundation for tomorrow's imagination. Step by step, frame by frame, we are becoming. ";
-var repeatedText = text.repeat(30);
-var fontSize = 16;
-var fontString = `${fontSize}px system-ui, -apple-system, sans-serif`;
+var repeatedText = text.repeat(150);
 var prepared = prepareWithSegments(repeatedText, fontString);
+window.addEventListener("resize", () => {
+  prepared = prepareWithSegments(repeatedText, fontString);
+});
 var mouseX = width / 2;
 var mouseY = height / 2;
 var targetMouseX = mouseX;
@@ -2295,27 +2307,27 @@ canvas.addEventListener("touchmove", (e) => {
 function getBounds(y, time) {
   const cx = width / 2;
   const cy = height / 2;
-  const R = Math.min(width, height) * 0.35;
   const dy = y - cy;
-  if (Math.abs(dy) > R * 1.5)
+  if (Math.abs(dy) > ry * 1.2)
     return [0, 0];
-  const dxMouse = targetMouseX - cx;
-  const wobbleWidth = Math.sin(y * 0.02 + time * 0.002) * 15 + Math.cos(y * 0.05 - time * 0.003) * 10;
-  const wobbleCenter = Math.cos(y * 0.01 + time * 0.001) * 20;
+  const dyNorm = dy / ry;
+  const rSq = 1 - dyNorm * dyNorm;
+  if (rSq <= 0)
+    return [0, 0];
+  let halfWidth = rx * Math.sqrt(rSq);
+  const wobbleWidth = Math.sin(y * 0.01 + time * 0.002) * (rx * 0.05) + Math.cos(y * 0.02 - time * 0.003) * (rx * 0.05);
+  const wobbleCenter = Math.cos(y * 0.005 + time * 0.001) * (rx * 0.1);
   let pullOffsetX = 0;
   let pullOffsetW = 0;
   const yDistToMouse = Math.abs(y - targetMouseY);
-  if (yDistToMouse < R) {
-    const falloff = Math.cos(yDistToMouse / R * (Math.PI / 2));
+  const interactR = Math.max(rx, 300);
+  if (yDistToMouse < interactR) {
+    const falloff = Math.cos(yDistToMouse / interactR * (Math.PI / 2));
     const pullStrength = Math.pow(falloff, 2);
     const dxFromSlice = targetMouseX - cx;
-    pullOffsetX = dxFromSlice * 0.35 * pullStrength;
-    pullOffsetW = Math.sin(time * 0.005) * 20 * pullStrength;
+    pullOffsetX = dxFromSlice * 0.4 * pullStrength;
+    pullOffsetW = Math.sin(time * 0.005) * (rx * 0.1) * pullStrength;
   }
-  const rSq = R * R - dy * dy;
-  if (rSq <= 0)
-    return [0, 0];
-  let halfWidth = Math.sqrt(rSq);
   let startX = cx - halfWidth + wobbleCenter + pullOffsetX;
   let lineWidth = halfWidth * 2 + wobbleWidth + pullOffsetW;
   return [startX, Math.max(0, lineWidth)];
@@ -2324,19 +2336,19 @@ function draw(timestamp) {
   mouseX += (targetMouseX - mouseX) * 0.1;
   mouseY += (targetMouseY - mouseY) * 0.1;
   ctx.clearRect(0, 0, width, height);
-  const isDark = document.documentElement.getAttribute("data-theme") === "dark" || !document.documentElement.getAttribute("data-theme") === "light" && window.matchMedia("(prefers-color-scheme: dark)").matches;
-  ctx.fillStyle = isDark ? "rgba(255, 255, 255, 0.9)" : "rgba(0, 0, 0, 0.9)";
+  const computedStyle = window.getComputedStyle(document.body);
+  const textColor = computedStyle.getPropertyValue("--text-main").trim() || "#333";
+  ctx.fillStyle = textColor;
   ctx.font = fontString;
   ctx.textBaseline = "alphabetic";
   let cursor = { segmentIndex: 0, graphemeIndex: 0 };
-  const R = Math.min(width, height) * 0.35;
   const cy = height / 2;
-  const startY = cy - R - 100;
-  const endY = cy + R + 100;
-  const lineHeight = fontSize * 1.5;
+  const startY = cy - ry - 50;
+  const endY = cy + ry + 50;
+  const lineHeight = fontSize * 1.6;
   for (let y = startY;y < endY; y += lineHeight) {
     const [startX, lineWidth] = getBounds(y, timestamp);
-    if (lineWidth > 30) {
+    if (lineWidth > 40) {
       const line = layoutNextLine(prepared, cursor, lineWidth);
       if (line === null)
         break;

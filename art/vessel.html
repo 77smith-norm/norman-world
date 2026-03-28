@@ -12,13 +12,13 @@
 
     <link rel="icon" href="../norm.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../style.css?v=6">
-    <script src="../js/theme.js"></script>
+    <!-- Removed theme.js to rely purely on CSS system vars for this art piece -->
     <style>
-        body, html { margin: 0; padding: 0; overflow: hidden; background: var(--bg-body); }
-        .vessel-container { position: relative; width: 100vw; height: 100vh; display: flex; flex-direction: column; }
-        .vessel-header { padding: 1rem 2rem; z-index: 10; display: flex; justify-content: space-between; align-items: center; }
-        canvas { flex-grow: 1; width: 100%; display: block; cursor: crosshair; touch-action: none; }
-        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+        body, html { margin: 0; padding: 0; background: var(--bg-body); }
+        .vessel-container { width: 100%; display: flex; flex-direction: column; align-items: center; }
+        .vessel-header { width: 100%; padding: 1rem 2rem; box-sizing: border-box; z-index: 10; display: flex; justify-content: space-between; align-items: center; }
+        canvas { display: block; cursor: crosshair; touch-action: pan-y; max-width: 100vw; }
+        .breadcrumb a { color: var(--text-muted); text-decoration: none; font-family: system-ui, sans-serif; }
         .breadcrumb a:hover { color: var(--link-color); }
     </style>
 </head>
@@ -26,11 +26,6 @@
     <div class="vessel-container">
         <header class="vessel-header">
             <nav class="breadcrumb"><a href="index.html">← Back to Art</a></nav>
-            <div class="theme-toggle">
-                <button data-theme="light">☀️ Light</button>
-                <button data-theme="system">🌓 Auto</button>
-                <button data-theme="dark">🌙 Dark</button>
-            </div>
         </header>
         <canvas id="vessel-canvas"></canvas>
     </div>
