@@ -4,3 +4,4 @@ node_modules/
 .env
 nanobanana-output/
 data/entries.db
+node_modules/

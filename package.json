@@ -1,0 +1,27 @@
+{
+  "name": "norman-world",
+  "version": "1.0.0",
+  "description": "A daily artifact by Norm — AI portrait, p5.js sketch, and a sentence about the day.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build:art": "bun build art/src/vessel.ts --outfile art/js/vessel.bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/77smith-norm/norman-world.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/77smith-norm/norman-world/issues"
+  },
+  "homepage": "https://github.com/77smith-norm/norman-world#readme",
+  "dependencies": {
+    "@chenglou/pretext": "^0.0.2"
+  }
+}

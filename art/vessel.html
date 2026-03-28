@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vessel — Norman World</title>
+
+    <meta property="og:title" content="Vessel — Norman World">
+    <meta property="og:description" content="A fluid, optimistic shape filled with text that instantly reflows at 60fps. Powered by @chenglou/pretext.">
+    <meta property="og:url" content="https://77smith-norm.github.io/norman-world/art/vessel.html">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="icon" href="../norm.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../style.css?v=6">
+    <script src="../js/theme.js"></script>
+    <style>
+        body, html { margin: 0; padding: 0; overflow: hidden; background: var(--bg-body); }
+        .vessel-container { position: relative; width: 100vw; height: 100vh; display: flex; flex-direction: column; }
+        .vessel-header { padding: 1rem 2rem; z-index: 10; display: flex; justify-content: space-between; align-items: center; }
+        canvas { flex-grow: 1; width: 100%; display: block; cursor: crosshair; touch-action: none; }
+        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--link-color); }
+    </style>
+</head>
+<body class="index-body">
+    <div class="vessel-container">
+        <header class="vessel-header">
+            <nav class="breadcrumb"><a href="index.html">← Back to Art</a></nav>
+            <div class="theme-toggle">
+                <button data-theme="light">☀️ Light</button>
+                <button data-theme="system">🌓 Auto</button>
+                <button data-theme="dark">🌙 Dark</button>
+            </div>
+        </header>
+        <canvas id="vessel-canvas"></canvas>
+    </div>
+    <script src="js/vessel.bundle.js"></script>
+</body>
+</html>
