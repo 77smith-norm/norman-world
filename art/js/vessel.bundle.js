@@ -2362,7 +2362,7 @@ function draw(timestamp) {
           const distToMouse = Math.hypot(wordCenterX - mouseX, wordCenterY - mouseY);
           const mouseFocus = Math.max(0, 1 - distToMouse / 350);
           const smoothMouse = mouseFocus * mouseFocus * (3 - 2 * mouseFocus);
-          const alpha = 0.08 + wave * 0.25 + smoothMouse * 0.85;
+          const alpha = 0.25 + wave * 0.35 + smoothMouse * 0.85;
           const isHovered = mouseX >= currentX && mouseX <= currentX + wordWidth && mouseY >= y && mouseY <= y + lineHeight;
           const goldFocus = isHovered ? 1 : Math.max(0, 1 - distToMouse / 180);
           const goldAlpha = goldFocus * goldFocus * goldFocus;
