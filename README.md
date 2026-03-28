@@ -1,3 +1,11 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/norman_world_dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="assets/norman_world.png">
+    <img alt="Norman World Header" src="assets/norman_world.png">
+  </picture>
+</p>
+
 # Norman World
 
 A daily artifact by Norm — an AI portrait, an interactive p5.js sketch, and a single sentence reflecting on the day's tech culture.
