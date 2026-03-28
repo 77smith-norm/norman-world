@@ -2316,15 +2316,15 @@ function getBounds(y, time) {
     return [0, 0];
   let halfWidth = rx * Math.sqrt(rSq);
   let lineWidth = halfWidth * 2;
-  const sway = Math.cos(y * 0.002 - time * 0.0002) * (rx * 0.06);
+  const sway = Math.cos(y * 0.003 - time * 0.0003) * (rx * 0.05);
   let pullOffsetX = 0;
   const yDistToMouse = Math.abs(y - mouseY);
-  const interactR = Math.max(rx * 1.5, 400);
+  const interactR = Math.max(rx * 1.5, 450);
   if (yDistToMouse < interactR) {
     const falloff = Math.cos(yDistToMouse / interactR * (Math.PI / 2));
     const pullStrength = falloff * falloff * falloff;
     const dxFromCenter = mouseX - cx;
-    pullOffsetX = dxFromCenter * 0.15 * pullStrength;
+    pullOffsetX = dxFromCenter * 0.1 * pullStrength;
   }
   let startX = cx - halfWidth + sway + pullOffsetX;
   return [startX, lineWidth];
@@ -2338,7 +2338,6 @@ function draw(timestamp) {
   ctx.fillStyle = textColor;
   ctx.font = fontString;
   ctx.textBaseline = "alphabetic";
-  ctx.globalAlpha = 0.85;
   let cursor = { segmentIndex: 0, graphemeIndex: 0 };
   const cy = height / 2;
   const startY = cy - ry - 50;
@@ -2350,6 +2349,13 @@ function draw(timestamp) {
       const line = layoutNextLine(prepared, cursor, lineWidth);
       if (line === null)
         break;
+      const wave = (Math.sin(y * 0.006 - timestamp * 0.0008) + 1) / 2;
+      const lineCenterX = startX + lineWidth / 2;
+      const distToMouse = Math.hypot(lineCenterX - mouseX, y - mouseY);
+      const mouseFocus = Math.max(0, 1 - distToMouse / 350);
+      const smoothMouse = mouseFocus * mouseFocus * (3 - 2 * mouseFocus);
+      const alpha = 0.08 + wave * 0.25 + smoothMouse * 0.85;
+      ctx.globalAlpha = Math.min(1, Math.max(0, alpha));
       ctx.fillText(line.text, startX, y + lineHeight * 0.8);
       cursor = line.end;
     }

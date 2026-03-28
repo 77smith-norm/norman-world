@@ -69,30 +69,24 @@ function getBounds(y: number, time: number): [number, number] {
     const rSq = 1 - dyNorm * dyNorm;
     if (rSq <= 0) return [0, 0];
     
-    // 1. CONSTANT WIDTH PARADIGM
-    // This is the key to readability. If the physical width of the slice changes,
-    // the word-wrapping recalculates. That causes the cascading, chaotic text jumping.
-    // By keeping the width perfectly static for a given Y, the words never jump lines.
+    // 1. CONSTANT WIDTH: The physical text boundary never changes size, preventing jitter.
     let halfWidth = rx * Math.sqrt(rSq);
     let lineWidth = halfWidth * 2;
     
-    // 2. DYNAMIC OFFSET (SWAY)
-    // We only animate the X-position. The text lines slide smoothly left/right.
-    // time * 0.0002 is an extremely slow, majestic drift.
-    const sway = Math.cos(y * 0.002 - time * 0.0002) * (rx * 0.06);
+    // 2. SOFT SWAY: Gentle organic drifting of the X coordinate.
+    const sway = Math.cos(y * 0.003 - time * 0.0003) * (rx * 0.05);
     
-    // 3. GENTLE MOUSE PULL
+    // 3. GENTLE MOUSE PULL: Subtly bends the shape toward the cursor.
     let pullOffsetX = 0;
     const yDistToMouse = Math.abs(y - mouseY);
-    const interactR = Math.max(rx * 1.5, 400); // Large, soft radius
+    const interactR = Math.max(rx * 1.5, 450); 
     
     if (yDistToMouse < interactR) {
-        // Smooth bell curve falloff (cubed for a softer ease-in-out)
         const falloff = Math.cos((yDistToMouse / interactR) * (Math.PI / 2));
         const pullStrength = falloff * falloff * falloff; 
         
         const dxFromCenter = mouseX - cx;
-        pullOffsetX = dxFromCenter * 0.15 * pullStrength;
+        pullOffsetX = dxFromCenter * 0.10 * pullStrength; // Very low multiplier for gentleness
     }
     
     let startX = cx - halfWidth + sway + pullOffsetX;
@@ -101,7 +95,6 @@ function getBounds(y: number, time: number): [number, number] {
 }
 
 function draw(timestamp: number) {
-    // Very viscous fluid feel for the mouse interaction
     mouseX += (targetMouseX - mouseX) * 0.02;
     mouseY += (targetMouseY - mouseY) * 0.02;
 
@@ -113,17 +106,12 @@ function draw(timestamp: number) {
     ctx.fillStyle = textColor;
     ctx.font = fontString;
     ctx.textBaseline = "alphabetic";
-    
-    // Add slight transparency to soften the visual harshness
-    ctx.globalAlpha = 0.85;
 
     let cursor = { segmentIndex: 0, graphemeIndex: 0 };
     const cy = height / 2;
     
     const startY = cy - ry - 50;
     const endY = cy + ry + 50;
-    
-    // Increase line height slightly for more breathing room
     const lineHeight = fontSize * 1.8; 
 
     for (let y = startY; y < endY; y += lineHeight) {
@@ -132,6 +120,26 @@ function draw(timestamp: number) {
         if (lineWidth > 40) {
             const line = layoutNextLine(prepared, cursor, lineWidth);
             if (line === null) break;
+            
+            // --- THE VISUAL BREATH (COLOR/OPACITY RIPPLE) ---
+            
+            // 1. The inherent wave (Ebb and flow)
+            // Sine wave moving vertically over time. Output is 0.0 to 1.0.
+            const wave = (Math.sin(y * 0.006 - timestamp * 0.0008) + 1) / 2;
+            
+            // 2. The Mouse Aura (Interactive highlight)
+            const lineCenterX = startX + lineWidth / 2;
+            const distToMouse = Math.hypot(lineCenterX - mouseX, y - mouseY);
+            const mouseFocus = Math.max(0, 1 - distToMouse / 350);
+            const smoothMouse = mouseFocus * mouseFocus * (3 - 2 * mouseFocus); 
+            
+            // 3. Composite the effect
+            // Base opacity is very low (light grey). 
+            // The wave gently pulses it up slightly.
+            // The mouse brings it to full contrast (solid black/white depending on theme).
+            const alpha = 0.08 + (wave * 0.25) + (smoothMouse * 0.85);
+            
+            ctx.globalAlpha = Math.min(1, Math.max(0, alpha));
             
             ctx.fillText(line.text, startX, y + lineHeight * 0.8);
             cursor = line.end;
