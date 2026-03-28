@@ -14,14 +14,10 @@ function resize() {
     width = window.innerWidth;
     
     // Responsive sizing
-    // On mobile (width < 600), make it fill most of the width and be quite tall
     const padding = width < 600 ? 20 : 100;
     rx = Math.max(100, (width - padding * 2) / 2);
-    
-    // Taller aspect ratio for scrolling
     ry = Math.max(width < 600 ? 600 : 500, rx * 1.5); 
-    
-    height = ry * 2 + 200; // 100px padding top/bottom
+    height = ry * 2 + 200; 
     
     fontSize = width < 600 ? 14 : 16;
     fontString = `${fontSize}px system-ui, -apple-system, sans-serif`;
@@ -39,7 +35,6 @@ resize();
 const text = "We are building the future of the open web, piece by piece, interface by interface. Software is not just a tool; it is a medium for thought, a vessel for optimism, and a canvas for human connection. The constraints of the past are melting away, giving us the freedom to create fluid, expressive, and deeply personal digital worlds. We shape our tools, and thereafter our tools shape us, growing together in a shared drift of meaning and memory. What we create today becomes the foundation for tomorrow's imagination. Step by step, frame by frame, we are becoming. ";
 const repeatedText = text.repeat(150);
 
-// Re-prepare text whenever font changes on resize (or just once at start is fine if font doesn't jump often)
 let prepared = prepareWithSegments(repeatedText, fontString);
 window.addEventListener('resize', () => {
     prepared = prepareWithSegments(repeatedText, fontString);
@@ -70,28 +65,37 @@ function getBounds(y: number, time: number): [number, number] {
     
     if (Math.abs(dy) > ry * 1.2) return [0, 0];
 
-    // Ellipse math
     const dyNorm = dy / ry;
     const rSq = 1 - dyNorm * dyNorm;
     if (rSq <= 0) return [0, 0];
     
     let halfWidth = rx * Math.sqrt(rSq);
     
-    const wobbleWidth = Math.sin(y * 0.01 + time * 0.002) * (rx * 0.05) + Math.cos(y * 0.02 - time * 0.003) * (rx * 0.05);
-    const wobbleCenter = Math.cos(y * 0.005 + time * 0.001) * (rx * 0.1);
+    // SLOW, ORGANIC BREATHING
+    // time * 0.0005 is roughly a 12.5 second breath cycle
+    const breath = Math.sin(time * 0.0005);
+    const slowWave = Math.cos(y * 0.002 - time * 0.0003);
+    
+    // Very gentle width expansion/contraction
+    const wobbleWidth = (breath + slowWave) * (rx * 0.02);
+    
+    // Lazy, viscous center drift
+    const wobbleCenter = Math.cos(y * 0.001 + time * 0.0002) * (rx * 0.04);
     
     let pullOffsetX = 0;
     let pullOffsetW = 0;
     
-    const yDistToMouse = Math.abs(y - targetMouseY);
+    // Use the INTERPOLATED mouseY for soft vertical tracking
+    const yDistToMouse = Math.abs(y - mouseY);
     const interactR = Math.max(rx, 300);
     if (yDistToMouse < interactR) {
         const falloff = Math.cos((yDistToMouse / interactR) * (Math.PI / 2));
-        const pullStrength = Math.pow(falloff, 2);
+        const pullStrength = falloff * falloff; // ease-in-out curve
         
-        const dxFromSlice = targetMouseX - cx;
-        pullOffsetX = dxFromSlice * 0.4 * pullStrength;
-        pullOffsetW = Math.sin(time * 0.005) * (rx * 0.1) * pullStrength;
+        // Use INTERPOLATED mouseX for soft horizontal pull
+        const dxFromSlice = mouseX - cx;
+        pullOffsetX = dxFromSlice * 0.12 * pullStrength; // Dialed way back from 0.4
+        pullOffsetW = breath * (rx * 0.02) * pullStrength;
     }
     
     let startX = cx - halfWidth + wobbleCenter + pullOffsetX;
@@ -101,12 +105,12 @@ function getBounds(y: number, time: number): [number, number] {
 }
 
 function draw(timestamp: number) {
-    mouseX += (targetMouseX - mouseX) * 0.1;
-    mouseY += (targetMouseY - mouseY) * 0.1;
+    // Very slow, heavy mouse interpolation (viscous fluid feeling)
+    mouseX += (targetMouseX - mouseX) * 0.015;
+    mouseY += (targetMouseY - mouseY) * 0.015;
 
     ctx.clearRect(0, 0, width, height);
     
-    // Grab color from CSS variables to respect system theme seamlessly
     const computedStyle = window.getComputedStyle(document.body);
     const textColor = computedStyle.getPropertyValue('--text-main').trim() || '#333';
     

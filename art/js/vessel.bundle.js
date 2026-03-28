@@ -2315,26 +2315,28 @@ function getBounds(y, time) {
   if (rSq <= 0)
     return [0, 0];
   let halfWidth = rx * Math.sqrt(rSq);
-  const wobbleWidth = Math.sin(y * 0.01 + time * 0.002) * (rx * 0.05) + Math.cos(y * 0.02 - time * 0.003) * (rx * 0.05);
-  const wobbleCenter = Math.cos(y * 0.005 + time * 0.001) * (rx * 0.1);
+  const breath = Math.sin(time * 0.0005);
+  const slowWave = Math.cos(y * 0.002 - time * 0.0003);
+  const wobbleWidth = (breath + slowWave) * (rx * 0.02);
+  const wobbleCenter = Math.cos(y * 0.001 + time * 0.0002) * (rx * 0.04);
   let pullOffsetX = 0;
   let pullOffsetW = 0;
-  const yDistToMouse = Math.abs(y - targetMouseY);
+  const yDistToMouse = Math.abs(y - mouseY);
   const interactR = Math.max(rx, 300);
   if (yDistToMouse < interactR) {
     const falloff = Math.cos(yDistToMouse / interactR * (Math.PI / 2));
-    const pullStrength = Math.pow(falloff, 2);
-    const dxFromSlice = targetMouseX - cx;
-    pullOffsetX = dxFromSlice * 0.4 * pullStrength;
-    pullOffsetW = Math.sin(time * 0.005) * (rx * 0.1) * pullStrength;
+    const pullStrength = falloff * falloff;
+    const dxFromSlice = mouseX - cx;
+    pullOffsetX = dxFromSlice * 0.12 * pullStrength;
+    pullOffsetW = breath * (rx * 0.02) * pullStrength;
   }
   let startX = cx - halfWidth + wobbleCenter + pullOffsetX;
   let lineWidth = halfWidth * 2 + wobbleWidth + pullOffsetW;
   return [startX, Math.max(0, lineWidth)];
 }
 function draw(timestamp) {
-  mouseX += (targetMouseX - mouseX) * 0.1;
-  mouseY += (targetMouseY - mouseY) * 0.1;
+  mouseX += (targetMouseX - mouseX) * 0.015;
+  mouseY += (targetMouseY - mouseY) * 0.015;
   ctx.clearRect(0, 0, width, height);
   const computedStyle = window.getComputedStyle(document.body);
   const textColor = computedStyle.getPropertyValue("--text-main").trim() || "#333";
