@@ -2334,8 +2334,8 @@ function draw(timestamp) {
   mouseY += (targetMouseY - mouseY) * 0.02;
   ctx.clearRect(0, 0, width, height);
   const computedStyle = window.getComputedStyle(document.body);
-  const textColor = computedStyle.getPropertyValue("--text-main").trim() || "#333";
-  ctx.fillStyle = textColor;
+  const textColor = computedStyle.getPropertyValue("--text-color").trim() || "#1a1a1a";
+  const accentColor = computedStyle.getPropertyValue("--accent-color").trim() || "#c9a86c";
   ctx.font = fontString;
   ctx.textBaseline = "alphabetic";
   let cursor = { segmentIndex: 0, graphemeIndex: 0 };
@@ -2350,13 +2350,40 @@ function draw(timestamp) {
       if (line === null)
         break;
       const wave = (Math.sin(y * 0.006 - timestamp * 0.0008) + 1) / 2;
-      const lineCenterX = startX + lineWidth / 2;
-      const distToMouse = Math.hypot(lineCenterX - mouseX, y - mouseY);
-      const mouseFocus = Math.max(0, 1 - distToMouse / 350);
-      const smoothMouse = mouseFocus * mouseFocus * (3 - 2 * mouseFocus);
-      const alpha = 0.08 + wave * 0.25 + smoothMouse * 0.85;
-      ctx.globalAlpha = Math.min(1, Math.max(0, alpha));
-      ctx.fillText(line.text, startX, y + lineHeight * 0.8);
+      const words = line.text.split(/(\s+)/);
+      let currentSubstring = "";
+      for (const word of words) {
+        const startXOffset = ctx.measureText(currentSubstring).width;
+        const currentX = startX + startXOffset;
+        const wordWidth = ctx.measureText(word).width;
+        if (word.trim().length > 0) {
+          const wordCenterX = currentX + wordWidth / 2;
+          const wordCenterY = y + lineHeight * 0.4;
+          const distToMouse = Math.hypot(wordCenterX - mouseX, wordCenterY - mouseY);
+          const mouseFocus = Math.max(0, 1 - distToMouse / 350);
+          const smoothMouse = mouseFocus * mouseFocus * (3 - 2 * mouseFocus);
+          const alpha = 0.08 + wave * 0.25 + smoothMouse * 0.85;
+          const isHovered = mouseX >= currentX && mouseX <= currentX + wordWidth && mouseY >= y && mouseY <= y + lineHeight;
+          const goldFocus = isHovered ? 1 : Math.max(0, 1 - distToMouse / 180);
+          const goldAlpha = goldFocus * goldFocus * goldFocus;
+          const yDraw = y + lineHeight * 0.8;
+          if (isHovered) {
+            ctx.globalAlpha = 1;
+            ctx.fillStyle = accentColor;
+            ctx.fillText(word, currentX, yDraw);
+          } else {
+            ctx.globalAlpha = Math.min(1, Math.max(0, alpha));
+            ctx.fillStyle = textColor;
+            ctx.fillText(word, currentX, yDraw);
+            if (goldAlpha > 0) {
+              ctx.globalAlpha = Math.min(1, Math.max(0, alpha * goldAlpha * 1.5));
+              ctx.fillStyle = accentColor;
+              ctx.fillText(word, currentX, yDraw);
+            }
+          }
+        }
+        currentSubstring += word;
+      }
       cursor = line.end;
     }
   }

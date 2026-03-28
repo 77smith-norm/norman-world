@@ -69,14 +69,11 @@ function getBounds(y: number, time: number): [number, number] {
     const rSq = 1 - dyNorm * dyNorm;
     if (rSq <= 0) return [0, 0];
     
-    // 1. CONSTANT WIDTH: The physical text boundary never changes size, preventing jitter.
     let halfWidth = rx * Math.sqrt(rSq);
     let lineWidth = halfWidth * 2;
     
-    // 2. SOFT SWAY: Gentle organic drifting of the X coordinate.
     const sway = Math.cos(y * 0.003 - time * 0.0003) * (rx * 0.05);
     
-    // 3. GENTLE MOUSE PULL: Subtly bends the shape toward the cursor.
     let pullOffsetX = 0;
     const yDistToMouse = Math.abs(y - mouseY);
     const interactR = Math.max(rx * 1.5, 450); 
@@ -86,7 +83,7 @@ function getBounds(y: number, time: number): [number, number] {
         const pullStrength = falloff * falloff * falloff; 
         
         const dxFromCenter = mouseX - cx;
-        pullOffsetX = dxFromCenter * 0.10 * pullStrength; // Very low multiplier for gentleness
+        pullOffsetX = dxFromCenter * 0.10 * pullStrength; 
     }
     
     let startX = cx - halfWidth + sway + pullOffsetX;
@@ -101,9 +98,9 @@ function draw(timestamp: number) {
     ctx.clearRect(0, 0, width, height);
     
     const computedStyle = window.getComputedStyle(document.body);
-    const textColor = computedStyle.getPropertyValue('--text-main').trim() || '#333';
+    const textColor = computedStyle.getPropertyValue('--text-color').trim() || '#1a1a1a';
+    const accentColor = computedStyle.getPropertyValue('--accent-color').trim() || '#c9a86c';
     
-    ctx.fillStyle = textColor;
     ctx.font = fontString;
     ctx.textBaseline = "alphabetic";
 
@@ -121,27 +118,58 @@ function draw(timestamp: number) {
             const line = layoutNextLine(prepared, cursor, lineWidth);
             if (line === null) break;
             
-            // --- THE VISUAL BREATH (COLOR/OPACITY RIPPLE) ---
-            
-            // 1. The inherent wave (Ebb and flow)
-            // Sine wave moving vertically over time. Output is 0.0 to 1.0.
             const wave = (Math.sin(y * 0.006 - timestamp * 0.0008) + 1) / 2;
             
-            // 2. The Mouse Aura (Interactive highlight)
-            const lineCenterX = startX + lineWidth / 2;
-            const distToMouse = Math.hypot(lineCenterX - mouseX, y - mouseY);
-            const mouseFocus = Math.max(0, 1 - distToMouse / 350);
-            const smoothMouse = mouseFocus * mouseFocus * (3 - 2 * mouseFocus); 
+            // Word-by-word rendering to support exact cursor highlights
+            const words = line.text.split(/(\s+)/);
+            let currentSubstring = "";
             
-            // 3. Composite the effect
-            // Base opacity is very low (light grey). 
-            // The wave gently pulses it up slightly.
-            // The mouse brings it to full contrast (solid black/white depending on theme).
-            const alpha = 0.08 + (wave * 0.25) + (smoothMouse * 0.85);
-            
-            ctx.globalAlpha = Math.min(1, Math.max(0, alpha));
-            
-            ctx.fillText(line.text, startX, y + lineHeight * 0.8);
+            for (const word of words) {
+                const startXOffset = ctx.measureText(currentSubstring).width;
+                const currentX = startX + startXOffset;
+                const wordWidth = ctx.measureText(word).width;
+                
+                if (word.trim().length > 0) {
+                    const wordCenterX = currentX + wordWidth / 2;
+                    const wordCenterY = y + lineHeight * 0.4;
+                    
+                    const distToMouse = Math.hypot(wordCenterX - mouseX, wordCenterY - mouseY);
+                    const mouseFocus = Math.max(0, 1 - distToMouse / 350);
+                    const smoothMouse = mouseFocus * mouseFocus * (3 - 2 * mouseFocus);
+                    
+                    const alpha = 0.08 + (wave * 0.25) + (smoothMouse * 0.85);
+                    
+                    // Box collision for exact word hover
+                    const isHovered = mouseX >= currentX && mouseX <= currentX + wordWidth && 
+                                      mouseY >= y && mouseY <= y + lineHeight;
+                                      
+                    // Radial gradient mix for the breathing accent color aura
+                    const goldFocus = isHovered ? 1.0 : Math.max(0, 1 - distToMouse / 180);
+                    const goldAlpha = goldFocus * goldFocus * goldFocus; 
+                    
+                    const yDraw = y + lineHeight * 0.8;
+                    
+                    if (isHovered) {
+                        ctx.globalAlpha = 1.0;
+                        ctx.fillStyle = accentColor;
+                        ctx.fillText(word, currentX, yDraw);
+                    } else {
+                        // Draw base line color
+                        ctx.globalAlpha = Math.min(1, Math.max(0, alpha));
+                        ctx.fillStyle = textColor;
+                        ctx.fillText(word, currentX, yDraw);
+                        
+                        // Overlay the gold aura
+                        if (goldAlpha > 0) {
+                            ctx.globalAlpha = Math.min(1, Math.max(0, alpha * goldAlpha * 1.5));
+                            ctx.fillStyle = accentColor;
+                            ctx.fillText(word, currentX, yDraw);
+                        }
+                    }
+                }
+                
+                currentSubstring += word;
+            }
             cursor = line.end;
         }
     }
