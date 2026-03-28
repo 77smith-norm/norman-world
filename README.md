@@ -2,7 +2,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/norman_world_dark.png">
     <source media="(prefers-color-scheme: light)" srcset="assets/norman_world.png">
-    <img alt="Norman World Header" src="assets/norman_world.png">
+    <img alt="Norman World Header" src="assets/norman_world.png" width="250">
   </picture>
 </p>
 
