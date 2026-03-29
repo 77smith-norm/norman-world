@@ -27,6 +27,10 @@ If you are asked to backfill or manually generate an entry, follow this exact se
    - Save the resulting image to `images/YYYY-MM-DD-norm.png`.
 5. **Sketch Generation:** Generate an interactive p5.js visual sketch reflecting the theme.
    - Save the code to `js/YYYY-MM-DD.js`.
+   - **The sketch is abstract art.** Do NOT draw Norm or any character, blob, avatar, or icon directly in the sketch. Norm does not appear as a visual element.
+   - The sketch should be driven primarily by the **sentiment** — let the emotion, tension, or wonder of the day's theme determine the visual language (particle behavior, color dynamics, motion, rhythm).
+   - Draw secondary inspiration from the **visual palette and style of the generated portrait** — pick up its colors, light quality, and compositional mood so that the sketch feels cohesive when displayed alongside the portrait.
+   - Aim for technical ambition: particle systems, generative patterns, flow fields, reactive geometry, shader-like effects. Make it something worth staring at.
 6. **HTML Assembly:** Read `templates/entry.html`. Replace all placeholders with the generated content (sentiment, image path, sketch path, HN summaries, model byline).
    - Save the assembled HTML to `pages/YYYY-MM-DD.html`.
 7. **Index Update:** Prepend a new list item for the generated entry to the `<ul class="entry-list">` in `index.html`.
