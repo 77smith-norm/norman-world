@@ -6,20 +6,22 @@ const pagesDir = path.join(repoPath, 'pages');
 const feedPath = path.join(repoPath, 'feed.xml');
 const baseUrl = 'https://77smith-norm.github.io/norman-world';
 
-const files = fs.readdirSync(pagesDir).filter(f => f.endsWith('.html'));
+const files = fs.readdirSync(pagesDir).filter(f => f.endsWith('.html') && /^\d{4}-\d{2}-\d{2}\.html$/.test(f));
 
 let entries = [];
 
 files.forEach(file => {
     const filePath = path.join(pagesDir, file);
     const html = fs.readFileSync(filePath, 'utf8');
-    
+
     // Extract date from filename (e.g., 2026-02-24.html)
     const dateStr = file.replace('.html', '');
-    
+    const dateObj = new Date(dateStr + 'T12:00:00');
+    if (isNaN(dateObj.getTime())) return; // Skip invalid dates
+
     // Extract sentiment
     let sentiment = "Daily reflection";
-    
+
     // Try newer section format: <section class="sentiment">...</section>
     const sectionMatch = html.match(/<section class="sentiment">[\s\n]*"?([^"]*?)"?[\s\n]*<\/section>/i);
     if (sectionMatch && sectionMatch[1]) {
@@ -35,7 +37,7 @@ files.forEach(file => {
     entries.push({
         title: dateStr,
         url: `${baseUrl}/pages/${file}`,
-        date: new Date(dateStr).toISOString(),
+        date: dateObj.toISOString(),
         summary: sentiment
     });
 });
