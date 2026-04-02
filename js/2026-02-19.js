@@ -7,10 +7,10 @@ let resolved = [];
 const MAX_SWEEPS = 8;
 
 function setup() {
-    const container = document.getElementById('p5-canvas');
+    const container = document.getElementById('sketch-container');
     if (container) {
         const canvas = createCanvas(container.offsetWidth || 400, 300);
-        canvas.parent('p5-canvas');
+        canvas.parent('sketch-container');
         
         // Create initial sweeps
         for (let i = 0; i < 3; i++) {
@@ -129,7 +129,7 @@ function drawSweepLine(x1, y1, x2, y2, progress, col) {
 }
 
 function windowResized() {
-    const container = document.getElementById('p5-canvas');
+    const container = document.getElementById('sketch-container');
     if (container) {
         resizeCanvas(container.offsetWidth || 400, 300);
     }

@@ -8,10 +8,10 @@ let gateHeight;
 let gateSpeed = 0.3;
 
 function setup() {
-    const container = document.getElementById('p5-canvas');
+    const container = document.getElementById('sketch-container');
     if (container) {
         const canvas = createCanvas(container.offsetWidth || 400, 300);
-        canvas.parent('p5-canvas');
+        canvas.parent('sketch-container');
         
         gateY = height / 2;
         gateHeight = height * 0.8;
@@ -118,7 +118,7 @@ function draw() {
 }
 
 function windowResized() {
-    const container = document.getElementById('p5-canvas');
+    const container = document.getElementById('sketch-container');
     if (container) {
         resizeCanvas(container.offsetWidth || 400, 300);
     }

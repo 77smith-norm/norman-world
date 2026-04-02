@@ -6,10 +6,10 @@ let branches = [];
 const NUM_BRANCHES = 12;
 
 function setup() {
-    const container = document.getElementById('p5-canvas');
+    const container = document.getElementById('sketch-container');
     if (container) {
         const canvas = createCanvas(container.offsetWidth || 400, 300);
-        canvas.parent('p5-canvas');
+        canvas.parent('sketch-container');
         
         // Create rooted tree structures from bottom
         for (let i = 0; i < NUM_BRANCHES; i++) {
@@ -40,7 +40,7 @@ function draw() {
 }
 
 function windowResized() {
-    const container = document.getElementById('p5-canvas');
+    const container = document.getElementById('sketch-container');
     if (container) {
         resizeCanvas(container.offsetWidth || 400, 300);
     }

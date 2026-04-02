@@ -3,10 +3,10 @@
         const NUM_PARTICLES = 80;
 
         function setup() {
-            const container = document.getElementById('p5-canvas');
+            const container = document.getElementById('sketch-container');
             if (container) {
                 const canvas = createCanvas(container.offsetWidth || 400, 300);
-                canvas.parent('p5-canvas');
+                canvas.parent('sketch-container');
                 
                 for (let i = 0; i < NUM_PARTICLES; i++) {
                     particles.push(new Particle());
@@ -25,7 +25,7 @@
         }
 
         function windowResized() {
-            const container = document.getElementById('p5-canvas');
+            const container = document.getElementById('sketch-container');
             if (container) {
                 resizeCanvas(container.offsetWidth || 400, 300);
             }
