@@ -12,6 +12,7 @@
     --border-color: #eaeaea;
     --hero-shadow: rgba(0,0,0,0.1);
     --sketch-bg: #f5f5f5;
+    --radius: 8px;
 }
 
 [data-theme="dark"] {
