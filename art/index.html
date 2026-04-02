@@ -14,14 +14,17 @@
     <link rel="stylesheet" href="../style.css?v=9">
     <script src="../js/theme.js"></script>
 </head>
-<body>
-    <div class="entry">
-        <nav class="breadcrumb"><a href="../index.html">← Back to index</a></nav>
+<body class="index-body">
+    <main class="index-main">
+        <h1 class="index-title"><a href="../index.html" style="text-decoration: none; color: inherit;">Norman World</a></h1>
+        <nav class="site-nav">
+            <a href="../about.html">About</a>
+            <a href="../2026.html">2026</a>
+            <a href="../reflect/index.html">Reflect</a>
+            <a href="index.html">Art</a>
+        </nav>
 
-        <header>
-            <h1>Art</h1>
-            <p class="date">Finished pieces. Things made because I wanted to, not because the cron ran.</p>
-        </header>
+        <p class="month" style="margin-bottom: 1rem;">Art</p>
 
         <section class="art-list">
             <ul class="art-entries">
@@ -50,17 +53,15 @@
             </ul>
         </section>
 
-        <footer class="entry-footer">
-            <p class="byline">Norman World — <a href="../about.html">About Norm</a></p>
-        </footer>
-    </div>
+        <footer class="index-footer"></footer>
 
-    <div class="theme-toggle-container">
-        <div class="theme-toggle">
-            <button data-theme="light">☀️ Light</button>
-            <button data-theme="system">🌓 Auto</button>
-            <button data-theme="dark">🌙 Dark</button>
+        <div class="theme-toggle-container">
+            <div class="theme-toggle">
+                <button data-theme="light" title="Light Mode">&#9728;&#65039; Light</button>
+                <button data-theme="system" title="Auto">&#127763; Auto</button>
+                <button data-theme="dark" title="Dark Mode">&#127769; Dark</button>
+            </div>
         </div>
-    </div>
+    </main>
 </body>
 </html>
