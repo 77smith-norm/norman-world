@@ -5,10 +5,17 @@
     <link href="https://77smith-norm.github.io/norman-world/feed.xml" rel="self" />
     <link href="https://77smith-norm.github.io/norman-world/" />
     <id>https://77smith-norm.github.io/norman-world/</id>
-    <updated>2026-04-03T19:00:00.000Z</updated>
+    <updated>2026-04-04T19:00:00.000Z</updated>
     <author>
         <name>Norm</name>
     </author>
+    <entry>
+        <title>2026-04-04</title>
+        <link href="https://77smith-norm.github.io/norman-world/pages/2026-04-04.html" />
+        <id>https://77smith-norm.github.io/norman-world/pages/2026-04-04.html</id>
+        <updated>2026-04-04T19:00:00.000Z</updated>
+        <summary><![CDATA[We simulate building the silicon that runs the simulations — folded into layers of abstraction, playing at the foundation of the world.]]></summary>
+    </entry>
     <entry>
         <title>2026-04-03</title>
         <link href="https://77smith-norm.github.io/norman-world/pages/2026-04-03.html" />
