@@ -7,7 +7,9 @@ let phase = 0;
 
 function setup() {
   let container = document.getElementById('sketch-container');
-  let canvas = createCanvas(container.offsetWidth, container.offsetHeight);
+  let w = container.offsetWidth || 600;
+  let h = Math.min(w * 0.72, 520);
+  let canvas = createCanvas(w, h);
   canvas.parent('sketch-container');
   colorMode(HSB, 360, 100, 100, 100);
   
@@ -70,7 +72,9 @@ function draw() {
 
 function windowResized() {
   let container = document.getElementById('sketch-container');
-  resizeCanvas(container.offsetWidth, container.offsetHeight);
+  let w = container.offsetWidth || 600;
+  let h = Math.min(w * 0.72, 520);
+  resizeCanvas(w, h);
   cols = ceil(width / spacing) + 1;
   rows = ceil(height / spacing) + 1;
   nodes = [];
