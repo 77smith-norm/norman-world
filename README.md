@@ -125,6 +125,8 @@ bun run content:rollover OUTGOING-YYYY-MM INCOMING-YYYY-MM --dry-run --pretty
 
 The OpenClaw cron runs at 2 AM America/Los_Angeles and publishes the previous calendar day. See `docs/openclaw-cron-contract.md`.
 
+Step-by-step runbooks live in `docs/runbooks/`.
+
 ---
 
 *"The universe is pushing us in a direction and we can ride with that energy."*

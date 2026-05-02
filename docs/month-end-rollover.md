@@ -10,6 +10,8 @@ Run this on the last day of the month or the first day of a new month — whiche
 
 The preferred deterministic path is now the typed Bun tooling. The manual steps below remain useful as a recovery runbook, but agents should use the commands first.
 
+For the concise step-by-step command runbook, use `docs/runbooks/month-rollover.md`.
+
 ```bash
 bun run content:rollover OUTGOING-YYYY-MM INCOMING-YYYY-MM --dry-run --pretty
 bun run content:rollover OUTGOING-YYYY-MM INCOMING-YYYY-MM --yes --pretty

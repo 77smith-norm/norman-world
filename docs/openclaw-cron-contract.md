@@ -14,6 +14,8 @@ Portrait: images/2026-05-02-norm.png
 
 ## Deterministic Tail
 
+For the full step-by-step operational procedure, use `docs/runbooks/daily-entry.md`.
+
 After the reflective/agent-assisted generation steps produce the structured entry JSON, portrait, and sketch, the cron should finish with deterministic commands:
 
 ```bash
