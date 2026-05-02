@@ -2,6 +2,8 @@
 
 Use this after any daily entry, archive, index, feed, portrait, sketch, or tooling change.
 
+The repo pre-commit hook also runs this validator, so bad homepage/archive/content states should fail before commit when `core.hooksPath` is set to `.githooks`.
+
 ## Fast Validation
 
 ```bash

@@ -2,3 +2,5 @@
 set -euo pipefail
 
 python3 scripts/optimize_staged_pngs.py
+
+bun run content:validate --pretty
