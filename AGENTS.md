@@ -54,6 +54,7 @@ bun run content:rollover OUTGOING-YYYY-MM INCOMING-YYYY-MM --dry-run --pretty
 - Never manually edit `feed.xml`; use `bun run content:feed`.
 - Prefer deterministic tools over ad hoc HTML surgery.
 - Preserve newest-first chronological order.
+- Homepage hero and social images must remain `assets/norman_world.png`; month landscapes belong only on month/year archive pages.
 - Use relative paths in HTML and CSS.
 - Do not rewrite historical daily content unless explicitly asked.
 - Run `bun run check` after TypeScript changes.

@@ -66,6 +66,7 @@ POST-PUSH:
 
 CONSTRAINTS:
 - Prefer deterministic Bun content tools over manual HTML/feed/index edits.
+- Keep the homepage hero and social images as `assets/norman_world.png`; month landscapes belong only on archive pages.
 - Never hand-write daily HTML structure; use `bun run content:entry`.
 - Never manually edit `feed.xml`; use `bun run content:feed`.
 - Do not use `ddgr` or broad web search for extra inspiration; Hacker News stories are enough.
