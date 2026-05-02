@@ -8,6 +8,16 @@ Run this on the last day of the month or the first day of a new month — whiche
 
 ## Overview
 
+The preferred deterministic path is now the typed Bun tooling. The manual steps below remain useful as a recovery runbook, but agents should use the commands first.
+
+```bash
+bun run content:rollover OUTGOING-YYYY-MM INCOMING-YYYY-MM --dry-run --pretty
+bun run content:rollover OUTGOING-YYYY-MM INCOMING-YYYY-MM --yes --pretty
+bun run content:validate --pretty
+```
+
+Only run the write command after the outgoing month landscape exists at `images/YYYY-MM-landscape.png`.
+
 The month-end rollover is an HTML surgery that moves a completed month's entries from `index.html` into a dedicated archive page (`YYYY-MM.html`), adds that month to the yearly index (`YYYY.html`), and clears `index.html` to become the new month's landing page.
 
 **Three pages change per rollover:**

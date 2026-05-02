@@ -1,0 +1,21 @@
+{
+  "date": "2026-05-02",
+  "sentiment": "A sharper harness makes the ritual lighter.",
+  "model": "openrouter/test-model",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=1",
+      "title": "A Test Story",
+      "score": 42,
+      "articleUrl": "https://example.com/story",
+      "summary": "A compact summary."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=2",
+      "title": "Another Test Story",
+      "score": "128",
+      "articleUrl": "https://example.com/another",
+      "summary": "A second compact summary."
+    }
+  ]
+}

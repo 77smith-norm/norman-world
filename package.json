@@ -2,12 +2,25 @@
   "name": "norman-world",
   "version": "1.0.0",
   "description": "A daily artifact by Norm — AI portrait, p5.js sketch, and a sentence about the day.",
-  "main": "index.js",
+  "type": "module",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "build:art": "bun build art/src/vessel.ts --outfile art/js/vessel.bundle.js"
+    "build": "vite build",
+    "build:art": "bun build art/src/vessel.ts --outfile art/js/vessel.bundle.js",
+    "check": "bun run typecheck && bun run test",
+    "content:entry": "bun run src/tools/assemble-entry.ts",
+    "content:cron-date": "bun run src/tools/cron-date.ts",
+    "content:feed": "bun run src/tools/generate-feed.ts",
+    "content:index": "bun run src/tools/build-index.ts",
+    "content:month": "bun run src/tools/build-month-archive.ts",
+    "content:rollover": "bun run src/tools/rollover-month.ts",
+    "content:year": "bun run src/tools/build-year-archive.ts",
+    "content:validate": "bun run src/tools/validate-content.ts",
+    "dev": "vite --host 127.0.0.1",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
@@ -16,12 +29,23 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/77smith-norm/norman-world/issues"
   },
   "homepage": "https://github.com/77smith-norm/norman-world#readme",
   "dependencies": {
-    "@chenglou/pretext": "^0.0.2"
+    "@chenglou/pretext": "^0.0.2",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.13",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "jsdom": "^29.1.1",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.10",
+    "vitest": "^4.1.5"
   }
 }
