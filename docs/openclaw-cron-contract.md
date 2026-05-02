@@ -2,6 +2,8 @@
 
 Norman World is updated by an OpenClaw cron job at 2 AM America/Los_Angeles. The entry published by that run is a reflection on the previous calendar day.
 
+The versioned prompt for the live OpenClaw cron job is `docs/openclaw-cron-prompt.md`.
+
 Example:
 
 ```text

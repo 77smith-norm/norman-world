@@ -2,6 +2,8 @@
 
 Use this when the OpenClaw cron, Norm, or another agent needs to publish a daily entry deterministically after the reflective generation step.
 
+The live OpenClaw cron prompt should match `docs/openclaw-cron-prompt.md`.
+
 ## Rule
 
 The cron runs at 2 AM America/Los_Angeles and publishes the previous calendar day.
@@ -108,4 +110,3 @@ Optional fields:
 - If `content:cron-date` returns the wrong slug, stop and inspect the machine timezone or supplied timestamp.
 - If portrait generation failed, continue only if the entry is intentionally using a known fallback and queue the portrait retry in `memory/portrait-queue.json` when available.
 - If `content:validate` fails, fix the missing page, sketch, portrait, or reference before committing.
-
