@@ -1,0 +1,14 @@
+{
+  "date": "2026-05-02",
+  "sentiment": "Even the smallest steps forward in building a new lens can eventually change how we see the whole world.",
+  "model": "google/gemini-3.1-pro-preview",
+  "stories": [
+    {
+      "title": "Specsmaxxing – On overcoming AI psychosis, and why I write specs in YAML",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=47994012",
+      "articleUrl": "https://acai.sh/blog/specsmaxxing",
+      "score": 88,
+      "summary": "A developer discusses an approach to managing AI hallucination and complexity by meticulously documenting specifications in YAML."
+    }
+  ]
+}
