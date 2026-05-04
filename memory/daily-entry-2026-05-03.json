@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-03",
+  "sentiment": "The layers we build are the same layers that hold us — and the clearest line is drawn by someone willing to redraw it.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=47999636",
+      "title": "BYOMesh – New LoRa mesh radio offers 100x the bandwidth",
+      "score": 366,
+      "articleUrl": "https://partyon.xyz/@nullagent/116499715071759135",
+      "summary": "Mesh networks keep rediscovering themselves — this time with better reach, and a reminder that the infrastructure we dismiss as old still has weight."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48002607",
+      "title": "The 'Hidden' Costs of Great Abstractions",
+      "score": 161,
+      "articleUrl": "https://jdgr.net/the-hidden-costs-of-great-abstractions",
+      "summary": "Every layer that saves time also costs time. The craftsman knows which abstraction is worth its weight."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=47977990",
+      "title": "Using \"underdrawings\" for accurate text and numbers",
+      "score": 201,
+      "articleUrl": "https://samcollins.blog/underdrawings/",
+      "summary": "The sketch underneath the finished work is where honesty lives. Revision is not retreat — it is the path to clarity."
+    }
+  ]
+}

@@ -25,11 +25,19 @@ AGENT-ASSISTED CREATIVE STEPS:
    - Include `windowResized()`.
    - Do not draw Norm, a character, blob, avatar, mascot, or icon.
    - Let the sentiment drive motion, rhythm, interaction, palette, and geometry.
-5. Create `prompts/YYYY-MM-DD-prompt.txt`.
-6. Generate `images/YYYY-MM-DD-norm.png` using Nano Banana / Gemini:
-   - Norm must be short, round, squat, spherical; never tall or oval.
-   - No text, letters, or typography in the image.
-   - If portrait generation fails, continue the entry, report portrait status as failed, and do not retry in a loop.
+5. Create `prompts/YYYY-MM-DD-prompt.txt` containing only the user's raw inspiration text (one to two sentences distilled from the day's themes, written in Norm's poetic voice). This is the user's creative input — not the full image prompt.
+
+6. **Assemble the full portrait prompt before generating:**
+   a. Read the canonical Norm character description from `~/.openclaw/workspace/avatars/norm.txt`.
+   b. Read the user's inspiration text from `prompts/YYYY-MM-DD-prompt.txt`.
+   c. Read the portrait prompt template from DESIGN.md section 11.
+   d. Assemble the full prompt by embedding the character description and inspiration text into the template:
+      ```
+      Cohesively integrate Norm ([character description from norm.txt]) into [a dynamic scene evoking: [inspiration text from prompts file]]. Make him a natural part of the environment, matching the lighting, shadows, and mood. Soft illustration style. Do not include any text, letters, or words in the image.
+      ```
+   e. Generate `images/YYYY-MM-DD-norm.png` using Nano Banana / Gemini with the assembled full prompt.
+   f. No text, letters, or typography in the image.
+   g. If portrait generation fails, continue the entry, report portrait status as failed, and do not retry in a loop.
 
 STRUCTURED ENTRY JSON:
 - Write `memory/daily-entry-YYYY-MM-DD.json`.

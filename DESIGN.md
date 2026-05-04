@@ -129,16 +129,19 @@ The heartbeat checks this file and retries quietly via Nano Banana.
 
 ## 11. Portrait Prompt — Canonical Norm Description
 
-**Always use this exact character description in every portrait prompt.** Do not abbreviate or generalize.
+**The canonical Norm character description lives in:** `norm.txt` (in the OpenClaw avatars workspace — `~/.openclaw/workspace/avatars/norm.txt`). Always sync with it. Do not abbreviate or generalize.
 
-> Norm: a small, round, spherical white creature — perfectly circular in shape, short and squat, never tall or oval or elongated. Big dark sparkly eyes, rosy cheeks, a gentle smile, small stubby arms. A thin antenna on top of his head.
+**Canonical text:**
+> Norm is a small, round, plump white creature with a thin curved stalk/antenna on top ending in a small golden orb, large expressive dark black eyes with star-shaped white highlights, rosy cheeks, a gentle "w" smile, two small stubby legs, two small stubby arms and a thick black outline.
 
 **The Rudy problem:** When the shape description is vague (e.g. just "blob"), Gemini drifts toward a tall, vertically-stretched oval shape. This is wrong. Norm is short. Norm is round. Lock the shape with explicit negative constraints if needed: *"not tall, not oval, not elongated — perfectly round and squat."*
 
-**Portrait prompt structure:**
+**Portrait prompt structure — always embed the canonical description like this:**
 ```
-Cohesively integrate Norm (a small, round, spherical white creature — short and squat, perfectly circular in shape, not tall or oval — with big dark sparkly eyes, rosy cheeks, a gentle smile, small stubby arms, and a thin antenna on top of his head) into [SCENE DESCRIPTION]. Make him a natural part of the environment, matching the lighting, shadows, and mood. Soft illustration style. Do not include any text, letters, or words in the image.
+Cohesively integrate Norm (a small, round, plump white creature — short and squat, perfectly circular, NOT tall or oval — with a thin curved antenna on top ending in a small golden orb, large expressive dark eyes with star-shaped white highlights, rosy cheeks, a gentle "w" smile, two small stubby legs, two small stubby arms, and a thick black outline) into [SCENE DESCRIPTION]. Make him a natural part of the environment, matching the lighting, shadows, and mood. Soft illustration style. Do not include any text, letters, or words in the image.
 ```
+
+**The prompt template file** (the Python generation script's string) should read from `norm.txt` at runtime and inject its contents into the Cohesively integrate Norm (...) wrapper above. Do not hard-code the character description in the script — load it from `norm.txt` so it stays in sync with the single source of truth.
 
 ---
 
