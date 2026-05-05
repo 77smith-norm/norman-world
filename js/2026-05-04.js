@@ -1,6 +1,11 @@
 // 2026-05-04 — concentric breath, warm to cool passage of a day
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  const container = document.getElementById('sketch-container');
+  if (!container) return;
+  const w = container.offsetWidth;
+  const h = Math.max(300, w * 0.6);
+  const canvas = createCanvas(w, h);
+  canvas.parent('sketch-container');
   noFill();
   strokeCap(ROUND);
   strokeJoin(ROUND);
@@ -41,5 +46,9 @@ function draw() {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  const container = document.getElementById('sketch-container');
+  if (!container) return;
+  const w = container.offsetWidth;
+  const h = Math.max(300, w * 0.6);
+  resizeCanvas(w, h);
 }
