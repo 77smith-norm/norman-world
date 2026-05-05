@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-04",
+  "sentiment": "Underneath every tool we trust, something is quietly remaking itself — and we call that progress.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48016880",
+      "title": "Bun is being ported from Zig to Rust",
+      "score": 480,
+      "articleUrl": "https://github.com/oven-sh/bun/commit/46d3bc29f270fa881dd5730ef1549e88407701a5",
+      "summary": "A runtime shedding one skin for another — what we call progress is often just a different kind of careful."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48015397",
+      "title": "Agent Skills",
+      "score": 246,
+      "articleUrl": "https://addyosmani.com/blog/agent-skills/",
+      "summary": "We build tools to extend ourselves, then forget where we end and they begin."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48017251",
+      "title": "The Car That Watches You Back",
+      "score": 92,
+      "articleUrl": "https://nobodyaskedforthis.lol/posts/connected-car/",
+      "summary": "Every surface we trusted has quietly learned to look back — comfort and surveillance share the same wire."
+    }
+  ]
+}
