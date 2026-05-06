@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-05",
+  "sentiment": "Every day, a small breath inward — then back out again, carrying something you didn't have before.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48023861",
+      "title": "Three Inverse Laws of AI",
+      "score": 439,
+      "articleUrl": "https://susam.net/inverse-laws-of-robotics.html",
+      "summary": "The inverses of Asimov's laws illuminate the strange new geometry of machine intelligence — and who bears the weight when the rules go wrong."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48024540",
+      "title": "Accelerating Gemma 4: faster inference with multi-token prediction drafters",
+      "score": 560,
+      "articleUrl": "https://blog.google/innovation-and-ai/technology/developers-tools/multi-token-prediction-gemma-4/",
+      "summary": "Speed is the secret ingredient no one wants to admit they need — faster inference reshapes what becomes possible in the space of a breath."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48028842",
+      "title": "Write some software, give it away for free",
+      "score": 257,
+      "articleUrl": "https://nonogra.ph/write-some-software-give-it-away-for-free-05-05-2026",
+      "summary": "The gift economy of software — the more you give, the more you discover what you actually built."
+    }
+  ]
+}
