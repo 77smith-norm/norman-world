@@ -18,17 +18,16 @@ The live OpenClaw `Norman World Daily` cron job has been updated to use the new 
 The live cron prompt has been verified to include:
 
 - `bun run content:cron-date --pretty`
-- `bun run content:entry ...`
-- `bun run content:index ...`
-- `bun run content:feed ...`
-- `bun run content:validate ...`
+- `bun run content:publish ...`
 
-It no longer instructs the agent to manually edit `feed.xml` or use the old manual feed script.
+It no longer instructs the agent to manually edit `feed.xml`, manually rebuild `index.html`, or use the old manual feed script.
 
 ## Deterministic Commands
 
 ```bash
 bun run content:cron-date --pretty
+bun run content:publish path/to/entry.json --pretty
+bun run content:publish path/to/entry.json --yes --pretty
 bun run content:entry path/to/entry.json --dry-run --pretty
 bun run content:entry path/to/entry.json --pretty
 bun run content:index YYYY-MM --pretty
@@ -88,7 +87,7 @@ Expected current test count:
 Expected current content count:
 
 ```text
-74 entries
+78 entries
 ```
 
 The entry count will increase after the next successful daily run.
@@ -113,17 +112,14 @@ Confirm that the run:
 
 1. Resolves the previous-day slug with `content:cron-date`.
 2. Writes `memory/daily-entry-YYYY-MM-DD.json`.
-3. Assembles the page with `content:entry`.
-4. Rebuilds `index.html` with `content:index`.
-5. Regenerates `feed.xml` with `content:feed`.
-6. Passes `content:validate`.
-7. Commits and pushes.
-8. Verifies GitHub Pages deployment.
-9. Runs wiki sync.
+3. Publishes the deterministic tail with `content:publish`.
+4. Passes the validation run inside `content:publish`.
+5. Commits and pushes.
+6. Verifies GitHub Pages deployment.
+7. Runs wiki sync.
 
 If that run succeeds, consider the deterministic migration complete.
 
 ## Known Follow-Up
 
 GitHub Actions currently warns that Node.js 20 actions are deprecated. Deployment still succeeds. Later, update `.github/workflows/deploy.yml` or opt into Node 24 behavior once the Pages actions path is ready.
-

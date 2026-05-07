@@ -15,6 +15,7 @@
     "content:feed": "bun run src/tools/generate-feed.ts",
     "content:index": "bun run src/tools/build-index.ts",
     "content:month": "bun run src/tools/build-month-archive.ts",
+    "content:publish": "bun run src/tools/publish-entry.ts",
     "content:rollover": "bun run src/tools/rollover-month.ts",
     "content:year": "bun run src/tools/build-year-archive.ts",
     "content:validate": "bun run src/tools/validate-content.ts",

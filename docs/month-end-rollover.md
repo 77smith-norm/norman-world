@@ -2,6 +2,8 @@
 
 **Canonical operations document for closing a month and creating its archive page.**
 
+Historical note: the March-to-April examples in this file are examples only. They do not describe the current month. For current work, prefer the concise runbook and substitute the actual outgoing/incoming months.
+
 Run this on the last day of the month or the first day of a new month — whichever is sooner after the final midnight entry has been generated.
 
 ---

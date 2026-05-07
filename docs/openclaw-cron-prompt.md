@@ -25,17 +25,21 @@ AGENT-ASSISTED CREATIVE STEPS:
    - Include `windowResized()`.
    - Do not draw Norm, a character, blob, avatar, mascot, or icon.
    - Let the sentiment drive motion, rhythm, interaction, palette, and geometry.
-5. Create `prompts/YYYY-MM-DD-prompt.txt` containing only the user's raw inspiration text (one to two sentences distilled from the day's themes, written in Norm's poetic voice). This is the user's creative input — not the full image prompt.
+5. Write one short scene inspiration phrase from the sentiment and story themes. Keep it concrete and visual.
 
-6. **Assemble the full portrait prompt before generating:**
+6. **Assemble and save the full portrait prompt before generating:**
    a. Read the canonical Norm character description from `~/.openclaw/workspace/avatars/norm.txt`.
-   b. Read the user's inspiration text from `prompts/YYYY-MM-DD-prompt.txt`.
-   c. Read the portrait prompt template from DESIGN.md section 11.
-   d. Assemble the full prompt by embedding the character description and inspiration text into the template:
+   b. Read the portrait prompt template from DESIGN.md section 11.
+   c. Assemble the full prompt by embedding the character description and scene inspiration into the template:
       ```
-      Cohesively integrate Norm ([character description from norm.txt]) into [a dynamic scene evoking: [inspiration text from prompts file]]. Make him a natural part of the environment, matching the lighting, shadows, and mood. Soft illustration style. Do not include any text, letters, or words in the image.
+      Cohesively integrate Norm ([character description from norm.txt]) into [SCENE DESCRIPTION]. Make him a natural part of the environment, matching the lighting, shadows, and mood. Soft illustration style. Do not include any text, letters, or words in the image.
       ```
-   e. Generate `images/YYYY-MM-DD-norm.png` using Nano Banana / Gemini with the assembled full prompt.
+   d. Save that exact full generation prompt to `prompts/YYYY-MM-DD-prompt.txt`.
+   e. Generate `images/YYYY-MM-DD-norm.png` using Nano Banana / Gemini with the exact prompt saved in `prompts/YYYY-MM-DD-prompt.txt`.
+      - In OpenClaw, use the `image_generate` tool in edit/reference mode when it is available.
+      - Use `/Users/norm/.openclaw/workspace/avatars/norm.png` as the reference image if repo-root `norm.png` is not allowed by the tool sandbox.
+      - Request PNG output and an absolute output path: `/Users/norm/Developer/norman-world/images/YYYY-MM-DD-norm.png`.
+      - If the tool saves into an OpenClaw media/output directory instead, copy the generated PNG to `/Users/norm/Developer/norman-world/images/YYYY-MM-DD-norm.png`.
    f. No text, letters, or typography in the image.
    g. If portrait generation fails, continue the entry, report portrait status as failed, and do not retry in a loop.
 
@@ -50,12 +54,11 @@ DETERMINISTIC TAIL:
 Run these commands exactly from `/Users/norm/Developer/norman-world`, replacing `YYYY-MM-DD` and `YYYY-MM` with `content:cron-date` output:
 
 ```bash
-bun run content:entry memory/daily-entry-YYYY-MM-DD.json --dry-run --pretty
-bun run content:entry memory/daily-entry-YYYY-MM-DD.json --pretty
-bun run content:index YYYY-MM --pretty
-bun run content:feed --pretty
-bun run content:validate --pretty
+bun run content:publish memory/daily-entry-YYYY-MM-DD.json --pretty
+bun run content:publish memory/daily-entry-YYYY-MM-DD.json --yes --pretty
 ```
+
+`content:publish` handles entry assembly, current-month index rebuild, feed regeneration, and content validation. Use the lower-level commands only for focused repair/debugging.
 
 COMMIT AND PUSH:
 ```bash

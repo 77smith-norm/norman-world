@@ -16,6 +16,8 @@ printJson({
   cronTimeZone: "America/Los_Angeles",
   entryDate,
   entryMonth: monthSlugFromDateSlug(entryDate),
+  entryJson: `memory/daily-entry-${entryDate}.json`,
+  prompt: `prompts/${entryDate}-prompt.txt`,
   page: `pages/${entryDate}.html`,
   sketch: `js/${entryDate}.js`,
   portrait: `images/${entryDate}-norm.png`

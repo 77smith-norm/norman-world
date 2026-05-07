@@ -40,6 +40,17 @@ If the prompt file is missing, use the `prompt` field from the queue JSON.
 
 ### Path A: Automated Generation (Gemini CLI + Nano Banana)
 
+Use OpenClaw `image_generate` in edit/reference mode if the run has that tool available. Set:
+
+- `prompt`: the exact full prompt from `prompts/YYYY-MM-DD-prompt.txt`
+- `image`: `/Users/norm/.openclaw/workspace/avatars/norm.png` if repo-root `norm.png` is not allowed
+- `outputFormat`: `png`
+- `filename`: `/Users/norm/Developer/norman-world/images/YYYY-MM-DD-norm.png`
+
+If OpenClaw writes the generated file to a media/output directory instead of the requested filename, copy the PNG to `images/YYYY-MM-DD-norm.png`.
+
+Gemini CLI remains the fallback path when `image_generate` is unavailable:
+
 1. Source nvm: `source ~/.nvm/nvm.sh && nvm use --lts`
 2. Read the API key from openclaw.json at `skills.entries.gemini.env.NANOBANANA_GEMINI_API_KEY`
 3. Run from the norman-world repo root:
@@ -76,24 +87,21 @@ cp /Users/norm/.openclaw/media/inbound/<filename> \
 
 ---
 
-## Step 4: Add Portrait to Entry Page
+## Step 4: Rebuild Entry Page References
 
-The entry file is at `pages/YYYY-MM-DD.html`.
+The entry file is at `pages/YYYY-MM-DD.html`. Prefer the deterministic assembler over manual HTML edits:
 
-Add a `<section class="portrait">` block **between** the sentiment section and
-the sketch section:
-
-```html
-<section class="portrait">
-    <img src="../images/YYYY-MM-DD-norm.png" alt="[full prompt text from prompts/YYYY-MM-DD-prompt.txt]" class="norm-portrait">
-</section>
+```bash
+cd ~/Developer/norman-world
+bun run content:entry memory/daily-entry-YYYY-MM-DD.json --dry-run --pretty
+bun run content:entry memory/daily-entry-YYYY-MM-DD.json --pretty
 ```
 
 **Key rules:**
-- Always use `../images/` prefix (entries are inside `pages/`)
-- The `alt` attribute must contain the full Nano Banana prompt text
-- Do not wrap the `<img>` in a `<p>` tag
-- The section goes after `</section>` (sentiment) and before `<section class="sketch">`
+- Do not hand-write daily HTML when the entry JSON exists.
+- The template uses `../images/YYYY-MM-DD-norm.png` because entries are inside `pages/`.
+- Entry assembly defaults the `alt` attribute to `Norm portrait for {title}` unless the JSON includes `portraitAlt`.
+- If the JSON is missing during a historical repair, recreate the JSON first from the page content and then run the assembler.
 
 ---
 

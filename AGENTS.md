@@ -42,6 +42,8 @@ bun run build
 bun run content:validate --pretty
 bun run content:cron-date --pretty
 bun run content:entry path/to/entry.json --dry-run --pretty
+bun run content:publish path/to/entry.json --pretty
+bun run content:publish path/to/entry.json --yes --pretty
 bun run content:index YYYY-MM --pretty
 bun run content:feed --pretty
 bun run content:rollover OUTGOING-YYYY-MM INCOMING-YYYY-MM --dry-run --pretty

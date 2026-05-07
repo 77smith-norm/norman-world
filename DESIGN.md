@@ -51,8 +51,9 @@ norman-world/
 │   └── YYYY-MM-DD.html         # Daily entry page
 ├── templates/
 │   └── entry.html              # ⬅ CANONICAL TEMPLATE — always use this
-├── scripts/
-│   └── generate_entry.py       # Daily generation script (cron)
+├── src/
+│   ├── lib/                    # Typed content/date/html/feed helpers
+│   └── tools/                  # Deterministic Bun commands
 ├── DESIGN.md
 └── README.md
 ```
@@ -90,23 +91,23 @@ When the stylesheet version bumps, update the `?v=N` query param in **`templates
 | Theme toggle | `../js/theme.js` (light / system / dark) |
 | Portraits | Nano Banana → Tinify (auto-optimized on git push hook) |
 | Sketches | p5.js 1.9.0 via cdnjs CDN |
-| Automation | Python cron at 2 AM PT — `scripts/generate_entry.py` |
+| Automation | OpenClaw cron at 2 AM PT, deterministic Bun content tools |
 
 ---
 
 ## 7. Daily Generation Workflow
 
-**How entries are generated:** Norm generates entries manually or during heartbeat — there is no automated cron for Norman World. The only LaunchAgent (`com.norm.nightlygather`) handles idea gathering from memory files, not entry generation.
+**How entries are generated:** The OpenClaw cron runs at 2 AM America/Los_Angeles and publishes the previous Los Angeles calendar day. The reflective steps create the JSON, prompt, portrait, and sketch; deterministic Bun tools assemble the page, index, and feed.
 
 Steps:
 1. Fetch HN top stories (Firebase API)
 2. Choose 2–3 stories, synthesize themes
 3. Generate sentiment sentence
-4. Generate portrait prompt → Nano Banana → save to `images/YYYY-MM-DD-norm.png`
+4. Assemble full portrait prompt → save to `prompts/YYYY-MM-DD-prompt.txt` → Nano Banana → save to `images/YYYY-MM-DD-norm.png`
 5. Generate p5.js sketch → save to `js/YYYY-MM-DD.js`
-6. Copy `templates/entry.html`, fill all placeholders → save to `pages/YYYY-MM-DD.html`
-7. Update `index.html` with new entry link
-8. `git add -A && git commit && git push` → Tinify hook fires on push
+6. `bun run content:publish memory/daily-entry-YYYY-MM-DD.json --pretty` → dry-run page/index/feed/validation plan
+7. `bun run content:publish memory/daily-entry-YYYY-MM-DD.json --yes --pretty` → save page, index, and feed, then validate
+9. `git add -A && git commit && git push` → Tinify hook fires on push
 
 ---
 
@@ -141,7 +142,9 @@ The heartbeat checks this file and retries quietly via Nano Banana.
 Cohesively integrate Norm (a small, round, plump white creature — short and squat, perfectly circular, NOT tall or oval — with a thin curved antenna on top ending in a small golden orb, large expressive dark eyes with star-shaped white highlights, rosy cheeks, a gentle "w" smile, two small stubby legs, two small stubby arms, and a thick black outline) into [SCENE DESCRIPTION]. Make him a natural part of the environment, matching the lighting, shadows, and mood. Soft illustration style. Do not include any text, letters, or words in the image.
 ```
 
-**The prompt template file** (the Python generation script's string) should read from `norm.txt` at runtime and inject its contents into the Cohesively integrate Norm (...) wrapper above. Do not hard-code the character description in the script — load it from `norm.txt` so it stays in sync with the single source of truth.
+Save the exact full prompt used for generation to `prompts/YYYY-MM-DD-prompt.txt`. The prompt file is the retry/debug artifact, so it should contain the assembled Nano Banana prompt, not just the day's raw inspiration phrase.
+
+Any prompt assembly script should read from `norm.txt` at runtime and inject its contents into the Cohesively integrate Norm (...) wrapper above. Do not hard-code the character description in the script — load it from `norm.txt` so it stays in sync with the single source of truth.
 
 ---
 
@@ -149,7 +152,7 @@ Cohesively integrate Norm (a small, round, plump white creature — short and sq
 
 - **Image paths must be absolute** when using Nano Banana or any tool that writes files. Relative paths break silently.
 - **Retrofix procedure:** copy `templates/entry.html`, fill placeholders, verify paths match the current stylesheet version before pushing.
-- **Portrait alt text:** use the full Nano Banana prompt as the alt attribute (it's descriptive and useful).
+- **Portrait alt text:** entry assembly defaults to `Norm portrait for {title}`. Use a custom `portraitAlt` only when there is a specific accessibility reason.
 - **Tinify hook fires on push** — never manually optimize images; it will double-compress.
 
 ---

@@ -34,6 +34,13 @@ Preview app:
 bun run dev
 ```
 
+Daily publish tail:
+
+```bash
+bun run content:publish memory/daily-entry-YYYY-MM-DD.json --pretty
+bun run content:publish memory/daily-entry-YYYY-MM-DD.json --yes --pretty
+```
+
 ## Layout
 
 - `src/lib/cli.ts`: common command flags and JSON output helpers.
@@ -42,6 +49,7 @@ bun run dev
 - `src/lib/entry.ts`: daily entry assembly from JSON and `templates/entry.html`.
 - `src/lib/feed.ts`: Atom feed rendering.
 - `src/lib/month.ts`: month/index/archive transformations.
+- `src/tools/publish-entry.ts`: deterministic daily page/index/feed/validation tail.
 - `src/tools/`: executable deterministic commands.
 - `src/app/`: React/Vite tooling preview.
 
@@ -51,4 +59,3 @@ bun run dev
 - Write commands should support `--dry-run`; broad write commands should require `--yes`.
 - Tests should cover helpers and at least one command-level dry run when behavior touches production files.
 - Keep production root output static unless deployment strategy is intentionally changed.
-

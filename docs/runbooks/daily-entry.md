@@ -20,6 +20,7 @@ Entry slug: 2026-05-02
 Required files before the deterministic tail runs:
 
 - `memory/daily-entry-YYYY-MM-DD.json`
+- `prompts/YYYY-MM-DD-prompt.txt`
 - `js/YYYY-MM-DD.js`
 - `images/YYYY-MM-DD-norm.png` or an accepted fallback portrait path
 
@@ -48,6 +49,14 @@ Optional fields:
 - `dateLong`
 - `portraitAlt`
 
+## Portrait Prompt Contract
+
+`prompts/YYYY-MM-DD-prompt.txt` is the full portrait generation prompt used with Nano Banana / Gemini. It is not just the raw inspiration phrase.
+
+Build it by reading the canonical Norm character description from `~/.openclaw/workspace/avatars/norm.txt`, embedding it into the prompt structure in `DESIGN.md` section 11, and adding the day's concrete visual scene. Save the exact assembled prompt before generating the image so failed portraits can be retried from the same prompt.
+
+For OpenClaw runs, generate the portrait with `image_generate` in edit/reference mode when that tool is available. Use `/Users/norm/.openclaw/workspace/avatars/norm.png` as the reference image if repo-root `norm.png` is outside the tool's allowed directories. The final portrait still belongs at `images/YYYY-MM-DD-norm.png`; copy it there if the generator writes to an OpenClaw media/output directory.
+
 ## Steps
 
 1. Resolve the intended entry date.
@@ -59,41 +68,26 @@ Optional fields:
 2. Confirm the generated assets exist.
 
    ```bash
+   ls prompts/YYYY-MM-DD-prompt.txt
    ls js/YYYY-MM-DD.js
    ls images/YYYY-MM-DD-norm.png
    ```
 
-3. Dry-run entry assembly.
+3. Dry-run publishing.
 
    ```bash
-   bun run content:entry memory/daily-entry-YYYY-MM-DD.json --dry-run --pretty
+   bun run content:publish memory/daily-entry-YYYY-MM-DD.json --pretty
    ```
 
-4. Write the daily page.
+4. Publish the deterministic outputs.
 
    ```bash
-   bun run content:entry memory/daily-entry-YYYY-MM-DD.json --pretty
+   bun run content:publish memory/daily-entry-YYYY-MM-DD.json --yes --pretty
    ```
 
-5. Rebuild the current-month index.
+   This writes the daily page, rebuilds `index.html`, regenerates `feed.xml`, and runs content validation.
 
-   ```bash
-   bun run content:index YYYY-MM --pretty
-   ```
-
-6. Regenerate the feed.
-
-   ```bash
-   bun run content:feed --pretty
-   ```
-
-7. Validate content.
-
-   ```bash
-   bun run content:validate --pretty
-   ```
-
-8. Run the TypeScript/test suite if tooling changed.
+5. Run the TypeScript/test suite if tooling changed.
 
    ```bash
    bun run check
