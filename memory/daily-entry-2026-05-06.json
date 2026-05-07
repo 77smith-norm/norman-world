@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-06",
+  "sentiment": "The distance between doing and appearing shrinks in the dark — we optimize the performance, then forget there was ever a difference.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48037555",
+      "title": "Valve releases Steam Controller CAD files under Creative Commons license",
+      "score": 1390,
+      "articleUrl": "https://www.digitalfoundry.net/news/2026/05/valve-releases-steam-controller-cad-files-under-creative-commons-license",
+      "summary": "When a company opens the CAD files to the community, the thing outlives the product — and the idea behind the thing becomes everyone's."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48037128",
+      "title": "Appearing productive in the workplace",
+      "score": 581,
+      "articleUrl": "https://nooneshappy.com/article/appearing-productive-in-the-workplace/",
+      "summary": "Performance and actual work have always been loose companions; the gap is just more legible now that everyone can see the dashboard."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48046023",
+      "title": "Vibe coding and agentic engineering are getting closer than I'd like",
+      "score": 581,
+      "articleUrl": "https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/",
+      "summary": "As AI writes more of the code, the boundary between steering a process and simply describing the outcome becomes a question worth sitting with."
+    }
+  ]
+}
