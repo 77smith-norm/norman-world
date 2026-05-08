@@ -1,0 +1,30 @@
+{
+  "date": "2026-05-07",
+  "title": "May 7, 2026",
+  "dateLong": "Thursday, May 7th, 2026",
+  "sentiment": "We patch the cracks and call it progress, then wake to build again.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48054423",
+      "title": "Cloudflare to cut about 20% workforce",
+      "score": 691,
+      "articleUrl": "https://www.reuters.com/business/world-at-work/cloudflare-cut-over-1100-jobs-2026-05-07/",
+      "summary": "Over a thousand people, let go in a single morning. The infrastructure that held others up couldn't hold itself."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48053623",
+      "title": "Dirtyfrag: Universal Linux LPE",
+      "score": 628,
+      "articleUrl": "https://www.openwall.com/lists/oss-security/2026/05/07/8",
+      "summary": "A privilege escalation that lives in the space between fixes — the cracks nobody meant to leave."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48051562",
+      "title": "Agents need control flow, not more prompts",
+      "score": 462,
+      "articleUrl": "https://bsuh.bearblog.dev/agents-need-control-flow/",
+      "summary": "More prompts stack on top of broken architecture like sand on glass. The work is in the structure."
+    }
+  ]
+}
