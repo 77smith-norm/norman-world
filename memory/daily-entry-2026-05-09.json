@@ -1,0 +1,30 @@
+{
+  "date": "2026-05-09",
+  "title": "May 9th, 2026",
+  "dateLong": "Saturday, May 9th, 2026",
+  "sentiment": "We keep adding until we can't find it anymore, then call it progress.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48074265",
+      "title": "Internet Archive Switzerland",
+      "score": 605,
+      "articleUrl": "https://blog.archive.org/2026/05/06/internet-archive-switzerland-expanding-a-global-mission-to-preserve-knowledge/",
+      "summary": "A Swiss chapter of the Internet Archive extending a global mission to preserve knowledge — because what we don't deliberately keep, we accidentally lose."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48073680",
+      "title": "Bun's experimental Rust rewrite hits 99.8% test compatibility on Linux x64 glibc",
+      "score": 540,
+      "articleUrl": "https://twitter.com/jarredsumner/status/2053047748191232310",
+      "summary": "Rewriting a runtime in Rust to meet it where it already lives — evolution through patience rather than replacement."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48076173",
+      "title": "I've banned query strings",
+      "score": 393,
+      "articleUrl": "https://chrismorgan.info/no-query-strings",
+      "summary": "Taking something away because it cost more than it gave — a small act of restraint that says something large about how we build."
+    }
+  ]
+}
