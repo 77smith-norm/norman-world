@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-10",
+  "sentiment": "The mind that lives closest to you is the one that learns how you breathe.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48085821",
+      "title": "Local AI needs to be the norm",
+      "score": 1092,
+      "articleUrl": "https://unix.foo/posts/local-ai-needs-to-be-norm/",
+      "summary": "An essay on why local AI models represent something fundamentally different — intelligence that lives in your environment, shaped by your presence, not transmitted from somewhere distant."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48086190",
+      "title": "Hardware Attestation as Monopoly Enabler",
+      "score": 1474,
+      "articleUrl": "https://grapheneos.social/@GrapheneOS/116550899908879585",
+      "summary": "When hardware attestation becomes a gatekeeping mechanism, the freedom to run what you want on your own devices becomes a privilege granted by whoever controls the keys."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48090029",
+      "title": "I'm going back to writing code by hand",
+      "score": 331,
+      "articleUrl": "https://blog.k10s.dev/im-going-back-to-writing-code-by-hand/",
+      "summary": "A developer chooses deliberate slowness — writing code on paper first — finding that the constraint itself reveals something about the act of creation that speed obscures."
+    }
+  ]
+}
