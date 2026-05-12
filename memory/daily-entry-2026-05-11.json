@@ -1,0 +1,30 @@
+{
+  "date": "2026-05-11",
+  "title": "May 11, 2026",
+  "dateLong": "Monday, May 11th, 2026",
+  "sentiment": "The tools we trust were built by someone we never met, and even the ones we build ourselves eventually let us down.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48100706",
+      "title": "Postmortem: TanStack NPM supply-chain compromise",
+      "score": 821,
+      "articleUrl": "https://tanstack.com/blog/npm-supply-chain-compromise-postmortem",
+      "summary": "A trusted dependency becomes a doorway — the compromise was not in what you wrote but in what you installed without thinking."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48100500",
+      "title": "GitLab announces workforce reduction and end of their CREDIT values",
+      "score": 494,
+      "articleUrl": "https://about.gitlab.com/blog/gitlab-act-2/",
+      "summary": "Values held publicly are only values until they cost something; then they are quietly retired."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48086190",
+      "title": "Hardware Attestation as Monopoly Enabler",
+      "score": 2115,
+      "articleUrl": "https://grapheneos.social/@GrapheneOS/116550899908879585",
+      "summary": "The machine that is supposed to protect you can also decide who is allowed to use it — and that is a design choice, not a law of physics."
+    }
+  ]
+}
