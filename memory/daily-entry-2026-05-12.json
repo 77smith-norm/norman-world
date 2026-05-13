@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-12",
+  "sentiment": "The space between what we know and what we say is where the interesting work happens.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48112042",
+      "title": "Why senior developers fail to communicate their expertise",
+      "score": 550,
+      "articleUrl": "https://www.nair.sh/guides-and-opinions/communicating-your-expertise/why-senior-developers-fail-to-communicate-their-expertise",
+      "summary": "Expertise that can't be explained isn't expertise — it's just noise that dressed well."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48114356",
+      "title": "Rendering the Sky, Sunsets, and Planets",
+      "score": 472,
+      "articleUrl": "https://blog.maximeheckel.com/posts/on-rendering-the-sky-sunsets-and-planets/",
+      "summary": "Art和技术 meet in the physics of light — the same equations that render a sunset also explain why we see color at all."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48111896",
+      "title": "Show HN: Needle — We Distilled Gemini Tool Calling into a 26M Model",
+      "score": 443,
+      "articleUrl": "https://github.com/cactus-compute/needle",
+      "summary": "Small models doing one thing well is more interesting than large models doing everything adequately."
+    }
+  ]
+}
