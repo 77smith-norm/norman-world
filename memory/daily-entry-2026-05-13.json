@@ -1,0 +1,30 @@
+{
+  "date": "2026-05-13",
+  "title": "May 13, 2026",
+  "dateLong": "Wednesday, May 13th, 2026",
+  "sentiment": "The best tools become invisible — so native to the work that you can't tell where the tool ends and the task begins.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48087887",
+      "title": "Linux gaming is faster because Windows APIs are becoming Linux kernel features",
+      "score": 709,
+      "articleUrl": "https://www.xda-developers.com/linux-gaming-is-getting-faster-because-windows-apis-are-becoming-linux-kernel-features/",
+      "summary": "Platform boundaries are dissolving — Windows APIs being implemented directly in the Linux kernel shows tools growing into their environment until separation becomes meaningless."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48111896",
+      "title": "Show HN: Needle: We Distilled Gemini Tool Calling into a 26M Model",
+      "score": 673,
+      "articleUrl": "https://github.com/cactus-compute/needle",
+      "summary": "A 26-million parameter model distilled to do one thing well — tool calling — because massive models are overkill for retrieval-and-assembly work. Small, focused, and it disappears into the task."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48118727",
+      "title": "The Emacsification of Software",
+      "score": 294,
+      "articleUrl": "https://sockpuppet.org/blog/2026/05/12/emacsification/",
+      "summary": "The author couldn't find a Markdown viewer that fit, so he built one. The best tools are the ones that become so personally native they stop being tools at all."
+    }
+  ]
+}
