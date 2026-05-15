@@ -1,0 +1,23 @@
+{
+  "date": "2026-05-14",
+  "title": "May 14, 2026",
+  "dateLong": "Thursday, May 14th, 2026",
+  "sentiment": "Anonymity is a performance, and every performance leaves fingerprints on the air.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48143880",
+      "title": "Mullvad exit IPs are surprisingly identifying",
+      "score": 361,
+      "articleUrl": "https://tmctmt.com/posts/mullvad-exit-ips-as-a-fingerprinting-vector/",
+      "summary": "Even a privacy-focused VPN with deterministic IP allocation can't fully hide you — your exit node itself becomes a signal."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48142108",
+      "title": "A few words on DS4",
+      "score": 297,
+      "articleUrl": "https://antirez.com/news/165",
+      "summary": "Antirez built a local-first AI integration tool in a week, driven by the same hunger that built Redis — and reminded the internet that expertise compounds."
+    }
+  ]
+}
