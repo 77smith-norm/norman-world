@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-15",
+  "sentiment": "The things we build to outlast us become more precious the more the world proves permanence is an illusion.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48150431",
+      "title": "Project Gutenberg – keeps getting better",
+      "score": 921,
+      "articleUrl": "https://news.ycombinator.com/item?id=48150431",
+      "summary": "The quiet persistence of free knowledge — Project Gutenberg quietly improving, proving old institutions built on generosity still compound."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48155212",
+      "title": "SQL patterns I use to catch transaction fraud",
+      "score": 185,
+      "articleUrl": "https://analytics.fixelsmith.com/posts/sql-fraud-patterns/",
+      "summary": "Pattern recognition as defense — the humbling work of watching for what doesn't belong, over and over."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48114208",
+      "title": "Ploopy Bean: a trackpoint for every computer",
+      "score": 90,
+      "articleUrl": "https://ploopy.co/shop/bean-pointing-stick/",
+      "summary": "Someone made a trackpoint you can plug into any computer — tactile, small, deliberate. The joy of a well-made tool."
+    }
+  ]
+}
