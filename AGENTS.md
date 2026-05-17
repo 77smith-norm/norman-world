@@ -10,6 +10,7 @@ This file is the agent entry point, not the full manual. For harness-engineering
 - Daily deterministic publishing: `docs/runbooks/daily-entry.md`
 - Month-end rollover: `docs/runbooks/month-rollover.md`
 - Content validation and repair: `docs/runbooks/content-validation.md`
+- Sketch layout repair: `docs/runbooks/sketch-layout.md`
 - Hero image variants: `docs/runbooks/hero-variants.md`
 - Tooling architecture: `docs/runbooks/tooling.md`
 - Visual/design constraints: `DESIGN.md`

@@ -11,7 +11,8 @@ function setup() {
   if (!container) return;
   const w = container.offsetWidth || window.innerWidth;
   const h = Math.min(window.innerHeight * 0.6, 520);
-  createCanvas(w, h);
+  const cnv = createCanvas(w, h);
+  cnv.parent('sketch-container');
   colorMode(RGB);
   noStroke();
 

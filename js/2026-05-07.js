@@ -5,7 +5,8 @@ let shards = [];
 let裂缝;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  const cnv = createCanvas(windowWidth, windowHeight);
+  cnv.parent('sketch-container');
   colorMode(HSB, 360, 100, 100, 100);
   noStroke();
 

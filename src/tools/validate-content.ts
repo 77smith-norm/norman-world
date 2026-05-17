@@ -3,7 +3,7 @@ import path from "node:path";
 import { parseCliArgs, printJson } from "../lib/cli";
 import { listEntries } from "../lib/content";
 import { sitePaths } from "../lib/paths";
-import { validateCurrentMonthIndex, validateHomePage, validateYearArchive } from "../lib/site-invariants";
+import { validateCurrentMonthIndex, validateEntryPage, validateEntrySketch, validateHomePage, validateYearArchive } from "../lib/site-invariants";
 
 interface ValidationError {
   file: string;
@@ -21,6 +21,7 @@ errors.push(...validateCurrentMonthIndex(homeHtml));
 for (const entry of entries) {
   const pageFile = path.join(sitePaths.pages, entry.file);
   const html = fs.readFileSync(pageFile, "utf8");
+  const sketchPath = path.join(sitePaths.repoRoot, "js", `${entry.slug}.js`);
 
   if (!entry.portraitPath) {
     errors.push({ file: entry.pagePath, message: `Missing portrait for ${entry.slug}` });
@@ -30,8 +31,12 @@ for (const entry of entries) {
     errors.push({ file: entry.pagePath, message: `Missing sketch script ../js/${entry.slug}.js` });
   }
 
-  if (!fs.existsSync(path.join(sitePaths.repoRoot, "js", `${entry.slug}.js`))) {
+  errors.push(...validateEntryPage(html, entry.slug));
+
+  if (!fs.existsSync(sketchPath)) {
     errors.push({ file: `js/${entry.slug}.js`, message: "Missing sketch file" });
+  } else {
+    errors.push(...validateEntrySketch(fs.readFileSync(sketchPath, "utf8"), entry.slug));
   }
 }
 

@@ -104,6 +104,108 @@ export function validateCurrentMonthIndex(html: string): ValidationError[] {
   return errors;
 }
 
+const VALID_SKETCH_MOUNT_IDS = ["sketch-container", "canvas-container"] as const;
+
+export function validateEntryPage(html: string, slug: string): ValidationError[] {
+  const errors: ValidationError[] = [];
+  const pageFile = `pages/${slug}.html`;
+
+  const sketchSection = html.match(/<section class="sketch">[\s\S]*?<\/section>/);
+  if (!sketchSection) {
+    errors.push({
+      file: pageFile,
+      message: "Entry page is missing the <section class=\"sketch\"> wrapper"
+    });
+    return errors;
+  }
+
+  const mountIds = collectMountIds(sketchSection[0]);
+  if (mountIds.length === 0) {
+    errors.push({
+      file: pageFile,
+      message: `Entry page is missing a sketch mount inside <section class="sketch">; expected one of ${formatList(VALID_SKETCH_MOUNT_IDS)} as <div id="...">. Without it the p5.js sketch has no mount point and renders at the bottom of <body>.`
+    });
+  }
+
+  if (!/<script[^>]+p5(?:\.min)?\.js/i.test(html)) {
+    errors.push({
+      file: pageFile,
+      message: "Entry page does not load p5.js (no <script> referencing p5.js or p5.min.js)"
+    });
+  }
+
+  return errors;
+}
+
+export function validateEntrySketch(jsSource: string, slug: string, mountIds: readonly string[] = VALID_SKETCH_MOUNT_IDS): ValidationError[] {
+  const errors: ValidationError[] = [];
+  const sketchFile = `js/${slug}.js`;
+
+  if (!jsSource.trim()) {
+    errors.push({ file: sketchFile, message: "Sketch file is empty" });
+    return errors;
+  }
+
+  const code = stripJsCommentsAndStrings(jsSource);
+  const usesCreateCanvas = /\bcreateCanvas\s*\(/.test(code);
+  const usesInstanceMode = /\bnew\s+p5\s*\(/.test(code);
+
+  if (!usesCreateCanvas && !usesInstanceMode) {
+    errors.push({
+      file: sketchFile,
+      message: `Sketch never calls createCanvas() or \`new p5(...)\` — no canvas will appear inside ${formatList(mountIds)}`
+    });
+    return errors;
+  }
+
+  const mountList = mountIds.length > 0 ? mountIds : VALID_SKETCH_MOUNT_IDS;
+  const mountAlternation = mountList.map(escapeRegex).join("|");
+
+  if (usesInstanceMode) {
+    if (!new RegExp(`['"](${mountAlternation})['"]`).test(jsSource)) {
+      errors.push({
+        file: sketchFile,
+        message: `Sketch uses instance mode but does not reference a known mount id (${formatList(mountList)}) — canvas will mount on <body>`
+      });
+    }
+    return errors;
+  }
+
+  if (!new RegExp(`\\.parent\\s*\\(\\s*['"](${mountAlternation})['"]\\s*\\)`).test(jsSource)) {
+    errors.push({
+      file: sketchFile,
+      message: `Sketch calls createCanvas() but never \`.parent('sketch-container')\` (or another valid mount: ${formatList(mountList)}); p5.js will append the canvas to <body>, pushing it below the entry layout`
+    });
+  }
+
+  return errors;
+}
+
+function collectMountIds(sketchSectionHtml: string): string[] {
+  const ids: string[] = [];
+  for (const id of VALID_SKETCH_MOUNT_IDS) {
+    if (new RegExp(`<div\\s+id="${id}"\\s*>\\s*</div>`).test(sketchSectionHtml)) {
+      ids.push(id);
+    }
+  }
+  return ids;
+}
+
+function escapeRegex(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function formatList(values: readonly string[]): string {
+  return values.map((value) => `'${value}'`).join(" or ");
+}
+
+function stripJsCommentsAndStrings(source: string): string {
+  return source
+    .replace(/\/\*[\s\S]*?\*\//g, "")
+    .replace(/(^|[^:])\/\/[^\n]*/g, "$1")
+    .replace(/(['"`])(?:\\.|(?!\1).)*\1/g, '""');
+}
+
 export function validateYearArchive(html: string, year: number): ValidationError[] {
   const errors: ValidationError[] = [];
   const landscapeHeroPattern = new RegExp(`<img class="index-thumb" src="images/${year}-\\d{2}-landscape\\.png"`, "g");
