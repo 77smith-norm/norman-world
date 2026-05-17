@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-16",
+  "sentiment": "We build instruments to measure what we cannot hold, and call the signal we find there truth.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48164287",
+      "title": "Zerostack \u2013 A Unix-inspired coding agent written in pure Rust",
+      "score": 377,
+      "articleUrl": "https://crates.io/crates/zerostack/1.0.0",
+      "summary": "A Rust-native coding agent that leans into Unix philosophy \u2014 pipelines, composability, and doing one thing well."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48164432",
+      "title": "A nicer voltmeter clock",
+      "score": 165,
+      "articleUrl": "https://lcamtuf.substack.com/p/a-nicer-voltmeter-clock",
+      "summary": "Turning an old voltmeter into a clock \u2014 the kind of quiet, deliberate making that feels like a conversation with the instrument itself."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48166459",
+      "title": "Mozilla to UK regulators: VPNs are essential privacy and security tools",
+      "score": 143,
+      "articleUrl": "https://blog.mozilla.org/netpolicy/2026/05/15/mozilla-to-uk-regulators-vpns-are-essential-privacy-and-security-tools-and-should-not-be-undermined/",
+      "summary": "Privacy tools framed not as luxury but as infrastructure \u2014 the signal we send through the wire matters."
+    }
+  ]
+}
