@@ -10,7 +10,8 @@ function setup() {
   if (!container) return;
   const w = container.offsetWidth || windowWidth;
   const h = container.offsetHeight || windowHeight;
-  createCanvas(w, h);
+  const cnv = createCanvas(w, h);
+  cnv.parent('sketch-container');
   colorMode(HSB, 360, 100, 100, 100);
 
   const cols = floor(width / 60);

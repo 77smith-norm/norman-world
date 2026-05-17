@@ -35,8 +35,10 @@ bun run content:validate --pretty
 - Each daily page references its sketch script.
 - Each referenced sketch exists under `js/YYYY-MM-DD.js`.
 - Each entry has a portrait file under `images/YYYY-MM-DD-norm.*`.
+- Each entry page exposes a `<div id="sketch-container">` (or legacy `canvas-container`) inside `<section class="sketch">` and loads p5.js.
+- Each sketch parents its canvas to that container (`cnv.parent('sketch-container')`); see `docs/runbooks/sketch-layout.md` for repair steps.
 - Entry discovery is newest-first.
-- Homepage hero and social image remain `assets/norman_world.png`.
+- Homepage hero defaults to `assets/norman_world_plumo.png` (light) and `assets/norman_world_plumo_dark.png` (dark); social image points at the light default.
 - Homepage hero does not use a month landscape image.
 - Current-month `index.html` does not link to entries from another month.
 - Year archives contain month landscape cards.

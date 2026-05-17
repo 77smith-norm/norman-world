@@ -445,6 +445,27 @@ html[data-theme="dark"] .dark-img { display: block; }
     html:not([data-theme="light"]) .dark-img { display: block; }
 }
 
+/* Hero variant cycler */
+.hero-image {
+    cursor: pointer;
+    border-radius: 8px;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.hero-image img {
+    transition: transform 0.2s ease;
+}
+
+.hero-image:hover img,
+.hero-image:focus-visible img {
+    transform: scale(1.02);
+}
+
+.hero-image:focus-visible {
+    box-shadow: 0 0 0 3px var(--accent-color);
+}
+
 /* ── Art Section ──────────────────────────────────────────────── */
 
 .art-entries {

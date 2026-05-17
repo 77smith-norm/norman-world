@@ -10,6 +10,8 @@ This file is the agent entry point, not the full manual. For harness-engineering
 - Daily deterministic publishing: `docs/runbooks/daily-entry.md`
 - Month-end rollover: `docs/runbooks/month-rollover.md`
 - Content validation and repair: `docs/runbooks/content-validation.md`
+- Sketch layout repair: `docs/runbooks/sketch-layout.md`
+- Hero image variants: `docs/runbooks/hero-variants.md`
 - Tooling architecture: `docs/runbooks/tooling.md`
 - Visual/design constraints: `DESIGN.md`
 
@@ -56,7 +58,7 @@ bun run content:rollover OUTGOING-YYYY-MM INCOMING-YYYY-MM --dry-run --pretty
 - Never manually edit `feed.xml`; use `bun run content:feed`.
 - Prefer deterministic tools over ad hoc HTML surgery.
 - Preserve newest-first chronological order.
-- Homepage hero and social images must remain `assets/norman_world.png`; month landscapes belong only on month/year archive pages.
+- Homepage hero and social images must be a `assets/norman_world*.png` variant (default: `assets/norman_world_plumo.png`); month landscapes belong only on month/year archive pages.
 - Use relative paths in HTML and CSS.
 - Do not rewrite historical daily content unless explicitly asked.
 - Run `bun run check` after TypeScript changes.
