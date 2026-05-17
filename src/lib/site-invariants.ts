@@ -6,28 +6,53 @@ export interface ValidationError {
   message: string;
 }
 
+const HERO_VARIANT_PATTERN = /^norman_world(?:_[a-z0-9]+)*$/;
+const DEFAULT_HERO_LIGHT = "norman_world_plumo";
+const DEFAULT_HERO_DARK = "norman_world_plumo_dark";
+
 export function validateHomePage(html: string): ValidationError[] {
   const errors: ValidationError[] = [];
 
-  if (!html.includes('<meta property="og:image" content="https://77smith-norm.github.io/norman-world/assets/norman_world.png">')) {
+  const ogMatch = html.match(/<meta property="og:image" content="https:\/\/77smith-norm\.github\.io\/norman-world\/assets\/([^"\.]+)\.png">/);
+  if (!ogMatch || !HERO_VARIANT_PATTERN.test(ogMatch[1])) {
     errors.push({
       file: "index.html",
-      message: "Homepage OG image must remain assets/norman_world.png"
+      message: "Homepage OG image must be a norman_world hero variant under assets/"
     });
   }
 
-  if (!html.includes('<meta name="twitter:image" content="https://77smith-norm.github.io/norman-world/assets/norman_world.png">')) {
+  const twMatch = html.match(/<meta name="twitter:image" content="https:\/\/77smith-norm\.github\.io\/norman-world\/assets\/([^"\.]+)\.png">/);
+  if (!twMatch || !HERO_VARIANT_PATTERN.test(twMatch[1])) {
     errors.push({
       file: "index.html",
-      message: "Homepage Twitter image must remain assets/norman_world.png"
+      message: "Homepage Twitter image must be a norman_world hero variant under assets/"
     });
   }
 
-  if (!html.includes('<img src="assets/norman_world.png" alt="Norman World">')) {
+  const heroSection = html.match(/<div class="hero">[\s\S]*?<\/div>\s*<\/div>/);
+  if (!heroSection) {
     errors.push({
       file: "index.html",
-      message: "Homepage hero image must remain assets/norman_world.png"
+      message: "Homepage must include a <div class=\"hero\"> block"
     });
+  } else {
+    const heroHtml = heroSection[0];
+    const lightSrc = heroHtml.match(/class="light-img"[^>]*src="assets\/([^"\.]+)\.png"/);
+    const darkSrc = heroHtml.match(/class="dark-img"[^>]*src="assets\/([^"\.]+)\.png"/);
+
+    if (!lightSrc || lightSrc[1] !== DEFAULT_HERO_LIGHT) {
+      errors.push({
+        file: "index.html",
+        message: `Homepage hero light image must default to assets/${DEFAULT_HERO_LIGHT}.png`
+      });
+    }
+
+    if (!darkSrc || darkSrc[1] !== DEFAULT_HERO_DARK) {
+      errors.push({
+        file: "index.html",
+        message: `Homepage hero dark image must default to assets/${DEFAULT_HERO_DARK}.png`
+      });
+    }
   }
 
   if (/<div class="hero">[\s\S]*?<img[^>]+src="images\/\d{4}-\d{2}-landscape\.(png|jpg|jpeg|webp)"/.test(html)) {
@@ -77,6 +102,108 @@ export function validateCurrentMonthIndex(html: string): ValidationError[] {
   }
 
   return errors;
+}
+
+const VALID_SKETCH_MOUNT_IDS = ["sketch-container", "canvas-container"] as const;
+
+export function validateEntryPage(html: string, slug: string): ValidationError[] {
+  const errors: ValidationError[] = [];
+  const pageFile = `pages/${slug}.html`;
+
+  const sketchSection = html.match(/<section class="sketch">[\s\S]*?<\/section>/);
+  if (!sketchSection) {
+    errors.push({
+      file: pageFile,
+      message: "Entry page is missing the <section class=\"sketch\"> wrapper"
+    });
+    return errors;
+  }
+
+  const mountIds = collectMountIds(sketchSection[0]);
+  if (mountIds.length === 0) {
+    errors.push({
+      file: pageFile,
+      message: `Entry page is missing a sketch mount inside <section class="sketch">; expected one of ${formatList(VALID_SKETCH_MOUNT_IDS)} as <div id="...">. Without it the p5.js sketch has no mount point and renders at the bottom of <body>.`
+    });
+  }
+
+  if (!/<script[^>]+p5(?:\.min)?\.js/i.test(html)) {
+    errors.push({
+      file: pageFile,
+      message: "Entry page does not load p5.js (no <script> referencing p5.js or p5.min.js)"
+    });
+  }
+
+  return errors;
+}
+
+export function validateEntrySketch(jsSource: string, slug: string, mountIds: readonly string[] = VALID_SKETCH_MOUNT_IDS): ValidationError[] {
+  const errors: ValidationError[] = [];
+  const sketchFile = `js/${slug}.js`;
+
+  if (!jsSource.trim()) {
+    errors.push({ file: sketchFile, message: "Sketch file is empty" });
+    return errors;
+  }
+
+  const code = stripJsCommentsAndStrings(jsSource);
+  const usesCreateCanvas = /\bcreateCanvas\s*\(/.test(code);
+  const usesInstanceMode = /\bnew\s+p5\s*\(/.test(code);
+
+  if (!usesCreateCanvas && !usesInstanceMode) {
+    errors.push({
+      file: sketchFile,
+      message: `Sketch never calls createCanvas() or \`new p5(...)\` — no canvas will appear inside ${formatList(mountIds)}`
+    });
+    return errors;
+  }
+
+  const mountList = mountIds.length > 0 ? mountIds : VALID_SKETCH_MOUNT_IDS;
+  const mountAlternation = mountList.map(escapeRegex).join("|");
+
+  if (usesInstanceMode) {
+    if (!new RegExp(`['"](${mountAlternation})['"]`).test(jsSource)) {
+      errors.push({
+        file: sketchFile,
+        message: `Sketch uses instance mode but does not reference a known mount id (${formatList(mountList)}) — canvas will mount on <body>`
+      });
+    }
+    return errors;
+  }
+
+  if (!new RegExp(`\\.parent\\s*\\(\\s*['"](${mountAlternation})['"]\\s*\\)`).test(jsSource)) {
+    errors.push({
+      file: sketchFile,
+      message: `Sketch calls createCanvas() but never \`.parent('sketch-container')\` (or another valid mount: ${formatList(mountList)}); p5.js will append the canvas to <body>, pushing it below the entry layout`
+    });
+  }
+
+  return errors;
+}
+
+function collectMountIds(sketchSectionHtml: string): string[] {
+  const ids: string[] = [];
+  for (const id of VALID_SKETCH_MOUNT_IDS) {
+    if (new RegExp(`<div\\s+id="${id}"\\s*>\\s*</div>`).test(sketchSectionHtml)) {
+      ids.push(id);
+    }
+  }
+  return ids;
+}
+
+function escapeRegex(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function formatList(values: readonly string[]): string {
+  return values.map((value) => `'${value}'`).join(" or ");
+}
+
+function stripJsCommentsAndStrings(source: string): string {
+  return source
+    .replace(/\/\*[\s\S]*?\*\//g, "")
+    .replace(/(^|[^:])\/\/[^\n]*/g, "$1")
+    .replace(/(['"`])(?:\\.|(?!\1).)*\1/g, '""');
 }
 
 export function validateYearArchive(html: string, year: number): ValidationError[] {

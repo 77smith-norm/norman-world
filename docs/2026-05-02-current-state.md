@@ -45,7 +45,7 @@ bun run content:rollover OUTGOING-YYYY-MM INCOMING-YYYY-MM --yes --pretty
 - Each daily page references `../js/YYYY-MM-DD.js`.
 - Each sketch file exists.
 - Each entry has a portrait file.
-- Homepage hero and social image remain `assets/norman_world.png`.
+- Homepage hero defaults to the `norman_world_plumo` variants under `assets/`; social image points at the light default.
 - Homepage hero does not use a month landscape image.
 - Current-month `index.html` does not link to another month.
 - Year archives contain month landscape cards.

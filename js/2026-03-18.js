@@ -9,7 +9,8 @@ const CELL_SIZE = 12;
 function setup() {
   const w = document.getElementById('sketch-container').offsetWidth || windowWidth;
   const h = 420;
-  createCanvas(w, h);
+  const cnv = createCanvas(w, h);
+  cnv.parent('sketch-container');
   cols = floor(width / CELL_SIZE);
   rows = floor(height / CELL_SIZE);
 

@@ -12,7 +12,8 @@ function setup() {
   if (!container) return;
   const w = container.offsetWidth || windowWidth;
   const h = Math.min(windowHeight, 520);
-  createCanvas(w, h);
+  const cnv = createCanvas(w, h);
+  cnv.parent('sketch-container');
   pixelDensity(1);
   cols = 18;
   rows = 12;
