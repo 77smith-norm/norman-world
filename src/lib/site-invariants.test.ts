@@ -2,10 +2,14 @@ import { describe, expect, it } from "vitest";
 import { validateCurrentMonthIndex, validateHomePage } from "./site-invariants";
 
 const validHome = `<!doctype html>
-<meta property="og:image" content="https://77smith-norm.github.io/norman-world/assets/norman_world.png">
-<meta name="twitter:image" content="https://77smith-norm.github.io/norman-world/assets/norman_world.png">
+<meta property="og:image" content="https://77smith-norm.github.io/norman-world/assets/norman_world_plumo.png">
+<meta name="twitter:image" content="https://77smith-norm.github.io/norman-world/assets/norman_world_plumo.png">
 <div class="hero">
-  <img src="assets/norman_world.png" alt="Norman World">
+  <div class="hero-image" data-hero-cycler>
+    <img class="light-img" src="assets/norman_world_plumo.png" alt="Norman World" data-variants="norman_world_plumo,norman_world">
+    <img class="dark-img" src="assets/norman_world_plumo_dark.png" alt="Norman World" data-variants="norman_world_plumo_dark,norman_world_dark">
+  </div>
+  <div class="hero-content"></div>
 </div>`;
 
 describe("validateHomePage", () => {
@@ -15,14 +19,14 @@ describe("validateHomePage", () => {
 
   it("rejects a month landscape as the homepage hero", () => {
     const html = validHome.replace(
-      '<img src="assets/norman_world.png" alt="Norman World">',
-      '<img src="images/2026-04-landscape.png" alt="April 2026 Landscape">'
+      '<img class="light-img" src="assets/norman_world_plumo.png" alt="Norman World" data-variants="norman_world_plumo,norman_world">',
+      '<img class="light-img" src="images/2026-04-landscape.png" alt="April 2026 Landscape">'
     );
 
     expect(validateHomePage(html)).toEqual([
       {
         file: "index.html",
-        message: "Homepage hero image must remain assets/norman_world.png"
+        message: "Homepage hero light image must default to assets/norman_world_plumo.png"
       },
       {
         file: "index.html",

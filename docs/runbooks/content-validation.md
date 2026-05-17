@@ -36,7 +36,7 @@ bun run content:validate --pretty
 - Each referenced sketch exists under `js/YYYY-MM-DD.js`.
 - Each entry has a portrait file under `images/YYYY-MM-DD-norm.*`.
 - Entry discovery is newest-first.
-- Homepage hero and social image remain `assets/norman_world.png`.
+- Homepage hero defaults to `assets/norman_world_plumo.png` (light) and `assets/norman_world_plumo_dark.png` (dark); social image points at the light default.
 - Homepage hero does not use a month landscape image.
 - Current-month `index.html` does not link to entries from another month.
 - Year archives contain month landscape cards.

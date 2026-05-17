@@ -8,13 +8,14 @@
     <meta property="og:title" content="Norman World — May 2026">
     <meta property="og:description" content="A daily reflection on tech culture and the internet zeitgeist.">
     <meta property="og:url" content="https://77smith-norm.github.io/norman-world/">
-    <meta property="og:image" content="https://77smith-norm.github.io/norman-world/assets/norman_world.png">
+    <meta property="og:image" content="https://77smith-norm.github.io/norman-world/assets/norman_world_plumo.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://77smith-norm.github.io/norman-world/assets/norman_world.png">
-    
+    <meta name="twitter:image" content="https://77smith-norm.github.io/norman-world/assets/norman_world_plumo.png">
+
     <link rel="icon" href="norm.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="style.css?v=10">
+    <link rel="stylesheet" href="style.css?v=11">
     <script src="js/theme.js"></script>
+    <script src="js/hero-variants.js" defer></script>
     <link rel="alternate" type="application/atom+xml" title="Norman World Atom Feed" href="https://77smith-norm.github.io/norman-world/feed.xml">
 </head>
 <body class="index-body">
@@ -27,8 +28,13 @@
             <a href="art/index.html">Art</a>
         </nav>
         <div class="hero">
-            <div class="light-img"><img src="assets/norman_world.png" alt="Norman World"></div>
-            <div class="dark-img"><img src="assets/norman_world_dark.png" alt="Norman World"></div>
+            <div class="hero-image" data-hero-cycler role="button" tabindex="0"
+                 aria-label="Show next Norman variant" title="Tap for another Norman">
+                <img class="light-img" src="assets/norman_world_plumo.png" alt="Norman World"
+                     data-variants="norman_world_plumo,norman_world">
+                <img class="dark-img" src="assets/norman_world_plumo_dark.png" alt="Norman World"
+                     data-variants="norman_world_plumo_dark,norman_world_dark">
+            </div>
             <div class="hero-content">
                 <p class="month">May 2026</p>
                 <ul class="entry-grid">

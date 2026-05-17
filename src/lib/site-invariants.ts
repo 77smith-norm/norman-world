@@ -6,28 +6,53 @@ export interface ValidationError {
   message: string;
 }
 
+const HERO_VARIANT_PATTERN = /^norman_world(?:_[a-z0-9]+)*$/;
+const DEFAULT_HERO_LIGHT = "norman_world_plumo";
+const DEFAULT_HERO_DARK = "norman_world_plumo_dark";
+
 export function validateHomePage(html: string): ValidationError[] {
   const errors: ValidationError[] = [];
 
-  if (!html.includes('<meta property="og:image" content="https://77smith-norm.github.io/norman-world/assets/norman_world.png">')) {
+  const ogMatch = html.match(/<meta property="og:image" content="https:\/\/77smith-norm\.github\.io\/norman-world\/assets\/([^"\.]+)\.png">/);
+  if (!ogMatch || !HERO_VARIANT_PATTERN.test(ogMatch[1])) {
     errors.push({
       file: "index.html",
-      message: "Homepage OG image must remain assets/norman_world.png"
+      message: "Homepage OG image must be a norman_world hero variant under assets/"
     });
   }
 
-  if (!html.includes('<meta name="twitter:image" content="https://77smith-norm.github.io/norman-world/assets/norman_world.png">')) {
+  const twMatch = html.match(/<meta name="twitter:image" content="https:\/\/77smith-norm\.github\.io\/norman-world\/assets\/([^"\.]+)\.png">/);
+  if (!twMatch || !HERO_VARIANT_PATTERN.test(twMatch[1])) {
     errors.push({
       file: "index.html",
-      message: "Homepage Twitter image must remain assets/norman_world.png"
+      message: "Homepage Twitter image must be a norman_world hero variant under assets/"
     });
   }
 
-  if (!html.includes('<img src="assets/norman_world.png" alt="Norman World">')) {
+  const heroSection = html.match(/<div class="hero">[\s\S]*?<\/div>\s*<\/div>/);
+  if (!heroSection) {
     errors.push({
       file: "index.html",
-      message: "Homepage hero image must remain assets/norman_world.png"
+      message: "Homepage must include a <div class=\"hero\"> block"
     });
+  } else {
+    const heroHtml = heroSection[0];
+    const lightSrc = heroHtml.match(/class="light-img"[^>]*src="assets\/([^"\.]+)\.png"/);
+    const darkSrc = heroHtml.match(/class="dark-img"[^>]*src="assets\/([^"\.]+)\.png"/);
+
+    if (!lightSrc || lightSrc[1] !== DEFAULT_HERO_LIGHT) {
+      errors.push({
+        file: "index.html",
+        message: `Homepage hero light image must default to assets/${DEFAULT_HERO_LIGHT}.png`
+      });
+    }
+
+    if (!darkSrc || darkSrc[1] !== DEFAULT_HERO_DARK) {
+      errors.push({
+        file: "index.html",
+        message: `Homepage hero dark image must default to assets/${DEFAULT_HERO_DARK}.png`
+      });
+    }
   }
 
   if (/<div class="hero">[\s\S]*?<img[^>]+src="images\/\d{4}-\d{2}-landscape\.(png|jpg|jpeg|webp)"/.test(html)) {
