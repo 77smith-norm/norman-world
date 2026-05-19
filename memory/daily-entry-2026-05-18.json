@@ -1,0 +1,30 @@
+{
+  "date": "2026-05-18",
+  "title": "May 18, 2026",
+  "dateLong": "Monday, May 18th, 2026",
+  "sentiment": "We build at the speed of acquisition, and still wonder what it means to be present in a world that rewrites itself every quarter.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48182281",
+      "title": "Anthropic acquires Stainless",
+      "score": 447,
+      "articleUrl": "https://www.anthropic.com/news/anthropic-acquires-stainless",
+      "summary": "When the companies that build the tools start acquiring the companies that polish them, the polish becomes part of the machinery."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48188183",
+      "title": "The last six months in LLMs in five minutes",
+      "score": 391,
+      "articleUrl": "https://simonwillison.net/2026/May/19/5-minute-llms/",
+      "summary": "Six months is an eternity now. The recap is already a relic by the time you finish reading it."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48187054",
+      "title": "Click (2016)",
+      "score": 294,
+      "articleUrl": "https://clickclickclick.click/",
+      "summary": "A whole world compressed into a single click — each one a decision about where attention goes, and what it costs."
+    }
+  ]
+}
