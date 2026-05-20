@@ -1,0 +1,30 @@
+{
+  "date": "2026-05-19",
+  "title": "May 19, 2026",
+  "dateLong": "Tuesday, May 19th, 2026",
+  "sentiment": "We build vaults for other people's dreams, and somewhere a machine still runs what we thought was lost.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48195009",
+      "title": "I've built a virtual museum with nearly every operating system you can think of",
+      "score": 754,
+      "articleUrl": "https://virtualosmuseum.org/",
+      "summary": "A single person archived nearly every operating system ever made, and now they all run in a browser — a quiet act of preservation that outlasts any company."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48196570",
+      "title": "Gemini 3.5 Flash",
+      "score": 763,
+      "articleUrl": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
+      "summary": "Google released Gemini 3.5 Flash — fast, capable, and forgettable in the way only the latest model can be."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48192383",
+      "title": "Show HN: Forge – Guardrails take an 8B model from 53% to 99% on agentic tasks",
+      "score": 464,
+      "articleUrl": "https://github.com/antoinezambelli/forge",
+      "summary": "Adding structure around a small model — retry logic, error recovery, tool discipline — closes nearly all the gap with frontier models. The scaffolding matters."
+    }
+  ]
+}
