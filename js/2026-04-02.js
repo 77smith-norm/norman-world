@@ -9,6 +9,8 @@ let repulseWaves = [];
 const NUM_KNOWLEDGE = 180;
 const NUM_GRAY = 60;
 
+let previousWidth = 0;
+
 function setup() {
   const container = document.getElementById('sketch-container');
   const w = container.offsetWidth || 600;

@@ -5,6 +5,8 @@ let spacing;
 let threshold;
 let phase = 0;
 
+let previousWidth = 0;
+
 function setup() {
   let container = document.getElementById('sketch-container');
   let w = container.offsetWidth || 600;
@@ -71,6 +73,13 @@ function draw() {
 }
 
 function windowResized() {
+  const container = document.getElementById('sketch-container');
+  if (!container) return;
+  const w = container.offsetWidth;
+  if (abs(w - previousWidth) > 10) {
+    const h = Math.max(400, windowHeight * 0.6);
+    resizeCanvas(w, h);
+    previousWidth = w;
   let container = document.getElementById('sketch-container');
   let w = container.offsetWidth || 600;
   let h = Math.min(w * 0.72, 520);
@@ -89,7 +98,9 @@ function windowResized() {
         vy: 0,
         hue: lerp(200, 120, (i + j) / (cols + rows)),
         shift: random(TWO_PI)
-      });
+      
+  }
+});
     }
   }
 }

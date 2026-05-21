@@ -8,6 +8,8 @@ let rows = 12;
 let cellW, cellH;
 let signals = [];
 
+let previousWidth = 0;
+
 function setup() {
   const container = document.getElementById('sketch-container');
   const w = container.offsetWidth || 600;

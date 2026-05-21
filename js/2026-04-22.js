@@ -2,9 +2,15 @@ let layers = [];
 let time = 0;
 let centerX, centerY;
 
+let previousWidth = 0;
+
 function setup() {
-  let canvas = createCanvas(windowWidth, windowHeight);
-  canvas.parent('sketch-container');
+  const container = document.getElementById('sketch-container');
+  const w = container ? container.offsetWidth : windowWidth;
+  const h = Math.max(400, windowHeight * 0.6);
+  previousWidth = w;
+  let cnv = createCanvas(w, h);
+  if (cnv && cnv.parent) cnv.parent('sketch-container');
   colorMode(HSB, 360, 100, 100, 100);
   
   centerX = width / 2;
@@ -92,7 +98,14 @@ function draw() {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  const container = document.getElementById('sketch-container');
+  if (!container) return;
+  const w = container.offsetWidth;
+  if (abs(w - previousWidth) > 10) {
+    const h = Math.max(400, windowHeight * 0.6);
+    resizeCanvas(w, h);
+    previousWidth = w;
+  
   centerX = width / 2;
   centerY = height / 2;
   
@@ -100,4 +113,6 @@ function windowResized() {
   layers[0].w = scale * 0.85; layers[0].h = scale * 0.85;
   layers[1].w = scale * 0.60; layers[1].h = scale * 0.60;
   layers[2].w = scale * 0.35; layers[2].h = scale * 0.35;
+
+  }
 }

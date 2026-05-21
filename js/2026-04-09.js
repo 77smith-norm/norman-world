@@ -1,9 +1,15 @@
 let rings = [];
 let numRings = 5;
 
+let previousWidth = 0;
+
 function setup() {
-  let canvas = createCanvas(windowWidth, windowHeight);
-  canvas.parent('sketch-container');
+  const container = document.getElementById('sketch-container');
+  const w = container ? container.offsetWidth : windowWidth;
+  const h = Math.max(400, windowHeight * 0.6);
+  previousWidth = w;
+  let cnv = createCanvas(w, h);
+  if (cnv && cnv.parent) cnv.parent('sketch-container');
   colorMode(HSB, 360, 100, 100, 100);
   background(220, 15, 6);
   
@@ -84,5 +90,14 @@ class Ring {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  const container = document.getElementById('sketch-container');
+  if (!container) return;
+  const w = container.offsetWidth;
+  if (abs(w - previousWidth) > 10) {
+    const h = Math.max(400, windowHeight * 0.6);
+    resizeCanvas(w, h);
+    previousWidth = w;
+  
+
+  }
 }

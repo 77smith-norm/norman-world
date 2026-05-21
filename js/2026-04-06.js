@@ -6,6 +6,8 @@ let clusters = [];
 let t = 0;
 const NUM_CLUSTERS = 5;
 
+let previousWidth = 0;
+
 function setup() {
   const container = document.getElementById('sketch-container');
   const w = container.offsetWidth || 600;

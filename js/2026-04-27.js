@@ -5,6 +5,8 @@ let particles = [];
 const NUM = 80;
 let t = 0;
 
+let previousWidth = 0;
+
 function setup() {
   const w = document.getElementById('sketch-container').offsetWidth || windowWidth;
   const h = Math.min(windowHeight * 0.55, 520);
@@ -56,7 +58,16 @@ function draw() {
 }
 
 function windowResized() {
+  const container = document.getElementById('sketch-container');
+  if (!container) return;
+  const w = container.offsetWidth;
+  if (abs(w - previousWidth) > 10) {
+    const h = Math.max(400, windowHeight * 0.6);
+    resizeCanvas(w, h);
+    previousWidth = w;
   const w = document.getElementById('sketch-container').offsetWidth || windowWidth;
   const h = Math.min(windowHeight * 0.55, 520);
   resizeCanvas(w, h);
+
+  }
 }

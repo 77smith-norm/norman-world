@@ -6,6 +6,8 @@ let particles = [];
 let t = 0;
 const N = 260;
 
+let previousWidth = 0;
+
 function setup() {
   const container = document.getElementById('sketch-container');
   const w = container.offsetWidth || 600;

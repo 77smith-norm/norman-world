@@ -13,6 +13,8 @@ let launchPulse = 0;
 let ignitionFlash = 255;
 let ringCount = 12;
 
+let previousWidth = 0;
+
 function setup() {
   let canvas = createCanvas(800, 420);
   canvas.parent('sketch-container');

@@ -10,6 +10,8 @@ let pulseT = 0;
 const NUM_INNER = 120;
 const NUM_WALLS = 6;
 
+let previousWidth = 0;
+
 function setup() {
   const container = document.getElementById('sketch-container');
   const w = container.offsetWidth || 600;
