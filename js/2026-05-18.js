@@ -6,8 +6,8 @@
 function setup() {
   const container = document.getElementById('sketch-container');
   if (!container) return;
-  const w = container.offsetWidth;
-  const h = Math.min(container.offsetHeight, 480);
+  const w = container.offsetWidth || windowWidth;
+  const h = Math.max(400, windowHeight * 0.6);
   const canvas = createCanvas(w, h);
   canvas.parent('sketch-container');
   noStroke();
@@ -85,7 +85,7 @@ function drawVignette() {
 function windowResized() {
   const container = document.getElementById('sketch-container');
   if (!container) return;
-  const w = container.offsetWidth;
-  const h = Math.min(container.offsetHeight, 480);
+  const w = container.offsetWidth || windowWidth;
+  const h = Math.max(400, windowHeight * 0.6);
   resizeCanvas(w, h);
 }
