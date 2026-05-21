@@ -9,9 +9,15 @@
 let rings = [];
 const COUNT = 7;
 
+let previousWidth = 0;
+
 function setup() {
   const container = document.getElementById('sketch-container');
-  const cnv = createCanvas(container.offsetWidth, container.offsetHeight);
+  const w = container ? container.offsetWidth : windowWidth;
+  const h = Math.max(400, windowHeight * 0.6);
+  previousWidth = w;
+
+  const cnv = createCanvas(w, h);
   cnv.parent('sketch-container');
   colorMode(HSB, 360, 100, 100, 100);
   noStroke();
@@ -72,10 +78,16 @@ function draw() {
 
 function windowResized() {
   const container = document.getElementById('sketch-container');
-  resizeCanvas(container.offsetWidth, container.offsetHeight);
+  if (!container) return;
+  const w = container.offsetWidth;
+  if (abs(w - previousWidth) > 10) {
+    const h = Math.max(400, windowHeight * 0.6);
+    resizeCanvas(w, h);
+    previousWidth = w;
 
-  const baseUnit = height * 0.095;
-  for (let i = 0; i < rings.length; i++) {
-    rings[i].baseRadius = (height * 0.12) + (i * baseUnit);
+    const baseUnit = height * 0.095;
+    for (let i = 0; i < rings.length; i++) {
+      rings[i].baseRadius = (height * 0.12) + (i * baseUnit);
+    }
   }
 }
