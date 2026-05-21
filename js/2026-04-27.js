@@ -65,9 +65,5 @@ function windowResized() {
     const h = Math.max(400, windowHeight * 0.6);
     resizeCanvas(w, h);
     previousWidth = w;
-  const w = document.getElementById('sketch-container').offsetWidth || windowWidth;
-  const h = Math.min(windowHeight * 0.55, 520);
-  resizeCanvas(w, h);
-
   }
 }

@@ -80,27 +80,22 @@ function windowResized() {
     const h = Math.max(400, windowHeight * 0.6);
     resizeCanvas(w, h);
     previousWidth = w;
-  let container = document.getElementById('sketch-container');
-  let w = container.offsetWidth || 600;
-  let h = Math.min(w * 0.72, 520);
-  resizeCanvas(w, h);
-  cols = ceil(width / spacing) + 1;
-  rows = ceil(height / spacing) + 1;
-  nodes = [];
-  for (let j = 0; j < rows; j++) {
-    for (let i = 0; i < cols; i++) {
-      nodes.push({
-        x: i * spacing,
-        y: j * spacing,
-        ox: i * spacing,
-        oy: j * spacing,
-        vx: 0,
-        vy: 0,
-        hue: lerp(200, 120, (i + j) / (cols + rows)),
-        shift: random(TWO_PI)
-      
-  }
-});
+    cols = ceil(width / spacing) + 1;
+    rows = ceil(height / spacing) + 1;
+    nodes = [];
+    for (let j = 0; j < rows; j++) {
+      for (let i = 0; i < cols; i++) {
+        nodes.push({
+          x: i * spacing,
+          y: j * spacing,
+          ox: i * spacing,
+          oy: j * spacing,
+          vx: 0,
+          vy: 0,
+          hue: lerp(200, 120, (i + j) / (cols + rows)),
+          shift: random(TWO_PI)
+        });
+      }
     }
   }
 }
