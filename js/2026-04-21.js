@@ -2,8 +2,14 @@ let layers = [];
 let centerX, centerY;
 let time = 0;
 
+let previousWidth = 0;
+
 function setup() {
-  let canvas = createCanvas(windowWidth, windowHeight);
+  const container = document.getElementById('sketch-container');
+  const w = container ? container.offsetWidth : windowWidth;
+  const h = Math.max(400, windowHeight * 0.6);
+  previousWidth = w;
+  let canvas = createCanvas(w, h);
   canvas.parent('sketch-container');
   colorMode(HSB, 360, 100, 100, 100);
   background(30, 15, 96);
@@ -103,10 +109,17 @@ function draw() {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-  centerX = width / 2;
-  centerY = height / 2;
-  for (let layer of layers) {
-    layer.radius = min(width, height) * (layer.sides === 4 ? 0.32 : layer.sides === 80 ? 0.24 : 0.16);
+  const container = document.getElementById('sketch-container');
+  if (!container) return;
+  const w = container.offsetWidth;
+  if (abs(w - previousWidth) > 10) {
+    const h = Math.max(400, windowHeight * 0.6);
+    resizeCanvas(w, h);
+    previousWidth = w;
+    centerX = width / 2;
+    centerY = height / 2;
+    for (let layer of layers) {
+      layer.radius = min(width, height) * (layer.sides === 4 ? 0.32 : layer.sides === 80 ? 0.24 : 0.16);
+    }
   }
 }
