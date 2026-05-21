@@ -8,9 +8,10 @@ let phase = 0;
 let previousWidth = 0;
 
 function setup() {
-  let container = document.getElementById('sketch-container');
-  let w = container.offsetWidth || 600;
-  let h = Math.min(w * 0.72, 520);
+  const container = document.getElementById('sketch-container');
+  const w = container ? container.offsetWidth : windowWidth;
+  const h = Math.max(400, windowHeight * 0.6);
+  previousWidth = w;
   let canvas = createCanvas(w, h);
   canvas.parent('sketch-container');
   colorMode(HSB, 360, 100, 100, 100);

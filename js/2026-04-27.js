@@ -8,8 +8,10 @@ let t = 0;
 let previousWidth = 0;
 
 function setup() {
-  const w = document.getElementById('sketch-container').offsetWidth || windowWidth;
-  const h = Math.min(windowHeight * 0.55, 520);
+  const container = document.getElementById('sketch-container');
+  const w = container ? container.offsetWidth : windowWidth;
+  const h = Math.max(400, windowHeight * 0.6);
+  previousWidth = w;
   const cnv = createCanvas(w, h);
   cnv.parent('sketch-container');
   colorMode(HSL, 360, 100, 100, 100);
