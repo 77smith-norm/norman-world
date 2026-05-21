@@ -10,6 +10,21 @@ function setup() {
   canvas.parent('sketch-container');
   colorMode(RGB, 255, 255, 255, 255);
   noStroke();
+
+  for (let i = 0; i < 28; i++) {
+    windows.push({
+      x: random(width),
+      y: random(height),
+      w: random(60, 200),
+      h: random(40, 130),
+      vx: random(-0.25, 0.25),
+      vy: random(-0.2, 0.2),
+      col: PALETTE[i % PALETTE.length],
+      alpha: random(100, 220),
+      phase: random(TWO_PI),
+      speed: random(0.003, 0.012),
+    });
+  }
 }
 
 const windows = [];
@@ -22,21 +37,6 @@ const PALETTE = [
   [230, 220, 190], // solaris gold
   [170, 180, 200], // bsd dark blue
 ];
-
-for (let i = 0; i < 28; i++) {
-  windows.push({
-    x: random(width),
-    y: random(height),
-    w: random(60, 200),
-    h: random(40, 130),
-    vx: random(-0.25, 0.25),
-    vy: random(-0.2, 0.2),
-    col: PALETTE[i % PALETTE.length],
-    alpha: random(100, 220),
-    phase: random(TWO_PI),
-    speed: random(0.003, 0.012),
-  });
-}
 
 let t = 0;
 
