@@ -5,8 +5,15 @@ let particles = [];
 let numParticles = 280;
 let t = 0;
 
+let previousWidth = 0;
+
 function setup() {
-  let cnv = createCanvas(windowWidth, windowHeight);
+  const container = document.getElementById('sketch-container');
+  const w = container ? container.offsetWidth : windowWidth;
+  const h = Math.max(400, windowHeight * 0.6);
+  previousWidth = w;
+  
+  let cnv = createCanvas(w, h);
   cnv.parent('sketch-container');
   colorMode(HSB, 360, 100, 100, 100);
   noStroke();
@@ -58,5 +65,13 @@ function draw() {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  const container = document.getElementById('sketch-container');
+  if (!container) return;
+  const w = container.offsetWidth;
+  // Only resize if the width actually changes (prevents mobile scroll-bar hiding from flashing the canvas)
+  if (abs(w - previousWidth) > 10) {
+    const h = Math.max(400, windowHeight * 0.6);
+    resizeCanvas(w, h);
+    previousWidth = w;
+  }
 }
