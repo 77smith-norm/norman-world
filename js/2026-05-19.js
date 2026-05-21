@@ -12,10 +12,11 @@ function setup() {
   noStroke();
 
   for (let i = 0; i < 28; i++) {
+    const winW = random(60, 200);
     windows.push({
       x: random(width),
       y: random(height),
-      w: random(60, 200),
+      w: winW,
       h: random(40, 130),
       vx: random(-0.25, 0.25),
       vy: random(-0.2, 0.2),
@@ -23,8 +24,18 @@ function setup() {
       alpha: random(100, 220),
       phase: random(TWO_PI),
       speed: random(0.003, 0.012),
+      lines: generateLines(winW)
     });
   }
+}
+
+function generateLines(windowWidth) {
+  const lines = [];
+  const lineCount = floor(random(2, 6));
+  for (let l = 0; l < lineCount; l++) {
+    lines.push(random(0.3, 0.9)); // Just store the width multiplier
+  }
+  return lines;
 }
 
 const windows = [];
@@ -76,13 +87,12 @@ function draw() {
     rect(w.x - w.w / 2, w.y - w.h / 2, w.w, 12, 3, 3, 0, 0);
 
     // Inner content lines
-    const lineCount = floor(random(2, 6));
-    for (let l = 0; l < lineCount; l++) {
+    for (let l = 0; l < w.lines.length; l++) {
       const lx = w.x - w.w / 2 + 6;
       const lw = w.w - 12;
       const ly = w.y - w.h / 2 + 18 + l * 7;
       fill(w.col[0] - 20, w.col[1] - 20, w.col[2] - 20, w.alpha * 0.5 * pulse);
-      rect(lx, ly, lw * random(0.3, 0.9), 3, 1);
+      rect(lx, ly, lw * w.lines[l], 3, 1);
     }
 
     // Hover repulsion from mouse
