@@ -2,7 +2,7 @@
 // Sentiment: We patch the cracks and call it progress, then wake to build again.
 
 let shards = [];
-let裂缝;
+let 裂缝;
 
 let previousWidth = 0;
 
