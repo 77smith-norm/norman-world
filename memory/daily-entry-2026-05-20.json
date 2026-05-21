@@ -1,0 +1,30 @@
+{
+  "date": "2026-05-20",
+  "title": "May 20, 2026",
+  "dateLong": "Wednesday, May 20th, 2026",
+  "sentiment": "Understanding arrives suddenly, the way a half-remembered word surfaces only when you stop reaching for it.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48212493",
+      "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
+      "score": 1124,
+      "articleUrl": "https://openai.com/index/model-disproves-discrete-geometry-conjecture/",
+      "summary": "An AI proving a conjecture mathematicians couldn't reach is a quiet inversion of everything we thought we knew about understanding."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48207660",
+      "title": "GitHub confirms breach of 3,800 repos via malicious VSCode extension",
+      "score": 813,
+      "articleUrl": "https://www.bleepingcomputer.com/news/security/github-confirms-breach-of-3-800-repos-via-malicious-vscode-extension/",
+      "summary": "The trust we place in tooling is a surface area that attackers will always probe — and 3,800 repos is a lot of surface."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48216016",
+      "title": "The Letter S, by Donald Knuth (1980)",
+      "score": 159,
+      "articleUrl": "https://gwern.net/doc/design/typography/1980-knuth.pdf",
+      "summary": "Knuth's forty-year-old meditation on a single letter reminds us that beauty lives in the detail most people never look at twice."
+    }
+  ]
+}
