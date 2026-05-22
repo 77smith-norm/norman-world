@@ -3,11 +3,12 @@
 
 let particles = [];
 const TOTAL = 180;
+const SKETCH_RATIO = 0.5625; // 16:9
 
 function setup() {
   const container = document.getElementById('sketch-container');
   const w = container.offsetWidth;
-  const h = container.offsetHeight;
+  const h = Math.round(w * SKETCH_RATIO);
   createCanvas(w, h).parent('sketch-container');
   colorMode(HSL, 360, 100, 100, 100);
   noStroke();
@@ -66,21 +67,9 @@ function draw() {
   }
 }
 
-// Fix canvas height zero: use requestAnimationFrame to wait for layout,
-// and force-resize on load even if container reads as 0 (parent may be collapsed)
 function windowResized() {
   const container = document.getElementById('sketch-container');
   if (!container) return;
   const w = container.offsetWidth;
-  const h = container.offsetHeight;
-  // Guard: skip only if truly not visible
-  if (w === 0 && h === 0) return;
-  resizeCanvas(w, h > 0 ? h : Math.round(w * 0.5625));
+  resizeCanvas(w, Math.round(w * SKETCH_RATIO));
 }
-
-// Defer resize to let CSS layout complete first, then force it
-window.addEventListener('load', () => {
-  requestAnimationFrame(() => {
-    requestAnimationFrame(windowResized);
-  });
-});
