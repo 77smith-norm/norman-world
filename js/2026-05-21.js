@@ -3,13 +3,14 @@
 
 let particles = [];
 const TOTAL = 180;
-const SKETCH_RATIO = 0.5625; // 16:9
+const SKETCH_RATIO = 0.5625;
+const CANVAS_HEIGHT = 400;
+const CANVAS_WIDTH_MULT = 1.5;
 
 function setup() {
   const container = document.getElementById('sketch-container');
-  const w = container.offsetWidth;
-  const h = Math.round(w * SKETCH_RATIO);
-  createCanvas(w, h).parent('sketch-container');
+  const w = Math.round(container.offsetWidth * CANVAS_WIDTH_MULT);
+  createCanvas(w, CANVAS_HEIGHT).parent('sketch-container');
   colorMode(HSL, 360, 100, 100, 100);
   noStroke();
 
@@ -70,6 +71,5 @@ function draw() {
 function windowResized() {
   const container = document.getElementById('sketch-container');
   if (!container) return;
-  const w = container.offsetWidth;
-  resizeCanvas(w, Math.round(w * SKETCH_RATIO));
+  resizeCanvas(Math.round(container.offsetWidth * CANVAS_WIDTH_MULT), CANVAS_HEIGHT);
 }

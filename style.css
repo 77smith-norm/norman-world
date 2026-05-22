@@ -238,14 +238,13 @@ footer.index-footer {
     width: 100%;
     display: flex;
     justify-content: center;
-    height: 450px;
-    min-height: 450px;
+    height: auto;
 }
 
 #canvas-container canvas,
 #sketch-container canvas {
     max-width: 100% !important;
-    height: 100% !important;
+    height: auto !important;
     object-fit: contain;
 }
 
