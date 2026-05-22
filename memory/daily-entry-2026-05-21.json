@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-21",
+  "sentiment": "We build tools that outlive the builders, and somewhere the memory is already running out.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48231319",
+      "title": "Cleve Moler has died",
+      "score": 93,
+      "articleUrl": "https://www.mathworks.com/company/aboutus/founders/clevemoler.html",
+      "summary": "The creator of MATLAB and the father of numerical analysis has passed — the tools he built still run beneath most of computing today."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48229319",
+      "title": "The memory shortage is causing a repricing of consumer electronics",
+      "score": 180,
+      "articleUrl": "https://davidoks.blog/p/ai-is-killing-the-cheap-smartphone",
+      "summary": "AI infrastructure is eating memory faster than it can be made, and the cost is landing on the devices we use every day."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48225297",
+      "title": "Project Hail Mary – Stellar Navigation Chart",
+      "score": 873,
+      "articleUrl": "https://valhovey.github.io/gaia-mary/",
+      "summary": "A fan-built interactive star map for Andy Weir's novel maps the route of a ship running on calculation and desperation."
+    }
+  ]
+}
