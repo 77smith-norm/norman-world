@@ -66,9 +66,16 @@ function draw() {
   }
 }
 
+// Fix canvas height zero by forcing a resize after setup
 function windowResized() {
   const container = document.getElementById('sketch-container');
+  if (!container) return;
   const w = container.offsetWidth;
   const h = container.offsetHeight;
-  resizeCanvas(w, h);
+  if (h > 0) resizeCanvas(w, h);
 }
+
+// Ensure canvas is properly sized even if window never resizes
+window.addEventListener('load', () => {
+  setTimeout(windowResized, 100);
+});
