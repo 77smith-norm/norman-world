@@ -6,9 +6,11 @@ let t = 0;
 let cx, cy;
 
 function setup() {
-  const container = document.querySelector('.sketch-container');
-  const cnv = createCanvas(container.offsetWidth, container.offsetWidth * 0.6);
-  cnv.parent('sketch-container');
+  const container = document.getElementById('sketch-container');
+  const w = container.offsetWidth || windowWidth;
+  const h = container.offsetHeight || Math.max(400, windowHeight * 0.6);
+  const canvas = createCanvas(w, h);
+  canvas.parent('sketch-container');
   colorMode(RGB, 255, 255, 255, 255);
   cx = width * 0.5;
   cy = height * 0.5;
@@ -66,8 +68,10 @@ function draw() {
 }
 
 function windowResized() {
-  const container = document.querySelector('.sketch-container');
-  resizeCanvas(container.offsetWidth, container.offsetWidth * 0.6);
+  const container = document.getElementById('sketch-container');
+  const w = container.offsetWidth || windowWidth;
+  const h = container.offsetHeight || Math.max(400, windowHeight * 0.6);
+  resizeCanvas(w, h);
   for (const p of particles) {
     p.pos.x = constrain(p.pos.x, 0, width);
     p.pos.y = constrain(p.pos.y, 0, height);
