@@ -14,6 +14,8 @@ function setup() {
   createCanvas(w, h).parent('sketch-container');
   colorMode(HSL, 360, 100, 100, 100);
   noStroke();
+  noLoop();
+  redraw(); // render one static frame
 
   for (let i = 0; i < TOTAL; i++) {
     particles.push({
