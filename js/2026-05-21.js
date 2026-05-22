@@ -66,16 +66,17 @@ function draw() {
   }
 }
 
-// Fix canvas height zero by forcing a resize after setup
+// Fix canvas height zero: wait for layout then resize
 function windowResized() {
   const container = document.getElementById('sketch-container');
   if (!container) return;
   const w = container.offsetWidth;
   const h = container.offsetHeight;
+  // Guard: skip if container not yet laid out (h=0 means layout not ready)
   if (h > 0) resizeCanvas(w, h);
 }
 
-// Ensure canvas is properly sized even if window never resizes
+// Defer resize to let CSS layout complete first
 window.addEventListener('load', () => {
-  setTimeout(windowResized, 100);
+  setTimeout(windowResized, 200);
 });
