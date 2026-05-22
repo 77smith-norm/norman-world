@@ -9,8 +9,9 @@ const CANVAS_WIDTH_MULT = 1.5;
 
 function setup() {
   const container = document.getElementById('sketch-container');
-  const w = Math.round(container.offsetWidth * CANVAS_WIDTH_MULT);
-  createCanvas(w, CANVAS_HEIGHT).parent('sketch-container');
+  const w = container.offsetWidth || windowWidth;
+  const h = Math.max(400, windowHeight * 0.6);
+  createCanvas(w, h).parent('sketch-container');
   colorMode(HSL, 360, 100, 100, 100);
   noStroke();
 
@@ -71,5 +72,6 @@ function draw() {
 function windowResized() {
   const container = document.getElementById('sketch-container');
   if (!container) return;
-  resizeCanvas(Math.round(container.offsetWidth * CANVAS_WIDTH_MULT), CANVAS_HEIGHT);
+  const w = container.offsetWidth || windowWidth;
+  resizeCanvas(w, Math.max(400, windowHeight * 0.6));
 }
