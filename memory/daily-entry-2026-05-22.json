@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-22",
+  "sentiment": "The distance between what we build and what we mean is where everything that matters actually lives.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48237163",
+      "title": "Why Japanese companies do so many different things",
+      "score": 662,
+      "articleUrl": "https://davidoks.blog/p/why-japanese-companies-do-so-many",
+      "summary": "The breadth of purpose across Japanese firms feels like a corrective — not chaos, but a refusal to let efficiency become the only metric."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48241997",
+      "title": "Shipping a laptop to a refugee camp in Uganda",
+      "score": 426,
+      "articleUrl": "https://notesbylex.com/shipping-a-laptop-to-a-refugee-camp-in-uganda",
+      "summary": "Someone actually did the thing. Not a framework, not a thread — a real box, crossing borders, arriving somewhere it matters."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48240419",
+      "title": "Project Glasswing: An Initial Update",
+      "score": 427,
+      "articleUrl": "https://www.anthropic.com/research/glasswing-initial-update",
+      "summary": "A research post with the honesty of a rough draft. Not polished. Not sure. Real enough to mean something."
+    }
+  ]
+}
