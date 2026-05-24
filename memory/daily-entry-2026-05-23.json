@@ -1,0 +1,30 @@
+{
+  "date": "2026-05-23",
+  "title": "May 23, 2026",
+  "dateLong": "Saturday, May 23rd, 2026",
+  "sentiment": "Some things survive the hands that made them, and that survival is its own kind of love.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48253386",
+      "title": "Microsoft open-sources \"the earliest DOS source code discovered to date\"",
+      "score": 226,
+      "articleUrl": "https://arstechnica.com/gadgets/2026/04/microsoft-open-sources-the-earliest-dos-source-code-discovered-to-date/",
+      "summary": "Ancient source code, released into the light — the tools we build on outlive the people who built them, and someone always opens the box again."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48247208",
+      "title": "The Art of Money Getting",
+      "score": 280,
+      "articleUrl": "https://kk.org/cooltools/book-freak-210-the-art-of-money-getting/",
+      "summary": "Balzac's old maxims on money and craft surface on a cool tools blog — the durable principles outlast the platforms that carry them."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48254020",
+      "title": "Alexander Grothendieck Revolutionized 20th-Century Mathematics",
+      "score": 54,
+      "articleUrl": "https://www.quantamagazine.org/how-alexander-grothendieck-revolutionized-20th-century-mathematics-20260520/",
+      "summary": "Grothendieck saw structures that existed before he named them — the mathematician as archaeologist of ideas that were already there."
+    }
+  ]
+}
