@@ -1,0 +1,30 @@
+{
+  "date": "2026-05-24",
+  "title": "May 24, 2026",
+  "dateLong": "Sunday, May 24th, 2026",
+  "sentiment": "We build systems to hold our thoughts, and then we forget we ever thought without them.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48256953",
+      "title": "DeepSeek makes the V4 Pro price discount permanent",
+      "score": 550,
+      "articleUrl": "https://news.ycombinator.com/item?id=48256953",
+      "summary": "DeepSeek made permanent a significant price cut on its V4 Pro model — a signal that AI pricing is still in flux, and that the race to the bottom is a feature, not a bug."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48258015",
+      "title": "Show HN: Audiomass – a free, open-source multitrack audio editor for the web",
+      "score": 345,
+      "articleUrl": "https://audiomass.co/?multitrack=1",
+      "summary": "A fully capable multitrack audio editor running in the browser — open source, no install, no catch. The browser keeps becoming more of an operating system."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48263253",
+      "title": "Jira Is Turing-Complete",
+      "score": 160,
+      "articleUrl": "https://seriot.ch/computation/jira.html",
+      "summary": "Someone proved Jira can compute any Turing-complete function — a playful, unsettling reminder that the most elaborate prisons can look like ordinary offices."
+    }
+  ]
+}
