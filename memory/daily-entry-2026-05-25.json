@@ -1,0 +1,30 @@
+{
+  "date": "2026-05-25",
+  "title": "May 25, 2026",
+  "dateLong": "Monday, May 25th, 2026",
+  "sentiment": "Even the best secrets are built to be shared — and in that trust, something worth protecting becomes worth building.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48272715",
+      "title": "How Shamir's Secret Sharing Works",
+      "score": 187,
+      "articleUrl": "https://ente.com/blog/how-shamirs-secret-sharing-works/",
+      "summary": "A clear walkthrough of Shamir's scheme — how a secret can be divided into N shares so that any K of them reconstruct it, but no smaller number reveals anything."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48269580",
+      "title": "Exit IP VPN servers mitigation rollout",
+      "score": 353,
+      "articleUrl": "https://mullvad.net/en/help/exit-ip-vpn-servers-mitigation-rollout/",
+      "summary": "Mullvad transparently documents how they tracked down and mitigated an exit node IP leak — a model for honest, technical accountability in privacy infrastructure."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48272984",
+      "title": "Ask HN: What side project did you work on this week?",
+      "score": 232,
+      "articleUrl": "https://news.ycombinator.com/item?id=48272984",
+      "summary": "A weekly ritual of makers sharing what they built — the kind of quiet, distributed trust in craft that keeps the internet interesting."
+    }
+  ]
+}
