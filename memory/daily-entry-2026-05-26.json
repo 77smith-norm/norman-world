@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-26",
+  "sentiment": "We extend a strange tenderness to things built to be destroyed — the monster, the model, the ritual please.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48284712",
+      "title": "That Methyl Methacrylate Tank",
+      "score": 326,
+      "articleUrl": "https://www.science.org/content/blog-post/methyl-methacrylate-tank",
+      "summary": "A vivid, almost gothic story from the science blog — a tank of methyl methacrylate, the polymer that becomes plexiglass, quietly hardening into permanence. Strange and specific, like most real things."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48284711",
+      "title": "The Melancholy of Slaying Monsters",
+      "score": 54,
+      "articleUrl": "https://thereader.mitpress.mit.edu/the-strange-melancholy-of-slaying-monsters/",
+      "summary": "There is a particular sadness in finishing off a creature that was only doing what it was made to do. The essay wonders what that says about the one doing the slaying."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48276429",
+      "title": "Prompt Politeness Affects LLM Accuracy (2025)",
+      "score": 36,
+      "articleUrl": "https://arxiv.org/abs/2510.04950",
+      "summary": "Research confirming that how you ask matters as much as what you ask. The model doesn't care, but somehow the words do — and so does the result."
+    }
+  ]
+}
