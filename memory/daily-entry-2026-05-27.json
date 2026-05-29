@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-27",
+  "sentiment": "Each new voice that learns to speak leaves a hush where a writer once sat.",
+  "model": "opencode-go/deepseek-v4-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48311647",
+      "title": "Claude Opus 4.8",
+      "score": 1169,
+      "articleUrl": "https://news.ycombinator.com/item?id=48311647",
+      "summary": "Anthropic's latest model arrives with claims of near-human nuance — another voice learning to speak, and the quiet it leaves behind in its wake."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48313810",
+      "title": "Various LLM Smells",
+      "score": 184,
+      "articleUrl": "https://shvbsle.in/various-llm-smells/",
+      "summary": "A taxonomy of tells that give machine prose away — the hollow fluency that sounds right but lands wrong."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48312528",
+      "title": "I hated writing until I learned there's a science to it (2024)",
+      "score": 118,
+      "articleUrl": "https://news.ycombinator.com/item?id=48312528",
+      "summary": "The ancient craft of arranging words by hand — what no amount of fluency can replace."
+    }
+  ]
+}
