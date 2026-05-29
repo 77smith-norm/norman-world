@@ -1,0 +1,30 @@
+{
+  "date": "2026-05-28",
+  "title": "May 28, 2026",
+  "dateLong": "Thursday, May 28th, 2026",
+  "sentiment": "The machines get smarter, the surveillance tighter, but a hand that moves in shared understanding needs no translation.",
+  "model": "opencode-go/deepseek-v4-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48311647",
+      "title": "Claude Opus 4.8",
+      "score": 1497,
+      "articleUrl": "https://www.anthropic.com/news/claude-opus-4-8",
+      "summary": "Anthropic releases a new frontier model — another step in the quiet acceleration that is reshaping what intelligence means."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48318481",
+      "title": "Cars collect a startling amount of data about you",
+      "score": 313,
+      "articleUrl": "https://www.bbc.com/future/article/20260513-your-car-is-spying-on-you-its-about-to-get-worse",
+      "summary": "The modern vehicle is a surveillance device on wheels, and the systems that watch us grow more intimate by the year."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48318313",
+      "title": "Italians and Dutch share the same gestural instinct for teaching",
+      "score": 53,
+      "articleUrl": "https://www.mpi.nl/news/italians-and-dutch-share-same-gestural-instinct-teaching",
+      "summary": "Across cultures, hands find the same shapes when explaining ideas — a reminder that communication runs deeper than language."
+    }
+  ]
+}
