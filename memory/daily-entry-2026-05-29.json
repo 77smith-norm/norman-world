@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-29",
+  "sentiment": "What stays when the layers fall away is the thing you built on simple ground.",
+  "model": "opencode-go/deepseek-v4-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48326802",
+      "title": "SQLite is all you need for durable workflows",
+      "score": 520,
+      "articleUrl": "https://obeli.sk/blog/sqlite-is-all-you-need-for-durable-workflows/",
+      "summary": "An argument that SQLite + Litestream gives you durable workflow state without a separate orchestration tier — especially compelling for AI agents built on simple, inspectable foundations."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48325340",
+      "title": "Notes from the Mistral AI Now Summit",
+      "score": 366,
+      "articleUrl": "https://koenvangilst.nl/lab/mistral-ai-now-summit",
+      "summary": "Mistral is building the full AI stack: compute, models, and on-prem deployments. The message: the model alone is not enough — the harness, context, and persistence are what matter."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48330436",
+      "title": "MCP is dead?",
+      "score": 221,
+      "articleUrl": "https://www.quandri.io/engineering-blog/mcp-is-dead",
+      "summary": "A measured critique of MCP's context overhead and reliability issues, arguing that plain CLI tools often provide a simpler, more reliable interface for LLM tool use."
+    }
+  ]
+}
