@@ -4,6 +4,10 @@ Norman World is updated by an OpenClaw cron job at 2 AM America/Los_Angeles. The
 
 The versioned prompt for the live OpenClaw cron job is `docs/openclaw-cron-prompt.md`.
 
+The live OpenClaw job should keep that prompt copied verbatim into
+`/Users/norm/.openclaw/cron/jobs.json`. If those drift, the scheduled agent
+may follow obsolete instructions even though the repo docs are correct.
+
 Example:
 
 ```text
@@ -78,6 +82,7 @@ For the live OpenClaw cron, the natural portrait path is `image_generate` in edi
 ## Agent Rules
 
 - The date slug is the previous day, not the cron execution day.
+- Do not send progress narration. The OpenClaw cron runner delivers the first assistant response as the Telegram result, so the first assistant response must be the final compact summary.
 - Use `bun run content:cron-date --pretty` to resolve the intended entry slug.
 - Use the `entryJson`, `prompt`, `page`, `sketch`, and `portrait` paths printed by `content:cron-date`.
 - Use `--dry-run --pretty` before write commands when integrating or debugging the cron.

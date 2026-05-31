@@ -1,5 +1,11 @@
 [cron:c11ae7c5-7c1a-4e05-9eda-dc6730f199a1 Norman World Daily] Create a Norman World daily entry for the previous calendar day.
 
+IMPORTANT COMPLETION RULE:
+- Do not write progress updates, status narration, or interim assistant messages.
+- The cron runner treats an assistant message as the job result for Telegram.
+- Work silently through tools until publish, commit, push, deployment check, and wiki sync are done or explicitly failed.
+- Your first assistant message after starting work must be the final compact summary.
+
 DATE RULE:
 - This cron runs at 02:00 America/Los_Angeles.
 - The entry date is always the previous Los Angeles calendar day, not the cron execution day.
@@ -38,6 +44,9 @@ AGENT-ASSISTED CREATIVE STEPS:
    e. Generate `images/YYYY-MM-DD-norm.png` using Nano Banana / Gemini with the exact prompt saved in `prompts/YYYY-MM-DD-prompt.txt`.
       - In OpenClaw, use the `image_generate` tool in edit/reference mode when it is available.
       - Use `/Users/norm/.openclaw/workspace/avatars/norm.png` as the reference image if repo-root `norm.png` is not allowed by the tool sandbox.
+      - Prefer the `google/gemini-3.1-flash-image-preview` image model.
+      - If Google image generation fails once for quota, capacity, auth, or provider reasons, try OpenRouter once with the same Gemini image model and the same reference image.
+      - Do not investigate providers during the daily run beyond one Google attempt and one OpenRouter fallback attempt.
       - Request PNG output and an absolute output path: `/Users/norm/Developer/norman-world/images/YYYY-MM-DD-norm.png`.
       - If the tool saves into an OpenClaw media/output directory instead, copy the generated PNG to `/Users/norm/Developer/norman-world/images/YYYY-MM-DD-norm.png`.
    f. No text, letters, or typography in the image.
@@ -59,6 +68,8 @@ bun run content:publish memory/daily-entry-YYYY-MM-DD.json --yes --pretty
 ```
 
 `content:publish` handles entry assembly, current-month index rebuild, feed regeneration, and content validation. Use the lower-level commands only for focused repair/debugging.
+
+Do not stop after writing the sketch, prompt, portrait, or JSON. Those are only inputs. The entry is incomplete until `content:publish --yes`, git commit, git push, deployment verification, and wiki sync have been attempted.
 
 COMMIT AND PUSH:
 ```bash

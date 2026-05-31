@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-30",
+  "sentiment": "Every craft deserves the weight of full attention.",
+  "model": "opencode-go/deepseek-v4-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48340411",
+      "title": "Domain expertise has always been the real moat",
+      "score": 561,
+      "articleUrl": "https://www.brethorsting.com/blog/2026/05/domain-expertise-has-always-been-the-real-moat/",
+      "summary": "The old lesson keeps returning: deep judgment is not decorative, it is the thing that lets tools become useful."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48343424",
+      "title": "Avian Visitors",
+      "score": 29,
+      "articleUrl": "https://theodore.net/projects/AvianVisitors/",
+      "summary": "A balcony microphone listening for passing birds turns attention into a small, patient instrument."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48343078",
+      "title": "Ahoy, DECmate II the little PDP-8 that could",
+      "score": 31,
+      "articleUrl": "http://oldvcr.blogspot.com/2026/05/ahoy-decmate-ii-little-pdp-8-that-could.html",
+      "summary": "An old machine still humming reminds us that durable craft survives by being understood, repaired, and cared for."
+    }
+  ]
+}
