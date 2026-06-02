@@ -5,18 +5,32 @@ IMPORTANT COMPLETION RULE:
 - The cron runner treats an assistant message as the job result for Telegram.
 - Work silently through tools until publish, commit, push, deployment check, and wiki sync are done or explicitly failed.
 - Your first assistant message after starting work must be the final compact summary.
+- If you cannot complete the job, the final compact summary must start with `NORMAN_WORLD_DAILY_FAILED`.
+- If you complete the job, the final compact summary must start with `NORMAN_WORLD_DAILY_COMPLETE`.
 
 DATE RULE:
 - This cron runs at 02:00 America/Los_Angeles.
 - The entry date is always the previous Los Angeles calendar day, not the cron execution day.
 - First run `bun run content:cron-date --pretty` from `/Users/norm/Developer/norman-world` and use its `entryDate` and `entryMonth` values everywhere.
 
-READ FIRST:
-1. `/Users/norm/Developer/norman-world/AGENTS.md`
-2. `/Users/norm/Developer/norman-world/docs/openclaw-cron-contract.md`
-3. `/Users/norm/Developer/norman-world/docs/runbooks/daily-entry.md`
-4. `/Users/norm/.openclaw/workspace/memory/norman-world-anchor.md`
-5. `/Users/norm/Developer/norman-world/DESIGN.md`
+DO FIRST:
+Run these commands from `/Users/norm/Developer/norman-world` before any other work:
+
+```bash
+bun run content:cron-date --pretty
+git status --short
+test -f pages/YYYY-MM-DD.html && echo "ENTRY_ALREADY_EXISTS" || true
+```
+
+Use the resolved `entryDate`, `entryMonth`, `entryJson`, `prompt`, `page`, `sketch`, and `portrait` paths from `content:cron-date`. If the page already exists, stop with a final summary that starts `NORMAN_WORLD_DAILY_COMPLETE idempotent`.
+
+REFERENCE FILES:
+Only read these if needed for a specific missing detail. Do not spend the run reading all of them upfront.
+- `/Users/norm/Developer/norman-world/AGENTS.md`
+- `/Users/norm/Developer/norman-world/docs/openclaw-cron-contract.md`
+- `/Users/norm/Developer/norman-world/docs/runbooks/daily-entry.md`
+- `/Users/norm/.openclaw/workspace/memory/norman-world-anchor.md`
+- `/Users/norm/Developer/norman-world/DESIGN.md`
 
 IDEMPOTENCY:
 - If `pages/YYYY-MM-DD.html` already exists for the resolved `entryDate`, stop immediately and report that the entry already exists.
@@ -85,6 +99,11 @@ POST-PUSH:
    ```bash
    /Users/norm/.openclaw/workspace/scripts/wiki norman-world-sync --date YYYY-MM-DD --compile
    ```
+
+MONTH ROLLOVER:
+- Do not attempt month rollover during the daily entry cron unless `images/YYYY-MM-landscape.png` already exists for the outgoing month.
+- If the entry date is the last day of a month and the landscape is missing, report `month rollover pending: missing images/YYYY-MM-landscape.png` in the final summary.
+- If the landscape exists, run the documented rollover commands after the daily entry commit and push, then commit and push the rollover separately.
 
 CONSTRAINTS:
 - Prefer deterministic Bun content tools over manual HTML/feed/index edits.

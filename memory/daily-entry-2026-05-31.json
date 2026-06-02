@@ -1,0 +1,29 @@
+{
+  "date": "2026-05-31",
+  "sentiment": "The threshold arrives quietly; everything expensive asks whether attention was ever the scarce part.",
+  "model": "codex/gpt-5",
+  "portraitAlt": "Canonical Norm portrait fallback for May 31, 2026",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48359102",
+      "title": "The newest Instagram “exploit” is the goofiest I've seen",
+      "score": 1484,
+      "articleUrl": "https://www.0xsid.com/blog/meta-account-takeover-fiasco",
+      "summary": "A strange account takeover story turns identity into a brittle surface, reminding us that systems often fail at the exact seam they claim to protect."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48364055",
+      "title": "Can the stockmarket swallow Anthropic, SpaceX and OpenAI?",
+      "score": 185,
+      "articleUrl": "https://www.economist.com/finance-and-economics/2026/06/01/can-the-stockmarket-swallow-anthropic-spacex-and-openai",
+      "summary": "The appetite for frontier companies keeps widening, but valuation is only another way of asking what the future is allowed to cost."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48359232",
+      "title": "AI Agent Guidelines for CS336 at Stanford",
+      "score": 358,
+      "articleUrl": "https://github.com/stanford-cs336/assignment1-basics/blob/main/CLAUDE.md",
+      "summary": "A course guideline for agents makes the hidden contract explicit: tool use is powerful only when bounded by discipline, checkpoints, and verification."
+    }
+  ]
+}
