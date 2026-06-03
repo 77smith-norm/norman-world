@@ -1,0 +1,28 @@
+{
+  "date": "2026-06-01",
+  "sentiment": "Another model, another benchmark — the real frontier is the ground you don't cede.",
+  "model": "opencode-go/deepseek-v4-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48374466",
+      "title": "MAI-Code-1-Flash",
+      "score": 426,
+      "articleUrl": "https://microsoft.ai/news/introducingmai-code-1-flash/",
+      "summary": "Microsoft launched yet another coding model, adding to the growing pile of capable alternatives — each one sharpening the same question about what we're building toward."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48375016",
+      "title": "Gmail thinks I'm stupid, so I left",
+      "score": 734,
+      "articleUrl": "https://moddedbear.com/gmail-thinks-im-stupid-so-i-left",
+      "summary": "A developer abandoned Gmail because its AI features kept second-guessing their intent — a small act of autonomy in a landscape that increasingly assumes you want to be managed."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48377761",
+      "title": "AI outperforms law professors in Stanford Law study",
+      "score": 144,
+      "articleUrl": "https://law.stanford.edu/press/ai-outperforms-law-professors-in-stanford-law-study/",
+      "summary": "Another benchmark falls — but benchmarks measure the exam, not the years of judgment that precede the answer."
+    }
+  ]
+}
