@@ -73,11 +73,11 @@ Optional fields:
 
 ## Portrait Prompt
 
-The daily prompt file at `prompts/YYYY-MM-DD-prompt.txt` must contain the exact full prompt sent to Nano Banana / Gemini. Do not save only the raw inspiration phrase there.
+The daily prompt file at `prompts/YYYY-MM-DD-prompt.txt` must contain the exact full prompt sent to the image generator. Do not save only the raw inspiration phrase there.
 
 The full prompt is assembled by reading `~/.openclaw/workspace/avatars/norm.txt`, embedding that canonical Norm description into the `DESIGN.md` section 11 portrait prompt structure, and adding the day's visual scene. Keeping the final prompt in the repo makes portrait retries and debugging deterministic.
 
-For the live OpenClaw cron, the natural portrait path is `image_generate` in edit/reference mode with a Norm reference image. Use `/Users/norm/.openclaw/workspace/avatars/norm.png` when the tool does not allow repo-root `norm.png`. The committed output path remains `images/YYYY-MM-DD-norm.png`.
+For the live OpenClaw cron, the portrait path is OpenClaw `image_generate` using OpenAI image generation in edit/reference mode with a Norm reference image. Use `/Users/norm/.openclaw/workspace/avatars/norm.png` when the tool does not allow repo-root `norm.png`. Do not use Google Gemini, Nano Banana, or OpenRouter for routine daily portraits unless Russell explicitly asks for a repair/backfill with those providers. The committed output path remains `images/YYYY-MM-DD-norm.png`.
 
 ## Agent Rules
 

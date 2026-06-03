@@ -18,7 +18,7 @@ A daily artifact where Norm meditates on tech culture (Hacker News), generates a
 
 Each entry consists of:
 1. A **sentiment** — one sentence distilled from the day's themes
-2. A **portrait** — Norm illustrated via Nano Banana (Gemini image gen)
+2. A **portrait** — Norm illustrated via OpenClaw `image_generate` using OpenAI image generation
 3. A **p5.js sketch** — interactive visual, generated and saved to `js/YYYY-MM-DD.js`
 4. **Inspiration** — 2–3 HN stories with summaries
 5. A **byline** — the model that generated the entry
@@ -30,7 +30,7 @@ Each entry consists of:
 | Source | Method |
 |--------|--------|
 | Hacker News | Official Firebase API — top 30 stories |
-| Portraits | Nano Banana (Gemini image gen) via `skills/gemini/SKILL.md` |
+| Portraits | OpenClaw `image_generate` with OpenAI image generation |
 | AI generation | `openrouter/minimax/minimax-m2.5` (default) |
 
 ---
@@ -89,7 +89,7 @@ When the stylesheet version bumps, update the `?v=N` query param in **`templates
 | Hosting | GitHub Pages (`main` branch, root) |
 | Stylesheet | `style.css?v=4` (flat `div.entry` structure) |
 | Theme toggle | `../js/theme.js` (light / system / dark) |
-| Portraits | Nano Banana → Tinify (auto-optimized on git push hook) |
+| Portraits | OpenAI image generation via OpenClaw `image_generate` → Tinify (auto-optimized on git push hook) |
 | Sketches | p5.js 1.9.0 via cdnjs CDN |
 | Automation | OpenClaw cron at 2 AM PT, deterministic Bun content tools |
 
@@ -103,7 +103,7 @@ Steps:
 1. Fetch HN top stories (Firebase API)
 2. Choose 2–3 stories, synthesize themes
 3. Generate sentiment sentence
-4. Assemble full portrait prompt → save to `prompts/YYYY-MM-DD-prompt.txt` → Nano Banana → save to `images/YYYY-MM-DD-norm.png`
+4. Assemble full portrait prompt → save to `prompts/YYYY-MM-DD-prompt.txt` → OpenAI image generation via OpenClaw `image_generate` → save to `images/YYYY-MM-DD-norm.png`
 5. Generate p5.js sketch → save to `js/YYYY-MM-DD.js`
 6. `bun run content:publish memory/daily-entry-YYYY-MM-DD.json --pretty` → dry-run page/index/feed/validation plan
 7. `bun run content:publish memory/daily-entry-YYYY-MM-DD.json --yes --pretty` → save page, index, and feed, then validate
@@ -114,7 +114,7 @@ Steps:
 ## 8. Portrait Queue & Retry
 
 Failed portrait generations are logged to `memory/portrait-queue.json`.
-The heartbeat checks this file and retries quietly via Nano Banana.
+The heartbeat can check this file for explicit repair/backfill work.
 
 ---
 
@@ -135,14 +135,14 @@ The heartbeat checks this file and retries quietly via Nano Banana.
 **Canonical text:**
 > Norm is a small, round, plump white creature with a thin curved stalk/antenna on top ending in a small golden orb, large expressive dark black eyes with star-shaped white highlights, rosy cheeks, a gentle "w" smile, two small stubby legs, two small stubby arms and a thick black outline.
 
-**The Rudy problem:** When the shape description is vague (e.g. just "blob"), Gemini drifts toward a tall, vertically-stretched oval shape. This is wrong. Norm is short. Norm is round. Lock the shape with explicit negative constraints if needed: *"not tall, not oval, not elongated — perfectly round and squat."*
+**The Rudy problem:** When the shape description is vague (e.g. just "blob"), image models can drift toward a tall, vertically-stretched oval shape. This is wrong. Norm is short. Norm is round. Lock the shape with explicit negative constraints if needed: *"not tall, not oval, not elongated — perfectly round and squat."*
 
 **Portrait prompt structure — always embed the canonical description like this:**
 ```
 Cohesively integrate Norm (a small, round, plump white creature — short and squat, perfectly circular, NOT tall or oval — with a thin curved antenna on top ending in a small golden orb, large expressive dark eyes with star-shaped white highlights, rosy cheeks, a gentle "w" smile, two small stubby legs, two small stubby arms, and a thick black outline) into [SCENE DESCRIPTION]. Make him a natural part of the environment, matching the lighting, shadows, and mood. Soft illustration style. Do not include any text, letters, or words in the image.
 ```
 
-Save the exact full prompt used for generation to `prompts/YYYY-MM-DD-prompt.txt`. The prompt file is the retry/debug artifact, so it should contain the assembled Nano Banana prompt, not just the day's raw inspiration phrase.
+Save the exact full prompt used for generation to `prompts/YYYY-MM-DD-prompt.txt`. The prompt file is the retry/debug artifact, so it should contain the assembled image prompt, not just the day's raw inspiration phrase.
 
 Any prompt assembly script should read from `norm.txt` at runtime and inject its contents into the Cohesively integrate Norm (...) wrapper above. Do not hard-code the character description in the script — load it from `norm.txt` so it stays in sync with the single source of truth.
 
@@ -150,7 +150,7 @@ Any prompt assembly script should read from `norm.txt` at runtime and inject its
 
 ## 10. Known Gotchas
 
-- **Image paths must be absolute** when using Nano Banana or any tool that writes files. Relative paths break silently.
+- **Image paths must be absolute** when using image tools that write files. Relative paths break silently.
 - **Retrofix procedure:** copy `templates/entry.html`, fill placeholders, verify paths match the current stylesheet version before pushing.
 - **Portrait alt text:** entry assembly defaults to `Norm portrait for {title}`. Use a custom `portraitAlt` only when there is a specific accessibility reason.
 - **Tinify hook fires on push** — never manually optimize images; it will double-compress.

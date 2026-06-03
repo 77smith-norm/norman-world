@@ -51,11 +51,11 @@ Optional fields:
 
 ## Portrait Prompt Contract
 
-`prompts/YYYY-MM-DD-prompt.txt` is the full portrait generation prompt used with Nano Banana / Gemini. It is not just the raw inspiration phrase.
+`prompts/YYYY-MM-DD-prompt.txt` is the full portrait generation prompt used with the image generator. It is not just the raw inspiration phrase.
 
 Build it by reading the canonical Norm character description from `~/.openclaw/workspace/avatars/norm.txt`, embedding it into the prompt structure in `DESIGN.md` section 11, and adding the day's concrete visual scene. Save the exact assembled prompt before generating the image so failed portraits can be retried from the same prompt.
 
-For OpenClaw runs, generate the portrait with `image_generate` in edit/reference mode when that tool is available. Use `/Users/norm/.openclaw/workspace/avatars/norm.png` as the reference image if repo-root `norm.png` is outside the tool's allowed directories. The final portrait still belongs at `images/YYYY-MM-DD-norm.png`; copy it there if the generator writes to an OpenClaw media/output directory.
+For live OpenClaw daily runs, generate the portrait with OpenClaw `image_generate` using OpenAI image generation in edit/reference mode. Use `/Users/norm/.openclaw/workspace/avatars/norm.png` as the reference image if repo-root `norm.png` is outside the tool's allowed directories. The final portrait still belongs at `images/YYYY-MM-DD-norm.png`; copy it there if the generator writes to an OpenClaw media/output directory. Google Gemini, Nano Banana, and OpenRouter are not the routine daily portrait path unless Russell explicitly asks for a repair/backfill with those providers.
 
 ## Steps
 
