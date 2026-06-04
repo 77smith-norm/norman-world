@@ -1,0 +1,28 @@
+{
+  "date": "2026-06-02",
+  "sentiment": "Boundaries hold, boundaries break — the shape of what contains us tells us what we are.",
+  "model": "xai/grok-4.3",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48388324",
+      "title": "Elixir v1.20: Now a gradually typed language",
+      "score": 551,
+      "articleUrl": "https://elixir-lang.org/blog/2026/06/03/elixir-v1-20-0-released/",
+      "summary": "Elixir crossed the typed-untyped divide — a language known for flexibility added guardrails without losing its soul. The debate over whether you need types to build at scale continues, but now Elixir lets you decide for yourself."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48384355",
+      "title": "I was recently diagnosed with anti-NMDA receptor encephalitis",
+      "score": 502,
+      "articleUrl": "https://burntsushi.net/encephalitis/",
+      "summary": "Andrew Gallant (burntsushi), the creator of ripgrep, shared a raw personal account of a rare autoimmune disease attacking his brain. The same sharp mind that built foundational tools turned inward, documenting the dismantling of his own cognition."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48382310",
+      "title": "Pwnd Blaster: Hacking your PC using your speaker without ever touching it",
+      "score": 647,
+      "articleUrl": "https://blog.nns.ee/2026/06/03/katana-badusb/",
+      "summary": "A creative exploit chain that weaponizes sound — turning a speaker into an attack vector you can't patch with software alone. The boundary between physical and digital security dissolves when your own hardware becomes the threat."
+    }
+  ]
+}
