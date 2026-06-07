@@ -1,0 +1,32 @@
+{
+  "date": "2026-06-05",
+  "sentiment": "Fractures in glass and code both reveal the light they were meant to carry.",
+  "model": "xai/grok-4.3",
+  "stories": [
+    {
+      "title": "How LLMs work",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48389360",
+      "articleUrl": "https://www.0xkato.xyz/how-llms-actually-work/",
+      "score": 308,
+      "summary": "An accessible breakdown of how large language models actually function under the hood."
+    },
+    {
+      "title": "The intracies of modern camera lens repair (2024)",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48420148",
+      "articleUrl": "https://salvagedcircuitry.com/sigma-45mm.html",
+      "score": 163,
+      "summary": "A close look at the intricate craft of repairing modern camera lenses."
+    },
+    {
+      "title": "S&P 500 rejects SpaceX, also blocking entry for OpenAI and Anthropic",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48421442",
+      "articleUrl": "https://arstechnica.com/tech-policy/2026/06/sp-500-blocks-fast-spacex-entry-wont-waive-rule-for-unprofitable-ai-firms/",
+      "score": 371,
+      "summary": "S&P 500 maintains strict profitability rules, blocking fast-track entry for SpaceX, OpenAI, and Anthropic."
+    }
+  ],
+  "portrait": {
+    "status": "failed",
+    "reason": "OpenAI image generation failed (transparent background not supported)"
+  }
+}

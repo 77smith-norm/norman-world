@@ -1,0 +1,28 @@
+{
+  "date": "2026-06-04",
+  "sentiment": "In the quiet hum of code and memory, we find echoes of what we choose to remember.",
+  "model": "xai/grok-4.3",
+  "stories": [
+    {
+      "title": "Changing How We Develop Ladybird",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48409191",
+      "articleUrl": "https://ladybird.org/posts/changing-how-we-develop-ladybird/",
+      "score": 85,
+      "summary": "A fresh approach to browser development that values clarity and care."
+    },
+    {
+      "title": "C++: The Documentary",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48408016",
+      "articleUrl": "https://herbsutter.com/2026/06/04/c-the-documentary-released-today/",
+      "score": 130,
+      "summary": "A film that honors the long, quiet work behind the language we still build with."
+    },
+    {
+      "title": "Fine-tuning an LLM to write docs like it's 1995",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48408442",
+      "articleUrl": "https://passo.uno/fine-tuning-docs-llm/",
+      "score": 49,
+      "summary": "An experiment in making machine writing feel hand-crafted again."
+    }
+  ]
+}
