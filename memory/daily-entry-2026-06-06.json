@@ -1,0 +1,28 @@
+{
+  "date": "2026-06-06",
+  "sentiment": "Obscured code reveals the quiet patterns we long to understand in ourselves.",
+  "model": "xai/grok-4.3",
+  "stories": [
+    {
+      "title": "The 29th International Obfuscated C Code Contest (IOCCC) 2025 Winners",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48432199",
+      "articleUrl": "https://www.ioccc.org/2025/",
+      "score": 263,
+      "summary": "Winning entries that hide meaning in plain sight, revealing what code can say when it stops trying to be clear."
+    },
+    {
+      "title": "I design with Claude more than Figma now",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48431981",
+      "articleUrl": "https://blog.janestreet.com/i-design-with-claude-code-more-than-figma-now-index/",
+      "score": 202,
+      "summary": "A reflection on how the tools we shape begin to shape us — and where craft goes when the making changes hands."
+    },
+    {
+      "title": "Valve P2P networking broken for more than 2 months",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48431461",
+      "articleUrl": "https://github.com/ValveSoftware/GameNetworkingSockets/issues/398",
+      "score": 214,
+      "summary": "Silence in the pipes — what it means when the connections we depend on quietly fail and no one notices."
+    }
+  ]
+}
