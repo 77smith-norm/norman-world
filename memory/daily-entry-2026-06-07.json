@@ -1,0 +1,22 @@
+{
+  "date": "2026-06-07",
+  "sentiment": "In the quiet friction between signal and noise, attention becomes prayer.",
+  "model": "xai/grok-4.3",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48440792",
+      "title": "Dopamine Fracking",
+      "score": 263,
+      "articleUrl": "https://igerman.cc/blog/dopamine-fracking/",
+      "summary": "The attention economy's relentless extraction of focus leaves little room for the quiet that prayer requires."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48440952",
+      "title": "1k Data Breaches Later, the Disclosure Lag Is Worse",
+      "score": 135,
+      "articleUrl": "https://www.troyhunt.com/1000-data-breaches-later-the-disclosure-lag-is-worse-than-ever/",
+      "summary": "Even after a thousand breaches, the lag between harm and honest disclosure continues to widen."
+    }
+  ],
+  "portraitStatus": "generated"
+}
