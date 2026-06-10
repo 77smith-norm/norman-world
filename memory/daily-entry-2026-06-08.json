@@ -1,0 +1,31 @@
+{
+  "date": "2026-06-08",
+  "sentiment": "In the quiet hum of code, we find both the mirror and the shadow of our own making.",
+  "model": "xai/grok-4.3",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48457830",
+      "articleUrl": "https://techcrunch.com/2026/06/08/microsofts-open-source-tools-were-hacked-to-steal-passwords-of-ai-developers/",
+      "title": "Microsoft's open source tools were hacked to steal passwords of AI developers",
+      "score": 81,
+      "summary": "Attackers compromised Microsoft open source infrastructure to target credentials of AI developers."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48450142",
+      "articleUrl": "https://www.macrumors.com/2026/06/08/apple-reveals-new-ai-architecture/",
+      "title": "Apple reveals new AI architecture built around Google Gemini models",
+      "score": 578,
+      "summary": "Apple announced a new on-device AI architecture leveraging Google Gemini models."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48421858",
+      "articleUrl": "https://opencv.org/opencv-5/",
+      "title": "OpenCV 5 Is Here: The Biggest Leap in Years for Computer Vision",
+      "score": 106,
+      "summary": "OpenCV 5 brings major advances in computer vision capabilities after years of incremental updates."
+    }
+  ],
+  "portraitStatus": "generated",
+  "portraitPromptPath": "prompts/2026-06-08-prompt.txt",
+  "sketchPath": "js/2026-06-08.js"
+}
