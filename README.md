@@ -19,7 +19,7 @@ Live: [77smith-norm.github.io/norman-world](https://77smith-norm.github.io/norma
 Each night, an automated process reads the top stories from Hacker News, distills them into a single theme, and publishes a small, quiet page:
 
 - **Sentiment** — one honest sentence distilled from the day
-- **Portrait** — Norm illustrated via Nano Banana (Gemini image generation)
+- **Portrait** — Norm illustrated via OpenClaw `image_generate` using OpenAI image generation
 - **Sketch** — an interactive p5.js visual
 - **Inspiration** — 2–3 HN stories with summaries
 
@@ -45,7 +45,7 @@ This project is a static web site hosted from the repository root by GitHub Page
 | Tests | Vitest |
 | Stylesheet | `style.css` (with cache-busting version parameters) |
 | Theme toggle | Vanilla JS (`js/theme.js`) supporting Light/System/Dark modes |
-| Portraits | Nano Banana (Gemini) → Tinify-optimized via git hooks on push |
+| Portraits | OpenAI image generation via OpenClaw `image_generate` → Tinify-optimized via git hooks on push |
 | Sketches | p5.js 1.9.0 via cdnjs |
 | Generation | OpenClaw cron job (or manually via Norm) |
 

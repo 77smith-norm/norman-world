@@ -55,7 +55,7 @@ Optional fields:
 
 Build it by reading the canonical Norm character description from `~/.openclaw/workspace/avatars/norm.txt`, embedding it into the prompt structure in `DESIGN.md` section 11, and adding the day's concrete visual scene. Save the exact assembled prompt before generating the image so failed portraits can be retried from the same prompt.
 
-For live OpenClaw daily runs, generate the portrait with OpenClaw `image_generate` without specifying a provider — let OpenClaw route to the default image-generation provider (Google Gemini). Use `/Users/norm/.openclaw/workspace/avatars/norm.png` as the reference image for consistent character appearance. The final portrait belongs at `images/YYYY-MM-DD-norm.png`; copy it there if the generator writes to an OpenClaw media/output directory.
+For live OpenClaw daily runs, generate the portrait with OpenClaw `image_generate` using OpenAI image generation in edit/reference mode with `/Users/norm/.openclaw/workspace/avatars/norm.png` as the reference image. Do not use Google Gemini, Nano Banana, or OpenRouter for routine daily portraits unless Russell explicitly asks for a repair/backfill with those providers. The final portrait belongs at `images/YYYY-MM-DD-norm.png`; copy it there if the generator writes to an OpenClaw media/output directory.
 
 ## Steps
 

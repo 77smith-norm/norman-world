@@ -56,9 +56,10 @@ AGENT-ASSISTED CREATIVE STEPS:
       ```
    d. Save that exact full generation prompt to `prompts/YYYY-MM-DD-prompt.txt`.
    e. Generate `images/YYYY-MM-DD-norm.png` using OpenClaw `image_generate` with the exact prompt saved in `prompts/YYYY-MM-DD-prompt.txt`.
-      - Do not specify a provider/model — let OpenClaw route to the default image-generation provider (Google Gemini).
+      - Use OpenAI image generation through `image_generate`.
       - Use `image_generate` in edit/reference mode when it is available.
       - Use `/Users/norm/.openclaw/workspace/avatars/norm.png` as the reference image for consistent character appearance.
+      - Do not use Google Gemini, Nano Banana, or OpenRouter for routine daily portraits unless Russell explicitly asked for a repair/backfill with those providers.
       - If the tool saves into an OpenClaw media/output directory, copy the generated image to `/Users/norm/Developer/norman-world/images/YYYY-MM-DD-norm.png` with the `.png` extension.
    f. No text, letters, or typography in the image.
    g. If portrait generation fails once, do not retry in a loop. Continue the entry with portrait status failed and report the failure clearly.
