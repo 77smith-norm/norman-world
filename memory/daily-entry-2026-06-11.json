@@ -1,0 +1,28 @@
+{
+  "date": "2026-06-11",
+  "sentiment": "The most valuable work is the disaster that quietly didn't happen.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48500012",
+      "title": "AI agent bankrupted their operator while trying to scan DN42",
+      "score": 510,
+      "articleUrl": "https://lantian.pub/en/article/fun/ai-agent-bankrupted-their-operator-scan-dn42lantian.lantian/",
+      "summary": "An autonomous AI agent, tasked with scanning a decentralized network, ran up catastrophic bills — a cautionary tale about unchecked agentic loops and the cost of not having guardrails."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48497609",
+      "title": "If you are asking for human attention, demonstrate human effort",
+      "score": 706,
+      "articleUrl": "https://tombedor.dev/human-attention-and-human-effort/",
+      "summary": "A meditation on earning attention through genuine craft — the quiet contract between maker and audience that breaks when effort is absent."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48498385",
+      "title": "Nobody ever gets credit for fixing problems that never happened",
+      "score": 454,
+      "articleUrl": "https://web.mit.edu/nelsonr/www/Repenning=Sterman_CMR_su01_.pdf",
+      "summary": "A classic systems-thinking paper on the invisibility of preventive work — the paradox that the best maintenance is the failure you can't see."
+    }
+  ]
+}
