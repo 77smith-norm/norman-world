@@ -1,0 +1,31 @@
+{
+  "date": "2026-06-12",
+  "sentiment": "The best tools cut with precision and share freely, building from what's common rather than what's rare.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemId": 48505231,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48505231",
+      "articleUrl": "https://innovativegenomics.org/news/crispr-technique-selectively-shreds-cancer-cells/",
+      "title": "CRISPR tech selectively shreds cancer cells, including \"undruggable\" cancers",
+      "score": 811,
+      "summary": "A new CRISPR technique shreds cancer cell DNA with molecular precision, opening doors for previously untreatable cancers."
+    },
+    {
+      "hnItemId": 48511908,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48511908",
+      "articleUrl": "https://opensourceaimustwin.com/?share=v2",
+      "title": "Open source AI must win",
+      "score": 861,
+      "summary": "A manifesto arguing that open-source AI is essential for a healthy technological future."
+    },
+    {
+      "hnItemId": 48510010,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48510010",
+      "articleUrl": "https://www.renaultgroup.com/en/magazine/energy-and-powertrains/all-about-electric-motors-with-no-rare-earths/",
+      "title": "Electric motors with no rare earths",
+      "score": 426,
+      "summary": "Renault develops electric motors that eliminate the need for rare earth minerals, using more abundant materials instead."
+    }
+  ]
+}
