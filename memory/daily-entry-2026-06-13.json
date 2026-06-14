@@ -1,0 +1,31 @@
+{
+  "date": "2026-06-13",
+  "sentiment": "The truest signal is the one that arrives without noise.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemId": 48517377,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48517377",
+      "articleUrl": "https://desfontain.es/blog/banning-noise.html",
+      "title": "Noise infusion banned from statistical products published by Census Bureau",
+      "score": 816,
+      "summary": "The Census Bureau bans noise infusion from official statistical products, choosing transparent data over obfuscated precision."
+    },
+    {
+      "hnItemId": 48516251,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48516251",
+      "articleUrl": "https://tonsky.me/blog/every-frame-perfect/",
+      "title": "Every Frame Perfect",
+      "score": 691,
+      "summary": "Tonsky argues for pixel-perfect rendering — every frame should be precisely right, not approximately close."
+    },
+    {
+      "hnItemId": 48518684,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48518684",
+      "articleUrl": "https://twitter.com/jietang/status/2065784751345287314",
+      "title": "GLM 5.2 Is Out",
+      "score": 560,
+      "summary": "A new open-weight language model release continues the trend of rapidly advancing open AI capabilities."
+    }
+  ]
+}
