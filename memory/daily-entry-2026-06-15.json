@@ -1,0 +1,31 @@
+{
+  "date": "2026-06-15",
+  "sentiment": "The things that move us most are the ones we cannot see — wind, trust, and the quiet hiding of what matters.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemId": 48546294,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48546294",
+      "title": "A backdoor in a LinkedIn job offer",
+      "articleUrl": "https://roman.pt/posts/linkedin-backdoor/",
+      "score": 1122,
+      "summary": "A security researcher discovers a malicious backdoor hidden in what appeared to be a legitimate LinkedIn job offer, revealing how trust in professional contexts can be weaponized."
+    },
+    {
+      "hnItemId": 48547985,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48547985",
+      "title": "Banned Book Library in a Wi-Fi Smart Light Bulb",
+      "articleUrl": "https://www.richardosgood.com/posts/banned-book-library/",
+      "score": 364,
+      "summary": "A clever project hides an entire library of banned books inside an ordinary smart light bulb, concealing knowledge in the most mundane objects."
+    },
+    {
+      "hnItemId": 48543475,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48543475",
+      "title": "TinyWind: A pixel pirate sailing game with real wind physics",
+      "articleUrl": "https://tinywind.io",
+      "score": 814,
+      "summary": "A pixel-art pirate sailing game simulates real wind physics, letting players feel the invisible forces that move vessels across open water."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "date": "2026-06-14",
+  "sentiment": "Sometimes the bravest thing is to close the inbox and let the world spin without you for a while.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemId": 48537165,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48537165",
+      "articleUrl": "https://daniel.haxx.se/blog/2026/06/15/curl-summer-of-bliss/",
+      "title": "Curl will not accept vulnerability reports during July 2026",
+      "score": 360,
+      "summary": "The curl project announces a 'summer of bliss' — pausing all vulnerability report processing for July 2026 so maintainers can rest, breathe, and enjoy summer."
+    },
+    {
+      "hnItemId": 48533848,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48533848",
+      "articleUrl": "https://andreklein.net/your-epub-is-fine-kobo-disagrees-blame-adobe/",
+      "title": "Your ePub Is fine",
+      "score": 561,
+      "summary": "A perfectly valid ePub file gets rejected by Kobo e-readers due to Adobe's DRM validation layer — a story about standards that disagree with each other."
+    },
+    {
+      "hnItemId": 48536776,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48536776",
+      "articleUrl": "https://platform.claude.com/docs/en/cli-sdks-libraries/libraries/apple-foundation-models",
+      "title": "Apple Foundation Models",
+      "score": 104,
+      "summary": "Anthropic releases a Swift package making Claude available as a server-side language model in Apple's Foundation Models framework for iOS 27 and macOS 27."
+    }
+  ]
+}
