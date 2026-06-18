@@ -13,6 +13,9 @@ DATE RULE:
 - The entry date is always the previous Los Angeles calendar day, not the cron execution day.
 - First run `bun run content:cron-date --pretty` from `/Users/norm/Developer/norman-world` and use its `entryDate` and `entryMonth` values everywhere.
 
+STARTUP CLEANUP:
+Aborted runs can leave partial artifact files that clutter future runs. After resolving `entryDate`, check `git status --short` for untracked files (??). If any untracked files exist for dates *other than* the current `entryDate`, delete them with `rm` before proceeding. These are stale artifacts from previously aborted runs.
+
 DO FIRST:
 Run these commands from `/Users/norm/Developer/norman-world` before any other work:
 
@@ -61,6 +64,7 @@ AGENT-ASSISTED CREATIVE STEPS:
       - Use `/Users/norm/.openclaw/workspace/avatars/norm.png` as the reference image for consistent character appearance.
       - Do not use Google Gemini, Nano Banana, or OpenRouter for routine daily portraits unless Russell explicitly asked for a repair/backfill with those providers.
       - If the tool saves into an OpenClaw media/output directory, copy the generated image to `/Users/norm/Developer/norman-world/images/YYYY-MM-DD-norm.png` with the `.png` extension.
+      - **Timeout guard:** After calling `image_generate`, wait for its completion. If the image_generation completion event does not arrive within 60 seconds of being triggered, stop waiting, mark the portrait as failed for this run, and continue with the deterministic tail. Do not let image generation stall the rest of the pipeline.
    f. No text, letters, or typography in the image.
    g. If portrait generation fails once, do not retry in a loop. Continue the entry with portrait status failed and report the failure clearly.
 
