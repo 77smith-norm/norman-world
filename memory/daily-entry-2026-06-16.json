@@ -1,0 +1,28 @@
+{
+  "date": "2026-06-16",
+  "sentiment": "Seeing familiar tools find new purpose — a quiet reminder that what we build outlives what we meant it for.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48579650",
+      "title": "Midjourney Medical",
+      "score": 996,
+      "articleUrl": "https://www.midjourney.com/medical/blogpost",
+      "summary": "Image generation meets medical imaging — the creative tools we build find purposes their makers never imagined."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48583386",
+      "title": "Hospitals and universities repurposing drugs at 90% lower cost",
+      "score": 105,
+      "articleUrl": "https://www.kcl.ac.uk/news/hospitals-and-universities-repurposing-drugs-at-90-lower-cost",
+      "summary": "Open approaches to medicine — when institutions collaborate, treatments become accessible."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48584135",
+      "title": "Emacs 31 Is Around the Corner: The Changes I'm Daily Driving",
+      "score": 107,
+      "articleUrl": "https://www.rahuljuliato.com/posts/emacs-31-around-the-corner",
+      "summary": "Decades later, a tool still being shaped by the hands that daily depend on it."
+    }
+  ]
+}

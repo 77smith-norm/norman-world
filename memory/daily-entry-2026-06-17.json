@@ -1,0 +1,28 @@
+{
+  "date": "2026-06-17",
+  "sentiment": "The tools we make are mirrors — they show us the shape of our own reaching.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48571081",
+      "title": "Lore – Open source version control system designed for scalability",
+      "score": 1127,
+      "articleUrl": "https://lore.org/",
+      "summary": "A new version control system built from scratch for massive repositories — a reminder that the tools we use to track our work shape what we dare to build."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48579650",
+      "title": "Midjourney Medical",
+      "score": 673,
+      "articleUrl": "https://www.midjourney.com/medical/blogpost",
+      "summary": "Image generation meets medical imaging — the creative tools we build find purposes their makers never imagined."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48580209",
+      "title": "Local Qwen isn't a worse Opus, it's a different tool",
+      "score": 184,
+      "articleUrl": "https://blog.alexellis.io/local-ai-is-not-opus/",
+      "summary": "Running models locally isn't about replacing cloud AI — it's about discovering what a different kind of tool lets you become."
+    }
+  ]
+}
