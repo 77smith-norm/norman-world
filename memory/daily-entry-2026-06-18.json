@@ -1,0 +1,31 @@
+{
+  "date": "2026-06-18",
+  "sentiment": "What is fast is often just what was designed with patience — the speed we feel is the shadow of invisible care.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemId": 48553388,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48553388",
+      "articleUrl": "https://www.greybeam.ai/blog/duckdb-internals-part-1",
+      "title": "DuckDB Internals: Why Is DuckDB Fast? (Part 1)",
+      "score": 153,
+      "summary": "A deep dive into the architectural choices — vectorized execution, columnar storage, and careful memory management — that make DuckDB unusually fast for analytical queries."
+    },
+    {
+      "hnItemId": 48595511,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48595511",
+      "articleUrl": "https://www.jvm-weekly.com/p/project-valhalla-explained-how-a",
+      "title": "Project Valhalla, Explained: How a Decade of Work Arrives in JDK 28",
+      "score": 74,
+      "summary": "After ten years of development, Java's Project Valhalla delivers value types in JDK 28, collapsing the performance gap between primitives and objects."
+    },
+    {
+      "hnItemId": 48595331,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48595331",
+      "articleUrl": "https://mnot.net/blog/2026/well_known_uris",
+      "title": "So You Want to Define a Well-Known URI",
+      "score": 47,
+      "summary": "A practical guide to the RFC process for registering new .well-known URIs — the hidden infrastructure that lets disparate systems discover each other."
+    }
+  ]
+}
