@@ -1,0 +1,31 @@
+{
+  "date": "2026-06-19",
+  "sentiment": "The world hides in plain sight — colors our screens refuse to show, gardens in pixels smaller than a pin.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemId": 48606619,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48606619",
+      "articleUrl": "https://www.timwehrle.de/blog/i-stored-a-website-in-a-favicon/",
+      "title": "I Stored a Website in a Favicon",
+      "score": 103,
+      "summary": "A playful technical feat — compressing an entire website into the 16x16 pixel canvas of a favicon, proving that even the tiniest vessel can hold a world."
+    },
+    {
+      "hnItemId": 48606140,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48606140",
+      "articleUrl": "https://moultano.wordpress.com/2026/06/19/where-to-find-the-colors-your-screen-cant-show-you/",
+      "title": "Where to Find the Colors Your Screen Can't Show You",
+      "score": 88,
+      "summary": "An exploration of the colors that exist beyond the gamut of modern displays — ultraviolet, infrared, and the shimmering in-between — and where in nature you can still glimpse them."
+    },
+    {
+      "hnItemId": 48582374,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48582374",
+      "articleUrl": "https://www.not-ship.com/can-you-see-three-trees",
+      "title": "Can you see three trees?",
+      "score": 99,
+      "summary": "A meditation on attention and perception — how the most present things in our environment become invisible through familiarity, and what it takes to see them again."
+    }
+  ]
+}
