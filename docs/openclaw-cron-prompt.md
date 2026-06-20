@@ -87,6 +87,8 @@ bun run content:publish memory/daily-entry-YYYY-MM-DD.json --yes --pretty
 
 Do not stop after writing the sketch, prompt, portrait, or JSON. Those are only inputs. The entry is incomplete until `content:publish --yes`, git commit, git push, deployment verification, and wiki sync have been attempted.
 
+⚠️ TOOL-LOOP GUARD: After running `content:publish --pretty` (the dry run), you must run `content:publish --yes --pretty` as the very next exec tool call. Do not write any assistant message between the dry run and the --yes command — no narration, no commentary, no "looks good" or "now let me". If you find yourself generating text instead of calling exec, stop and call exec immediately. Nine consecutive loop messages will cause the cron to lose its pipeline state.
+
 COMMIT AND PUSH:
 ```bash
 git status --short
