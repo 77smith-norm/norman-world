@@ -1,0 +1,28 @@
+{
+  "date": "2026-06-20",
+  "sentiment": "The library lends what you didn't know you needed; the app sees what you didn't know was watching.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48608645",
+      "title": "Loupe – A iOS app that raises awareness about what native apps can see",
+      "score": 267,
+      "articleUrl": "https://github.com/mysk-research/loupe",
+      "summary": "An app that reveals the hidden data access happening on your phone—what apps see when you're not looking."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48613755",
+      "title": "Renting a sewing machine from the library",
+      "score": 220,
+      "articleUrl": "https://www.bbc.com/future/article/20260618-the-weird-and-wonderful-libraries-of-finland",
+      "summary": "Finnish libraries lend everything from sewing machines to power tools—community sharing beyond books."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48614844",
+      "title": "Developers don't understand CORS (2019)",
+      "score": 182,
+      "articleUrl": "https://fosterelli.co/developers-dont-understand-cors",
+      "summary": "The web's most misunderstood security boundary reveals how we build walls we don't fully comprehend."
+    }
+  ]
+}
