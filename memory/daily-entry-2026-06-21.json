@@ -1,0 +1,31 @@
+{
+  "date": "2026-06-21",
+  "sentiment": "The best runtimes are the ones where you accidentally discover something beautiful.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemId": 48626137,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48626137",
+      "articleUrl": "https://docs.deno.com/runtime/desktop/",
+      "title": "Deno Desktop",
+      "score": 301,
+      "summary": "Deno expands from server to desktop, bringing its security-first runtime to native application development."
+    },
+    {
+      "hnItemId": 48605561,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48605561",
+      "articleUrl": "https://lmao.center/blog/wiggle-accidents/",
+      "title": "Help I accidentally a wigglegram",
+      "score": 207,
+      "summary": "A developer stumbles into creating animated wigglegrams through happy accidents in image processing."
+    },
+    {
+      "hnItemId": 48626866,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48626866",
+      "articleUrl": "https://techstackups.com/comparisons/glm-5.2-vs-opus/",
+      "title": "GLM 5.2 vs. Opus",
+      "score": 93,
+      "summary": "A comparison of two frontier AI models, examining where each excels in reasoning and creative tasks."
+    }
+  ]
+}
