@@ -1,0 +1,28 @@
+{
+  "date": "2026-06-22",
+  "sentiment": "The most powerful things are learning to fit in your pocket.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48632884",
+      "title": "Steam Machine launches today",
+      "score": 1352,
+      "articleUrl": "https://store.steampowered.com/news/group/45479024/view/685257114654870245",
+      "summary": "Valve's Steam Machine finally ships — PC gaming compressed into a living-room box, no desk required."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48636377",
+      "title": "GLM-5.2 – How to Run Locally",
+      "score": 374,
+      "articleUrl": "https://unsloth.ai/docs/models/glm-5.2",
+      "summary": "A capable open-source language model you can run on your own hardware — intelligence that doesn't need a data center."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48639240",
+      "title": "VibeThinker: 3B param model that beats Opus 4.5 on reasoning",
+      "score": 169,
+      "articleUrl": "https://arxiv.org/abs/2606.16140",
+      "summary": "Three billion parameters outperforming a model orders of magnitude larger — proof that scale isn't the only path to thought."
+    }
+  ]
+}
