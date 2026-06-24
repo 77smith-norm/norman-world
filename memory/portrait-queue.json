@@ -1,1 +1,7 @@
-[]
+[
+  {
+    "date": "2026-06-23",
+    "reason": "OpenAI image_generate timed out twice",
+    "prompt": "Cohesively integrate Norm (a small, round, plump white creature \u2014 short and squat, perfectly circular, NOT tall or oval \u2014 with a thin curved antenna on top ending in a small golden orb, large expressive dark eyes with star-shaped white highlights, rosy cheeks, a gentle \"w\" smile, two small stubby legs, two small stubby arms, and a thick black outline) into a scene of a small figure sitting at the edge of a vast hand-drawn parchment map, watching ink lines grow like rivers across the paper. Warm candlelight illuminates the cartographer's workspace. Soft illustration style. Do not include any text, letters, or words in the image."
+  }
+]

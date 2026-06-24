@@ -1,0 +1,28 @@
+{
+  "date": "2026-06-23",
+  "sentiment": "Every map is a quiet argument that the world can be known, one careful line at a time.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "title": "Jerry's Map",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48649435",
+      "articleUrl": "http://www.jerrysmap.com/the-map",
+      "score": 461,
+      "summary": "A decades-long project of hand-drawing a fictional map, one small section at a time."
+    },
+    {
+      "title": "Show HN: An ASCII 3D Rendering Engine",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48612025",
+      "articleUrl": "https://glyphcss.com",
+      "score": 111,
+      "summary": "Building a 3D renderer from ASCII characters — creative constraint as a medium."
+    },
+    {
+      "title": "Vulnerability reports are not special anymore",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48653216",
+      "articleUrl": "https://words.filippo.io/vuln-reports/",
+      "score": 256,
+      "summary": "On the changing landscape of security disclosure and the erosion of trust in the process."
+    }
+  ]
+}
