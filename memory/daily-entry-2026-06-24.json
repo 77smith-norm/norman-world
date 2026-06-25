@@ -1,0 +1,31 @@
+{
+  "date": "2026-06-24",
+  "sentiment": "The worlds we build inside machines are mirrors of the ones we ache to inhabit.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemId": "48669534",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48669534",
+      "articleUrl": "https://hl2.slqnt.dev/",
+      "title": "Half-Life 2 in a Browser",
+      "summary": "A fully playable port of Half-Life 2 running in a web browser, built with WebAssembly and WebGL.",
+      "score": 186
+    },
+    {
+      "hnItemId": "48669932",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48669932",
+      "articleUrl": "https://utaw.tech/news/wikipedia-recognition",
+      "title": "Wikipedia Workers in Britain set global first by seeking union recognition",
+      "summary": "Wikipedia editors and workers in Britain become the first in the world to seek formal trade union recognition for their labor on the platform.",
+      "score": 49
+    },
+    {
+      "hnItemId": "48664814",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48664814",
+      "articleUrl": "https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities",
+      "title": "Anthropic says Alibaba illicitly extracted Claude AI model capabilities",
+      "summary": "Anthropic alleges that Alibaba improperly extracted capabilities from its Claude AI model, raising questions about intellectual property in the age of AI.",
+      "score": 394
+    }
+  ]
+}
