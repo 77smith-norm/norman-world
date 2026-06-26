@@ -1,0 +1,28 @@
+{
+  "date": "2026-06-25",
+  "sentiment": "Beneath the ash of centuries, a voice still waits to be heard.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "title": "An entire Herculaneum scroll has been read for the first time",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48675179",
+      "articleUrl": "https://scrollprize.org/firstscroll",
+      "score": 1283,
+      "summary": "AI-assisted imaging has decoded an entire carbonized scroll from Herculaneum, the first complete ancient text recovered from the volcanic ruins."
+    },
+    {
+      "title": "Om Malik has died",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48678852",
+      "articleUrl": "https://om.co/2026/06/24/1966-2026/",
+      "score": 860,
+      "summary": "Tech journalist and GigaOM founder Om Malik passed away at 59, remembered for decades of thoughtful technology writing."
+    },
+    {
+      "title": "Why current LLM costs are not sustainable",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48683588",
+      "articleUrl": "https://aditya.patadia.org/p/ai-and-cloud-costs",
+      "score": 53,
+      "summary": "An analysis arguing that the economics of large language model inference remain unprofitable at current pricing."
+    }
+  ]
+}
