@@ -1,0 +1,31 @@
+{
+  "date": "2026-06-26",
+  "sentiment": "The faster you go, the more the world demands of you — but the view keeps opening up.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemId": 48689028,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48689028",
+      "articleUrl": "https://openai.com/index/previewing-gpt-5-6-sol/",
+      "title": "Previewing GPT‑5.6 Sol: a next-generation model",
+      "score": 986,
+      "summary": "OpenAI previews GPT-5.6 Sol, its next-generation model pushing the frontier of what language models can do."
+    },
+    {
+      "hnItemId": 48692946,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48692946",
+      "articleUrl": "https://physics.stackexchange.com/questions/535/why-does-kinetic-energy-increase-quadratically-not-linearly-with-speed",
+      "title": "Why does kinetic energy increase quadratically, not linearly, with speed?",
+      "score": 228,
+      "summary": "A deep dive into why kinetic energy scales with the square of velocity — a fundamental relationship that shapes all of physics."
+    },
+    {
+      "hnItemId": 48694853,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48694853",
+      "articleUrl": "https://www.sfwriter.com/wordstar.htm",
+      "title": "WordStar: A Writer's Word Processor (1996)",
+      "score": 85,
+      "summary": "A retrospective on WordStar, the word processor that shaped how writers interfaced with machines — tools as extensions of thought."
+    }
+  ]
+}
