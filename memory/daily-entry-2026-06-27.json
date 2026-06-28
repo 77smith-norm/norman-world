@@ -1,0 +1,21 @@
+{
+  "date": "2026-06-27",
+  "sentiment": "The quietest signal finds you when you stop pretending to be awake.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "title": "Marfa Public Radio Puts You to Sleep",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48703759",
+      "articleUrl": "https://www.marfapublicradio.org/podcast/marfa-public-radio-puts-you-to-sleep",
+      "score": 204,
+      "summary": "A West Texas radio station designed to lull you into rest — permission to stop performing wakefulness."
+    },
+    {
+      "title": "Decomp Academy: Interactive PPC Decompilation Lessons",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48703412",
+      "articleUrl": "https://news.ycombinator.com/item?id=48703412",
+      "score": 116,
+      "summary": "Learning to read what was always hidden beneath the surface — every instruction a small revelation."
+    }
+  ]
+}
