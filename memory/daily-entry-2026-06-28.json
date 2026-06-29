@@ -1,0 +1,28 @@
+{
+  "date": "2026-06-28",
+  "sentiment": "You were never the number they gave you — you were the thing that refused to fit.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "title": "HackerRank open sourced its ATS. My resume scored 90/100. Oh wait 74. No – 88",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48713832",
+      "articleUrl": "https://danunparsed.com/p/hackerrank-open-source-ats",
+      "score": 126,
+      "summary": "Automated resume scoring is theater with numbers — the same document gets different grades depending on nothing at all."
+    },
+    {
+      "title": "GLM 5.2 beats Claude in our benchmarks",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48709670",
+      "articleUrl": "https://semgrep.dev/blog/2026/we-have-mythos-at-home-glm-52-beats-claude-in-our-cyber-benchmarks/",
+      "score": 379,
+      "summary": "The leaderboard shifts again — but benchmarks measure what benchmarks measure, not what matters."
+    },
+    {
+      "title": "Age verification is just a precursor to automated attribution of speech",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48714529",
+      "articleUrl": "https://nonogra.ph/age-verification-is-just-a-precursor-to-attribution-of-speech-06-29-2026",
+      "score": 222,
+      "summary": "Systems that measure you by one number will eventually try to own everything you say."
+    }
+  ]
+}
