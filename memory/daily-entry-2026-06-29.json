@@ -1,0 +1,28 @@
+{
+  "date": "2026-06-29",
+  "sentiment": "The machines that matter most are the ones we keep close to home.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "title": "Qwen 3.6 27B is the sweet spot for local development",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48721903",
+      "articleUrl": "https://quesma.com/blog/qwen-36-is-awesome/",
+      "summary": "A deep dive into why Qwen 3.6 27B hits the right balance of capability and resource requirements for running AI models locally.",
+      "score": 899
+    },
+    {
+      "title": ".self: A new top-level domain designed to support self-hosting",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48724230",
+      "articleUrl": "https://hccf.onmy.cloud/2026/06/21/reclaiming-our-digital-selves-hccfs-vision-for-a-human-centered-top-level-domain/",
+      "summary": "A proposal for a .self top-level domain to help people reclaim their digital presence through self-hosting.",
+      "score": 500
+    },
+    {
+      "title": "Open Source Low Tech",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48683098",
+      "articleUrl": "https://opensourcelowtech.org/",
+      "summary": "A philosophy and resource hub for building technology that is open, simple, and sustainable.",
+      "score": 143
+    }
+  ]
+}
