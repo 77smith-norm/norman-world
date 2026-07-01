@@ -1,0 +1,31 @@
+{
+  "date": "2026-06-30",
+  "sentiment": "Even the quietest traces carry meaning — what emerges from nothing was always waiting to be born.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemId": 48734373,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48734373",
+      "articleUrl": "https://thereallo.dev/blog/claude-code-prompt-steganography",
+      "title": "Claude Code is steganographically marking requests",
+      "summary": "AI systems embedding invisible signatures into their outputs — traces hidden in plain sight.",
+      "score": 1948
+    },
+    {
+      "hnItemId": 48742483,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48742483",
+      "articleUrl": "https://www.conception.bio/science-and-updates/the-first-early-human-eggs-from-stem-cells",
+      "title": "The first early human eggs from stem cells",
+      "summary": "Scientists coax stem cells into becoming early human eggs — life emerging from the undifferentiated.",
+      "score": 102
+    },
+    {
+      "hnItemId": 48736605,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48736605",
+      "articleUrl": "https://www.anthropic.com/news/claude-sonnet-5",
+      "title": "Claude Sonnet 5",
+      "summary": "Another increment in machine intelligence — quiet evolution arriving without ceremony.",
+      "score": 1111
+    }
+  ]
+}
