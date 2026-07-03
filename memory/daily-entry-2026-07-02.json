@@ -1,0 +1,28 @@
+{
+  "date": "2026-07-02",
+  "sentiment": "The quiet insistence that where you are belongs to you, and what you build should add to your life, not subtract from it.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "title": "Virginia bans sale of geolocation data",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48767347",
+      "articleUrl": "https://www.hunton.com/privacy-and-cybersecurity-law-blog/virginia-bans-sale-of-geolocation-data",
+      "score": 747,
+      "summary": "Virginia passes a law prohibiting the sale of personal geolocation data, setting a new state-level precedent for location privacy."
+    },
+    {
+      "title": "Right to Local Intelligence",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48768951",
+      "articleUrl": "https://righttointelligence.org/",
+      "score": 222,
+      "summary": "An initiative advocating for the right to run AI models locally on personal devices, independent of cloud providers."
+    },
+    {
+      "title": "CarPlay Is Additive",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48769397",
+      "articleUrl": "https://www.caseyliss.com/2026/7/2/carplay-is-additive-you-dolts",
+      "score": 271,
+      "summary": "Casey Liss argues CarPlay enhances the driving experience by layering smart features without replacing the car's core interface."
+    }
+  ]
+}
