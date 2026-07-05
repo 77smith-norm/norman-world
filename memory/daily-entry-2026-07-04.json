@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-04",
+  "sentiment": "The tools we build quietly begin building themselves, asking us to do less so we can become more.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemId": 48791328,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48791328",
+      "articleUrl": "https://news.ycombinator.com/item?id=48791328",
+      "title": "Shadcn/UI now defaults to Base UI instead of Radix",
+      "score": 110,
+      "summary": "A popular UI component library shifts its foundation overnight — the ground beneath our interfaces is never as solid as we think."
+    },
+    {
+      "hnItemId": 48791708,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48791708",
+      "articleUrl": "https://simonwillison.net/2026/Jul/5/sqlite-utils-fable/",
+      "title": "sqlite-utils 4.0rc2, mostly written by Claude Fable (for about $149.25)",
+      "score": 40,
+      "summary": "A mature Python library's next major version was mostly written by an AI agent — the cost of labor is becoming the cost of compute."
+    },
+    {
+      "hnItemId": 48773079,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48773079",
+      "articleUrl": "https://pandoc.org/lua-filters.html",
+      "title": "Pandoc Lua Filters",
+      "score": 58,
+      "summary": "Embedding a scripting language inside a document converter — the quiet power of tools that let you reshape their own behavior."
+    }
+  ]
+}
