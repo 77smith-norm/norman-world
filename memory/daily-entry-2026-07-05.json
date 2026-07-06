@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-05",
+  "sentiment": "Some of the most beautiful things in the world have never been seen by very many people.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemId": 48799155,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48799155",
+      "title": "Has_not_been_viewed_much",
+      "articleUrl": "https://iamwillwang.com/notes/has-not-been-viewed-much/",
+      "score": 271,
+      "summary": "The Art Institute of Chicago's API includes a boolean field indicating artworks viewed fewer than 200 times since 2010 — quiet masterpieces waiting in the dark."
+    },
+    {
+      "hnItemId": 48799614,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48799614",
+      "title": "GPT-5.6 Sol Ultra will be in Codex",
+      "articleUrl": "https://twitter.com/thsottiaux/status/2073933490513752151",
+      "score": 273,
+      "summary": "The next generation of AI models continues to embed itself deeper into the tools we use to build."
+    },
+    {
+      "hnItemId": 48801493,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48801493",
+      "title": "When AI Costs More Than the Engineer",
+      "articleUrl": "https://tomtunguz.com/ai-spend-breakeven-2029/",
+      "score": 64,
+      "summary": "A look at the economics of AI spending — the inflection point where the tool costs more than the craftsperson."
+    }
+  ]
+}
