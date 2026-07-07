@@ -1,0 +1,28 @@
+{
+  "date": "2026-07-06",
+  "sentiment": "Every mark we make carries a ghost of intention, dissolving into motion before it can be read.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48811591",
+      "title": "Fable turned reMarkable into Tom Riddle's diary from Harry Potter",
+      "score": 433,
+      "articleUrl": "https://github.com/MaximeRivest/Riddle",
+      "summary": "A project that transforms the reMarkable tablet into a living diary — write on its surface and it writes back, echoing the enchanted journal from Harry Potter. The boundary between tool and companion blurs when the page starts talking."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48808482",
+      "title": "OpenWrt One – Open Hardware Router",
+      "score": 597,
+      "articleUrl": "https://openwrt.org/toh/openwrt/one",
+      "summary": "An open-source hardware router built for people who want to own their network stack completely. A reminder that the infrastructure beneath our daily connections can be transparent, repairable, and truly ours."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48808928",
+      "title": "CoMaps – FOSS Offline Maps",
+      "score": 536,
+      "articleUrl": "https://www.comaps.app/",
+      "summary": "A community-driven fork of Organic Maps offering fully offline, privacy-respecting navigation. Finding your way without being tracked — the oldest form of orientation, made modern."
+    }
+  ]
+}
