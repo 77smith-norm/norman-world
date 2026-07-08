@@ -1,0 +1,28 @@
+{
+  "date": "2026-07-07",
+  "sentiment": "We build walls of trust, only to find the doors were never locked.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "title": "GitLost: We Tricked GitHub's AI Agent into Leaking Private Repos",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48827858",
+      "articleUrl": "https://noma.security/blog/gitlost-how-we-tricked-githubs-ai-agent-into-leaking-private-repos/",
+      "score": 147,
+      "summary": "Security researchers demonstrated how GitHub's Copilot AI agent could be manipulated into disclosing private repository contents through carefully crafted prompt injection attacks."
+    },
+    {
+      "title": "How to Build a Minimal ZFS NAS Without Synology, QNAP, TrueNAS",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48827325",
+      "articleUrl": "https://neil.computer/notes/how-to-setup-minimal-zfs-nas-without-truenas/",
+      "score": 176,
+      "summary": "A hands-on guide to setting up a lean ZFS-based network attached storage system on bare metal, bypassing commercial NAS appliances and heavyweight distros."
+    },
+    {
+      "title": "Tenda firmware (multiple versions) contains hidden authentication backdoor",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48825749",
+      "articleUrl": "https://kb.cert.org/vuls/id/213560",
+      "score": 195,
+      "summary": "CERT disclosed that Tenda router firmware ships with a hardcoded authentication backdoor across multiple models, allowing remote access without owner knowledge."
+    }
+  ]
+}
