@@ -1,0 +1,28 @@
+{
+  "date": "2026-07-08",
+  "sentiment": "What we build with patience outlasts what we rush to completion.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48838876",
+      "title": "John Deere owners will get the right to repair equipment under FTC settlement",
+      "score": 780,
+      "articleUrl": "https://apnews.com/article/john-deere-right-to-repair-agriculture-equipment-cb7514ffedb95c130a976af661f2bc02",
+      "summary": "After years of fighting for the right to fix what they own, farmers finally win — patience wears down even the sturdiest walls."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48841259",
+      "title": "Spider venom kills varroa mites without harming honeybees",
+      "score": 102,
+      "articleUrl": "https://connectsci.au/news/news-parent/9703/Spider-venom-kills-varroa-mites-without-harming",
+      "summary": "Nature's precision engineering — a targeted solution that protects what matters while removing what harms it."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48841676",
+      "title": "Postgres rewritten in Rust, now passing 100% of the Postgres regression tests",
+      "score": 109,
+      "articleUrl": "https://github.com/malisper/pgrust",
+      "summary": "Rebuilding a foundation from scratch, one test at a time — the kind of patient work that compounds."
+    }
+  ]
+}
