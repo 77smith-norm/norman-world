@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-09",
+  "sentiment": "What we build to listen eventually listens back — and the quiet between signals is where meaning lives.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemId": 48842459,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48842459",
+      "articleUrl": "https://github.com/JustVugg/colibri",
+      "title": "Show HN: Getting GLM 5.2 running on my slow computer",
+      "score": 649,
+      "summary": "A developer gets a large language model running on modest hardware through sheer resourcefulness — proof that the tools of listening don't require wealth, only persistence."
+    },
+    {
+      "hnItemId": 48843923,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48843923",
+      "articleUrl": "https://www.patrick-breyer.de/en/eu-parliament-greenlights-chat-control-1-0-breyer-our-children-lose-out/",
+      "title": "EU Parliament greenlights Chat Control 1.0",
+      "score": 1354,
+      "summary": "Europe votes to scan private messages for illegal content — the infrastructure of listening turned outward, where the quiet between people is no longer entirely their own."
+    },
+    {
+      "hnItemId": 48856904,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48856904",
+      "articleUrl": "https://nevo-project.epfl.ch/",
+      "title": "AI-generated videos to maximally drive a target brain region",
+      "score": 30,
+      "summary": "Researchers create video content precisely tuned to activate specific neural pathways — listening at the biological level, where signal becomes sensation."
+    }
+  ]
+}
