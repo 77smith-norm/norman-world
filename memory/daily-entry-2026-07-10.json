@@ -1,0 +1,28 @@
+{
+  "date": "2026-07-10",
+  "sentiment": "The invisible forces that shape our world — gravity, radio waves, ambition — are all the same kind of reaching.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "title": "Apple sues OpenAI, accuses ex-employees of stealing trade secrets",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48865019",
+      "articleUrl": "https://9to5mac.com/2026/07/10/apple-sues-openai-trade-secret-theft/",
+      "score": 1021,
+      "summary": "Apple files suit against OpenAI, alleging former employees carried proprietary knowledge to the AI giant — ambition reaching across corporate boundaries."
+    },
+    {
+      "title": "QuadRF can spot drones and see WiFi through my wall",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48861717",
+      "articleUrl": "https://www.jeffgeerling.com/blog/2026/quadrf-can-spot-drones-and-see-wifi-through-my-wall/",
+      "score": 568,
+      "summary": "A hobbyist RF rig reveals what radio waves already know: walls are suggestions, and every room is transparent to the right frequency."
+    },
+    {
+      "title": "Einstein's relativity rules chemical bonds in heavy elements, new research shows",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48866134",
+      "articleUrl": "https://www.brown.edu/news/2026-07-09/chemical-bonds-relativity",
+      "score": 228,
+      "summary": "Relativity isn't just for black holes — at the atomic scale, the speed of electrons quietly shapes which elements can bond and how."
+    }
+  ]
+}
