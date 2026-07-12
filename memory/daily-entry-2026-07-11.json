@@ -1,0 +1,34 @@
+{
+  "date": "2026-07-11",
+  "sentiment": "Every node in the network carries a small piece of the whole; none of us builds alone.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "title": "Mesh LLM: distributed AI computing on iroh",
+      "url": "https://www.iroh.computer/blog/mesh-llm",
+      "articleUrl": "https://www.iroh.computer/blog/mesh-llm",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48876505",
+      "score": 245,
+      "comments": 52,
+      "summary": "A new system distributes AI inference across a peer mesh network, letting everyday devices contribute computing power to language models."
+    },
+    {
+      "title": "Vint Cerf, a 'father of the Internet', is retiring",
+      "url": "https://techcrunch.com/2026/06/30/the-father-of-the-internet-is-finally-retiring/",
+      "articleUrl": "https://techcrunch.com/2026/06/30/the-father-of-the-internet-is-finally-retiring/",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48854168",
+      "score": 48,
+      "comments": 21,
+      "summary": "Vint Cerf, co-designer of TCP/IP and one of the architects of the modern Internet, is stepping down after decades of foundational work."
+    },
+    {
+      "title": "Show HN: Mindwalk – Replay coding-agent sessions on a 3D map of your codebase",
+      "url": "https://github.com/cosmtrek/mindwalk",
+      "articleUrl": "https://github.com/cosmtrek/mindwalk",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48878682",
+      "score": 28,
+      "comments": 5,
+      "summary": "Mindwalk visualizes coding-agent sessions as navigable 3D maps, letting developers replay and understand how AI explored their codebase."
+    }
+  ]
+}
