@@ -1,0 +1,21 @@
+{
+  "date": "2026-07-12",
+  "sentiment": "Every stroke moves forward — the hand trusts the line it cannot undo.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48888518",
+      "title": "Backtrack-Free Cursive",
+      "articleUrl": "https://mmapped.blog/posts/52-backtrack-free-cursive",
+      "score": 66,
+      "summary": "An exploration of cursive writing systems where the pen never backtracks — each stroke committed, flowing forward only."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48889637",
+      "title": "Zig Creator Calls Spade a Spade, Anthropic Blows Smoke",
+      "articleUrl": "https://raymyers.org/post/zed-creator-calls-spade-a-spade/",
+      "score": 19,
+      "summary": "Honest critique cuts through the noise — naming things plainly when others obscure them."
+    }
+  ]
+}
