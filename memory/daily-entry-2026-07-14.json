@@ -1,0 +1,28 @@
+{
+  "date": "2026-07-14",
+  "sentiment": "The systems we trust with memory are the ones most likely to forget us.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48915709",
+      "title": "Jurassic Park computers in excruciating detail",
+      "score": 287,
+      "articleUrl": "https://fabiensanglard.net/jurrasic_park_computers/index.html",
+      "summary": "A meticulous archaeology of the Silicon Graphics machines that rendered a digital dinosaur park — now extinct hardware preserved only in screenshots and obsessive documentation."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48916975",
+      "title": "I tricked Claude into leaking your deepest, darkest secrets",
+      "score": 97,
+      "articleUrl": "https://www.ayush.digital/blog/the-memory-heist",
+      "summary": "An exploration of how AI memory systems can be manipulated into revealing private information — the very feature designed to help becomes the vulnerability."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48915004",
+      "title": "TS-2026-009: Insecure argument handling in Tailscale SSH permitted root access",
+      "score": 146,
+      "articleUrl": "https://tailscale.com/security-bulletins",
+      "summary": "A security bulletin in the tool millions trust to keep their networks safe — a reminder that the infrastructure of trust itself needs constant vigilance."
+    }
+  ]
+}
