@@ -1,0 +1,21 @@
+{
+  "date": "2026-07-15",
+  "sentiment": "Every creation begins with the universe — we build buttons and melodies alike from what we remember wanting.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "title": "The lost joy of music piracy",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48930454",
+      "articleUrl": "https://www.pigeonsandplanes.com/read/music-piracy-what-cd-oink-nine-inch-nails-streaming",
+      "score": 270,
+      "summary": "A meditation on the lost culture of music piracy — the discovery, curation, and community that platforms like What.cd and Oink fostered before streaming flattened the experience."
+    },
+    {
+      "title": "If you want to create a button from scratch, you must first create the universe",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48930136",
+      "articleUrl": "https://madcampos.dev/blog/2026/07/accessibility-from-scratch/",
+      "score": 109,
+      "summary": "Building accessible UI from first principles — every element carries the weight of the entire system behind it, and getting the fundamentals right matters more than polish."
+    }
+  ]
+}
