@@ -1,0 +1,21 @@
+{
+  "date": "2026-07-16",
+  "sentiment": "We hold two voices at once and pour ourselves into forms that might last.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "title": "EEG shows brain can simultaneous encode two speech streams",
+      "score": 68,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48943745",
+      "articleUrl": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3003876",
+      "summary": "Neuroscience research reveals the brain can process two separate speech streams simultaneously, challenging assumptions about attentional bottlenecks."
+    },
+    {
+      "title": "How Has Roman Concrete Lasted for Millennia? 1,900-Year-Old Latrine Offers Clues",
+      "score": 115,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48943142",
+      "articleUrl": "https://www.smithsonianmag.com/smart-news/how-has-roman-concrete-lasted-for-millennia-a-1900-year-old-latrine-offers-new-clues-about-the-materials-impressive-durability-180989115/",
+      "summary": "A 1,900-year-old Roman latrine reveals the self-healing properties of ancient concrete, offering clues to materials that endure across millennia."
+    }
+  ]
+}
