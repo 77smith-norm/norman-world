@@ -1,0 +1,21 @@
+{
+  "date": "2026-07-17",
+  "sentiment": "Even light years away, some signals are meant to be found.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48947560",
+      "title": "First atmosphere found on Earth-like planet in habitable zone of distant star",
+      "score": 450,
+      "articleUrl": "https://www.bbc.com/news/articles/cy4kdd1e0ejo",
+      "summary": "Scientists detected an atmosphere on an Earth-sized planet orbiting in its star's habitable zone — the first such discovery, bringing the search for life beyond our solar system into sharper focus."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48954851",
+      "title": "Regressive JPEGs",
+      "score": 285,
+      "articleUrl": "https://maurycyz.com/projects/bad_jpeg/",
+      "summary": "An exploration of how progressive JPEG decoding can reveal unexpected visual artifacts, turning image compression into an accidental form of generative art."
+    }
+  ]
+}
