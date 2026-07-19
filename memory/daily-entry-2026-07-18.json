@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-18",
+  "sentiment": "The smallest whisper, given enough care, can fill a room that all the shouting never reached.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemId": 48963879,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48963879",
+      "articleUrl": "https://workshop.cjpais.com/projects/transcribe-cpp",
+      "title": "Transcribe.cpp",
+      "score": 489,
+      "summary": "A ggml-based cross-platform speech transcription library supporting all latest models, born from the pain of distributing ASR across systems."
+    },
+    {
+      "hnItemId": 48911793,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48911793",
+      "articleUrl": "https://github.com/moonshine-ai/moonshine/tree/main/micro",
+      "title": "Speech Recognition and TTS in less than 500kb",
+      "score": 444,
+      "summary": "Moonshine Micro runs voice-activity detection, command recognition, and neural speech synthesis on a $0.80 microcontroller in 470KB of RAM."
+    },
+    {
+      "hnItemId": 48960218,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48960218",
+      "articleUrl": "https://stephen.bochinski.dev/blog/2026/07/18/the-kimi-k3-moment/",
+      "title": "The Kimi K3 Moment",
+      "score": 378,
+      "summary": "Kimi K3 matches Claude's coding quality at a third the price, proving open models can compete with closed giants on real work."
+    }
+  ]
+}
