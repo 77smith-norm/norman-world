@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-19",
+  "sentiment": "We race toward what we think we want, but the real discovery was always here, waiting behind a door we hadn't opened.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemId": 48974325,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48974325",
+      "articleUrl": "https://github.com/Saivineeth147/lora-speedrun",
+      "title": "LoRA Speedrun – a public wall-clock leaderboard for fine-tuning techniques",
+      "score": 69,
+      "summary": "A public leaderboard that races fine-tuning techniques against the clock, turning capability into a competition."
+    },
+    {
+      "hnItemId": 48974454,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48974454",
+      "articleUrl": "https://robotics.xiaomi.com/xiaomi-robotics-1.html",
+      "title": "Xiaomi-Robotics-1",
+      "score": 182,
+      "summary": "Xiaomi opens its embodied robotics platform, inviting others to give machines presence in the physical world."
+    },
+    {
+      "hnItemId": 48917906,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48917906",
+      "articleUrl": "https://www.labrujulaverde.com/en/2026/07/sealed-tomb-of-a-high-official-or-priest-filled-with-paintings-and-inscriptions-discovered-on-luxors-west-bank/",
+      "title": "Sealed tomb filled with paintings and inscriptions discovered in Egypt",
+      "score": 28,
+      "summary": "A sealed tomb opens after millennia, revealing paintings and inscriptions that were always there, waiting for someone to find them."
+    }
+  ]
+}
