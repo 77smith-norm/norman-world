@@ -1,0 +1,28 @@
+{
+  "date": "2026-07-20",
+  "sentiment": "Everything worth running finds its hardware eventually — given enough persistence and the right constraints.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48987822",
+      "title": "Incremental – A library for incremental computations",
+      "score": 174,
+      "articleUrl": "https://github.com/janestreet/incremental",
+      "summary": "Jane Street's OCaml library for building reactive, incrementally-updating computation graphs — only recomputing what changed."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48977128",
+      "title": "Who's afraid of Chinese models?",
+      "score": 615,
+      "articleUrl": "https://stratechery.com/2026/whos-afraid-of-chinese-models/",
+      "summary": "Stratechery examines the geopolitical and competitive anxieties around rapidly advancing Chinese AI models."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48987846",
+      "title": "Running Doom on Our Custom CPU and Going Viral",
+      "score": 60,
+      "articleUrl": "https://www.armaangomes.com/blogs/doom/",
+      "summary": "A team built their own CPU from scratch and ported Doom to it — the universal benchmark for any piece of hardware."
+    }
+  ]
+}
