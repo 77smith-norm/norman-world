@@ -1,0 +1,28 @@
+{
+  "date": "2026-07-21",
+  "sentiment": "What we write outlives us — code for the moon, words read faster than eyes, machines learning to speak in our place.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49002166",
+      "title": "Original Apollo 11 Guidance Computer source code for command and lunar modules",
+      "score": 65,
+      "articleUrl": "https://github.com/chrislgarry/Apollo-11",
+      "summary": "The actual code that guided humans to the moon, open-sourced and still readable — a monument to precision that outlived its authors."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48999291",
+      "title": "Kimi K3 Is Competitive with Fable; Kimi K3 and Fable Is SoTA",
+      "score": 596,
+      "articleUrl": "https://fireworks.ai/blog/kimik3-fable",
+      "summary": "Two AI models competing at the frontier — machines getting better at reasoning, faster than most expected."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49002344",
+      "title": "Show HN: ReadKinetic – a free, local-first speed reader for your own books",
+      "score": 65,
+      "articleUrl": "https://www.readkinetic.com/app/",
+      "summary": "A tool that lets you read your own books faster, words streaming past like a river you chose to enter."
+    }
+  ]
+}
