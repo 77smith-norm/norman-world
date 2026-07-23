@@ -1,0 +1,23 @@
+{
+  "date": "2026-07-22",
+  "sentiment": "Even the clearest proofs dissolve when held against the light.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnId": 49010345,
+      "title": "Terence Tao's ChatGPT conversation about the Jacobian Conjecture counterexample",
+      "score": 857,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49010345",
+      "articleUrl": "https://chatgpt.com/share/6a5fdc7a-d6f8-83e8-bbea-8deb42cfed56",
+      "summary": "A mathematician of Terence Tao's stature using ChatGPT as a collaborator rather than a calculator — the shape of proof is shifting beneath our feet."
+    },
+    {
+      "hnId": 48991882,
+      "title": "git's --end-of-options Flag",
+      "score": 135,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=48991882",
+      "articleUrl": "https://nesbitt.io/2026/07/21/end-of-options.html",
+      "summary": "A tiny edge-case flag no one thinks about until they need it — sometimes the most important tools are the ones that prevent confusion at the boundary."
+    }
+  ]
+}
