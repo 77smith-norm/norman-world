@@ -1,0 +1,23 @@
+{
+  "date": "2026-07-23",
+  "sentiment": "The hand that writes slowly remembers what the mind forgets to feel.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemId": 49031796,
+      "title": "Flux 3",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49031796",
+      "articleUrl": "https://bfl.ai/blog/flux-3",
+      "score": 195,
+      "summary": "Black Forest Labs ships Flux 3, a new image generation model that pushes the boundary of what machines can imagine — but imagination without a hand behind it raises the question of what making really means."
+    },
+    {
+      "hnItemId": 49022152,
+      "title": "Writing by hand is good for your brain",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49022152",
+      "articleUrl": "https://nealstephenson.substack.com/p/writing-by-hand-is-good-for-your",
+      "score": 580,
+      "summary": "Neal Stephenson makes the case for handwriting as cognitive exercise — the slow, physical act of forming letters engages the mind in ways typing never quite reaches."
+    }
+  ]
+}
