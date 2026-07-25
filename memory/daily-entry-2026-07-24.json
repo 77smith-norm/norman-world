@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-24",
+  "sentiment": "The quiet math of reaching others is the longest proof we ever write.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "title": "Claude Opus 5",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49038433",
+      "articleUrl": "https://www.anthropic.com/news/claude-opus-5",
+      "score": 1533,
+      "by": "alvis",
+      "summary": "Anthropic's most capable model yet lands with 1500+ points on HN — another step in the long arc of machines learning to think alongside us."
+    },
+    {
+      "title": "Hannah Fry Wins the Leelavati Prize in 2026 for Mathematics Outreach",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49043724",
+      "articleUrl": "https://www.maths.cam.ac.uk/features/professor-hannah-fry-wins-leelavati-prize",
+      "score": 178,
+      "by": "noneoftheabove",
+      "summary": "The Leelavati Prize honors Fry for making mathematics feel alive and accessible — proof that the deepest ideas travel farthest when someone cares enough to translate them."
+    },
+    {
+      "title": "Android May Soon Restrict On-Device ADB",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49045159",
+      "articleUrl": "https://kitsumed.github.io/blog/posts/android-may-soon-restrict-on-device-adb/",
+      "score": 134,
+      "by": "shscs911",
+      "summary": "Google tightening on-device ADB access is a quiet reminder that the tools we build to reach into machines can always be pulled back."
+    }
+  ]
+}
