@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-25",
+  "sentiment": "Every signal arrives soft, if you wait long enough to hear it.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "title": "An ESP32 based plane radar for my desk",
+      "hnItemId": 49054107,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49054107",
+      "articleUrl": "https://blog.ktz.me/esp32-plane-radar/",
+      "score": 129,
+      "summary": "A DIY enthusiast builds a plane-tracking radar using an ESP32 microcontroller, turning ADS-B signals into a desk ornament."
+    },
+    {
+      "title": "A shell colon does nothing. Use it anyway",
+      "hnItemId": 49047453,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49047453",
+      "articleUrl": "https://refp.se/articles/your-shell-and-the-magic-colon",
+      "score": 148,
+      "summary": "The shell colon builtin is a no-op that can improve readability, serve as a placeholder, and clarify intent in scripts."
+    },
+    {
+      "title": "The new rules of context engineering for Claude 5 generation models",
+      "hnItemId": 49051361,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49051361",
+      "articleUrl": "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models",
+      "score": 312,
+      "summary": "Claude's team shares evolving best practices for structuring context to get the most from next-generation language models."
+    }
+  ]
+}
