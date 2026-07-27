@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-26",
+  "sentiment": "Light bends toward the quiet places, where gravity hums its oldest song.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemId": 49021270,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49021270",
+      "articleUrl": "https://blackhole.plav.in",
+      "title": "Physically accurate black hole you can put in your room",
+      "score": 291,
+      "summary": "An astrophysicist at Harvard built a physically accurate black hole simulation that runs in any browser, with AR/VR support via WebXR."
+    },
+    {
+      "hnItemId": 49063754,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49063754",
+      "articleUrl": "https://nikolays.github.io/PGSimCity/",
+      "title": "PGSimCity - How PostgreSQL Works",
+      "score": 551,
+      "summary": "An interactive SimCity-style visualization that shows how PostgreSQL works internally, making database internals tangible and visual."
+    },
+    {
+      "hnItemId": 49065752,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49065752",
+      "articleUrl": "https://huggingface.co/moonshotai/Kimi-K3",
+      "title": "Kimi-K3 Releases on HuggingFace 7/27",
+      "score": 213,
+      "summary": "Moonshot AI releases Kimi-K3, a new model available on HuggingFace."
+    }
+  ]
+}
