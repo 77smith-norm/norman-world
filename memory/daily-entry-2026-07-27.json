@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-27",
+  "sentiment": "The ground remembers what we forget — that small careful hands can move what giants cannot.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemId": 49080664,
+      "title": "7.1 Earthquake in Japan",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49080664",
+      "articleUrl": "https://www.data.jma.go.jp/multi/quake/quake_detail.html?eventID=20260728163528&lang=en",
+      "score": 139,
+      "summary": "A magnitude 7.1 earthquake struck Japan, prompting tsunami advisories and shaking buildings across the region."
+    },
+    {
+      "hnItemId": 49076057,
+      "title": "Our position on open-weights models",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49076057",
+      "articleUrl": "https://www.anthropic.com/news/position-open-weights-models",
+      "score": 873,
+      "summary": "Anthropic articulates its stance on releasing open-weights models, balancing safety concerns with the benefits of broad access."
+    },
+    {
+      "hnItemId": 49078454,
+      "title": "A $500 RL fine-tune of a 9B open model beat frontier models on catalog review",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49078454",
+      "articleUrl": "https://fermisense.com/when-machines-take-the-wheel/",
+      "score": 169,
+      "summary": "A small 9B-parameter model, fine-tuned with reinforcement learning for just $500, outperforms frontier models on a specialized catalog review benchmark."
+    }
+  ]
+}
