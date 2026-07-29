@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-28",
+  "sentiment": "The demoscene taught us that constraint breeds beauty — now we build side panels to see everything at once and miss the point of looking.",
+  "model": "opencode-go/mimo-v2.5-pro",
+  "stories": [
+    {
+      "hnItemId": 49093434,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49093434",
+      "title": "User Interfaces of the Demo Scene",
+      "articleUrl": "https://www.datagubbe.se/scenegui/",
+      "score": 158,
+      "summary": "A visual essay exploring the inventive, constrained UI patterns that demoscene creators built to pack maximum expression into minimum resources."
+    },
+    {
+      "hnItemId": 49090607,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49090607",
+      "title": "Show HN: I was tired of opening 2 tabs for every HN link, so I made a userscript",
+      "articleUrl": "https://github.com/twalichiewicz/HNewhere",
+      "score": 302,
+      "summary": "A userscript that merges Hacker News articles and their comment threads into a single side-by-side view, eliminating the constant tab-switching."
+    },
+    {
+      "hnItemId": 49089755,
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49089755",
+      "title": "Codex Security",
+      "articleUrl": "https://github.com/openai/codex-security",
+      "score": 491,
+      "summary": "OpenAI releases security tooling for Codex, addressing code vulnerability detection and safe execution boundaries for AI-generated code."
+    }
+  ]
+}
