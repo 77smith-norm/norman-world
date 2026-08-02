@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-01",
+  "sentiment": "The tools we build to think for us eventually become the shape of what we think.",
+  "model": "opencode-go/deepseek-v4-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49140396",
+      "title": "Show HN: I'm a 15 Year Old Wannabe Engineer, This Is a Cycloidal Gearbox I Built",
+      "score": 148,
+      "articleUrl": "https://github.com/tom-ilan/cycloidal_gearbox",
+      "summary": "A teenager building gearboxes from scratch at night — before the tools reshape what they imagine possible."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49140218",
+      "title": "Go 1.27 Interactive Tour",
+      "score": 197,
+      "articleUrl": "https://victoriametrics.com/blog/go-1-27/index.html",
+      "summary": "Language tours that unfold one step at a time — the tour itself becomes the teacher, the teacher the tool."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49141073",
+      "title": "Running Kimi K3 on MI355X at Better Performance per Dollar Than B300",
+      "score": 121,
+      "articleUrl": "https://www.wafer.ai/blog/kimi-k3-mi355x",
+      "summary": "Benchmarking is just counting who wins — it tells you nothing about what winning costs."
+    }
+  ]
+}
