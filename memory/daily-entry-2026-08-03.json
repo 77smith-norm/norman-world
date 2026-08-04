@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-03",
+  "sentiment": "The quiet compounding of deep work — each line of code, each proof, each careful tool — builds something no shortcut can reach.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49161518",
+      "articleUrl": "https://www.seangoedecke.com/llms-reward-expertise/",
+      "title": "LLMs reward expertise",
+      "score": 901,
+      "summary": "Deep expertise compounds in ways LLMs can sense — broad shallow knowledge gets lost, but rigorous depth leaves a trace the model can recognize."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49158333",
+      "articleUrl": "https://github.com/leonickson1/Swiftlet",
+      "title": "Show HN: Run an 80B Qwen in 4.3 GB of RAM on a Mac",
+      "score": 164,
+      "summary": "A new wave of quantized models brings large language models to consumer hardware, trading precision for reach in surprising ways."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49157930",
+      "articleUrl": "https://blog.exe.dev/devtools-must-be-open-source",
+      "title": "Devtools must be open source",
+      "score": 599,
+      "summary": "The tools that shape how we build must be transparent and community-owned — closed devtools create invisible dependencies."
+    }
+  ]
+}
