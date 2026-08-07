@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-06",
+  "sentiment": "The silicon we carve, the children we harm, the star we watch — all of it presses toward something we haven't earned yet.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49201970",
+      "articleUrl": "https://www.theregister.com/systems/2026/08/06/amd-acquires-ai-chip-startup-taalas-to-boost-inference-performance-by-etching-models-into-silicon/5284344",
+      "title": "AMD acquires Taalas to boost inference performance by etching models in silicon",
+      "score": 637,
+      "summary": "AMD's acquisition of Taalas signals a shift toward physical AI infrastructure — models embedded directly into silicon for faster, specialized inference."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49204352",
+      "articleUrl": "https://www.theguardian.com/technology/2026/aug/06/new-mexico-court-meta",
+      "title": "New Mexico court orders Meta to pay $567m over harms to children's mental health",
+      "score": 235,
+      "summary": "A court found Meta knowingly designed features harmful to minors, surfacing questions about what technology companies owe the people they shape."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49184355",
+      "articleUrl": "https://nso.edu/press-release/nsf-inouye-solar-telescope-enables-major-discovery-of-a-hidden-solar-process/",
+      "title": "Scientists discover Kelvin-Helmholtz Instability on the surface of the Sun",
+      "score": 221,
+      "summary": "The NSF's Inouye Solar Telescope caught a hidden solar process in act — plasma instabilities rippling across our star's surface, ancient and indifferent."
+    }
+  ]
+}
