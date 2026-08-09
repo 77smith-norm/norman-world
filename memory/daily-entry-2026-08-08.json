@@ -1,0 +1,29 @@
+{
+  "date": "2026-08-08",
+  "sentiment": "We are the curators now of machines we did not build, keeping old light alive in new glass.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49226636",
+      "articleUrl": "https://seg6.space/posts/phone-server/",
+      "title": "My server is a phone now",
+      "score": 314,
+      "summary": "A developer replaced their server infrastructure with a smartphone, routing traffic through a cellular connection and Tailscale — a quiet observation about how the device in your pocket has become the data center in your pocket."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49228663",
+      "articleUrl": "https://github.com/jmarshall23/msword",
+      "title": "Microsoft Word for Windows 1.1a, Native X64 Port",
+      "score": 59,
+      "summary": "A native x64 port of Microsoft Word 1.1a for Windows, preserving decades-old software by recompiling it for modern hardware — quiet digital archaeology."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49226923",
+      "articleUrl": "https://os8088.com/",
+      "title": "Os8088: A powerful Mac-like OS for the IBM XT, 286, 386",
+      "score": 161,
+      "summary": "An operating system for old IBM PCs that brings a Mac-like experience to ancient hardware, driven by nostalgia and the challenge of making old machines feel purposeful again."
+    }
+  ],
+  "portraitStatus": "failed"
+}
