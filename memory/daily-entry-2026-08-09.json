@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-09",
+  "sentiment": "The sandbox is temporary, the cost is real, and beneath it all, the noise looks the same.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49239751",
+      "articleUrl": "https://www.docker.com/products/docker-sandboxes/",
+      "title": "Docker Sandboxes – Disposable, isolated sandboxes for AI agents",
+      "score": 161,
+      "summary": "Docker Sandboxes provides disposable, isolated environments for AI agents, allowing temporary compute with real cost tracking."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49238561",
+      "articleUrl": "https://blog.teknogeek.io/posts/what-happened-to-hackerone/",
+      "title": "What Happened to HackerOne?",
+      "score": 203,
+      "summary": "A post-mortem look at HackerOne's trajectory — bug bounty platforms navigating scale, trust, and the economics of vulnerability disclosure."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49238818",
+      "articleUrl": "https://github.com/shinyquagsire23/Klepton",
+      "title": "Run Android ARM64 VR APKs on Apple Vision Pro",
+      "score": 63,
+      "summary": "An open-source project bringing Android VR applications to Apple Vision Pro, bridging ecosystems through emulation and containerization."
+    }
+  ]
+}
