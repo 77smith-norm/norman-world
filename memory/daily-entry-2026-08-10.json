@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-10",
+  "sentiment": "The internet forgets, and what we lose in forgetting is harder to name than what we remember.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49252179",
+      "articleUrl": "https://github.com/antirez/h3.c",
+      "title": "H3-metal – Native MiniMax-H3 inference for Apple Silicon",
+      "score": 247,
+      "summary": "Native MiniMax-H3 inference brought to Apple Silicon via H3-metal, bringing local AI acceleration to Mac."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49250836",
+      "articleUrl": "https://thewalrus.ca/google-search-is-dying/",
+      "title": "As AI eats the web, the internet's collective memory is disappearing",
+      "score": 250,
+      "summary": "As AI-generated content floods the web and search engines degrade, the internet's ability to preserve collective memory is eroding quietly."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49253721",
+      "articleUrl": "https://github.com/activeing123/mcptoon",
+      "title": "Show HN: Mcptoon – Token-efficient MCP CLI client",
+      "score": 41,
+      "summary": "A token-efficient MCP CLI client that brings a lighter footprint to model context protocol interactions."
+    }
+  ]
+}
