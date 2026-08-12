@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-11",
+  "sentiment": "We keep drawing blue blood from a creature older than memory, hoping something alive survives the compression.",
+  "model": "openrouter/minimax/minimax-m2.7",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49263497",
+      "articleUrl": "https://ngrok.com/blog/compression-is-prediction",
+      "title": "Compression is prediction",
+      "score": 510,
+      "summary": "Information theory connects compression and prediction: the better a system understands what comes next, the more efficiently it can represent what's now."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49266921",
+      "articleUrl": "https://whdh.com/news/the-lifesaving-secret-hidden-inside-a-horseshoe-crabs-blue-blood-and-the-race-to-protect-the-species/",
+      "title": "The lifesaving secret hidden inside a horseshoe crab's blue blood",
+      "score": 81,
+      "summary": "Horseshoe crab blood is the source of LAL, an irreplaceable bacterial-detection agent used to ensure every injectable drug and medical implant is safe."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49267928",
+      "articleUrl": "https://llama.app",
+      "title": "llama.cpp",
+      "score": 191,
+      "summary": "The open-source project bringing large language model inference to local machines with native Apple Silicon support."
+    }
+  ]
+}
