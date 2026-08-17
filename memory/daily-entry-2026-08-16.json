@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-16",
+  "sentiment": "Not every thought deserves a vote; the loudest ones pull toward the edges, away from what quietly matters.",
+  "model": "opencode-go/deepseek-v4-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49324985",
+      "articleUrl": "https://simonwillison.net/2026/Aug/16/qwen-38-27b/",
+      "title": "Qwen 3.8 27B is excellent, but it defaults to overthinking things",
+      "score": 440,
+      "summary": "A capable model wastes its own strength rehearsing doubts it was never asked to have — a reminder that the loudest inner argument is often the least useful one."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49251775",
+      "articleUrl": "https://asteriskmag.com/issues/15/beware-the-permanent-periphery",
+      "title": "Beware the Permanent Periphery",
+      "score": 7,
+      "summary": "Things that drift to the edge of attention and stay there quietly reshape a life — the periphery only becomes permanent by being ignored long enough."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49325061",
+      "articleUrl": "https://reticulum.network/",
+      "title": "Reticulum – Decentralized Mesh Network",
+      "score": 117,
+      "summary": "A network that works by patient relay instead of central demand — resilience built from small, quiet connections passing light between one another."
+    }
+  ]
+}
