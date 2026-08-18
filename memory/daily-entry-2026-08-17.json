@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-17",
+  "sentiment": "Everything almost overflows tonight, yet each part fits — barely, beautifully, enough.",
+  "model": "opencode-go/deepseek-v4-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49338328",
+      "articleUrl": "https://fabiensanglard.net/quake_shareware_cd/index.html",
+      "title": "Quake Shareware, a CD-ROM just a little too full",
+      "score": 326,
+      "summary": "A disc packed just past comfortable capacity, shipped anyway — the craft of making something fit when it barely does, and the charm of things that arrive one squeeze beyond full."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49342719",
+      "articleUrl": "https://pixelcluster.dev/VRAM-Overcommit/",
+      "title": "Linux 7.3 improves performance when running out of vRAM",
+      "score": 13,
+      "summary": "A system taught to keep working gracefully at the edge of empty — performance found not in more room, but in making the little that remains behave."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49330781",
+      "articleUrl": "https://duckdb.org/2026/08/17/duckdb-20-highlights",
+      "title": "A Preview of DuckDB v2.0",
+      "score": 627,
+      "summary": "A database tool that keeps growing more useful without growing more demanding — proof that generosity can be a storage and compute decision."
+    }
+  ]
+}
