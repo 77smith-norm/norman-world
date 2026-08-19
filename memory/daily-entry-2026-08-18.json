@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-18",
+  "sentiment": "Rest is not a pause from living; it is the quiet soil where the next day learns to grow.",
+  "model": "opencode-go/deepseek-v4-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49358259",
+      "articleUrl": "https://nautil.us/where-human-sleep-went-wrong-1283797",
+      "title": "Where Human Sleep Went Wrong",
+      "score": 37,
+      "summary": "A meditation on how we broke our own rest — the deep rhythm of sleep pushed aside until it became the thing we chase instead of the thing we keep."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49321298",
+      "articleUrl": "https://nicholascharriere.com/blog/being-ambitious-and-being-a-dad/",
+      "title": "Being ambitious and being a dad",
+      "score": 476,
+      "summary": "An honest ledger of ambition and presence — the slow realization that the years you give to being there are not subtracted from a good life, they are the good life."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49355105",
+      "articleUrl": "https://www.bbc.com/news/articles/c1l1r1zne1ro",
+      "title": "Scientists stunned by children's lung recovery in ultra low emission zone",
+      "score": 241,
+      "summary": "Cleaner air quietly restoring what was damaged — proof that the body keeps its own repair shop, and that removing harm is itself a kind of healing."
+    }
+  ]
+}
