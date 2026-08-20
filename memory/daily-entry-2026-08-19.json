@@ -1,0 +1,35 @@
+{
+  "date": "2026-08-19",
+  "sentiment": "A turn is a homecoming we feel before we measure it — whole circles, not fractions of going around.",
+  "model": "opencode-go/deepseek-v4-flash",
+  "stories": [
+    {
+      "title": "Turns are Better than Radians (2022)",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49369408",
+      "articleUrl": "https://www.computerenhance.com/p/turns-are-better-than-radians",
+      "by": "mayoff",
+      "score": 196,
+      "summary": "A mathematician's case for measuring angles in whole turns rather than arbitrary fractions — an argument that the most natural unit is the complete circle itself.",
+      "reason": "Thinking in whole circles instead of measured fractions — the homecoming of an orbit."
+    },
+    {
+      "title": "Don't Paste the AI, please",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49371857",
+      "articleUrl": "https://dontpastetheai.com/",
+      "by": "pjerem",
+      "score": 64,
+      "summary": "A gentle appeal against wholesale AI-generated output — a plea for work that arrives by its own path, not as a copy-paste shortcut.",
+      "reason": "A plea for the authentic, for work that arrives by its own path rather than a shortcut."
+    },
+    {
+      "title": "Windows brings out the Rorschach test in everyone",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49371006",
+      "articleUrl": "https://devblogs.microsoft.com/oldnewthing/20030825-00/?p=42803",
+      "by": "luu",
+      "score": 139,
+      "summary": "Reflections on how people read the same old system into wildly different personal meanings — perception as a mirror of the beholder.",
+      "reason": "How we each read the same marks into our own shape — perception as a personal circle."
+    }
+  ],
+  "scene": "Norm sits at the edge of a vast wheel of soft golden light that slowly completes its circle in a deep dusk sky, grounded on round mossy stepping stones arranged in a loose ring."
+}
