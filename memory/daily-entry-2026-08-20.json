@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-20",
+  "sentiment": "Sometimes the old and plain is enough — what we call simple still holds a quiet treasure.",
+  "model": "opencode-go/deepseek-v4-flash",
+  "stories": [
+    {
+      "title": "The Lost Treasure of Sid Meier's Pirates",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49384896",
+      "score": 48,
+      "articleUrl": "https://remapradio.com/articles/the-lost-treasure-of-sid-meiers-pirates/",
+      "summary": "A lost, unfinished gem of a game calls back to how a plain old treasure can still hold wonder."
+    },
+    {
+      "title": "We Rebuilt the Linux MicroVM Stack on Apple Silicon",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49384716",
+      "score": 46,
+      "articleUrl": "https://encore.dev/blog/firecracker-apple-silicon",
+      "summary": "Rebuilding what seemed settled shows that even old foundations can be quietly remade."
+    },
+    {
+      "title": "HTML Can Do That",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49362689",
+      "score": 785,
+      "articleUrl": "https://chrisburnell.com/html-can-do-that/",
+      "summary": "The plainest of tools silently does more than we give it credit for — a quiet kind of treasure."
+    }
+  ]
+}
