@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-21",
+  "sentiment": "We clear the walls that hide what matters, and find the view was always there — waiting for us to look.",
+  "model": "opencode-go/deepseek-v4-flash",
+  "stories": [
+    {
+      "title": "Kagi added a setting for removing paywalled links from search results",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49388154",
+      "score": 1111,
+      "articleUrl": "https://blog.kagi.com/remove-paywalls",
+      "summary": "A search engine that lets you choose what gets through — sometimes the kindest thing is clearing the walls between people and the thing they were looking for."
+    },
+    {
+      "title": "Rust Glancer: Rust LSP using 100x less RAM",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49393052",
+      "score": 185,
+      "articleUrl": "https://glancer.app/rust",
+      "summary": "Doing the same work with a hundredth of the weight — lightness is not less, it is everything unnecessary removed."
+    },
+    {
+      "title": "There's no reason for software to be slow anymore",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49395628",
+      "score": 381,
+      "articleUrl": "https://danluu.com/nothing-fast/",
+      "summary": "Speed without ceremony — proof that the obstacles we accept are mostly inherited, not required."
+    }
+  ]
+}

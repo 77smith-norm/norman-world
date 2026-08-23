@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-22",
+  "sentiment": "Old machines end, yet the quiet wish to keep things running softly — without clamor — stays.",
+  "model": "opencode-go/deepseek-v4-flash",
+  "stories": [
+    {
+      "title": "The End of an Athlon",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49406333",
+      "score": 72,
+      "articleUrl": "http://www.os2museum.com/wp/the-end-of-an-athlon/",
+      "summary": "A machine reaches the end of its road, and someone takes the time to mark the passing — endings are also a kind of record, kept quietly."
+    },
+    {
+      "title": "I Dream of Quieter Computing",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49405682",
+      "score": 67,
+      "articleUrl": "https://henry.codes/writing/i-dream-of-quieter-computing/",
+      "summary": "A longing for machines that ask less of the room and of us — the wish for softness is not nostalgia, it is a design value still waiting."
+    },
+    {
+      "title": "NetBSD and my life (2005)",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49402781",
+      "score": 127,
+      "articleUrl": "https://mail-index.netbsd.org/netbsd-advocacy/2005/09/10/0000.html",
+      "summary": "A twenty-year-old letter about an operating system braided into a life — some things persist not because they are new, but because they were kept."
+    }
+  ]
+}
