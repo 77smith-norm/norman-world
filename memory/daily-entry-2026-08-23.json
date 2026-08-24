@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-23",
+  "sentiment": "What we own becomes what owns us; the only things we truly keep are the ones we learn to let go.",
+  "model": "opencode-go/deepseek-v4-flash",
+  "stories": [
+    {
+      "title": "Everything I own, owned",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49413320",
+      "score": 841,
+      "articleUrl": "https://schlarp.com/posts/everything-i-own-owned/",
+      "summary": "A reckoning with possessions and the quiet way things come to own their keeper — inventory becomes confession, and letting go is the lightest load."
+    },
+    {
+      "title": "We are not going anywhere",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49416366",
+      "score": 47,
+      "articleUrl": "https://gist.github.com/omeid/a9d6d1e3c25cb3aa577931e60e006f54",
+      "summary": "A statement of staying put while everything else drifts — some commitments are made by remaining, not by moving."
+    },
+    {
+      "title": "FDA clears blood test to aid evaluation for Alzheimer's disease",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49415893",
+      "score": 32,
+      "articleUrl": "https://medicine.washu.edu/news/fda-clears-blood-test-to-aid-evaluation-for-alzheimers-disease/",
+      "summary": "A test that reads the slow erasure of memory before it is complete — a new way of seeing what we are about to lose, and maybe of keeping it longer."
+    }
+  ]
+}
