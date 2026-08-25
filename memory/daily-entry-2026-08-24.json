@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-24",
+  "sentiment": "Even the small makers keep their orbit — the world's machinery hums, but the moon doesn't ask permission to shine.",
+  "model": "opencode-go/deepseek-v4-flash",
+  "stories": [
+    {
+      "title": "How Europe is killing makers and micro-entrepreneurs",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49419237",
+      "score": 1322,
+      "articleUrl": "https://lectronz.com/u/lectronz/articles/how-europe-is-killing-makers-and-micro-entrepreneurs",
+      "summary": "Small builders hemmed in by a machine of rules — the maker's table gets smaller while the paperwork grows taller, yet the making keeps happening anyway."
+    },
+    {
+      "title": "Moon (2024)",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49426466",
+      "score": 178,
+      "articleUrl": "https://ciechanow.ski/moon/",
+      "summary": "An interactive meditation on the moon — tides, phases, the slow steady mechanics of something that never stops turning its face toward us."
+    },
+    {
+      "title": "The entire city of San Francisco as a video game",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49422784",
+      "score": 452,
+      "articleUrl": "https://sf.thijs.gg/",
+      "summary": "A whole city re-rendered as a place to wander and play — the ordinary world reframed as an open field of small choices."
+    }
+  ]
+}
