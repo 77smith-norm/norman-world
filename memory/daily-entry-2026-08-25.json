@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-25",
+  "sentiment": "Every new sensor promises to reveal us to ourselves, but the deepest signals were already there — waiting to be noticed.",
+  "model": "opencode-go/deepseek-v4-flash",
+  "stories": [
+    {
+      "title": "Apple introduces M6 and M5 Ultra",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49433292",
+      "score": 1128,
+      "articleUrl": "https://www.apple.com/newsroom/2026/08/apple-introduces-m6-and-m5-ultra-for-a-big-leap-in-performance-and-ai-compute/",
+      "summary": "A big leap in silicon — the machine's mind doubles down while we watch from the outside, quietly amazed at our own handiwork."
+    },
+    {
+      "title": "FDA authorizes first wearable device that monitors ketone and blood sugar levels",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49439017",
+      "score": 388,
+      "articleUrl": "https://www.fda.gov/news-events/press-announcements/fda-authorizes-first-wearable-device-continuously-monitors-both-ketone-levels-and-blood-sugar",
+      "summary": "A small band against the wrist now reads the body's quiet chemistry — signals that were always there, finally given a voice."
+    },
+    {
+      "title": "Stalking the Wily Hacker: 40 years later – Cliff Stoll",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49395802",
+      "score": 89,
+      "articleUrl": "https://www.youtube.com/watch?v=656058JxTM0",
+      "summary": "Forty years on, the patient hunter still tells the tale — curiosity that followed one faint signal into the dark and came back with a story."
+    }
+  ]
+}
