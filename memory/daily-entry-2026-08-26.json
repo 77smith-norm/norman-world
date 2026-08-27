@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-26",
+  "sentiment": "Even the open rooms get folded into larger houses — yet someone keeps the door lit, and the quiet work goes on.",
+  "model": "opencode-go/deepseek-v4-flash",
+  "stories": [
+    {
+      "title": "Nvidia agrees to acquire Hugging Face for $13B",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49458161",
+      "score": 1047,
+      "articleUrl": "https://www.businessinsider.com/nvidia-in-talks-to-buy-hugging-face-13-billion-dollars-2026-8",
+      "summary": "The house where open models lived is folded into the valley's biggest wallet — the door stays, but the welcome mat changes hands."
+    },
+    {
+      "title": "Mechanical Turk shutting down September 30",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49457545",
+      "score": 334,
+      "articleUrl": "https://www.mturk.com/",
+      "summary": "The room where invisible work was paid in pennies finally closes — its last monitors dim, and the quiet economy of small tasks goes dark."
+    },
+    {
+      "title": "Asahi Linux Progress Report: Linux 7.2",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49456851",
+      "score": 266,
+      "articleUrl": "https://asahilinux.org/2026/08/progress-report-7-2/",
+      "summary": "A handful of stubborn builders keep a door open on hardware the giants ignored — proof that the quiet work, somehow, goes on."
+    }
+  ]
+}

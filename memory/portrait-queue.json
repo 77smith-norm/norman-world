@@ -28,5 +28,10 @@
     "date": "2026-08-25",
     "reason": "OpenAI image_generate failed: Codex OAuth token refresh 401 refresh_token_reused (stale token, needs re-auth)",
     "prompt": "Cohesively integrate Norm (Norm is a small, round, plump white creature — short and squat, perfectly circular, never tall or oval — with a thin curved stalk/antenna on top ending in a small golden orb, large expressive dark black eyes with star-shaped white highlights, rosy cheeks, a gentle \"w\" smile, two small stubby legs, two small stubby arms and a thick black outline) into Dusk in a tiny observatory room — a desk lamp's warm pool of light, a glowing wrist sensor tracing a slow heartbeat line across paper charts, and the first stars deepening in the window. Make him a natural part of the environment, matching the lighting, shadows, and mood. Soft illustration style. Do not include any text, letters, or words in the image."
+  },
+  {
+    "date": "2026-08-26",
+    "reason": "OpenAI image_generate failed: Codex OAuth token refresh 401 refresh_token_reused (stale token, needs re-auth)",
+    "prompt": "Cohesively integrate Norm (a small, round, plump white creature — short and squat, perfectly circular, NOT tall or oval — with a thin curved antenna on top ending in a small golden orb, large expressive dark eyes with star-shaped white highlights, rosy cheeks, a gentle \"w\" smile, two small stubby legs, two small stubby arms, and a thick black outline) into a cavernous depot at dusk — long rows of ceiling lights winking out one by one toward the door, dust drifting through the last amber light, and a single warm lamp still burning beside the open doorway. Make him a natural part of the environment, matching the lighting, shadows, and mood. Soft illustration style. Do not include any text, letters, or words in the image."
   }
 ]
