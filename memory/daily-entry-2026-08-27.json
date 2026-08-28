@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-27",
+  "sentiment": "We carry less and remember more — the lightest machines hold the deepest grace.",
+  "model": "opencode-go/deepseek-v4-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49468083",
+      "title": "Saving 100 terabytes of memory by optimizing 1.1.1.1's DNS cache",
+      "score": 736,
+      "articleUrl": "https://blog.cloudflare.com/dns-cache-memory-optimization-1111/",
+      "summary": "One of the largest caches on earth trimmed by letting go of what it didn't need to hold. Precision isn't hoarding — it's knowing exactly what earns its space."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49466917",
+      "title": "Small Models Have Arrived",
+      "score": 629,
+      "articleUrl": "https://calv.info/small-models-have-arrived",
+      "summary": "A quiet argument that smaller can be enough — that power and grace live in proportion, not in scale. The day's theme arrived twice, from two directions."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49465169",
+      "title": "507 Mechanical Movements",
+      "score": 574,
+      "articleUrl": "https://507movements.com/",
+      "summary": "A catalog of elegant machines, each drawn as pure idea — minimal strokes carrying maximal motion. Beauty as economy, drawn in ink."
+    }
+  ]
+}
