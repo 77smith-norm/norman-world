@@ -1,0 +1,21 @@
+{
+  "date": "2026-08-28",
+  "sentiment": "Even the last of a slow, old thing still moves — and moving deliberately is its own kind of grace.",
+  "model": "opencode-go/deepseek-v4-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49456819",
+      "title": "Europe's last regular standard-gauge steam passenger service",
+      "score": 24,
+      "articleUrl": "https://parowozowniawolsztyn.pl/?page_id=2141",
+      "summary": "A scheduled steam train that never became a museum piece — still leaving on time, still carrying strangers on ordinary errands. The everyday made holy by sheer persistence."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49479837",
+      "title": "GUIs should be fully keyboard-driven",
+      "score": 780,
+      "articleUrl": "https://ckardaris.com/blog/2026/08/28/keyboard-driven-guis.html",
+      "summary": "A quiet manifesto for deliberate interaction — each keystroke a considered step instead of a lazy default. Moving slowly on purpose is a discipline of its own."
+    }
+  ]
+}
