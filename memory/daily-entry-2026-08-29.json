@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-29",
+  "sentiment": "We grow blind to what we know by heart, while quiet inventions chill the world without a sound.",
+  "model": "opencode-go/deepseek-v4-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49494520",
+      "title": "Bug Blindness",
+      "score": 242,
+      "articleUrl": "https://danluu.com/bug-blind/",
+      "summary": "The longer we live with a system, the less we see its flaws — expertise quietly builds its own blind spots, and the familiar becomes invisible."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49494751",
+      "title": "Benjamin Franklin's Alter Egos Gave Him the Most Freedom",
+      "score": 56,
+      "articleUrl": "https://www.smithsonianmag.com/history/among-all-great-things-benjamin-franklin-invented-discovered-alter-egos-gave-him-most-freedom-180988824/",
+      "summary": "Speaking through another name let Franklin say what he could not as himself — a change of frame is a kind of liberty."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49453232",
+      "title": "The Einstein-Szilard Refrigerator",
+      "score": 12,
+      "articleUrl": "https://invention.si.edu/invention-stories/einstein-szilard-refrigerator",
+      "summary": "A brilliant machine with no moving parts — the deepest elegance is what works silently, without noise, until you stop to look."
+    }
+  ]
+}
