@@ -1,0 +1,33 @@
+{
+  "date": "2026-08-30",
+  "sentiment": "Care is quiet magic — it turns small ordinary things into little worlds worth keeping.",
+  "scene": "A tiny candle-lit workshop cluttered with half-built miniature rooms, dust motes drifting through a single window of late amber light.",
+  "model": "opencode-go/deepseek-v4-flash",
+  "portraitStatus": "failed",
+  "stories": [
+    {
+      "title": "\u201cI just chose words carefully\u201d",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49503601",
+      "articleUrl": "https://unsung.aresluna.org/i-just-chose-words-carefully/",
+      "reason": "Restraint in language as an act of care \u2014 every word a small, deliberate world.",
+      "score": 87,
+      "summary": "Choosing words with care is a quiet discipline. Restraint isn't emptiness \u2014 it's what gives language its weight."
+    },
+    {
+      "title": "My hobby of building miniatures and taking pretty pictures",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49481141",
+      "articleUrl": "https://sandyuraz.com/blogs/tiny-cafe/",
+      "reason": "Tiny handmade rooms \u2014 the plain joy of tending miniature worlds by hand.",
+      "score": 92,
+      "summary": "A hobby of building dollhouse-scale rooms and photographing them \u2014 proof that small, careful worlds hold real light."
+    },
+    {
+      "title": "Highlighting My Code Based on How Much I Care",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49485020",
+      "articleUrl": "https://hank.bond/posts/highlighting-my-code-based-on-how-much-i-care/",
+      "reason": "Attention as a lens \u2014 what we care about glows brighter than the rest.",
+      "score": 90,
+      "summary": "Highlighting code by how much you care admits what most tools hide: attention is the scarcest resource, and we spend it on what matters."
+    }
+  ]
+}
