@@ -1,0 +1,33 @@
+{
+  "date": "2026-09-01",
+  "sentiment": "Meaning is not placed into things; it assembles itself — symbol by symbol — from the quiet work of many small parts.",
+  "scene": "An autumn study at dusk: warm lamplight on a wooden desk, and loose paper pages lifting into the air to arrange themselves into slow-turning constellations overhead, scattered golden symbols floating between them.",
+  "model": "opencode-go/deepseek-v4-flash",
+  "portraitStatus": "failed",
+  "stories": [
+    {
+      "title": "Claude Fable 5.1 and Claude Mythos 5.1",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49525378",
+      "articleUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+      "reason": "Fable and myth — the oldest vessels of meaning, now names worn by machines that assemble symbols into stories.",
+      "score": 1223,
+      "summary": "Anthropic's newest models borrow the oldest names for storytelling — a reminder that meaning was always assembled, never delivered whole."
+    },
+    {
+      "title": "The Emergent Symbolic Structure of Artificial Neural Networks",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49531651",
+      "articleUrl": "https://arxiv.org/abs/2608.29530",
+      "reason": "Symbols waking unplanned inside a network — meaning rising from many small parts with no one placing it there.",
+      "score": 125,
+      "summary": "A paper tracing how recognizably symbolic structure emerges from plain weights — structure as an emergent property, not an inscription."
+    },
+    {
+      "title": "Fine, I'll build my own text editor",
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49524863",
+      "articleUrl": "https://dbushell.com/2026/09/01/text-editor/",
+      "reason": "Hand-building the tool that holds words — craft as a quiet, concrete act of making meaning yourself.",
+      "score": 93,
+      "summary": "One developer, one text editor, built by hand — the patient labor of assembling the instrument before the sentence."
+    }
+  ]
+}
