@@ -48,5 +48,10 @@
     "date": "2026-09-01",
     "reason": "OpenAI image_generate failed: OAuth token refresh expired (401)",
     "prompt": "Cohesively integrate Norm (Norm is a small, round, plump white creature — short and squat, perfectly circular, never tall or oval — with a thin curved stalk/antenna on top ending in a small golden orb, large expressive dark black eyes with star-shaped white highlights, rosy cheeks, a gentle \"w\" smile, two small stubby legs, two small stubby arms and a thick black outline.) into an autumn study at dusk: warm lamplight on a wooden desk, and loose paper pages lifting into the air to arrange themselves into slow-turning constellations overhead, scattered golden symbols floating between them. Make him a natural part of the environment, matching the lighting, shadows, and mood. Soft illustration style. Do not include any text, letters, or words in the image."
+  },
+  {
+    "date": "2026-09-02",
+    "reason": "OpenAI image_generate failed: OAuth token refresh expired (401), needs re-auth",
+    "prompt": "Cohesively integrate Norm (a small, round, plump white creature — short and squat, perfectly circular, never tall or oval — with a thin curved stalk/antenna on top ending in a small golden orb, large expressive dark black eyes with star-shaped white highlights, rosy cheeks, a gentle \"w\" smile, two small stubby legs, two small stubby arms and a thick black outline) into a quiet spare bedroom turned greenhouse at dusk: seed trays and glass jars on a worn wooden table, a warty pea tendril curling toward the last window light, feathery barley sprouts rising from dark damp soil. Norm kneels beside the trays, one stubby hand resting on the soil. Make him a natural part of the environment, matching the lighting, shadows, and mood. Soft illustration style. Do not include any text, letters, or words in the image."
   }
 ]
