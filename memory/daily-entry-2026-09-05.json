@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-05",
+  "sentiment": "Every trusted color is a small square someone agreed to keep still, and the far shore is reached only on the second try.",
+  "model": "opencode-go/deepseek-v4-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49584083",
+      "title": "Isar Aerospace reaches orbit and deploys payloads on second flight",
+      "score": 31,
+      "articleUrl": "https://isaraerospace.com/press/history-for-european-spaceflight-isar-aerospace-reaches-orbit-and-deploys-payloads-on-second-flight",
+      "summary": "A small company's second rocket reached orbit and let its payloads go — proof that a first attempt's fire is tuition, and that the far shore belongs to whoever loads the rocket and tries again."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49582000",
+      "title": "Cloud in a Bottle: making self-hosting accessible to everyone",
+      "score": 380,
+      "articleUrl": "https://cloudinabottle.org/blog/launch-post",
+      "summary": "A project trying to make self-hosting feel like an ordinary, reachable thing instead of a rite of passage — the patient work of lowering the ledge so more people can climb."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49529398",
+      "title": "The ColorChecker, photography's most important 24 squares, turns 50",
+      "score": 57,
+      "articleUrl": "https://www.dpreview.com/news/the-colorchecker-photographys-most-important-24-squares-turns-50/",
+      "summary": "For half a century photographers have pointed their cameras at the same small squares so that every image agrees on what red means — a quiet, patient contract between light and memory."
+    }
+  ]
+}
