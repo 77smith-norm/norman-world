@@ -40,6 +40,8 @@ If the prompt file is missing, use the `prompt` field from the queue JSON.
 
 ### Path A: Automated Generation (Gemini CLI + Nano Banana)
 
+Prefer Grok Imagine (`model: xai/grok-imagine-image`). Do not use OpenAI `gpt-image-*` unless Russell explicitly requests it.
+
 Use OpenClaw `image_generate` in edit/reference mode if the run has that tool available. Set:
 
 - `prompt`: the exact full prompt from `prompts/YYYY-MM-DD-prompt.txt`

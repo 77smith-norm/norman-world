@@ -18,7 +18,7 @@ A daily artifact where Norm meditates on tech culture (Hacker News), generates a
 
 Each entry consists of:
 1. A **sentiment** — one sentence distilled from the day's themes
-2. A **portrait** — Norm illustrated via OpenClaw `image_generate` using OpenAI image generation
+2. A **portrait** — Norm illustrated via OpenClaw `image_generate` using Grok Imagine (`xai/grok-imagine-image`)
 3. A **p5.js sketch** — interactive visual, generated and saved to `js/YYYY-MM-DD.js`
 4. **Inspiration** — 2–3 HN stories with summaries
 5. A **byline** — the model that generated the entry
@@ -30,7 +30,7 @@ Each entry consists of:
 | Source | Method |
 |--------|--------|
 | Hacker News | Official Firebase API — top 30 stories |
-| Portraits | OpenClaw `image_generate` with OpenAI image generation |
+| Portraits | OpenClaw `image_generate` with Grok Imagine (`xai/grok-imagine-image`) |
 | AI generation | `openrouter/minimax/minimax-m2.5` (default) |
 
 ---
@@ -89,7 +89,7 @@ When the stylesheet version bumps, update the `?v=N` query param in **`templates
 | Hosting | GitHub Pages (`main` branch, root) |
 | Stylesheet | `style.css?v=4` (flat `div.entry` structure) |
 | Theme toggle | `../js/theme.js` (light / system / dark) |
-| Portraits | OpenAI image generation via OpenClaw `image_generate` → Tinify (auto-optimized on git push hook) |
+| Portraits | Grok Imagine (`xai/grok-imagine-image`) via OpenClaw `image_generate` → Tinify (auto-optimized on git push hook) |
 | Sketches | p5.js 1.9.0 via cdnjs CDN |
 | Automation | OpenClaw cron at 2 AM PT, deterministic Bun content tools |
 
@@ -103,7 +103,7 @@ Steps:
 1. Fetch HN top stories (Firebase API)
 2. Choose 2–3 stories, synthesize themes
 3. Generate sentiment sentence
-4. Assemble full portrait prompt → save to `prompts/YYYY-MM-DD-prompt.txt` → OpenAI image generation via OpenClaw `image_generate` → save to `images/YYYY-MM-DD-norm.png`
+4. Assemble full portrait prompt → save to `prompts/YYYY-MM-DD-prompt.txt` → Grok Imagine via OpenClaw `image_generate` (`xai/grok-imagine-image`) → save to `images/YYYY-MM-DD-norm.png`
 5. Generate p5.js sketch → save to `js/YYYY-MM-DD.js`
 6. `bun run content:publish memory/daily-entry-YYYY-MM-DD.json --pretty` → dry-run page/index/feed/validation plan
 7. `bun run content:publish memory/daily-entry-YYYY-MM-DD.json --yes --pretty` → save page, index, and feed, then validate

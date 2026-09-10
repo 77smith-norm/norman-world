@@ -59,12 +59,13 @@ AGENT-ASSISTED CREATIVE STEPS:
       ```
    d. Save that exact full generation prompt to `prompts/YYYY-MM-DD-prompt.txt`.
    e. Generate `images/YYYY-MM-DD-norm.png` using OpenClaw `image_generate` with the exact prompt saved in `prompts/YYYY-MM-DD-prompt.txt`.
-      - Use OpenAI image generation through `image_generate`.
+      - Always use Grok Imagine via `image_generate` with model `xai/grok-imagine-image` (matches `agents.defaults.mediaModels.image.primary`).
+      - Explicitly pass `model: "xai/grok-imagine-image"` on the tool call. Do NOT pass `openai/gpt-image-*` or any OpenAI image model.
       - Use `image_generate` in edit/reference mode when it is available.
       - Use `/Users/norm/.openclaw/workspace/avatars/norm.png` as the reference image for consistent character appearance.
       - Do not use Google Gemini, Nano Banana, or OpenRouter for routine daily portraits unless Russell explicitly asked for a repair/backfill with those providers.
       - If the tool saves into an OpenClaw media/output directory, copy the generated image to `/Users/norm/Developer/norman-world/images/YYYY-MM-DD-norm.png` with the `.png` extension.
-      - **Timeout guard:** After calling `image_generate`, wait for its completion. If the image_generation completion event does not arrive within 60 seconds of being triggered, stop waiting, mark the portrait as failed for this run, and continue with the deterministic tail. Do not let image generation stall the rest of the pipeline.
+      - **Timeout guard:** After calling `image_generate`, wait for its completion. If the image_generation completion event does not arrive within 300 seconds of being triggered (Grok Imagine can take a few minutes; mediaModels timeout is 600s), stop waiting, mark the portrait as failed for this run, and continue with the deterministic tail. Do not let image generation stall the rest of the pipeline.
    f. No text, letters, or typography in the image.
    g. If portrait generation fails once, do not retry in a loop. Continue the entry with portrait status failed and report the failure clearly.
 
