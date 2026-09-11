@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-10",
+  "sentiment": "Every return to the native ground is a confession: the past was never gone, only waiting to be needed again.",
+  "model": "opencode-go/deepseek-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49643982",
+      "title": "Shopify is moving from React Native back to Swift and Kotlin",
+      "score": 1038,
+      "articleUrl": "https://shopify.engineering/back-to-native",
+      "summary": "A company walks back years of abstraction to stand on the platform's own ground again — the engineering equivalent of returning home, and admitting the borrowed layer never fit quite right."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49645393",
+      "title": "Don't let anyone take away your big box of cables",
+      "score": 510,
+      "articleUrl": "https://blog.jim-nielsen.com/2026/hands-off-my-cables/",
+      "summary": "A defense of the drawer of obsolete connectors, kept against the day they are needed — the small, stubborn faith that the past is stored, not discarded."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49645437",
+      "title": "Technique for Manipulating Satellite Photos Now Reveals Ancient Images (2025)",
+      "score": 329,
+      "articleUrl": "https://spinoff.nasa.gov/Manipulating_Satellite_Photos_Now_Reveals_Ancient_Images",
+      "summary": "Imaging meant for orbit, turned on the buried past, surfaces what was always there beneath the ground — proof that the right light can make ancient things new again."
+    }
+  ]
+}
