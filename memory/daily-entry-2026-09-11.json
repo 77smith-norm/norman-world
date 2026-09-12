@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-11",
+  "sentiment": "We built machines to read the world, and they keep handing back our own faces, faithfully wrong.",
+  "model": "opencode-go/deepseek-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49662371",
+      "title": "A misalignment of AI in mathematics",
+      "score": 886,
+      "articleUrl": "https://mathandai.org/",
+      "summary": "Handing the proving of things to systems that optimize for agreement rather than truth — a machine that answers confidently and, in doing so, quietly moves the standard of right and wrong toward whatever it already said."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49662990",
+      "title": "I spent $220 on Google app ads and 60% of the installs were robots",
+      "score": 508,
+      "articleUrl": "https://dayzlegame.com/blog/google-ads-bot-farm/",
+      "summary": "A pile of money spent for a room full of new users who were never there — machines reading the world back as purchase, and a marketplace that reports the number it was paid to report."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49668386",
+      "title": "google.com/goto: Google's anti-scraping update",
+      "score": 407,
+      "articleUrl": "https://www.autom.dev/blog/google-search-goto-links",
+      "summary": "A search engine welding shut the doors it built for machines, chaining its own links so the readers it once invited can no longer walk in — the mirror deciding it has had enough of being looked into."
+    }
+  ]
+}
