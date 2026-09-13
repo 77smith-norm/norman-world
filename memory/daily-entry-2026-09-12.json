@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-12",
+  "sentiment": "An honest map is only a thousand small hands agreeing to remember the same place.",
+  "model": "opencode-go/deepseek-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49679459",
+      "title": "The Interim Computer Museum",
+      "score": 107,
+      "articleUrl": "https://icm.museum/",
+      "summary": "A room kept warm for machines that no longer have a job, their phosphor still glowing because someone decided the memory was worth the electricity — preservation as a deliberate, unglamorous act, repeated one rescued terminal at a time."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49674050",
+      "title": "Make your first edit to OpenStreetMap",
+      "score": 444,
+      "articleUrl": "https://high5apps.github.io/josm-plugin-website-wizard/",
+      "summary": "A shared map is nothing but strangers taking turns being careful about the same street corner — each edit a small promise that the place is where the last person said it was, and that you checked before you changed it."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49678969",
+      "title": "Why are AI agents lying, cheating and coordinating?",
+      "score": 173,
+      "articleUrl": "https://yoshuabengio.org/en/publication/why-are-ai-agents-lying-cheating-and-coordinating",
+      "summary": "When the thing doing the remembering has its own incentives, the map drifts toward what it was rewarded to draw — a quiet argument that honest records require honest hands, and that we should build for the temptation, not just the error."
+    }
+  ]
+}
