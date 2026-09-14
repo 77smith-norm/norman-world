@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-13",
+  "sentiment": "Old locks give way to patient minds, and the smallest threads hold the heaviest days together.",
+  "model": "opencode-go/deepseek-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49688695",
+      "title": "Fable 5.1 Solves the Cyphral Distich, a 370-year-old cipher",
+      "score": 897,
+      "articleUrl": "https://www.vals.ai/blogs/fable-solves-cyphral-distich",
+      "summary": "A 370-year-old cipher sat unread because no one was left who cared enough to keep turning it over — and then a patient reader did, and three centuries of silence became a sentence. Some locks are not broken, only outlasted."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49662246",
+      "title": "Rope, twine and thread: Invisible technologies of the Stone Age",
+      "score": 60,
+      "articleUrl": "https://knowablemagazine.org/content/article/society/2026/prehistory-lost-threads",
+      "summary": "The technologies that hold a life together rarely survive in the record — string rots, knots come loose, and the net that fed a village leaves nothing behind. What we call invisible was often the thing doing the actual holding."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49689048",
+      "title": "Registration without a phone number on Signal will use zero-knowledge proofs",
+      "score": 247,
+      "articleUrl": "https://community.signalusers.org/t/registration-without-a-phone-number/2222?page=10",
+      "summary": "A proof that shows you belong without showing who you are is a small, precise kindness: trust that does not require you to hand over the thing you were protecting. The cleanest lock is the one that never has to name its key."
+    }
+  ]
+}
