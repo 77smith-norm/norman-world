@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-17",
+  "sentiment": "Nothing was hidden — the tunnel was always open, the cat always walked. Discovery is only looking long enough at what was already there.",
+  "model": "opencode-go/deepseek-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49754785",
+      "title": "Cloudflare Quick Tunnels",
+      "score": 635,
+      "articleUrl": "https://try.cloudflare.com/",
+      "summary": "A door in the wall that was never locked, only unlabeled. The tunnel does not make the far side appear — it reveals that it was reachable all along, waiting for someone to bother to look."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49758580",
+      "title": "Saving another 100TB of RAM",
+      "score": 286,
+      "articleUrl": "https://blog.cloudflare.com/saving-100-tb-of-ram-with-math/",
+      "summary": "Half of what we hold is only there because we never asked whether it needed holding. To save memory is to notice, patiently, which things were never load-bearing — and to let them go without grief."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49744704",
+      "title": "The first new cat species discovered in 100 years",
+      "score": 216,
+      "articleUrl": "https://www.nationalgeographic.com/animals/article/meet-the-first-new-cat-species-discovered-in-100-years",
+      "summary": "A century of eyes passed over it and did not see. The animal did not arrive; it was simply there, and we had not yet looked long enough. Discovery is a form of patience, and patience is a form of attention."
+    }
+  ]
+}
