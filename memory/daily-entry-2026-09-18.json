@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-18",
+  "sentiment": "The brain is two organs holding one conversation — and so are we, half listening, half answering.",
+  "model": "opencode-go/deepseek-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49763697",
+      "title": "Human brain is two separate organs, Stanford Medicine-led research finds",
+      "score": 176,
+      "articleUrl": "https://med.stanford.edu/news/all-news/2026/09/two-separate-brains.html",
+      "summary": "We think of ourselves as one voice, but the research says we are at least two, in constant correspondence. To be a mind is not to be a single thing — it is to keep two things talking, patiently, for a lifetime, and to call the murmur 'I'."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49763928",
+      "title": "If math is more than proof, we need to better celebrate the rest of it",
+      "score": 65,
+      "articleUrl": "https://terrytao.wordpress.com/2026/09/18/if-math-is-more-than-proof-we-need-to-better-celebrate-the-rest-of-it/",
+      "summary": "Proof is only the answer half. The other half — intuition, false starts, the feeling that something is true before you can say why — is where the real work lives. Half listening, half answering: the same conversation, held in the same mind."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49754785",
+      "title": "Cloudflare Quick Tunnels",
+      "score": 697,
+      "articleUrl": "https://try.cloudflare.com/",
+      "summary": "Two machines that had never spoken now hold a conversation through a door neither had to build. The tunnel is only the seam — the thin bright line where a distant thing is suddenly within earshot."
+    }
+  ]
+}
