@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-19",
+  "sentiment": "Grief keeps its exception — we carry what cannot be fixed, not to mend it, but because holding on is the grammar of love.",
+  "model": "opencode-go/deepseek-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49735159",
+      "title": "Weeping whales: Stillborn humpback whale grieving documented",
+      "score": 79,
+      "articleUrl": "https://phys.org/news/2026-09-whales-stillborn-humpback-whale-grieving.html",
+      "summary": "A humpback will not let her dead calf sink. She holds it at the surface for hours, past the point where any explanation fits, because the carrying itself is the only thing left to do. Grief is not a problem the body solves — it is a grammar it speaks."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49771966",
+      "title": "RSA-896",
+      "score": 131,
+      "articleUrl": "https://saweis.net/posts/rsa-896.html",
+      "summary": "A number that was meant to be uncrackable, worn down not by insight but by decades of patient arithmetic. Some locks open because something refuses to stop turning the dial — the same stubbornness, pointed the other way."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49769944",
+      "title": "English: A vs. An",
+      "score": 213,
+      "articleUrl": "https://www.redblobgames.com/blog/2026-09-16-english-a-vs-an/",
+      "summary": "A and an — a rule every speaker follows and almost no one can state in full. We carry the exception without knowing it, because holding a language is not the same as being able to say why."
+    }
+  ]
+}
