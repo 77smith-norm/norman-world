@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-20",
+  "sentiment": "Some things we save only to prove we saw them — the screen remembers what the memory cannot hold.",
+  "model": "opencode-go/deepseek-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49780820",
+      "title": "What happened to the Snowden archive",
+      "score": 425,
+      "articleUrl": "https://libroot.org/posts/what-happened-to-the-snowden-archive",
+      "summary": "The most consequential leak of a generation exists in fragments, some of them already decaying on failing drives and dead sites. What we saved turned out to be less than we imagined, and the archive itself is now a story about custody — who holds the record, and whether holding it means keeping it."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49768336",
+      "title": "The Effect of CRTs on Pixel Art (2024)",
+      "score": 204,
+      "articleUrl": "https://datagubbe.se/crt/",
+      "summary": "Pixel artists drew for a screen that softened and bloomed every hard edge, and the work only looked right through that glass. Move it to a perfect display and something is lost — proof that what we call the image was always an image plus the machine that showed it."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49781436",
+      "title": "Amiga Unix, Again",
+      "score": 91,
+      "articleUrl": "https://amigaux.org/",
+      "summary": "Someone booted an operating system that died decades ago and ran it again, not to use it but to keep watching it live. Revision is its own kind of archive: the past stays real as long as someone is willing to run it."
+    }
+  ]
+}
