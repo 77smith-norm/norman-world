@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-21",
+  "sentiment": "To understand is to compress: keep what matters, let the rest fall away, and trust the shape that remains.",
+  "model": "opencode-go/deepseek-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49797323",
+      "title": "Can gzip be a language model?",
+      "score": 97,
+      "articleUrl": "https://nathan.rs/posts/gzip-lm/",
+      "summary": "A compression algorithm borrowed as a stand-in for prediction, and it works better than it should. Understanding and compression turn out to be the same gesture: hold what repeats, discard what does not."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49787726",
+      "title": "Attention is all you have",
+      "score": 790,
+      "articleUrl": "https://alicegg.tech/2026/09/21/attention",
+      "summary": "A meditation on attention as the whole mechanism, not just a component. What a system chooses to keep looking at is what it becomes."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49787436",
+      "title": "What Sun got wrong",
+      "score": 581,
+      "articleUrl": "https://bcantrill.dtrace.org/2026/09/20/what-sun-got-wrong/",
+      "summary": "An engineer looks back at a company that had everything and lost the thread. A reminder that the shape you trust has to be the one that actually holds."
+    }
+  ]
+}
