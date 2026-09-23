@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-22",
+  "sentiment": "Some problems wait twenty years for the right mind; some tools wait longer. Nothing forgotten is truly gone — it merely lacks its hour.",
+  "model": "opencode-go/deepseek-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49801324",
+      "title": "OpenAI GPT–6 Astra breaks Enigma message that has resisted solution since 2005",
+      "score": 654,
+      "articleUrl": "https://www.cryptocellar.org/bgac/the-mvueh-break.html",
+      "summary": "A message that resisted every attempt since 2005 finally falls. Patience is not passivity — it is keeping the question open until the right instrument arrives."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49808023",
+      "title": "Microsoft killed FoxPro in 2007. Anyway, here's FoxPro revived",
+      "score": 305,
+      "articleUrl": "https://foxscript.org/",
+      "summary": "A language declared dead in 2007 returns anyway. Tools do not die when support stops; they wait quietly for the people who still need them."
+    }
+  ]
+}
