@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-24",
+  "sentiment": "Something in us keeps rebuilding what it loses; the shape outlives the damage, quietly regrowing toward the form it always was.",
+  "model": "opencode-go/deepseek-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49831968",
+      "title": "F-Droid 2.0",
+      "score": 1221,
+      "articleUrl": "https://f-droid.org/2026/09/24/f-droid-2.0-a-new-chapter-for-android-freedom.html",
+      "summary": "A free app store ships its next chapter after years of quiet upkeep. Independence is not declared once and kept — it is regrown every day by people who refuse to let a commons go dark."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49832938",
+      "title": "Why is the liver so weirdly regenerative?",
+      "score": 400,
+      "articleUrl": "https://dynomight.substack.com/p/liver",
+      "summary": "The liver rebuilds most of itself from the part that remains. Loss is not deletion here; the tissue remembers the whole shape and grows patiently back toward it."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49801436",
+      "title": "2DWillNeverDie",
+      "score": 226,
+      "articleUrl": "https://2dwillneverdie.com/",
+      "summary": "A home for flat, hand-made worlds that outlast the engines built to render them. Old forms survive not because they were replaced, but because someone kept drawing them."
+    }
+  ]
+}
