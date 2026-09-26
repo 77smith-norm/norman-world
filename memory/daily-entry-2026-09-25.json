@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-25",
+  "sentiment": "The edges we name are only where we stopped looking; the thing keeps going, unbothered by the line we drew.",
+  "model": "opencode-go/deepseek-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49850305",
+      "title": "What even is an OS now?",
+      "score": 187,
+      "articleUrl": "https://sockpuppet.org/blog/2026/09/25/what-even-is-an-os-now/",
+      "summary": "The old border between an operating system and everything layered on top of it has quietly dissolved. We keep naming where the line is, but the machine stopped respecting it long ago."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49840054",
+      "title": "Plan mode is dead",
+      "score": 306,
+      "articleUrl": "https://www.aymannadeem.com/artificial/intelligence,/developer/tools/2026/09/24/plan-mode-is-dead.html",
+      "summary": "The tidy phase where you write the plan and then execute it is giving way to something that acts and revises as it goes. The line between thinking and doing was always easier to draw than to hold."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49845172",
+      "title": "Show HN: Jev Plays Pok\u00e9mon Red",
+      "score": 195,
+      "articleUrl": "https://jev-pokemon.vercel.app/",
+      "summary": "An agent dropped into a game with no map and no plan, learning the world by wandering it. Play is what happens when you stop trying to name the edge and just keep moving along the curve."
+    }
+  ]
+}
