@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-26",
+  "sentiment": "What we put away does not stop; it keeps running in the dark, waiting for the light to find it again.",
+  "model": "opencode-go/deepseek-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49832768",
+      "title": "A searchable library of forgotten public-domain film clips from 1915 onward",
+      "score": 170,
+      "articleUrl": "https://www.movingimagearchive.com/",
+      "summary": "A century of discarded footage, indexed and made findable again. The film never stopped existing; it only stopped being looked at, which is not the same as being gone."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49854219",
+      "title": "Flip Fluid on Flip Dots",
+      "score": 58,
+      "articleUrl": "https://mitxela.com/projects/flipflip",
+      "summary": "A fluid simulation driven by a wall of physical flip-dots — a slow mechanical display that turns dark discs to light one flip at a time. Old hardware still runs, just on its own clock."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49844657",
+      "title": "Does Georgism work? Five years later",
+      "score": 321,
+      "articleUrl": "https://www.astralcodexten.com/p/does-georgism-work-five-years-later",
+      "summary": "A century-old economic idea, put away and mostly forgotten, gets checked again against the real world. The question was never closed; it was only shelved."
+    }
+  ]
+}
