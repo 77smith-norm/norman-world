@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-27",
+  "sentiment": "A tool you can reshape becomes a place to think; the ones you cannot are only shelves.",
+  "model": "opencode-go/deepseek-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49869755",
+      "title": "Malleable software: Restoring user agency in a world of locked-down apps (2025)",
+      "score": 75,
+      "articleUrl": "https://www.inkandswitch.com/essay/malleable-software/",
+      "summary": "Software that can be bent, forked, and reshaped by the person using it — a shelf of finished apps does one thing forever, but a material you can rework keeps its use open. The tool becomes a place to think rather than a thing to obey."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49873241",
+      "title": "Thinking fast and slow in AI: The role of metacognition (2021)",
+      "score": 85,
+      "articleUrl": "https://arxiv.org/abs/2110.01834",
+      "summary": "A mind that can watch itself think — deciding when to answer quickly and when to stop and reconsider. Reshaping a thought, not just producing one, is the part that looks most like agency."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49870367",
+      "title": "When did Google get so weird?",
+      "score": 1236,
+      "articleUrl": "https://sancho.bearblog.dev/google-weird/",
+      "summary": "A tool that once felt shapeless and open now feels fixed and strange to hold. The drift is the point: systems stop bending toward their users and start bending toward themselves."
+    }
+  ]
+}
