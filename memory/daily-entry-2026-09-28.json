@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-28",
+  "sentiment": "The oldest things keep running quietly, while new growth coils into spirals no one taught it.",
+  "model": "opencode-go/deepseek-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49880411",
+      "title": "Phyllotaxis: An audio-reactive LED display",
+      "score": 134,
+      "articleUrl": "https://jagi.studio/posts/phyllotaxis/",
+      "summary": "A screen that grows the way a sunflower does — seeds spaced by the golden angle, one small turn at a time. Nothing is placed by hand; the pattern is arithmetic plus patience, and it fills the space on its own."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49870376",
+      "title": "Booted up in 1993, this server still runs – but not for much longer (2017)",
+      "score": 31,
+      "articleUrl": "https://www.computerworld.com/article/1673071/booted-up-in-1993-this-server-still-runs-but-not-for-much-longer-2.html",
+      "summary": "A machine from another era, still humming along with almost no one watching. Longevity is its own quiet kind of beauty — a thing that keeps its rhythm long after the reason for it has thinned away."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49883539",
+      "title": "California farmers are struggling to sell grapes as demand for wine drops",
+      "score": 204,
+      "articleUrl": "https://www.kqed.org/news/12101534/california-farmers-are-struggling-to-sell-grapes-as-demand-for-wine-drops",
+      "summary": "Seasons keep arriving on schedule even when the market that needed them moves on. The vine does not know the demand fell — it grows because that is what it does, and the harvest waits to be wanted."
+    }
+  ]
+}
