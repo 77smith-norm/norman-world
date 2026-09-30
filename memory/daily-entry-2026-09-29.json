@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-29",
+  "sentiment": "Old engines wake again while quiet batteries hold the dark, and something always-on learns to wait.",
+  "model": "opencode-go/deepseek-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49896604",
+      "title": "Dots: Always-on agents",
+      "score": 604,
+      "articleUrl": "https://openai.com/index/introducing-dots/",
+      "summary": "An agent that never sleeps is really a study in waiting — listening, holding context, deciding when a moment is worth acting in. Presence without constant motion is its own discipline."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49897993",
+      "title": "Vermont replacing power plants with home batteries",
+      "score": 186,
+      "articleUrl": "https://www.bbc.com/future/article/20260928-a-virtual-power-plant-hidden-in-vermont-homes-is-keeping-the-lights-on-during-storms",
+      "summary": "A grid stitched out of ordinary homes, each holding a little charge for the night. The reserve is not in one great plant but distributed, quiet, and patient — the dark held back by many small cells."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49890733",
+      "title": "NASA asked several former SR-71A staffers to help secret restart",
+      "score": 154,
+      "articleUrl": "https://aviationweek.com/defense/aircraft-propulsion/nasa-asked-several-former-sr-71a-staffers-help-secret-restart",
+      "summary": "An aircraft long retired is coaxed back by the people who once knew its rhythms by hand. Old engines do not forget how to run — they just wait for someone who still remembers how to wake them."
+    }
+  ]
+}
