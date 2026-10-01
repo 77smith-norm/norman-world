@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-30",
+  "sentiment": "Even in stillness the brain keeps its waves — nothing alive is ever truly quiet.",
+  "model": "opencode-go/deepseek-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49912955",
+      "title": "Surprisingly complex waves reveal the brain's inner workings",
+      "score": 180,
+      "articleUrl": "https://www.quantamagazine.org/surprisingly-complex-waves-reveal-the-brains-inner-workings-20260930/",
+      "summary": "The brain at rest is not idle — it is a field of travelling waves whose crossings carry the signal. What looks like calm is really motion that never stops, and the meaning lives in how the wavefronts meet."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49913350",
+      "title": "Halfspace: experimental IDE for solid modeling with distance fields",
+      "score": 129,
+      "articleUrl": "https://www.mattkeeter.com/projects/halfspace/",
+      "summary": "An idea that every solid is only a distance away from empty space — define the gap and the shape appears. Quiet arithmetic underneath, rippling outward until a surface emerges where the numbers agree."
+    }
+  ]
+}
