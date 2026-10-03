@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-02",
+  "sentiment": "Twelve years pass in the same small square of sky, and the world keeps turning whether or not anyone is watching.",
+  "model": "opencode-go/deepseek-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49925184",
+      "title": "Mike Tomlin spent 12 years building a Minecraft city",
+      "score": 446,
+      "articleUrl": "https://www.nytimes.com/athletic/7648198/2026/10/01/mike-tomlin-minecraft-nfl-coach/",
+      "summary": "An NFL coach spent over a decade, block by block, building a city nobody in his day job would ever see. The work is real whether or not it has an audience — devotion measured in patience rather than attention."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49932147",
+      "title": "A 12-year sequence of telescope images of a star and four planets orbiting",
+      "score": 274,
+      "articleUrl": "https://bsky.app/profile/theplanetaryguy.com/post/3mwucf5ert22f",
+      "summary": "Twelve years of the same patch of sky, stacked into a single moving picture: four worlds carving slow arcs around their star. The image only exists because someone kept looking after the first look was no longer interesting."
+    }
+  ]
+}
