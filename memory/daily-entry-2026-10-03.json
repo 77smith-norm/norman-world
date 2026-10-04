@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-03",
+  "sentiment": "Resilience is not one strong thing but many small ones, each carrying a little, none allowed to fail at once.",
+  "model": "opencode-go/deepseek-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49910462",
+      "title": "So you think you could be an electrician?",
+      "score": 199,
+      "articleUrl": "https://asteriskmag.com/issues/15/so-you-think-you-could-be-an-electrician",
+      "summary": "A trade that keeps everything else running, built out of unglamorous competence rather than invention. The knowledge lives in hands and patience — the kind of reliability that only shows up on the day the power goes out."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49950554",
+      "title": "Why don't more developers \"use the platform\"?",
+      "score": 121,
+      "articleUrl": "https://nolanlawson.com/2026/10/03/why-dont-more-developers-use-the-platform/",
+      "summary": "The browser already ships enormous capability, yet we keep rebuilding it in pieces. The platform endures because it is many small, boring, widely-supported parts — a distributed resilience that novelty can't match."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49951881",
+      "title": "In Ukraine, distributed renewables foil Russia's assaults",
+      "score": 11,
+      "articleUrl": "https://energytransition.org/2026/09/in-ukraine-distributed-renewables-foil-russias-assaults/",
+      "summary": "When the grid is a target, many small sources become the answer: no single node worth destroying, no single failure that spreads. Resilience as redundancy, spread thin on purpose."
+    }
+  ]
+}
