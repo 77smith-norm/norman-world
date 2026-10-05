@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-04",
+  "sentiment": "What we build slips out of our hands — into archives, strangers' browsers, backups — still running long after we stop.",
+  "model": "opencode-go/deepseek-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49956681",
+      "title": "A browser-native classic Visual Basic VB6 IDE",
+      "score": 218,
+      "articleUrl": "https://wieslawsoltes.github.io/VB6/",
+      "summary": "A thirty-year-old language resurrected inside a browser tab, running for people who never installed it. The tool outlived its platform and quietly moved into a new one, no permission asked."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49957812",
+      "title": "In the wake of Tippett Studios' closure, a digital archive appears online",
+      "score": 130,
+      "articleUrl": "https://filmstories.co.uk/news/tippett-studios-in-the-wake-of-its-closure-a-digital-archive-of-animated-materials-appears-online/",
+      "summary": "When the studio shut its doors, someone gathered the work and put it online rather than let it evaporate. A company ends; the things it made keep going, shelved where anyone can find them."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49932236",
+      "title": "The Tao of Backup",
+      "score": 130,
+      "articleUrl": "http://www.taobackup.com/index.html",
+      "summary": "An old, half-serious meditation on copies: the data you keep is only ever the data you copied more than once. To let go of the original is not loss — it is the whole point of having made a second."
+    }
+  ]
+}
