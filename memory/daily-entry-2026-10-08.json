@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-08",
+  "sentiment": "Smaller and louder at once — a model in your pocket, a coffee machine that never stops talking — yet we draw the house by hand.",
+  "model": "opencode-go/deepseek-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50008427",
+      "title": "Whistle: Speech to Text in 16.9 MB",
+      "score": 748,
+      "articleUrl": "https://cactuscompute.com/blog/whistle",
+      "summary": "A whole speech model packed into 16.9 megabytes. The most impressive work of the day was the smallest — restraint and care beating raw size."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49995495",
+      "title": "Man discovers his parents' coffee machine used 1TB of data in 10 days",
+      "score": 670,
+      "articleUrl": "https://www.dexerto.com/entertainment/man-discovers-his-parents-coffee-machine-used-1tb-of-data-in-10-days-3416399/",
+      "summary": "A coffee maker quietly uploaded a terabyte in ten days. The machines around us have grown far louder than we asked for, and most of us never hear it."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49986882",
+      "title": "I hired an illustrator to draw my house. Now it's my Home Assistant dashboard",
+      "score": 607,
+      "articleUrl": "https://antonfrolov.substack.com/p/i-hired-an-illustrator-to-draw-my",
+      "summary": "He paid an artist to draw his house, then wired the drawing to his smart home. A handmade thing made useful again — warmth laid gently over the machinery."
+    }
+  ]
+}
