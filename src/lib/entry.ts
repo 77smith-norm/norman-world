@@ -24,6 +24,14 @@ export interface EntryModels {
  */
 export const IMAGE_MODEL_ALLOWLIST: readonly string[] = ["xai/grok-imagine-image"];
 
+/**
+ * Entries dated on or after this date must use the structured `models`
+ * object. The legacy single-string `model` field is accepted only for
+ * earlier entries, so a new entry cannot silently bypass the image-model
+ * allowlist by using the old shape.
+ */
+export const STRUCTURED_MODELS_REQUIRED_FROM = "2026-10-11";
+
 export interface DailyEntryInput {
   date: string;
   title?: string;
@@ -32,9 +40,9 @@ export interface DailyEntryInput {
   /** Structured model attribution (preferred for entries from 2026-10-11 on). */
   models?: EntryModels;
   /**
-   * @deprecated Legacy single-string model field. Grandfathered: entries
-   * written before 2026-10-11 keep rendering, but new entries must use
-   * `models`.
+   * @deprecated Legacy single-string model field. Accepted only for entries
+   * dated before `STRUCTURED_MODELS_REQUIRED_FROM`; entries on or after it
+   * must use `models`.
    */
   model?: string;
   portraitAlt?: string;
@@ -65,7 +73,14 @@ export function validateDailyEntryInput(input: DailyEntryInput): string[] {
       );
     }
   } else if (input.model?.trim()) {
-    // Legacy grandfathered shape: no allowlist enforcement.
+    // The legacy shape is grandfathered only for entries predating the
+    // cutover; a new entry cannot skip the allowlist via the old field.
+    if (dateSlugPattern.test(input.date ?? "") && input.date >= STRUCTURED_MODELS_REQUIRED_FROM) {
+      errors.push(
+        `entries dated ${STRUCTURED_MODELS_REQUIRED_FROM} or later must use models.text/models.image, ` +
+          `not the legacy model string`
+      );
+    }
   } else {
     errors.push("models.text/models.image (or legacy model) is required");
   }

@@ -20,6 +20,11 @@ const path = require("node:path");
 const { spawnSync } = require("node:child_process");
 
 const repo = path.resolve(__dirname, "..");
+// NOTE: these are the current OpenClaw storage locations (as of 2026-10).
+// OpenClaw has migrated cron storage before — cron/runs/<id>.jsonl moved to
+// the cron_run_receipts table in state/openclaw.sqlite, and jobs.json became
+// jobs.json.migrated. If it migrates again, update these paths; the checks
+// below fail loudly (not silently) when a source goes stale.
 const openclaw = "/Users/norm/.openclaw";
 const jobId = "c11ae7c5-7c1a-4e05-9eda-dc6730f199a1";
 const TRAILING_RUNS = 14;

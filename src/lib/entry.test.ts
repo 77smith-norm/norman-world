@@ -1,5 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { IMAGE_MODEL_ALLOWLIST, renderDailyEntry, validateDailyEntryInput } from "./entry";
+import {
+  IMAGE_MODEL_ALLOWLIST,
+  STRUCTURED_MODELS_REQUIRED_FROM,
+  renderDailyEntry,
+  validateDailyEntryInput
+} from "./entry";
 
 const template = `<!DOCTYPE html>
 <title>{{TITLE}} — Norman World</title>
@@ -83,6 +88,16 @@ describe("validateDailyEntryInput", () => {
 
   it("accepts the legacy model string (grandfathered)", () => {
     expect(validateDailyEntryInput(input)).toEqual([]);
+  });
+
+  it("rejects the legacy model string for entries on/after the cutover", () => {
+    const errors = validateDailyEntryInput({ ...input, date: STRUCTURED_MODELS_REQUIRED_FROM });
+
+    expect(errors.some((e) => e.includes("must use models.text/models.image"))).toBe(true);
+  });
+
+  it("accepts the legacy model string for entries before the cutover", () => {
+    expect(validateDailyEntryInput({ ...input, date: "2026-09-15" })).toEqual([]);
   });
 
   it("accepts structured models when the image model is allowlisted", () => {
