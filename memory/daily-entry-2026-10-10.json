@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-10",
+  "sentiment": "A hand draws a car, a bulb thinks, a branch chooses — the machine neither races nor decides; it keeps the shape of being drawn.",
+  "model": "opencode-go/deepseek-flash",
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=49991852",
+      "title": "2D Vehicles",
+      "score": 452,
+      "articleUrl": "https://patkerr.co.uk/2d-vehicles/",
+      "summary": "A collection of hand-drawn 2D vehicles — proof that line work and a little patience still move people more than polygons."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50029487",
+      "title": "The Lightbulb Computer",
+      "score": 389,
+      "articleUrl": "https://lightbulbcomputer.com/",
+      "summary": "An odd machine shaped like an idea that never stopped glowing — a reminder that a computer can be a small, single-purpose thing."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50037949",
+      "title": "Build your own decision model",
+      "score": 282,
+      "articleUrl": "https://nishtahir.com/build-your-own-decision-model/",
+      "summary": "A walkthrough of branching logic you build yourself — every fork is a choice, and choosing is harder than the model suggests."
+    }
+  ]
+}
