@@ -19,7 +19,9 @@ describe("updateMonthArchiveHtml", () => {
 <img src="images/2026-04-landscape.png" alt="April 2026 Landscape">
 <ul class="entry-grid"><li>old</li></ul>`;
 
-    const next = updateMonthArchiveHtml(html, "2026-05");
+    // Pass entries explicitly so the test does not depend on which months
+    // have entries on disk in the working repo.
+    const next = updateMonthArchiveHtml(html, "2026-05", []);
 
     expect(next).toContain("<title>May 2026 - Norman World</title>");
     expect(next).toContain('content="https://77smith-norm.github.io/norman-world/2026-05.html"');
@@ -38,7 +40,9 @@ describe("updateIndexHtmlForMonth", () => {
 <p class="month">April 2026</p>
 <ul class="entry-grid"><li>old</li></ul>`;
 
-    const next = updateIndexHtmlForMonth(html, "2026-06");
+    // Pass entries explicitly so the test does not depend on which months
+    // have entries on disk in the working repo.
+    const next = updateIndexHtmlForMonth(html, "2026-06", []);
 
     expect(next).toContain("<title>Norman World — June 2026</title>");
     expect(next).toContain('content="Norman World — June 2026"');

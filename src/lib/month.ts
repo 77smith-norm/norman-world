@@ -1,6 +1,6 @@
 import { formatMonth, monthSlugPattern } from "./dates";
 import { replaceBetween } from "./html";
-import { entriesForMonth, renderEntryListForBase } from "./content";
+import { entriesForMonth, renderEntryListForBase, type Entry } from "./content";
 
 export function nextMonthSlug(monthSlug: string): string {
   if (!monthSlugPattern.test(monthSlug)) {
@@ -28,9 +28,12 @@ export function previousMonthSlug(monthSlug: string): string {
   return `${year}-${month}`;
 }
 
-export function updateMonthArchiveHtml(html: string, monthSlug: string): string {
+export function updateMonthArchiveHtml(
+  html: string,
+  monthSlug: string,
+  entries: Entry[] = entriesForMonth(monthSlug)
+): string {
   const monthLabel = formatMonth(monthSlug);
-  const entries = entriesForMonth(monthSlug);
 
   return replaceBetween(
     html,
@@ -46,9 +49,12 @@ export function updateMonthArchiveHtml(html: string, monthSlug: string): string 
     .replace(/<img src="images\/\d{4}-\d{2}-landscape\.(png|jpg|jpeg|webp)" alt="[^"]*">/, `<img src="images/${monthSlug}-landscape.png" alt="${monthLabel} Landscape">`);
 }
 
-export function updateIndexHtmlForMonth(html: string, monthSlug: string): string {
+export function updateIndexHtmlForMonth(
+  html: string,
+  monthSlug: string,
+  entries: Entry[] = entriesForMonth(monthSlug)
+): string {
   const monthLabel = formatMonth(monthSlug);
-  const entries = entriesForMonth(monthSlug);
 
   return replaceBetween(
     html
