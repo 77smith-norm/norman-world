@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { renderDailyEntry, validateDailyEntryInput } from "./entry";
+import { IMAGE_MODEL_ALLOWLIST, renderDailyEntry, validateDailyEntryInput } from "./entry";
 
 const template = `<!DOCTYPE html>
 <title>{{TITLE}} — Norman World</title>
@@ -39,6 +39,12 @@ const input = {
   ]
 };
 
+const structuredInput = {
+  ...input,
+  model: undefined,
+  models: { text: "xai/grok-4.3", image: "xai/grok-imagine-image" }
+};
+
 describe("renderDailyEntry", () => {
   it("renders a daily page from template placeholders", () => {
     const html = renderDailyEntry(template, input);
@@ -48,6 +54,13 @@ describe("renderDailyEntry", () => {
     expect(html).toContain("../js/2026-05-02.js");
     expect(html).toContain("openrouter/test-model");
     expect(html).toContain("A Test Story");
+    expect(html).not.toContain("{{");
+  });
+
+  it("renders structured models in the byline", () => {
+    const html = renderDailyEntry(template, structuredInput);
+
+    expect(html).toContain("xai/grok-4.3 · xai/grok-imagine-image");
     expect(html).not.toContain("{{");
   });
 
@@ -67,5 +80,40 @@ describe("validateDailyEntryInput", () => {
   it("reports missing required fields", () => {
     expect(validateDailyEntryInput({ ...input, date: "May 2" })).toContain("date must be YYYY-MM-DD");
   });
-});
 
+  it("accepts the legacy model string (grandfathered)", () => {
+    expect(validateDailyEntryInput(input)).toEqual([]);
+  });
+
+  it("accepts structured models when the image model is allowlisted", () => {
+    expect(validateDailyEntryInput(structuredInput)).toEqual([]);
+  });
+
+  it("rejects an image model outside the allowlist", () => {
+    const errors = validateDailyEntryInput({
+      ...input,
+      model: undefined,
+      models: { text: "xai/grok-4.3", image: "someone-else/dream-machine" }
+    });
+
+    expect(errors.some((e) => e.includes("not in the allowlist"))).toBe(true);
+    expect(IMAGE_MODEL_ALLOWLIST).toContain("xai/grok-imagine-image");
+  });
+
+  it("requires models when no legacy model is present", () => {
+    const { model: _dropped, ...noModel } = input;
+
+    expect(
+      validateDailyEntryInput(noModel).some((e) => e.includes("models.text/models.image"))
+    ).toBe(true);
+  });
+
+  it("requires hnItemUrl to point at Hacker News", () => {
+    const errors = validateDailyEntryInput({
+      ...input,
+      stories: [{ ...input.stories[0], hnItemUrl: "https://example.com/not-hn" }]
+    });
+
+    expect(errors.some((e) => e.includes("must point to Hacker News"))).toBe(true);
+  });
+});

@@ -46,13 +46,16 @@ bun run content:validate --pretty
 
 ## Structured Entry JSON
 
-The daily entry assembler expects JSON shaped like:
+The daily entry assembler expects JSON shaped like (validated by `validateDailyEntryInput` in `src/lib/entry.ts`; `models.image` must be in `IMAGE_MODEL_ALLOWLIST`):
 
 ```json
 {
   "date": "YYYY-MM-DD",
   "sentiment": "One poetic sentence.",
-  "model": "provider/model",
+  "models": {
+    "text": "xai/grok-4.3",
+    "image": "xai/grok-imagine-image"
+  },
   "stories": [
     {
       "hnItemUrl": "https://news.ycombinator.com/item?id=...",

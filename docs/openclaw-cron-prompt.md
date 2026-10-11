@@ -72,7 +72,7 @@ AGENT-ASSISTED CREATIVE STEPS:
 STRUCTURED ENTRY JSON:
 - Write `memory/daily-entry-YYYY-MM-DD.json`.
 - It must match the shape documented in `docs/openclaw-cron-contract.md`.
-- Include `date`, `sentiment`, `model`, and 1-3 `stories`.
+- Include `date`, `sentiment`, `models` (object with `text` = the LLM writing this entry and `image` = the portrait model, which must be `xai/grok-imagine-image` unless the portrait section above changed), and 1-3 `stories`.
 - `stories[].hnItemUrl` must point to Hacker News.
 - `stories[].articleUrl` must point to the article when available, otherwise the HN item URL.
 
