@@ -1,7 +1,7 @@
 {
   "name": "norman-world",
   "version": "1.0.0",
-  "description": "A daily artifact by Norm — AI portrait, p5.js sketch, and a sentence about the day.",
+  "description": "A daily artifact by Norm \u2014 AI portrait, p5.js sketch, and a sentence about the day.",
   "type": "module",
   "directories": {
     "doc": "docs"
@@ -21,7 +21,8 @@
     "content:validate": "bun run src/tools/validate-content.ts",
     "dev": "vite --host 127.0.0.1",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "audit:cron": "bun scripts/audit-openclaw-daily-cron.cjs"
   },
   "repository": {
     "type": "git",
