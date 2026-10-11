@@ -30,7 +30,10 @@ The JSON must contain:
 {
   "date": "YYYY-MM-DD",
   "sentiment": "One poetic sentence.",
-  "model": "provider/model",
+  "models": {
+    "text": "xai/grok-4.3",
+    "image": "xai/grok-imagine-image"
+  },
   "stories": [
     {
       "hnItemUrl": "https://news.ycombinator.com/item?id=...",
@@ -104,3 +107,18 @@ For live OpenClaw daily runs, generate the portrait with OpenClaw `image_generat
 - If `content:cron-date` returns the wrong slug, stop and inspect the machine timezone or supplied timestamp.
 - If portrait generation failed, continue only if the entry is intentionally using a known fallback and queue the portrait retry in `memory/portrait-queue.json` when available.
 - If `content:validate` fails, fix the missing page, sketch, portrait, or reference before committing.
+
+## Missing Days
+
+Do not backfill missed dates as part of the routine. Gaps are accepted and
+recorded per the backfill policy in `docs/openclaw-cron-contract.md`. A
+backfill happens only on an explicit request naming the date(s).
+
+## Month Rollover Catch-Up
+
+Month archives and landscapes currently exist only through 2026-05; the
+rollover gate depended on a landscape artifact that stopped being produced.
+The cron prompt now generates the landscape on month-end before rolling
+over. The missing 2026-06 through 2026-09 archives remain a one-time manual
+catch-up (generate each month's landscape, then `bun run content:rollover
+YYYY-MM --dry-run` / `--yes`), not a cron behavior.

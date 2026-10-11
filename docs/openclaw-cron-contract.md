@@ -93,3 +93,18 @@ For the live OpenClaw cron, the portrait path is OpenClaw `image_generate` using
 - Do not hand-write daily HTML; use `bun run content:entry`.
 - Do not manually edit `feed.xml`; use `bun run content:feed`.
 - Do not manually prepend index entries; use `bun run content:index`.
+
+## Missing Days (Backfill Policy)
+
+Gaps are accepted and recorded; they are not backfilled. The archive is a
+record of the days the ritual ran, and a retroactive entry would be a
+reflection written without the day it claims to reflect.
+
+- The daily cron never creates entries for dates other than the resolved
+  `entryDate`. The idempotency rule ("do not overwrite existing daily entry
+  files unless Russell explicitly asked for a backfill or repair") stands.
+- `bun run audit:cron` reports missing entry days in the trailing 30-day
+  window so gaps stay visible instead of silent.
+- A deliberate backfill is a manual, explicitly requested operation, not a
+  cron behavior. It requires Russell's (or Norm's) explicit ask naming the
+  date(s).

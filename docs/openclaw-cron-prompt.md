@@ -106,9 +106,10 @@ POST-PUSH:
    ```
 
 MONTH ROLLOVER:
-- Do not attempt month rollover during the daily entry cron unless `images/YYYY-MM-landscape.png` already exists for the outgoing month.
-- If the entry date is the last day of a month and the landscape is missing, report `month rollover pending: missing images/YYYY-MM-landscape.png` in the final summary.
-- If the landscape exists, run the documented rollover commands after the daily entry commit and push, then commit and push the rollover separately.
+- If the entry date is the last day of a month, do the rollover as part of this run, after the daily entry commit and push.
+- First generate `images/YYYY-MM-landscape.png`: a wide month-in-review scene using the same portrait pipeline (canonical Norm description from `~/.openclaw/workspace/avatars/norm.txt` + DESIGN.md section 11 template, with the month's recurring themes as the scene). Save the generation prompt to `prompts/YYYY-MM-landscape-prompt.txt`. Do not reuse a daily portrait as the landscape.
+- Then run the rollover commands from `docs/openclaw-cron-contract.md` (dry-run first, then `--yes`), then commit and push the rollover separately from the daily entry commit.
+- If landscape generation fails, do NOT force the rollover: report `month rollover pending: missing images/YYYY-MM-landscape.png` in the final summary. `content:rollover` fails closed on a missing landscape by design.
 
 CONSTRAINTS:
 - Prefer deterministic Bun content tools over manual HTML/feed/index edits.

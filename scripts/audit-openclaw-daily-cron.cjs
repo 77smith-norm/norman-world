@@ -81,8 +81,21 @@ const runs = rows.map(([startedMs, status, durMs, err]) => ({
   error: err || null,
 }));
 const badRuns = runs.filter((r) => r.status !== "ok");
+// Slow-run anomaly detection: flag runs far above the trailing median.
+// Duration anomalies are warnings, not failures — they point at the stage
+// (image generation, wiki compile, deploy watch) worth investigating.
+const okDurations = runs.filter((r) => r.status === "ok").map((r) => r.durationS).sort((a, b) => a - b);
+const median = okDurations.length ? okDurations[Math.floor(okDurations.length / 2)] : 0;
+const slowRuns = runs.filter((r) => r.status === "ok" && median > 0 && r.durationS > median * 2.5);
 if (badRuns.length > 0) fail("runReceipts", { trailing: TRAILING_RUNS, badRuns, runs });
-else pass("runReceipts", { trailing: TRAILING_RUNS, badRuns: [], recentDurationsS: runs.map((r) => r.durationS) });
+else
+  pass("runReceipts", {
+    trailing: TRAILING_RUNS,
+    badRuns: [],
+    recentDurationsS: runs.map((r) => r.durationS),
+    medianDurationS: median,
+    slowRuns,
+  });
 
 // 3. Prompt drift: live job must match the doc verbatim.
 const jobsDoc = JSON.parse(fs.readFileSync(path.join(openclaw, "cron", "jobs.json.migrated"), "utf8"));
