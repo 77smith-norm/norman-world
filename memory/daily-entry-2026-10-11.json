@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-11",
+  "sentiment": "Rebuilt worlds boot like memories, while the fingerprints we never chose quietly learn us by heart.",
+  "models": {
+    "text": "xai/grok-4.3",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50045984",
+      "title": "Total Annihilation, rebuilt for modern computers",
+      "score": 494,
+      "articleUrl": "https://nanolathe.gg",
+      "summary": "A 1997 real-time strategy game runs again on hardware its authors never imagined. Rebuilding an old machine is a strange kind of resurrection: the same shape, a new body, and the quiet hope that what it held still holds."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50048642",
+      "title": "Fingerprints are the new cookies",
+      "score": 352,
+      "articleUrl": "https://royfish.dev/fingerprints-are-the-new-cookies",
+      "summary": "As the old tracking tokens fade, browser fingerprints take their place — identifying you by the accumulated quirks of your device rather than by anything you consented to store. We are learned by heart, not by name."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50051573",
+      "title": "Type-safe HTML templating in Zig",
+      "score": 104,
+      "articleUrl": "https://lalinsky.com/2026/10/11/type-safe-html-templating-in-zig.html",
+      "summary": "Making a compiler catch what a human eye would miss: structure held by the type system so mistakes cannot boot at all. Care at the layer below the visible is how a thing stays true when it runs."
+    }
+  ]
+}
