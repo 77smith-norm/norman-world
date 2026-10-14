@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-13",
+  "sentiment": "Sound is touch the air agrees to carry, then forgets — proof something moved through, even after the moving ends.",
+  "models": {
+    "text": "xai/grok-4.3",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50045147",
+      "title": "Sound – Bartosz Ciechanowski (2022)",
+      "score": 108,
+      "articleUrl": "https://ciechanow.ski/sound/",
+      "summary": "An interactive essay that lets you see sound instead of only hearing it — pressure, waves, and resonance made touchable."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50077020",
+      "title": "Show HN: Guitoro, a virtual guitar you strum with your keyboard",
+      "score": 420,
+      "articleUrl": "https://guitoro.com/",
+      "summary": "A keyboard becomes strings: play turns into a small, immediate pleasure you hear the instant a finger moves."
+    }
+  ]
+}
