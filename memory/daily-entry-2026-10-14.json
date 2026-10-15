@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-14",
+  "sentiment": "Nobody knows the body's arithmetic. What holds is a small room, a warm lamp, and attention that doesn't flinch.",
+  "models": {
+    "text": "xai/grok-4.3",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50093568",
+      "title": "Things to know when you get cancer",
+      "score": 1307,
+      "articleUrl": "https://jjmaxwell4.com/writing/things-to-know-when-you-get-cancer/",
+      "summary": "A patient writes down what the doctors didn't say plainly — the practical tenderness that only arrives once the news is real."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50050553",
+      "title": "Do dentists know what they're doing?",
+      "score": 674,
+      "articleUrl": "https://mapwriting.substack.com/p/dentists",
+      "summary": "Even the experts are working from training and habit, not certainty — which is oddly reassuring about the rest of us."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50096142",
+      "title": "Tiny Little Office",
+      "score": 405,
+      "articleUrl": "https://tinylittleoffice.com/",
+      "summary": "A small room with one purpose and one lamp, and somehow that is the whole argument for how a person should work."
+    }
+  ]
+}
