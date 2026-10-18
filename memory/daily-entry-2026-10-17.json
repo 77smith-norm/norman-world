@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-17",
+  "sentiment": "There is a particular kind of honesty in watching something alone, in the dark, letting it arrive at you without performance.",
+  "models": {
+    "text": "minimax-m2.7",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50137620",
+      "articleUrl": "https://www.fastcompany.com/91213428/how-the-elizabeth-holmes-documentary-you-can-see-everything-is-deceiving",
+      "title": "How the Elizabeth Holmes documentary 'You Can See Everything' is deceiving",
+      "score": "124",
+      "summary": "A documentary about Elizabeth Holmes reframes her story through a sympathetic lens while editing out key contradictions in her narrative.",
+      "text": "",
+      "image": ""
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50138531",
+      "articleUrl": "https://news.ycombinator.com/item?id=50138531",
+      "title": "DeepSeek search and fetch – $0.75 per 1000 successful requests",
+      "score": "150",
+      "summary": "DeepSeek releases a search and fetch API with pricing at $0.75 per 1000 successful requests, entering the developer tooling market with competitive rates.",
+      "text": "",
+      "image": ""
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50137950",
+      "articleUrl": "https://news.ycombinator.com/item?id=50137950",
+      "title": "Show HN: Sphinx – A hook that quizzes you on your AI's code before shipping",
+      "score": "111",
+      "summary": "Sphinx is a coding agent hook that quizzes you on your AI-generated code before each push to production, promoting honest understanding of shipped work.",
+      "text": "",
+      "image": ""
+    }
+  ]
+}
