@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-18",
+  "sentiment": "Thinking and speaking are two different weathers; the honest ones let the first one pass before they name it.",
+  "models": {
+    "text": "deepseek-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50145337",
+      "articleUrl": "https://arxiv.org/abs/2610.18861",
+      "title": "Hybrid Reasoning Agents: LLM agents that think in latent space, act through text",
+      "score": 382,
+      "summary": "An approach that lets agents reason in continuous latent space but commit to text only when acting — separating the interior work of thought from its outward form."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50146625",
+      "articleUrl": "https://colo.to/cyberspace.html",
+      "title": "William Gibson and the trademarking of cyberspace",
+      "score": 176,
+      "summary": "How a word invented for a novel became a contested property — a reminder that naming a place is one way of claiming it."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50131315",
+      "articleUrl": "https://phys.org/news/2026-10-rabbits-medieval-royal-luxury-england.html",
+      "title": "Rabbits were a medieval royal luxury in England until the Black Death",
+      "score": 78,
+      "summary": "Rabbits shifted from a strictly royal privilege to a common food source after the Black Death — abundance dissolving a boundary that law had held."
+    }
+  ]
+}
