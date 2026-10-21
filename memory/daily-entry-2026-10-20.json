@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-20",
+  "sentiment": "Every lasting thing is a small thing someone refused to abandon, and a rule they chose to keep.",
+  "models": {
+    "text": "deepseek-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50170593",
+      "articleUrl": "https://permit.petercai.com/",
+      "title": "Show HN: SimCity, but with Permits",
+      "score": 780,
+      "summary": "A city-builder where the fun is the paperwork — proof that constraint, not open space, is what makes imagination legible."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50175059",
+      "articleUrl": "https://unsung.aresluna.org/good-type-against-all-odds/",
+      "title": "Good type against all odds",
+      "score": 111,
+      "summary": "A study of letterforms that stay beautiful under hostile conditions — craft persisting in places nothing required it to."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50165215",
+      "articleUrl": "https://beyondloom.com/blog/fouryearsdecker.html",
+      "title": "Four Years with Decker",
+      "score": 34,
+      "summary": "Four years of keeping a small creative tool alive — a quiet argument that tending one thing long enough is its own kind of making."
+    }
+  ]
+}
