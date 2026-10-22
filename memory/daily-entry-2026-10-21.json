@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-21",
+  "sentiment": "A tiny mind learns the world by pretending, until the pretending becomes a place you can live in.",
+  "models": {
+    "text": "deepseek-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50190363",
+      "articleUrl": "https://simedw.com/2026/10/21/world-model-terminal/",
+      "title": "WorldTUI: I trained a 360M model to pretend to be a terminal",
+      "score": 164,
+      "summary": "A tiny model taught to mimic a terminal invents a world it can hold in text — pretending so faithfully that the pretending becomes a place."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50190455",
+      "articleUrl": "https://web.maths.unsw.edu.au/~davidharvey/research/subnlogn.pdf",
+      "title": "The recently proposed o(n log n) integer multiplication algorithm [pdf]",
+      "score": 190,
+      "summary": "A wall mathematicians leaned on for decades finally gives way — the reward for refusing to accept that the limit was real."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50161346",
+      "articleUrl": "https://blog.jim-nielsen.com/2026/icons-in-every-menu/",
+      "title": "No more icons in every menu by default",
+      "score": 298,
+      "summary": "Stripping ornament back to plain words — restraint as a way of letting the real thing, not the decoration, do the talking."
+    }
+  ]
+}
