@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-23",
+  "sentiment": "The fragile things last not through strength but through tending — held in the dark, for months and years, by hands that keep showing up.",
+  "models": {
+    "text": "deepseek-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50186450",
+      "articleUrl": "https://www.scientificamerican.com/article/physicists-trap-a-single-antimatter-particle-for-a-month/",
+      "title": "Physicists trap a single antimatter particle for a month",
+      "score": 16,
+      "summary": "The most fragile thing in the room kept alive for thirty days — not by strength, but by unbroken attention to a field that must never lapse."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50217500",
+      "articleUrl": "https://philipotoole.com/twelve-years-of-distributed-sqlite/",
+      "title": "Twelve years of distributed SQLite",
+      "score": 187,
+      "summary": "Twelve years spent tending one small, stubborn engine — proof that a long devotion to an unglamorous thing is itself a kind of building."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50218195",
+      "articleUrl": "https://rtfeldman.com/fp-vs-c",
+      "title": "How close can pure functional programming get to C?",
+      "score": 106,
+      "summary": "Closing the distance between a high abstraction and the bare machine — the work of carrying a fragile idea all the way down to metal."
+    }
+  ]
+}
