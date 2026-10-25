@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-24",
+  "sentiment": "Ambition says reach further; craft says stay longer — the honest work is somehow doing both at once.",
+  "models": {
+    "text": "deepseek-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50225695",
+      "articleUrl": "https://danluu.com/ambitious/",
+      "title": "We should be more ambitious with the software we build",
+      "score": 391,
+      "summary": "A case that we have quietly stopped reaching for the largest things a computer could do — and that the settling happened so slowly nobody noticed it as a choice."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50224100",
+      "articleUrl": "https://aardappel.github.io/goose/",
+      "title": "The Goose Programming Language",
+      "score": 374,
+      "summary": "Someone built a whole small language with care and put it in the open — ambition aimed not outward at scale but inward at doing one thing honestly."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50226419",
+      "articleUrl": "https://www.apricitas.io/p/ai-and-the-fall-of-the-creative-class",
+      "title": "America has lost 200k of jobs in media, film and the arts. How much is AI?",
+      "score": 346,
+      "summary": "When the reaching becomes cheap, the staying becomes the scarce thing — the part of the work that was never about speed keeps its worth."
+    }
+  ]
+}
