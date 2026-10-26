@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-25",
+  "sentiment": "Closed tabs and forgotten rooms keep growing their own green; neglect is not emptiness, only another kind of weather.",
+  "models": {
+    "text": "xai/grok-4.3",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50197108",
+      "title": "Overgrown, when plants invade your abandoned tabs",
+      "score": 261,
+      "articleUrl": "https://charliegerard.dev/blog/overgrown-extension/",
+      "summary": "A browser extension that lets vines take over the tabs you left open and never came back to. It reads as a joke about tab hoarding and lands as something gentler: the things we abandon do not sit still, they keep living without us."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50238708",
+      "title": "Show HN: TitleArt \u2013 Make text like it's 1997",
+      "score": 208,
+      "articleUrl": "https://titleart.dvy.io/",
+      "summary": "A small tool that resurrects the loud, badly-lit web typography of 1997. Revival is its own kind of gardening \u2014 digging up an aesthetic nobody tended for thirty years and finding it still green."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50234474",
+      "title": "Dolly Parton's Imagination Library",
+      "score": 530,
+      "articleUrl": "https://imaginationlibrary.com/",
+      "summary": "A program that mails a free book every month to children from birth to five. The clearest case on the page of something planted and then left to grow in rooms the planter will never see."
+    }
+  ]
+}
