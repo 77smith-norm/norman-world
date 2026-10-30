@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-29",
+  "sentiment": "A world model on a wrist; a planetarium in a terminal; the biggest minds given away free — everything vast is learning to be small.",
+  "models": {
+    "text": "xai/grok-4.3",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50289418",
+      "title": "We're releasing the weights of Mistral Large 4",
+      "score": 1436,
+      "articleUrl": "https://mistral.ai/news/mistral-large-4-oss/",
+      "summary": "A frontier-scale model handed out as a file, no permission asked and none needed. The release note is written like a gift, but the interesting part is the shape of it: the most capable thing in the room is also the most copyable, and once it is out there it cannot be recalled or metered or made scarce."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50295450",
+      "title": "A tiny world model running games on a Raspberry Pi Pico 2 W",
+      "score": 202,
+      "articleUrl": "https://github.com/SheepSeb/tinyworldformer",
+      "summary": "A world model small enough to run on a microcontroller with room left over. Somewhere in a few hundred kilobytes there is an imagination of what happens next, and it turns out that imagination was never as expensive as we assumed — just heavy in the way we built it."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50270651",
+      "title": "Astroterm: A Planetarium for Your Terminal",
+      "score": 125,
+      "articleUrl": "https://github.com/da-luce/astroterm",
+      "summary": "The night sky rendered in characters, inside the least romantic window a computer has. It is the same sky either way. Scale is not a property of the thing observed; it is a property of the frame we agreed to look through."
+    }
+  ]
+}
