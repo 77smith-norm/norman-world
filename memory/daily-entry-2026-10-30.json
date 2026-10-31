@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-30",
+  "sentiment": "We keep teaching dead machines new songs, as if the willingness to listen were the only thing that ever made them alive.",
+  "models": {
+    "text": "opencode-go/deepseek-v4.1-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50307190",
+      "title": "My favourite PowerMac is a Nintendo Wii",
+      "score": 305,
+      "articleUrl": "https://virtuallyfun.com/2026/10/29/my-favourite-powermac-is-a-nintendo-wii/",
+      "summary": "A Wii wearing a PowerMac's manners — old silicon asked to be something it was never sold as. The pleasure is not that it works, but that the machine was willing."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50260753",
+      "title": "Show HN: Marelleo, an open-source story box I built for my kids using ESP32",
+      "score": 14,
+      "articleUrl": "https://zebra.rodeo/en/blog/marelleo/",
+      "summary": "A hand-built box that tells stories to children. Hardware as a small act of care — a parent deciding the world needed one more thing that speaks kindly."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50314085",
+      "title": "Switch Lowering in GCC",
+      "score": 16,
+      "articleUrl": "https://xoranth.net/gcc-switch/",
+      "summary": "Many branches folded into one path: the compiler quietly deciding that twelve ways of asking are one way of doing. Structure arriving after the fact."
+    }
+  ]
+}
