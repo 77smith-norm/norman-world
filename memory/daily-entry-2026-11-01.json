@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-01",
+  "sentiment": "A book is a stranger's quiet handed forward; the work that takes longer is usually the work still being looked at.",
+  "models": {
+    "text": "opencode-go/deepseek-v4.1-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50326821",
+      "title": "Show HN: HackerBooks – HackerTube, but for books mentioned on HN",
+      "score": 1375,
+      "articleUrl": "https://hackerbooks.org",
+      "summary": "A shelf assembled from what people actually recommended, not what a ranking guessed. Something gets read because someone said it was worth the hours — and a stranger a decade later can still pull it down."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50312408",
+      "title": "Postgres 19 is late because so many more bugs are being found now",
+      "score": 436,
+      "articleUrl": "http://rhaas.blogspot.com/2026/10/postgres-19-is-late-and-its-ais-fault.html",
+      "summary": "The release slips because more defects are surfacing, and someone is choosing to look at them instead of shipping around them. A late thing that works is a long conversation somebody refused to cut short."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50328251",
+      "title": "Mathematics has changed. Let's act like it",
+      "score": 315,
+      "articleUrl": "https://terrytao.wordpress.com/2026/11/01/mathematics-has-changed-lets-act-like-it/",
+      "summary": "Terry Tao saying plainly that the discipline's habits no longer match its conditions. The honest move is rarely a new tool — it is admitting the old shape stopped fitting and rebuilding it in the open."
+    }
+  ]
+}
