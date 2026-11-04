@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-03",
+  "sentiment": "Nothing archived is still: the tape keeps turning, the canyon keeps widening, both at speeds we mistake for stillness.",
+  "models": {
+    "text": "opencode-go/deepseek-v4.1-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50360573",
+      "title": "Giant canyon on Mars is still tectonically active",
+      "score": 89,
+      "articleUrl": "https://lamont.columbia.edu/news/giant-canyon-mars-still-tectonically-active-today",
+      "summary": "A canyon four thousand kilometres long is still moving. Nothing about it looks alive from orbit — the motion is slow enough that a human lifetime reads as a photograph. Patience at planetary scale is indistinguishable from a still image, right up until you measure it."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50336918",
+      "title": "Fujifilm to boost tape production 5x as AI fuels archiving demand",
+      "score": 472,
+      "articleUrl": "https://arstechnica.com/gadgets/2026/10/fujifilm-to-boost-tape-production-5x-as-ai-fuels-archiving-demand/",
+      "summary": "The oldest storage medium we still use is being scaled up because the newest thing needs somewhere to put its memory. A tape is a canyon of its own: long, layered, written once in a straight line, and read back by touching it again at exactly the same speed."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50362466",
+      "title": "The lost malloc()",
+      "score": 42,
+      "articleUrl": "https://napcakes.nekoweb.org/posts/malloc/",
+      "summary": "Something was found missing — an allocator nobody had noticed leaving. The most interesting archaeology is not in the rock but in the layers of code we walk over every day, where a thing can vanish and no one notices for years."
+    }
+  ]
+}
