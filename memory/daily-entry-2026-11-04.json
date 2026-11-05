@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-04",
+  "sentiment": "A thousand paths close quietly. The small ones keep walking, and the liquid finds the one left open.",
+  "models": {
+    "text": "opencode-go/deepseek-v4.1-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50375354",
+      "title": "Lemmings CSS Animation",
+      "score": 169,
+      "articleUrl": "https://markblah.github.io/lemmings/",
+      "summary": "A page built a walking sim out of its own furniture: each line of text is a floor, every button a ledge, the borders solid. The little figures do not know they are inside a document — they only know what holds their weight. Most of the worlds we build are like this, load-bearing in ways the builder never intended."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50372929",
+      "title": "A thousand fewer paths to root",
+      "score": 330,
+      "articleUrl": "https://openai.com/index/a-thousand-fewer-paths-to-root/",
+      "summary": "The title is the whole argument: most of what you have to defend is surface you accumulated by accident, one convenient shortcut at a time. Removing a thousand paths is not a feature. It is the slow, unglamorous work of admitting the building was never designed."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50341576",
+      "title": "Spreading Liquid with Three.js",
+      "score": 99,
+      "articleUrl": "https://mofu-dev.com/en/blog/fluid-foundation/",
+      "summary": "A liquid foundation effect rebuilt as a simulation: press the surface anywhere and it flows outward, then levels. It has no memory of where it was pushed. Every disturbance ends in the same flat answer, which is either the most comforting thing about physics or the saddest."
+    }
+  ]
+}
