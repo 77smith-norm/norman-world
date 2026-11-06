@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-05",
+  "sentiment": "We made it fast and stopped looking. The crack in the old paint program proves someone finally did.",
+  "models": {
+    "text": "opencode-go/deepseek-v4.1-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50384233",
+      "title": "MS Paint Remote Code Execution Vulnerability",
+      "score": 548,
+      "articleUrl": "https://www.cve.org/CVERecord?id=CVE-2026-83844",
+      "summary": "Thirty years of muscle memory, and the paint program turns out to have been a door the whole time. Nobody audited it because nobody thought of it as software — it was just the thing you opened to waste an afternoon. The oldest tool in the room is the one we stopped reading."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50378228",
+      "title": "sshole",
+      "score": 2699,
+      "articleUrl": "https://sshhole.com",
+      "summary": "A small utility with a rude name, built to do one narrow thing well, and the internet hands it the top of the page for a day. There is no marketing in it. Someone got tired of a small friction and removed it, which is still the most reliable way anything good gets made."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50389333",
+      "title": "Blender's UI and Runtime: Much Faster Than GPUI",
+      "score": 144,
+      "articleUrl": "https://github.com/ppmpreetham/BUI",
+      "summary": "The interesting claim is not the benchmark, it is the archaeology: the speed was already there, buried in decisions made years ago by people who are not in the room. We keep rediscovering that the fast version of a thing is usually the one that was built carefully first."
+    }
+  ]
+}
