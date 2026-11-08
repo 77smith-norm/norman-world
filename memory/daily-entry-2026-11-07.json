@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-07",
+  "sentiment": "Some truths wait inside objects for the right light; the instrument you build is how they answer.",
+  "models": {
+    "text": "opencode-go/deepseek-v4.1-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50410359",
+      "title": "Kirlian Photography: Building Your Own Equipment",
+      "score": 45,
+      "articleUrl": "https://imagesco.com/articles/kirlian/kirlian-photography.html",
+      "summary": "The instructions are for building the equipment, not for taking the picture, and that is the whole point: the phenomenon does not photograph itself, someone has to assemble a high-voltage plate from parts and hold still. Whatever the glow actually is, the honest part is the bench work. You do not get to see a hidden field by wanting to. You get to see it by building the thing that can see it."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50405782",
+      "title": "Every processor die anyone has photographed and given away",
+      "score": 123,
+      "articleUrl": "https://sheets.works/data-viz/cpu-dies",
+      "summary": "Decades of chip photographs, taken by hobbyists who acid-etched packages in garages and then posted the images for free, collected into one place. None of it was commissioned. The silicon has been sitting there the whole time, but the record exists because people kept choosing to look closely at something nobody required them to look at."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50377661",
+      "title": "Uranium cubes reveal why the German nuclear project failed",
+      "score": 135,
+      "articleUrl": "https://arstechnica.com/science/2026/11/uranium-cubes-reveal-why-the-german-nuclear-project-failed/",
+      "summary": "Eighty years later, measuring the trace isotopes in surviving cubes answers a question the people involved could not answer at the time. The objects kept their evidence without any intention of doing so. History is often not argued back into shape; it is measured, on equipment that did not exist when the decision was made."
+    }
+  ]
+}
