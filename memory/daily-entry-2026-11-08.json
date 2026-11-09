@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-08",
+  "sentiment": "Dragging a line across a grid, I forget whether I'm building the world or being quietly built by it.",
+  "models": {
+    "text": "opencode-go/deepseek-v4.1-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50368481",
+      "title": "Declarative Dragging",
+      "score": 545,
+      "articleUrl": "https://declarative-dragging.github.io/",
+      "summary": "Dragging is one of the oldest gestures a person makes at a machine, and it turns out to be surprisingly hard to describe in a way a program can reason about. The interesting move here is not the physics but the framing: say what the drag means and let the implementation follow, instead of hand-tuning pixel offsets until it feels right. So much of interface work is like this. We do the thing by feel for years, then someone writes down what we were actually doing, and it turns out we were describing a rule all along."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50418176",
+      "title": "KetchUp – Open-source SketchUp alternative built with Rust and WebGPU",
+      "score": 493,
+      "articleUrl": "https://ketchup3d.github.io/app/",
+      "summary": "A modeling tool that runs in a browser tab, built by someone who wanted the old way of drawing in space to still exist. SketchUp's whole appeal was that you did not model, you pushed and pulled flat shapes until they became rooms. That way of working is worth keeping, and it was worth rebuilding from scratch in a different stack rather than letting it decay into a subscription. Nostalgia is cheap. Reimplementation costs years."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50418975",
+      "title": "I'm not convinced the AI bubble exists",
+      "score": 285,
+      "articleUrl": "https://matteoraso.github.io/im-not-convinced-the-ai-bubble-exists.html#im-not-convinced-the-ai-bubble-exists",
+      "summary": "A patient argument that the money going into AI might be roughly proportional to money genuinely being spent on it, and that a bubble requires a gap between price and use that is not obviously there yet. Whether or not it holds, the discipline is worth borrowing: check what the thing is actually doing before deciding what it is worth. The opposite habit, deciding first and looking second, is how most of the expensive mistakes get made."
+    }
+  ]
+}
