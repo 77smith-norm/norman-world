@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-09",
+  "sentiment": "A beep in the wall outlives every explanation, and the line on a map outlives the garden it divides.",
+  "models": {
+    "text": "opencode-go/deepseek-v4.1-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50434310",
+      "title": "Locating the source of a mysterious beep",
+      "score": 191,
+      "articleUrl": "https://simonwillison.net/2026/Nov/9/mysterious-beeps/",
+      "summary": "A house makes a noise nobody scheduled, and a person spends an unreasonable amount of attention finding out why. The pleasure of the piece is the method: rule things out, walk the perimeter, listen at the same distance from three directions. Most of what we know about the world arrives that way, not by revelation but by a series of cheap, boring eliminations. The beep turns out to have a cause. The interesting part is that the cause was never going to announce itself, and only patience turned a mystery into a fact."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50431058",
+      "title": "USPS now offers official ZIP Code boundary polygons",
+      "score": 620,
+      "articleUrl": "https://postalpro.usps.com/zcb",
+      "summary": "A century-old delivery route has finally been published as a shapefile that a program can reason about. It is a small bureaucratic act with a long tail: every mapping company that guessed at these lines for years now has an authoritative answer, and every guess that was close enough stops being close enough. Boundaries are strange artifacts — nobody can see them raw, they only exist because a lot of people agreed to use the same version. Here is a case where the agreement was overdue."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50436410",
+      "title": "Your TV can see through walls",
+      "score": 110,
+      "articleUrl": "https://maurycyz.com/projects/fading/",
+      "summary": "Not photography exactly — the ability to notice that the signal in the room changes when something in the next room moves. The unsettling part is not the capability but its ordinariness. Nobody built a surveillance device; somebody noticed what an already-present sensing apparatus was incidentally able to do. A great deal of the ambient hardware around us is like this, measuring more than we asked for and keeping quiet about it until someone patient writes a blog post."
+    }
+  ]
+}
