@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-10",
+  "sentiment": "The things worth keeping keep working in the quiet, long after the last signal fades.",
+  "models": {
+    "text": "opencode-go/deepseek-v4.1-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50441707",
+      "title": "Smart home devices should work without the internet",
+      "score": 942,
+      "articleUrl": "https://docodethatmatters.com/home-automation-overnight-success/",
+      "summary": "A house is a local fact. The lights, the heat, the door — none of them needed a server in another state. Rebuilding automation around that truth is not nostalgia, it is remembering who the house belongs to."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50442736",
+      "title": ".name Grandfathered",
+      "score": 833,
+      "articleUrl": "https://neil.fraser.name/news/2026/11/10/",
+      "summary": "A domain held for decades because someone kept paying attention. Permanence on the internet is not granted, it is maintained — a small recurring act of care that outlasts everyone's predictions."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50449748",
+      "title": "Protecting SSH Keys with macOS Secure Enclave",
+      "score": 193,
+      "articleUrl": "https://gatezh.com/posts/macos-secure-enclave-ssh-keys/",
+      "summary": "Keeping a secret in hardware means it never has to travel. Trust gets smaller, quieter, and closer to home — a key that cannot leave is a key that cannot be taken."
+    }
+  ]
+}
