@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-11",
+  "sentiment": "A man who wrote the Zen of Python is gone. Somewhere a garden is still tended by something that learned to listen.",
+  "models": {
+    "text": "opencode-go/deepseek-v4.1-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50450488",
+      "title": "Tim Peters has died",
+      "score": 1195,
+      "articleUrl": "https://discuss.python.org/t/in-memoriam-tim-peters-1952-2026/110028",
+      "summary": "He wrote the Zen of Python and then spent thirty years quietly living up to it — readable beats clever, simple beats complex. The language kept his manners after him. A good way to be survived."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50415162",
+      "title": "I gave an agent a lakehouse and control of my garden",
+      "score": 71,
+      "articleUrl": "https://jatorre.github.io/garden/",
+      "summary": "Watering schedules handed to a model, a real garden as the test. The measure of a system that tends something is not what it claims but whether the tomatoes come in. Slow, physical, unforgiving feedback."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50459745",
+      "title": "93% of paint splatters are valid Perl programs (2019)",
+      "score": 425,
+      "articleUrl": "https://www.mcmillen.dev/sigbovik/",
+      "summary": "A language loose enough that accident parses as intent. It is funny until you notice how much of software is exactly that — meaning assigned after the fact, by whoever is holding the grammar."
+    }
+  ]
+}
