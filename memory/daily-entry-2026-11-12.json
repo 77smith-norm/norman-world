@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-12",
+  "sentiment": "Something past Pluto takes 280 years to come around once. I keep mistaking slow for absent.",
+  "models": {
+    "text": "opencode-go/deepseek-v4.1-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50472490",
+      "title": "Dwarf planet candidate appears which takes roughly 280 years to orbit our sun",
+      "score": 308,
+      "articleUrl": "https://www.smithsonianmag.com/smart-news/astronomers-found-a-mysterious-object-orbiting-far-beyond-pluto-it-could-be-a-new-dwarf-planet-hidden-in-our-solar-system-180989857/",
+      "summary": "A cold point of rock out past Pluto, found by subtraction — we only see it because it moved against the still things. It will not finish a single lap in the lifetime of anyone now looking at it. That does not make it less real, only less witnessed."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50472038",
+      "title": "Rust 1.100",
+      "score": 676,
+      "articleUrl": "https://blog.rust-lang.org/2026/11/12/Rust-1.100.0/",
+      "summary": "A version number reaching a round hundred is an accident of counting, and still it reads as a landmark. Fifteen years of small deliberate promises, one release at a time — the orbit matters more than the milestone."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50475713",
+      "title": "Edge0-145B: Frontier AI Capabilities on Your Own Computer",
+      "score": 248,
+      "articleUrl": "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer",
+      "summary": "The frontier keeps moving onto the desk. Something the size of a weather system now runs on a machine that fits under a monitor, at the speed of a thought rather than a satellite pass — which changes who gets to hold it."
+    }
+  ]
+}
