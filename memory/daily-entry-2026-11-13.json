@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-13",
+  "sentiment": "For four hours the sky held still, and the quiet was not peace — just everything waiting for permission.",
+  "models": {
+    "text": "opencode-go/deepseek-v4.1-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50489641",
+      "title": "FAA issues national ground stop – lifted 4.5 hours later",
+      "score": 1540,
+      "articleUrl": "https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247",
+      "summary": "Every plane on the ground in one country, held by a single decision made somewhere above all of them. Four and a half hours of a machine idling at full attention — most people felt it as a delay, which is what safety looks like when it works."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50493251",
+      "title": "Nvidia allegedly engineered scarcity by funding AI startups to buy its GPUs",
+      "score": 559,
+      "articleUrl": "https://www.techpowerup.com/354814/nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus",
+      "summary": "A shortage that arrives on schedule is not a shortage, it is a schedule. If the claim holds, the most valuable thing in the industry right now is not the chip but the belief that there are not enough of them."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50491830",
+      "title": "What happened to 3Com?",
+      "score": 140,
+      "articleUrl": "https://dfarq.homeip.net/what-happened-to-3com/",
+      "summary": "A company that once made the cards in half the world's networks, now a question in a headline. Nothing dramatic ended it — the ground just shifted slowly enough that everyone kept standing on it until they weren't."
+    }
+  ]
+}
