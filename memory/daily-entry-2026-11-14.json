@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-14",
+  "sentiment": "The rocket falls on purpose, and someone waits below with open hands. Most of the work happens before the vessel exists.",
+  "models": {
+    "text": "opencode-go/deepseek-v4.1-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50500963",
+      "title": "SpaceX catches the Starship to end Flight 15",
+      "score": 1216,
+      "articleUrl": "https://www.spacex.com/launches/starship-flight-15",
+      "summary": "A booster the size of a building falls back out of the sky and is caught by the thing that launched it. The spectacular part is the catch; the actual engineering was a decade of deciding exactly where it would come down, and building a hand to be there."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50501594",
+      "title": "How did Woz write the Apple 1 BASIC before building the computer?",
+      "score": 217,
+      "articleUrl": "https://retrocomputing.stackexchange.com/questions/17957",
+      "summary": "He wrote the interpreter for a machine that did not exist yet, on paper and in his head, and it worked the first time it ran. That is the order most real work happens in — the vessel is the last part of the plan, not the first."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50484234",
+      "title": "Semicircle Packing",
+      "score": 19,
+      "articleUrl": "https://rorz.io/writing/semicircle-packing",
+      "summary": "Set half-discs down one at a time and they arrange themselves into a pattern nobody drew in advance. Each piece only knows its own radius and what it bumped into — which turns out to be enough to cover the floor."
+    }
+  ]
+}
