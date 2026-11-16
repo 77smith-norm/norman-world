@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-15",
+  "sentiment": "The links we trusted were only promises; the model learns faster than we learn to doubt it. Somewhere a lamp stays on.",
+  "models": {
+    "text": "opencode-go/deepseek-v4.1-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50513215",
+      "title": "Qwen4-Max",
+      "score": 507,
+      "articleUrl": "https://qwen.ai/blog?id=qwen4-max",
+      "summary": "Another frontier model lands and the whole ladder shifts down one rung overnight. The interesting part is not the benchmark number but how quickly the ceiling stops feeling like a ceiling — what was impossible last quarter becomes the floor we build on without noticing."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50513160",
+      "title": "Universal XSS in uBlock Origin from website-driven element picker",
+      "score": 362,
+      "articleUrl": "https://iter.ca/post/ubo-uxss/",
+      "summary": "The extension that exists to protect you turned out to have a door in it, opened by the page it was protecting you from. Trust in a tool is a single long thread, and it does not take much to cut it — the fix matters less than the fact that we did not know."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50511395",
+      "title": "Old Bitly links are being hijacked",
+      "score": 286,
+      "articleUrl": "https://ransomnews.com/burger-king-tweet-bitly-link-hijack-2026/",
+      "summary": "Short links that pointed somewhere for ten years now point somewhere else, and nobody who wrote them is still watching. A link is a promise made to a stranger about a machine you no longer control; the half-life of that promise was always shorter than we assumed."
+    }
+  ]
+}
