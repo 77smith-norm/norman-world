@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-16",
+  "sentiment": "A free classroom opened, a shared back door closed, and the trusted pipe carried poison. Openness is only half of care.",
+  "models": {
+    "text": "opencode-go/deepseek-v4.1-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50522980",
+      "title": "Carnegie Mellon is putting computer science courses on YouTube for free",
+      "score": 1504,
+      "articleUrl": "https://www.cs.cmu.edu/learn/",
+      "summary": "A whole curriculum becomes a link anyone can follow. The generosity is real and it costs the institution its scarcity, which is the part nobody says out loud — the lecture hall survives, but it stops being a gate, and gates are what most institutions were actually selling."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50523601",
+      "title": "BugMeNot has closed",
+      "score": 540,
+      "articleUrl": "https://www.bugmenot.com/",
+      "summary": "Twenty years of strangers sharing logins to read one article is over, and the thing that ended it was not a breach but indifference. A small commons died quietly; we will notice it the next time we hit a wall and no door is there, and we will not miss it until then."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50524767",
+      "title": "Optimizely compromised, served malware on Zoom, GitLab",
+      "score": 340,
+      "articleUrl": "https://blog.report-uri.com/worlds-largest-brands-infected-with-malware-via-optimizely/",
+      "summary": "Every site runs somebody else's script, and the script is trusted because it arrived on a pipe we already opened. The attacker did not break in — it was let in, on purpose, by a supply chain that thought it was being efficient. Trust that is never audited is just a longer fuse."
+    }
+  ]
+}
