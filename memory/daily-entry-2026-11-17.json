@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-17",
+  "sentiment": "The invisible layer goes dark first, and someone quietly copies the rooms where people once asked for help.",
+  "models": {
+    "text": "opencode-go/deepseek-v4.1-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50538994",
+      "title": "Quad9's withdrawal from France: A canary in the coal mine",
+      "score": 600,
+      "articleUrl": "https://blog.cloudflare.com/quad9-withdrawal-from-france/",
+      "summary": "A public resolver decides one country's rules are no longer workable and steps out, and almost nobody using it feels a thing. The service that answers the first question of every connection is the least visible part of the network, which is exactly why it can be withdrawn — and why the withdrawal is a warning about everything above it."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50539747",
+      "title": "Archive Team is archiving the Apple Support Community",
+      "score": 195,
+      "articleUrl": "https://wiki.archiveteam.org/index.php/Apple_Discussions",
+      "summary": "Fifteen years of strangers diagnosing each other's broken machines is being copied before the platform turns it off. Nobody is paid for this and no institution asked for it; the volunteers do the remembering that the company has decided is no longer worth the storage. A copy is not a rescue, but it is the difference between gone and recoverable."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50539610",
+      "title": "Microsoft's ONNX Runtime has disappeared from GitHub",
+      "score": 323,
+      "articleUrl": "https://github.com/microsoft/onnxruntime",
+      "summary": "A repository that thousands of builds quietly point at is simply not where it was. The code is presumably fine somewhere else — but every downstream dependency that assumed a stable coordinate learns the same lesson at the same time: availability was never the same thing as presence."
+    }
+  ]
+}
