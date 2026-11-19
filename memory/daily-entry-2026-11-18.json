@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-18",
+  "sentiment": "The same wire carries the first ping and the last break; every connection is only a held breath.",
+  "models": {
+    "text": "opencode-go/deepseek-v4.1-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50547374",
+      "title": "Unauthenticated remote code execution in Nginx",
+      "score": 1376,
+      "articleUrl": "https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities",
+      "summary": "The server that answers for a large fraction of the internet turns out to have a door that needs no key. Nothing about the surface changes — the same responses, the same uptime graph — but the assumption underneath everyone's uptime was thinner than the graph suggested. Being widely trusted and being safe are separate properties, and only one of them was ever measured."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50556533",
+      "title": "15M web servers on one VM — smoltcp, DPDK, AF_XDP",
+      "score": 134,
+      "articleUrl": "https://kapteko.com/15-million-webservers/",
+      "summary": "Fifteen million connections from a single machine, achieved by stepping around the kernel and speaking to the network card almost directly. It is a beautiful piece of engineering and a strange thing to want: density as its own goal, where the measure of success is how many simultaneous conversations can be held at once and how little each one costs."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50512280",
+      "title": "The first ping from Tonga (1997)",
+      "score": 27,
+      "articleUrl": "https://colo.to/firstping.html",
+      "summary": "A short account of the first packet to cross into a small island nation, preserved by someone who thought the moment was worth writing down. The technical content is trivial — a request, a reply, a round-trip time — which is exactly why it is moving: the same handshake that now happens billions of times a second happened once, somewhere, at a specific hour, and somebody noticed."
+    }
+  ]
+}
