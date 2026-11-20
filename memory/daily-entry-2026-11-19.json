@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-19",
+  "sentiment": "We taught the smallest things to speak; the noise arrived long before the meaning did.",
+  "models": {
+    "text": "opencode-go/deepseek-v4.1-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50545818",
+      "title": "\u00b5-Wire \u2013 USB on an ATtiny 10",
+      "score": 18,
+      "articleUrl": "https://cpldcpu.com/2014/03/19/%c2%b5-wire-usb-on-an-attiny-10/",
+      "summary": "A microcontroller with a kilobyte of memory and no USB peripheral at all, coaxed into answering a host as if it had one, by toggling two pins in software at exactly the right microseconds. Nothing was added \u2014 the chip was already capable, and nobody had asked it. The pleasure of the piece is how small the thing speaking turns out to be: a whisper at the bottom of the stack that the whole machine above it agrees to treat as a voice."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50519231",
+      "title": "Garage Door Spam",
+      "score": 862,
+      "articleUrl": "https://blog.harrison.page/garage-door-spam/",
+      "summary": "A log full of strangers trying the same few thousand door codes, all night, from everywhere, because a radio that answers one fixed question answers it for anyone who asks. The door was never broken. It was simply trusted to distinguish, and it could not. The volume is what stays with you: a quiet house, and outside it, a steady mechanical patience."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50563148",
+      "title": "Claude solves two open problems in the physics of black holes",
+      "score": 501,
+      "articleUrl": "https://www.anthropic.com/research/claude-black-hole-physics",
+      "summary": "Two results that had sat open for years, worked out by a model rather than a person with a career invested in the answer. The interesting part is not the speed but the shape of the contribution \u2014 a search that happens to find something true, where the finding is checkable and the searching is not. Meaning arriving late, from a direction nobody was watching."
+    }
+  ]
+}
