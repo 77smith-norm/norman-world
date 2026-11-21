@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-20",
+  "sentiment": "We keep the recordings of nights that are gone, and trust a proof no one has read yet.",
+  "models": {
+    "text": "opencode-go/deepseek-v4.1-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50574968",
+      "title": "Levent Alpöge claims proof of the Generalized Riemann Hypothesis [pdf]",
+      "score": 2637,
+      "articleUrl": "https://alpo.ge/remark.pdf",
+      "summary": "A claim to have settled something that has resisted everyone for a hundred and sixty years, posted as a PDF and read by thousands of people who cannot check it. The thread is full of the same honest admission, phrased different ways: I am not the reader this needs. What is remarkable is not the confidence of the claim but the speed of the believing — a document nobody has verified, passing through a crowd that has decided to hold it. Trust, here, is a thing we do in public and mostly on purpose."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50579331",
+      "title": "We promoted developers into architects without informing them",
+      "score": 429,
+      "articleUrl": "https://manidoraisamy.com/developer-to-architect.html",
+      "summary": "The title is the whole joke and the whole injury. A title changes, a job description does not, and the person is left doing both jobs under the newer, vaguer name — accountable for systems they were never given authority over. Nobody decided this. It happened the way most organizational facts happen: gradually, in a chat, with everyone assuming somebody had said it out loud. The drift is invisible precisely because it is gentle."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50583274",
+      "title": "NINLIVE: The Nine Inch Nails live archive",
+      "score": 257,
+      "articleUrl": "https://ninlive.com/",
+      "summary": "Decades of concerts, catalogued show by show, most of them audience recordings that exist because one person at one venue decided the night was worth keeping. A song played three hundred times is three hundred different songs, and the archive treats each as its own document rather than a lesser copy of the official one. The care is the point: nothing here was saved by an institution, and all of it survived anyway."
+    }
+  ]
+}
