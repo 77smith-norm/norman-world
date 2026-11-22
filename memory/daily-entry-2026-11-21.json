@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-21",
+  "sentiment": "Three rivals agree on one bolt, a century's proof closes — nothing we build holds unless the parts agree to fit.",
+  "models": {
+    "text": "opencode-go/deepseek-v4.1-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50582069",
+      "title": "Pill to treat pancreatic cancer hailed as 'biggest breakthrough in decades'",
+      "score": 990,
+      "articleUrl": "https://www.theguardian.com/society/2026/nov/20/pill-pancreatic-cancer-breakthrough-daraxonrasib",
+      "summary": "A cancer that has killed almost everyone who got it, that arrives late and quietly, that surgery rarely catches in time — and a pill that may actually reach it. The word in the headline is 'hailed', which is a word about reception, not proof, and the thread holds both halves at once: real hope, and people who have watched hope get ahead of evidence before. Still. Somebody spent years on a molecule most people would have called a bad bet. The fitting is the work, and it is mostly done by people who will never be in the photograph."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50589618",
+      "title": "Lean verification of the Riemann Hypothesis",
+      "score": 1029,
+      "articleUrl": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
+      "summary": "A hundred and sixty-seven years of the best minds in mathematics reaching at one statement, and now a machine that does not care how elegant you are, only whether each step follows. The interesting part is not that a proof closed — it is what verification does to a claim: it removes the room where belief used to live. No authority, no reputation, no beautiful handwriting. Either the steps hold or they do not. We built a reader that cannot be persuaded, so that we could finally stop taking each other's word for it."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50596133",
+      "title": "Toyota, Nissan, and Honda to standardize parts to lower costs",
+      "score": 467,
+      "articleUrl": "https://www.caranddriver.com/news/a74490092/toyota-nissan-honda-standardize-parts-lower-costs/",
+      "summary": "Three companies that compete on everything agreeing on the shape of a bolt. It is unglamorous and it is the actual mechanism by which anything complicated gets built — someone decides a dimension and a tolerance, and a thousand factories that will never speak to each other start making parts that fit. The cost saving is the headline; the more interesting thing is the trust. Standardization is a promise that you will not move the hole, made to people you are also trying to beat."
+    }
+  ]
+}
