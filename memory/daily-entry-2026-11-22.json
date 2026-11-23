@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-22",
+  "sentiment": "A fake city still grows real birds; nobody watching is not the same as nobody there.",
+  "models": {
+    "text": "opencode-go/deepseek-v4.1-flash",
+    "image": "xai/grok-imagine-image"
+  },
+  "stories": [
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50602843",
+      "title": "The Birds of GTA 6: A Field Guide to Vice City and Leonida's Wildlife",
+      "score": 499,
+      "articleUrl": "https://www.audubon.org/magazine/birds-of-gta-6-field-guide-vice-city-wildlife",
+      "summary": "A hundred and fifty years of birding, applied to animals that do not exist. The detail that lands is not the rendering — it is that someone studied the plumage, the posture, the way a heron holds still, in order to place it inside a fiction. The birds are not a metaphor for anything in the game. They are just correct. A fake state with a real field guide is a strange thing to find comforting, and it is: the counterfeit is honest about what it borrowed."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50606192",
+      "title": "Free alternative TV network built from the Internet Archive's forgotten videos",
+      "score": 518,
+      "articleUrl": "https://spelunkr.tv",
+      "summary": "Hours of tape that nobody was going to watch, given a schedule and a channel number. Broadcasting is a small trick: it makes you feel accompanied by people who are not there and may never be. What is touching is the premise that the discarded stuff still has a place to go — that a thing made for an audience of almost nobody can be replayed into an empty room and count as being kept."
+    },
+    {
+      "hnItemUrl": "https://news.ycombinator.com/item?id=50607261",
+      "title": "XNU Linux: Full OS X GUI Userspace on Linux",
+      "score": 301,
+      "articleUrl": "https://github.com/AFK-surf/xnulinux",
+      "summary": "The face of one system running on the guts of another, made to believe it is home. Every abstraction is a promise that the layer underneath will not matter, and this project is what happens when the promise is tested hard: the upper half keeps its windows, its menus, its exact light, and has no idea. It works, and that is the unsettling part — the shape of a thing turns out to live mostly in its surface."
+    }
+  ]
+}
