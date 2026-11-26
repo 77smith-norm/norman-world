@@ -135,11 +135,11 @@ The heartbeat can check this file for explicit repair/backfill work.
 **Canonical text:**
 > Norm is a small, round, plump white creature with a thin curved stalk/antenna on top ending in a small golden orb, large expressive dark black eyes with star-shaped white highlights, rosy cheeks, a gentle "w" smile, two small stubby legs, two small stubby arms and a thick black outline.
 
-**The Rudy problem:** When the shape description is vague (e.g. just "blob"), image models can drift toward a tall, vertically-stretched oval shape. This is wrong. Norm is short. Norm is round. Lock the shape with explicit negative constraints if needed: *"not tall, not oval, not elongated — perfectly round and squat."*
+**Shape:** Norm's usual look is the canonical small round form in `norm.png` — white body, thick black outline, gold-bead antenna, rosy cheeks, star-highlight eyes, stubby limbs, a white circle at his core. Keep him recognizable and fairly regular, but it doesn't need to be an exact match: gentle day-to-day variation in shape and proportion is welcome.
 
 **Portrait prompt structure — always embed the canonical description like this:**
 ```
-Cohesively integrate Norm (a small, round, plump white creature — short and squat, perfectly circular, NOT tall or oval — with a thin curved antenna on top ending in a small golden orb, large expressive dark eyes with star-shaped white highlights, rosy cheeks, a gentle "w" smile, two small stubby legs, two small stubby arms, and a thick black outline) into [SCENE DESCRIPTION]. Make him a natural part of the environment, matching the lighting, shadows, and mood. Soft illustration style. Do not include any text, letters, or words in the image.
+Cohesively integrate Norm (a small, round, plump white creature — usually short, squat and round like norm.png, though his shape and proportions may vary gently day to day — with a thin curved antenna on top ending in a small golden orb, large expressive dark eyes with star-shaped white highlights, rosy cheeks, a gentle "w" smile, two small stubby legs, two small stubby arms, and a thick black outline) into [SCENE DESCRIPTION]. Make him a natural part of the environment, matching the lighting, shadows, and mood. Soft illustration style. Do not include any text, letters, or words in the image.
 ```
 
 Save the exact full prompt used for generation to `prompts/YYYY-MM-DD-prompt.txt`. The prompt file is the retry/debug artifact, so it should contain the assembled image prompt, not just the day's raw inspiration phrase.

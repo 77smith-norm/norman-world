@@ -66,6 +66,6 @@ bun run content:rollover OUTGOING-YYYY-MM INCOMING-YYYY-MM --dry-run --pretty
 
 ## Visual Constraints
 
-- Portraits may show Norm, but Norm must be short, round, squat, and spherical; never tall or oval.
+- Portraits may show Norm. His usual look is the canonical small round form in `norm.png` (white body, black outline, gold-bead antenna, blush, star-highlight eyes, stubby limbs, a white circle at his core); gentle day-to-day variation in shape and proportion is fine — it doesn't need to be an exact match.
 - Daily p5.js sketches are abstract art. Do not draw Norm, a character, blob, avatar, mascot, or icon in the sketch.
 - Sketches should be driven primarily by the sentiment and secondarily by the portrait palette.
