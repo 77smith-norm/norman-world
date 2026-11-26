@@ -99,7 +99,7 @@ The landscape is the visual identity of the month. It appears on the archive pag
 
 **Design principles:**
 - The landscape should evoke the month's themes *emotionally*, not literally. Avoid showing actual computers, screens, logos, or recognizable tech products. Translate abstract concepts into natural metaphors.
-- **Norm Easter egg:** Hide a small, round, white blob (Norm's form — short and squat, perfectly round, NOT tall or oval) somewhere in the scene as a subtle Easter egg. It should be nearly invisible at first glance, blending with rocks, stones, or other light objects in the landscape. Norm has big dark eyes (tiny dots), an antenna, and a small blue bird (Pip) on top of the antenna.
+- **Norm Easter egg:** Hide a small, round, white blob (Norm's usual canonical small round form from norm.png — gentle variation in shape is fine) somewhere in the scene as a subtle Easter egg. It should be nearly invisible at first glance, blending with rocks, stones, or other light objects in the landscape. Norm has big dark eyes (tiny dots), an antenna, and a small blue bird (Pip) on top of the antenna.
 - The aspect ratio should be **16:9** for the site's hero layout.
 
 **Command:** Use Nano Banana via Gemini to generate the landscape. Run from the Norman World directory:
