@@ -47,6 +47,8 @@ Use OpenClaw `image_generate` in edit/reference mode if the run has that tool av
 - `prompt`: the exact full prompt from `prompts/YYYY-MM-DD-prompt.txt`
 - `image`: `/Users/norm/.openclaw/workspace/avatars/norm.png` if repo-root `norm.png` is not allowed
 - `outputFormat`: `png`
+- `aspectRatio`: `1:1` (pinned — never omit; an omitted aspect ratio lets the provider pick a wide canvas, the November 2026 squish failure)
+- `resolution`: `1K`
 - `filename`: `/Users/norm/Developer/norman-world/images/YYYY-MM-DD-norm.png`
 
 If OpenClaw writes the generated file to a media/output directory instead of the requested filename, copy the PNG to `images/YYYY-MM-DD-norm.png`.

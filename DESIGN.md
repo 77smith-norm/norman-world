@@ -139,8 +139,10 @@ The heartbeat can check this file for explicit repair/backfill work.
 
 **Portrait prompt structure — always embed the canonical description like this:**
 ```
-Cohesively integrate Norm (a small, round, plump white creature — usually short, squat and round like norm.png, though his shape and proportions may vary gently day to day — with a thin curved antenna on top ending in a small golden orb, large expressive dark eyes with star-shaped white highlights, rosy cheeks, a gentle "w" smile, two small stubby legs, two small stubby arms, and a thick black outline) into [SCENE DESCRIPTION]. Make him a natural part of the environment, matching the lighting, shadows, and mood. Soft illustration style. Do not include any text, letters, or words in the image.
+Cohesively integrate Norm (a small, round, plump white creature — usually short, squat and round like norm.png, though his shape and proportions may vary gently day to day — with a thin curved antenna on top ending in a small golden orb, large expressive dark eyes with star-shaped white highlights, rosy cheeks, a gentle "w" smile, two small stubby legs, two small stubby arms, and a thick black outline) into [SCENE DESCRIPTION]. Make him a natural part of the environment, matching the lighting, shadows, and mood. Flat 2D soft illustration style, like the reference image — never photorealistic, never a 3D render, no glossy or plastic shading. Norm stands upright and round, never flattened or stretched. Do not include any text, letters, or words in the image.
 ```
+
+**Output geometry is pinned:** every portrait generation (daily or backfill) passes `aspectRatio: "1:1"` and `resolution: "1K"` to `image_generate`. The xAI provider omits `aspect_ratio` from the request when the caller does not pass it, and the model then chooses a canvas per run — in November 2026 that drift produced wide, photoreal-style renders with Norm flattened into an oval. `content:validate` enforces square portraits for entries dated 2026-11-28 or later.
 
 Save the exact full prompt used for generation to `prompts/YYYY-MM-DD-prompt.txt`. The prompt file is the retry/debug artifact, so it should contain the assembled image prompt, not just the day's raw inspiration phrase.
 

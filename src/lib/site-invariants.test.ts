@@ -3,7 +3,8 @@ import {
   validateCurrentMonthIndex,
   validateEntryPage,
   validateEntrySketch,
-  validateHomePage
+  validateHomePage,
+  validatePortraitGeometry
 } from "./site-invariants";
 
 const validHome = `<!doctype html>
@@ -161,3 +162,29 @@ describe("validateEntrySketch", () => {
   });
 });
 
+function pngBuffer(width: number, height: number): Buffer {
+  const buffer = Buffer.alloc(24);
+  Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]).copy(buffer, 0);
+  buffer.writeUInt32BE(width, 16);
+  buffer.writeUInt32BE(height, 20);
+  return buffer;
+}
+
+describe("validatePortraitGeometry", () => {
+  it("accepts a square portrait on or after the cutoff", () => {
+    expect(validatePortraitGeometry("2026-11-28", "images/2026-11-28-norm.png", pngBuffer(1024, 1024))).toEqual([]);
+  });
+
+  it("rejects a wide portrait on or after the cutoff", () => {
+    expect(validatePortraitGeometry("2026-11-29", "images/2026-11-29-norm.png", pngBuffer(1248, 832))).toEqual([
+      {
+        file: "images/2026-11-29-norm.png",
+        message: "Portrait for 2026-11-29 must be square (1:1, pinned aspectRatio) — got 1248x832"
+      }
+    ]);
+  });
+
+  it("leaves pre-cutoff portraits at their original ratio", () => {
+    expect(validatePortraitGeometry("2026-11-26", "images/2026-11-26-norm.png", pngBuffer(1152, 864))).toEqual([]);
+  });
+});

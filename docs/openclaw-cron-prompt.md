@@ -55,13 +55,14 @@ AGENT-ASSISTED CREATIVE STEPS:
    b. Read the portrait prompt template from DESIGN.md section 11.
    c. Assemble the full prompt by embedding the character description and scene inspiration into the template:
       ```
-      Cohesively integrate Norm ([character description from norm.txt]) into [SCENE DESCRIPTION]. Make him a natural part of the environment, matching the lighting, shadows, and mood. Soft illustration style. Do not include any text, letters, or words in the image.
+      Cohesively integrate Norm ([character description from norm.txt]) into [SCENE DESCRIPTION]. Make him a natural part of the environment, matching the lighting, shadows, and mood. Flat 2D soft illustration style, like the reference image — never photorealistic, never a 3D render, no glossy or plastic shading. Norm stands upright and round, never flattened or stretched. Do not include any text, letters, or words in the image.
       ```
    d. Save that exact full generation prompt to `prompts/YYYY-MM-DD-prompt.txt`.
    e. Generate `images/YYYY-MM-DD-norm.png` using OpenClaw `image_generate` with the exact prompt saved in `prompts/YYYY-MM-DD-prompt.txt`.
       - Always use Grok Imagine via `image_generate` with model `xai/grok-imagine-image` (matches `agents.defaults.mediaModels.image.primary`).
       - Explicitly pass `model: "xai/grok-imagine-image"` on the tool call. Do NOT pass `openai/gpt-image-*` or any OpenAI image model.
       - Use `image_generate` in edit/reference mode when it is available.
+      - Explicitly pass `aspectRatio: "1:1"` and `resolution: "1K"` on the tool call. Never omit them: without an aspect ratio the provider chooses one per run, which is how portraits drifted into wide, flattened renders in November 2026.
       - Use `/Users/norm/.openclaw/workspace/avatars/norm.png` as the reference image for consistent character appearance.
       - Do not use Google Gemini, Nano Banana, or OpenRouter for routine daily portraits unless Russell explicitly asked for a repair/backfill with those providers.
       - If the tool saves into an OpenClaw media/output directory, copy the generated image to `/Users/norm/Developer/norman-world/images/YYYY-MM-DD-norm.png` with the `.png` extension.

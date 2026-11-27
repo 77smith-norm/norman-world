@@ -3,7 +3,7 @@ import path from "node:path";
 import { parseCliArgs, printJson } from "../lib/cli";
 import { listEntries } from "../lib/content";
 import { sitePaths } from "../lib/paths";
-import { validateCurrentMonthIndex, validateEntryPage, validateEntrySketch, validateHomePage, validateYearArchive } from "../lib/site-invariants";
+import { validateCurrentMonthIndex, validateEntryPage, validateEntrySketch, validateHomePage, validatePortraitGeometry, validateYearArchive } from "../lib/site-invariants";
 
 interface ValidationError {
   file: string;
@@ -25,6 +25,9 @@ for (const entry of entries) {
 
   if (!entry.portraitPath) {
     errors.push({ file: entry.pagePath, message: `Missing portrait for ${entry.slug}` });
+  } else {
+    const portraitBuffer = fs.readFileSync(path.join(sitePaths.repoRoot, entry.portraitPath));
+    errors.push(...validatePortraitGeometry(entry.slug, entry.portraitPath, portraitBuffer));
   }
 
   if (!html.includes(`../js/${entry.slug}.js`)) {

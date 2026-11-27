@@ -239,3 +239,57 @@ function monthLabelToSlug(label: string): string {
   return slug;
 }
 
+/**
+ * Portraits generated from 2026-11-28 onward are pinned to a square canvas
+ * (image_generate aspectRatio "1:1"; see docs/openclaw-cron-prompt.md).
+ * Earlier portraits predate the pin and keep whatever ratio they were
+ * generated with, so the square rule only applies on/after the cutoff.
+ */
+export const SQUARE_PORTRAIT_CUTOFF = "2026-11-28";
+
+export function readImageDimensions(buffer: Buffer): { width: number; height: number } | null {
+  // PNG: IHDR width/height are big-endian uint32 at bytes 16 and 20.
+  if (
+    buffer.length >= 24 &&
+    buffer.subarray(0, 8).equals(Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]))
+  ) {
+    return { width: buffer.readUInt32BE(16), height: buffer.readUInt32BE(20) };
+  }
+
+  // JPEG: scan segments for a Start Of Frame marker (C0-CF except C4, C8, CC).
+  if (buffer.length >= 4 && buffer[0] === 0xff && buffer[1] === 0xd8) {
+    let offset = 2;
+    while (offset + 9 <= buffer.length) {
+      if (buffer[offset] !== 0xff) return null;
+      const marker = buffer[offset + 1];
+      if (marker >= 0xc0 && marker <= 0xcf && marker !== 0xc4 && marker !== 0xc8 && marker !== 0xcc) {
+        return { height: buffer.readUInt16BE(offset + 5), width: buffer.readUInt16BE(offset + 7) };
+      }
+      const segmentLength = buffer.readUInt16BE(offset + 2);
+      if (segmentLength < 2) return null;
+      offset += 2 + segmentLength;
+    }
+  }
+
+  return null;
+}
+
+export function validatePortraitGeometry(slug: string, portraitPath: string, buffer: Buffer): ValidationError[] {
+  if (slug < SQUARE_PORTRAIT_CUTOFF) return [];
+
+  const dimensions = readImageDimensions(buffer);
+  if (!dimensions) {
+    return [{ file: portraitPath, message: `Could not read portrait dimensions for ${slug}` }];
+  }
+
+  if (dimensions.width !== dimensions.height) {
+    return [
+      {
+        file: portraitPath,
+        message: `Portrait for ${slug} must be square (1:1, pinned aspectRatio) — got ${dimensions.width}x${dimensions.height}`
+      }
+    ];
+  }
+
+  return [];
+}
